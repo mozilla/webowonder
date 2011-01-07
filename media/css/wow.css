@@ -1,0 +1,1008 @@
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+/**
+ * Mozilla Web O'pen Wonder Stylesheeet
+ *
+ * Initial version created by Weightshift
+ * http://weightshift.com/
+ *
+ * @copyright 2011 Mozilla Corporation
+ * @license   http://www.mozilla.org/MPL/ Mozilla Public License
+ */
+
+/* Reset */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+/* @font-face declarations -- do not change!!! */
+@font-face {
+	font-family: 'LeagueGothicRegular';
+	src: url('../fonts/League_Gothic-webfont.eot');
+	src: local('☺'), url('../fonts/League_Gothic-webfont.woff') format('woff'), url('../fonts/League_Gothic-webfont.ttf') format('truetype'), url('../fonts/League_Gothic-webfont.svg#webfontpm5EArBj') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ChunkFiveRegular';
+	src: url('../fonts/Chunkfive-webfont.eot');
+	src: local('☺'), url('../fonts/Chunkfive-webfont.woff') format('woff'), url('../fonts/Chunkfive-webfont.ttf') format('truetype'), url('../fonts/Chunkfive-webfont.svg#webfontr824sA59') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CopseRegular';
+	src: url('../fonts/Copse-Regular-webfont.eot');
+	src: local('☺'), url('../fonts/Copse-Regular-webfont.woff') format('woff'), url('../fonts/Copse-Regular-webfont.ttf') format('truetype'), url('../fonts/Copse-Regular-webfont.svg#webfont2ZLDIqTa') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* end @font-face declarations -- do not change!!! */
+
+/* HTML5 elements must be set to block because they have no inherent display setting */
+header, nav, section, article, aside, footer {
+	display: block;
+}
+
+html,body {
+	height: 100%;
+	font-size: 14.99px;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+	background: url(../img/bg-main-top.png) 0 0 repeat-x,
+				url(../img/bg-harlequin.png) 0 0 repeat;
+	min-height: 700px;
+	font-size: 1em;
+	line-height: 1em;
+	-webkit-font-smoothing: antialiased;
+}
+
+a:hover {
+	-moz-transition: all 0.1s linear;
+	-webkit-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+
+#page-container {
+	min-width: 960px;
+	max-width: 100%;
+	min-height: 700px;
+	height: 100%;
+	position: relative;
+	background: url(../img/bg-top-hat.png) center bottom no-repeat,
+				url(../img/bg-pole.png) center top repeat-y,
+				/*url(../img/bg-main-stains.png) center top no-repeat,*/
+				/*url(../img/bg-main-bottom.png) left bottom repeat-x,*/
+				url(../img/bg-medallion.png) center top no-repeat;
+}
+
+#header {
+	width: 750px;
+	height: 220px;
+	margin: 0 auto;
+	background: url(../img/logo-web-o-wonder.png) center top  no-repeat;
+}
+
+	#home-link {
+		display: block;
+		height: 130px;
+		width: 710px;
+		margin-left: 20px;
+	}
+
+#navigation {
+	width: 750px;
+	padding-top: 4px;
+	background: url(../img/non-sprited/bg-nav.png) 0 0 no-repeat;
+	float: left;
+}	
+		#navigation li {
+			float: left;
+			font-size: 1.2em;
+			line-height: 1.2em;
+			color: #fff;
+			text-transform: uppercase;
+			text-shadow: 1px 1px 0 #000;
+		}
+			
+			#navigation .see-types {
+				font-family: "LeagueGothicRegular", sans-serif;
+				padding: 10px 45px 0 0;
+				margin-left: 96px;
+				letter-spacing: 0.5px;
+				background: url(../img/non-sprited/bg-see-types.png) right 13px no-repeat;
+			}
+		
+		#navigation a {
+			font-family: "ChunkFiveRegular", serif;
+			color: #fff6e1;
+			display: block;
+			border-left: 1px dotted #333;
+			padding: 11px 32px;
+			text-decoration: none;
+			letter-spacing: 2px;
+			background-position: center 30px;
+			background-repeat: no-repeat;
+		}
+		#navigation a:hover, #navigation a.selected {
+  			text-shadow: 2px 2px 3px #333;
+  			background-image: url(../img/non-sprited/nav-selected.png);
+		}
+		
+	#twitter {
+		float: right;
+		margin-right: -90px;
+		padding-top: 95px;
+		background: url(../img/chain-1.png) top center no-repeat;
+	}
+		
+		#twitter iframe {
+			-moz-transform: rotate(4deg);
+			-webkit-transform: rotate(4deg);
+			-o-transform: rotate(4deg);
+			-ms-transform: rotate(4deg);
+			transform: rotate(4deg);
+		}
+		
+	#facebook {
+		float: right;
+		margin-right: -10px;
+		padding-top: 50px;
+		background: url(../img/chain-facebook.png) top center no-repeat;
+	}
+
+		#facebook iframe {
+			-moz-transform: rotate(-4deg);
+			-webkit-transform: rotate(-4deg);
+			-o-transform: rotate(-4deg);
+			-ms-transform: rotate(-4deg);
+			transform: rotate(-4deg);
+		}
+		
+	#back-to-mozilla {
+		float: right;
+		margin-right: -160px;
+		margin-top: -2px;
+		-moz-transform: rotate(6deg);
+		-webkit-transform: rotate(6deg);
+		-o-transform: rotate(6deg);
+		-ms-transform: rotate(6deg);
+		transform: rotate(6deg);
+	}
+	
+		#back-to-mozilla:hover {
+			margin-right: -158px;
+			-moz-transform: rotate(4deg);
+			-webkit-transform: rotate(4deg);
+			-o-transform: rotate(4deg);
+			-ms-transform: rotate(4deg);
+			transform: rotate(4deg);
+		}	
+
+#mozilla-info {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -515px;
+}
+
+#magic-tickets {
+	position: absolute;
+	top: 0;
+	left: 25px;
+	z-index: 1000;
+	display: block;
+}
+
+#magic-tickets img {
+	float: right;
+	-moz-transform: rotate(8deg);
+	-webkit-transform: rotate(8deg);
+	-o-transform: rotate(8deg);
+	-ms-transform: rotate(8deg);
+	transform: rotate(8deg);
+}
+
+	#magic-tickets .magic-ticket-2 {
+		margin-right: -170px;
+		-moz-transform: rotate(-13deg);
+		-webkit-transform: rotate(-13deg);
+		-o-transform: rotate(-13deg);
+		-ms-transform: rotate(-13deg);
+		transform: rotate(-13deg);
+	}
+
+img[src*="chain-1"] {
+	position: absolute;
+	z-index: 101;
+	margin-left: 102px;
+}
+img[src*="chain-2"] {
+	position: absolute;
+	z-index: 101;
+	top: 397px;
+	margin-left: 80px;
+	-moz-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+img[src*="chain-3"] {
+	position: absolute;
+	z-index: 101;
+	top: 392px;
+	margin-left: 156px;
+	-moz-transform: rotate(-1deg);
+	-webkit-transform: rotate(-1deg);
+	-o-transform: rotate(-1deg);
+	-ms-transform: rotate(-1deg);
+	transform: rotate(-1deg);
+}
+		
+#marvels-await {
+	position: relative;
+	width: 170px;
+	height: 243px;
+	padding: 40px 30px 35px 35px;
+	margin-top: 92px;
+	background: url(../img/non-sprited/bg-marvels-await.png) 0 0 no-repeat;
+	color: #173956;
+	margin-bottom: 5px;
+	-moz-transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+	-o-transform: rotate(-4deg);
+	-ms-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+	z-index: 100;
+}
+
+	#marvels-await h3 {
+		font-family: "LeagueGothicRegular", sans-serif;
+		font-size: 3.6em;
+		line-height: 0.6em;
+		letter-spacing: 2px;
+		font-weight: normal;
+		text-transform: uppercase;
+		padding-left: 6px; 
+		text-shadow: -3px 3px 0px rgba(255,255,255,0.6);
+	}
+	
+	#marvels-await h3 span {
+		font-family: "ChunkFiveRegular", serif;
+		font-size: 0.7em;
+		line-height: 1em;
+	}
+	
+	#marvels-await p {
+		color: #403a30;
+		font-family: "CopseRegular", Georgia, serif;
+		font-size: 0.9em;
+		line-height: 1.5em;
+		margin-right: 10px;
+		padding: 7px 0 3px 4px;
+		text-shadow: 1px 1px 0px rgba(255,255,255,0.6);
+	}
+	
+	#marvels-await a {
+		color: #c30;
+		font-size: 1.8em;
+		line-height: 1.2em;
+		font-family: "LeagueGothicRegular", sans-serif;
+		text-transform: uppercase;
+		display: block;
+		padding: 6px 5px 5px;
+		margin: 10px 15px 0 0;
+		text-decoration: none;
+		background: url(../img/non-sprited/bg-submit-demo.png) right 10px no-repeat,
+					url(../img/non-sprited/bg-submit-demo-top.png) left top repeat-x,
+					url(../img/non-sprited/bg-submit-demo-bottom.png) left bottom repeat-x;
+	}
+	#marvels-await a:hover { color: #9a280d; }
+
+#firefox-four {
+	position: relative;
+	display: block;
+	background: url(../img/non-sprited/bg-firefox-four.png) 0 0 no-repeat;
+	width: 220px;
+	height: 250px;
+	-moz-transform: rotate(6deg);
+	-webkit-transform: rotate(6deg);
+	-o-transform: rotate(6deg);
+	-ms-transform: rotate(6deg);
+	transform: rotate(6deg);
+	margin-top: 10px;
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	z-index: 100;
+	-moz-box-shadow: 3px 5px 3px #111;
+	-webkit-box-shadow: 3px 5px 3px #111;
+	box-shadow: 3px 5px 3px #111;
+	
+}
+	#firefox-four h3 {
+		text-indent: -10000px;
+	}
+		
+	#firefox-four .tagline {
+		font-family: "LeagueGothicRegular", sans-serif;
+		color: #f61a1a;
+		float: left;
+		width: 40px;
+		margin-top: 115px;
+		margin-left: 20px;
+	}
+	
+	#firefox-four .tagline-2 {
+		float: right;
+		margin-right: 16px;
+		margin-top: 120px;
+	}
+	
+	.knows {
+		font-size: 1.3em;
+	}
+	
+	.sees {
+		font-size: 2em;
+		line-height: 0.9em;
+	}
+	
+	.tells {
+		font-size: 1.5em;
+	}
+	
+	.all {
+		font-size: 2.3em;
+		line-height: 0.8em;
+	}
+		
+	#firefox-four .get-it {
+		clear: both;
+		display: block;
+		font-weight: bold;
+		letter-spacing: 2px;
+		font-size: 1.2em;
+		color: #ffdeb5;
+		padding-top: 35px;
+		padding-left: 8px;
+	}
+	
+	#firefox-four:hover .get-it,
+	#firefox-four:hover .tagline span {
+  		-moz-transition: all 0.2s ease-in-out;
+		-webkit-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s  ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	#firefox-four:hover .get-it { text-shadow: 0px 3px 10px #999; }
+	#firefox-four:hover .tagline span { text-shadow: 0px 5px 20px #000; }
+		
+#demos {
+	width: 100%;
+	height: 360px;
+	margin-top: -15px;
+	position: relative;
+	background: url(../img/bg-rope.png) left center repeat-x;
+	z-index: 2;
+	overflow: hidden;
+}
+#demos.init { overflow: visible; }
+
+	#demos .coming-soon {
+	}
+
+	#demos-inner {
+		height: 360px;
+		width: 10000px;
+		margin-left: -780px;
+		position: absolute;
+		left: 50%;
+	}
+	
+	.demo {
+		width: 500px;
+		height: 350px;
+		float: left;
+		margin-right: 20px;
+		background: #e5dabb;
+		/*background: #e5dabb url(../img/non-sprited/bg-demo.png) 0 0 no-repeat;*/
+		border-radius: 4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		position: relative;
+		-moz-box-shadow: 0 3px 5px #000;
+		-webkit-box-shadow: 0 3px 5px #000;
+		box-shadow: 0 3px 5px #000;
+	}
+		.demo.flipping {
+			-moz-box-shadow: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			border: none;
+		}
+	
+		.flipped {
+			/*background: #e5dabb url(../img/non-sprited/demo-flipped.png) 0 0 no-repeat;*/
+		}
+	
+		.flag {
+			position: absolute;
+			top: 30px;
+			left: 0;
+			padding: 7px 15px 6px 30px;
+			width: 45px;
+			background-color: #000;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #fff;
+			font-size: 0.7em;
+			line-height: 1em;
+			background: url(../img/non-sprited/bg-flags.png) 0 0 no-repeat;
+			z-index: 99;
+		}
+		
+			.design .flag {
+				background-position: 0 0;
+			}
+			
+			.html5 .flag {
+				background-position: 0 -25px;
+			}
+			
+			.video .flag {
+				background-position: 0 -50px;
+			}
+			
+			.audio .flag {
+				background-position: 0 -75px;
+			}
+			
+			.coming-soon .flag {
+				width: 105px;
+				background-position: 0 -100px;
+			}
+	
+		.demo-inner {
+			margin: 10px;
+			padding: 9px;
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+			border: 1px solid #fff;
+			float: left;
+			height: 310px;
+		}
+		
+			.design .demo-inner {
+				border-color: #82902a;
+			}
+			
+			.html5 .demo-inner {
+				border-color: #d09607;
+			}
+			
+			.audio .demo-inner {
+				border-color: #725b3d;
+			}
+			
+			.video .demo-inner {
+				border-color: #d45155;
+			}
+			
+			.flipped .demo-inner {
+				width: 460px;
+			}
+		
+		.coming-soon-cover {
+			position: absolute;
+			top: 20px;
+			width: 460px;
+			height: 310px;
+			-moz-box-shadow: inset 0 0 30px #000;
+			-webkit-box-shadow: inset 0 0 30px #000;
+			box-shadow: inset 0 0 30px #000;
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+		}
+		
+		.demo-image {
+			width: 458px;
+			height: 230px;
+			border: 1px solid #fff;
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+			background-color: #000;
+			overflow: hidden;
+		}
+		
+			.coming-soon .demo-image {
+				width: 460px;
+				border: none;
+			}
+			
+			.flipped .demo-image {
+				position: relative;
+				width: 159px;
+				height: 154px;
+				border-radius: 3px;
+				-moz-border-radius: 3px;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				top: 76px;
+				left: 294px;
+			}
+			
+				.flipped .demo-image img { margin: -30px 0 0 -150px;}
+			
+.flip-card-back {
+	display: none;
+	margin: -18px auto 0;
+	padding-top: 13px;
+	text-align: center;
+	width: 120px;
+	text-decoration: none;
+	font-size: 0.6em;
+	font-family: "ChunkFiveRegular", serif;
+	text-transform: uppercase;
+	background: url(../img/bg-flip-card-back.png) center top no-repeat;
+}
+	
+	.flipped .flip-card-back { display: block; }
+	
+	.design .flip-card-back {
+		color: #82902a;
+		background-position: center 0px;
+	}
+	
+	.html5 .flip-card-back {
+		color: #d09607;
+		background-position: center -29px;
+	}
+	
+	.audio .flip-card-back {
+		color: #725b3d;
+		background-position: center -57px;
+	}
+	
+	.video .flip-card-back {
+		color: #d45155;
+		background-position: center -85px;
+	}
+	
+.demo-info {
+	width: 285px;
+	padding-right: 15px;
+	float: left;
+	padding-left: 5px;
+}
+
+.demo-info-extra { display: none; }
+			
+.flipped .demo-info {
+	width: 265px;
+	margin-top: -130px;
+	color: #423d30;
+}
+
+.flipped .demo-info-extra { display: block; }
+		
+	.demo-info h1 {
+		font-family: "ChunkFiveRegular", serif;
+		color: #069;
+		text-shadow: 1px 1px 0 #fff;
+		font-size: 2.1em;
+		line-height: 28px;
+		margin: 10px 0 0;
+	}
+	
+	.demo-info h2 {
+		font-size: 0.8em;
+		margin-bottom: 10px;
+	}
+	
+		.demo-info h2 a {
+			color: #c30;
+			text-decoration: none;
+			display: inline-block;
+			padding: 2px 20px 2px 0;
+			background: url(../img/non-sprited/icon-info.png) right top no-repeat;
+		}
+		
+		.flipped .demo-info h2 a {
+  			background: none;
+  			color: #423D30;
+		}
+
+	.demo-info p {
+		margin-bottom: 5px;
+		line-height: 16px;
+		font-size: 0.8em;
+	}
+
+	.demo-info ul {
+		border-top: 1px solid #c4ba9c;
+		margin-bottom: 10px;
+		font-size: 0.8em;
+	}
+
+	.demo-info li {
+		padding: 5px 0 5px 25px;
+		line-height: 15px;
+		border-bottom: 1px solid #c4ba9c;
+		background: url(../img/non-sprited/bg-bullet.png) 5px 4px no-repeat;
+	}
+	
+	.demo-info a {
+		color: #069;
+		text-decoration: none;
+		font-weight: bold;
+	}
+	.demo-info a:hover { text-decoration: underline; }
+
+.video-container a { font-size: 0.9em; }
+
+.video-container img {
+	float: left;
+	display: block;
+	border: 1px solid #fff;
+	margin-right: 10px;
+}
+
+.demo-actions {
+	float: left;
+	margin: -60px 0 0 10px;
+	width: 120px;
+	text-transform: uppercase;
+	color: #423d30;
+	text-align: center;
+	font-size: 0.7em;
+	line-height: 1.2em;
+}
+
+	.flipped .demo-actions {
+		margin-top: 58px;
+		width: 170px;
+		margin-left: 5px;
+	}
+
+	.experience-it {
+		display: block;
+		background-color: #c23404;
+		border-radius: 4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		padding: 6px;
+		text-decoration: none;
+		color: #fff;
+		font-family: "LeagueGothicRegular", sans-serif;
+		-moz-box-shadow: 0 1px 4px #333;
+		-webkit-box-shadow: 0 1px 4px #333;
+		box-shadow: 0 1px 4px #333;
+		margin-bottom: 11px;
+		font-weight: bold;
+		position: relative;
+		letter-spacing: -1px;
+	}
+		.experience-it:hover {
+			background-color: #9a280d;
+			text-shadow: 2px 2px 3px #333;
+		}
+	
+		.experience-it b {
+			font-family: "ChunkFiveRegular", serif;
+			font-weight: normal;
+			font-size: 0.7em;
+			letter-spacing: 1px;
+			line-height: 0;
+		}
+	
+		.experience-it span {
+			font-size: 3em;
+			line-height: 0.7em;
+			border: 1px solid #fff;
+			border-radius: 3px;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			padding: 8px 6px 6px;
+			display: block;
+			font-weight: normal;
+		}
+		
+			.flipped .experience-it {
+				margin: -52px 0 11px 25px;
+				width: 108px;
+			}
+			
+		.experience-it img {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin: -7px -4px 0 0;
+		}
+		
+	.watch-video {
+		color: #069;
+		display: block;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	.watch-video:hover { text-decoration: underline; }
+	
+	.demo-over {
+		top: 0;
+		left: 0;
+		position: absolute;
+		width: 500px;
+		height: 350px;
+		background-color: #0e1a28;
+		opacity: 0.8;
+		z-index: 999;
+	}
+		
+		.demo.init .demo-over, /* At page init, for progressive enhancement */
+		.demo.selected .demo-over { 
+			visibility: hidden;
+		}
+	
+	.social-media {
+		display: block;
+		float: left;
+		width: 24px;
+		height: 24px;
+		text-indent: -10000px;
+		background: url(../img/non-sprited/icon-social.png) 0 0 no-repeat;
+		margin: 6px 0 0 24px;
+		opacity: 0.5;
+		text-decoration: none !important;
+	}
+	
+		.social-media:hover {
+			opacity: 1;
+		}
+	
+	.facebook {
+		margin-left: 0;
+	}
+	
+		.flipped .facebook {
+			margin-left: 25px;
+		}
+	
+	.twitter {
+		background-position: 0 -24px;
+	}
+	
+	.link {
+		background-position: 0 -48px;
+	}
+	
+	.social-tooltip {
+		display: none;
+		position: absolute;
+		margin-top: -50px;
+		text-indent: 0;
+		width: 130px;
+		text-align: center;
+		background-color: #fff;
+		font-weight: bold;
+		border-radius: 4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		color: #069;
+		text-transform: uppercase;
+		font-size: 1em;
+		line-height: 1em;
+		padding: 8px 4px 8px;
+		margin-left: -68px;
+		-moz-box-shadow: 0px 3px 3px #666;
+		-webkit-box-shadow: 0px 3px 3px #666;
+		box-shadow: 0px 3px 3px #666;
+	}
+	
+	.social-tooltip div {
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		bottom: -10px;
+		left: 75px;
+		background: url(../img/tooltip-arrow.png) 0 0 no-repeat;
+	}
+	
+#demo-controls {
+	width: 460px;
+	margin: 0 auto;
+	position: relative;
+}
+
+	#lights-down {
+		position: absolute;
+		border-radius: 30px;
+		-moz-border-radius: 30px;
+		-webkit-border-radius: 30px;
+		border-radius: 30px;
+		left: 50%;
+		margin-left: -35px;
+		margin-top: -5px;
+	}
+	a#lights-down:active { 
+		position: absolute;
+		top: 2px;
+		-moz-transition: none;
+		-webkit-transition: none;
+		-o-transition: none;
+		transition: none;
+	}
+
+	#that-way,
+	#this-way {
+		display: block;
+		margin-top: 8px;
+		-moz-transition: all 0.1s ease-in-out;
+		-webkit-transition: all 0.1s ease-in-out;
+		-o-transition: all 0.1s ease-in-out;
+		transition: all 0.1s ease-in-out;
+	} 
+	
+	#that-way {
+		float: left;
+		margin-left: 34px;
+	}
+	
+		#that-way:hover {
+			margin-left: 18px;
+		}
+
+	#this-way {
+		float: right;
+		margin-right: 33px;
+	}
+	
+		#this-way:hover {
+			margin-right: 18px;
+		}
+
+/* Demo iFrame */
+#demo-viewport { 
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+
+.loading {
+	display: none;
+	font-family: "ChunkFiveRegular", serif;
+	font-size: 32px;
+	line-height: 32px;
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	background: #000;
+  	z-index: 998;
+  	color: #FFF;
+  	text-align: center;
+	opacity: 0.95;
+}
+	.loading-inner { 
+		margin-top: 250px;
+		padding-bottom: 10px;
+	}
+
+	.loading .title {
+		display: block;
+  		color: #999;
+  		size: 36px;
+	}
+
+/* Spotlight */
+/* http://svay.com/experiences/css3-spotlight/ */
+.spotlight {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* this is the sweet spot */
+    background-image: -moz-radial-gradient(50% 50% 45deg,circle closest-side,transparent 0,transparent 150px,rgba(0, 0, 0, 0.8) 180px);
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.8)), color-stop(0.8, rgba(0,0,0,0)));
+    z-index: 9999;
+}
+
+/* Shake */
+.disruptable {
+	-moz-transition: all 0.2s linear;
+	-webkit-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+		
+/* Media Query for Small Screens */
+@media screen and (max-width: 960px) {
+	  #mozilla-info {
+		left: 0;
+		margin-left: -35px;
+	}
+}
+
+/* Colorbox */
+/*
+    ColorBox Core Style
+    The following rules are the styles that are consistant between themes.
+    Avoid changing this area to maintain compatability with future versions of ColorBox.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative; overflow:hidden;}
+#cboxLoadedContent{overflow:auto;}
+#cboxLoadedContent iframe{display:block; width:100%; height:100%; border:0;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+
+/* 
+    Example user style
+    The following rules are ordered and tabbed in a way that represents the
+    order/nesting of the generated HTML, so that the structure easier to understand.
+*/
+#cboxOverlay{background-color: #000; opacity: 0.95;}
+#colorbox{}
+    #cboxTopLeft{width:21px; height:21px; background:url(../img/colorbox/controls.png) no-repeat -100px 0;}
+    #cboxTopRight{width:21px; height:21px; background:url(../img/colorbox/controls.png) no-repeat -129px 0;}
+    #cboxBottomLeft{width:21px; height:21px; background:url(../img/colorbox/controls.png) no-repeat -100px -29px;}
+    #cboxBottomRight{width:21px; height:21px; background:url(../img/colorbox/controls.png) no-repeat -129px -29px;}
+    #cboxMiddleLeft{width:21px; background:url(../img/colorbox/controls.png) left top repeat-y;}
+    #cboxMiddleRight{width:21px; background:url(../img/colorbox/controls.png) right top repeat-y;}
+    #cboxTopCenter{height:21px; background:url(../img/colorbox/border.png) 0 0 repeat-x;}
+    #cboxBottomCenter{height:21px; background:url(../img/colorbox/border.png) 0 -29px repeat-x;}
+    #cboxContent{background:#fff;}
+        #cboxLoadedContent{margin-bottom:28px;}
+        #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+        #cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+        #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+        #cboxPrevious{position:absolute; bottom:0; left:0px; background:url(../img/colorbox/controls.png) no-repeat -75px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxPrevious.hover{background-position:-75px -25px;}
+        #cboxNext{position:absolute; bottom:0; left:27px; background:url(../img/colorbox/controls.png) no-repeat -50px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxNext.hover{background-position:-50px -25px;}
+        #cboxLoadingOverlay{background:url(../img/colorbox/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(../img/colorbox/loading.gif) no-repeat center center;}
+        #cboxClose{position:absolute; bottom:0; right:0; background:url(../img/colorbox/controls.png) no-repeat -25px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxClose.hover{background-position:-25px -25px;}
+
+/*
+    The following fixes png-transparency for IE6.  
+    It is also necessary for png-transparency in IE7 & IE8 to avoid 'black halos' with the fade transition
+    
+    Since this method does not support CSS background-positioning, it is incompatible with CSS sprites.
+    Colorbox preloads navigation hover classes to account for this.
+    
+    !! Important Note: AlphaImageLoader src paths are relative to the HTML document,
+    while regular CSS background images are relative to the CSS document.
+*/
+.cboxIE #cboxTopLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderTopLeft.png, sizingMethod='scale');}
+.cboxIE #cboxTopCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderTopCenter.png, sizingMethod='scale');}
+.cboxIE #cboxTopRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderTopRight.png, sizingMethod='scale');}
+.cboxIE #cboxBottomLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderBottomLeft.png, sizingMethod='scale');}
+.cboxIE #cboxBottomCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderBottomCenter.png, sizingMethod='scale');}
+.cboxIE #cboxBottomRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderBottomRight.png, sizingMethod='scale');}
+.cboxIE #cboxMiddleLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderMiddleLeft.png, sizingMethod='scale');}
+.cboxIE #cboxMiddleRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderMiddleRight.png, sizingMethod='scale');}
