@@ -117,8 +117,8 @@ def JINJA_CONFIG():
 # and js files that can be bundled together by the minify app.
 MINIFY_BUNDLES = {
     'css': {
-        'example_css': (
-            'css/examples/main.css',
+        'wow_css': (
+            'css/wow.css',
         ),
     },
     'js': {
@@ -161,7 +161,7 @@ INSTALLED_APPS = (
     'jingo_minify',
     'tower',  # for ./manage.py extract (L10n)
 
-    'examples',  # Example code. Can (and should) be removed for actual projects.
+    'wow',
 )
 
 # Tells the extract script what files to look for L10n in and what function

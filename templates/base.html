@@ -5,8 +5,15 @@
     <title>{% block page_title %}playdoh examples{% endblock %}</title>
 
     {% block site_css %}
-      {{ css('example_css') }}
+      {{ css('wow_css') }}
     {% endblock %}
+        <!--[if IE]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<![endif]-->
+	
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="css/ie7.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<![endif]-->
   </head>
   <body>
     {% block content %}{% endblock %}

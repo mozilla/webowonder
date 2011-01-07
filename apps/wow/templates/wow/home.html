@@ -1,16 +1,268 @@
-{% extends "example_base.html" %}
-
+{% extends "base.html" %}
+{% block page_title %}{{ _('Mozilla\'s Web O\'(pen) Wonder') }}{% endblock %}
 {% block content %}
-<h1>{{ _('Hello world') }}</h1>
+<div id="page-container">
+	<div id="header">
+		<div id="twitter" class="disruptable">
+			<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+		</div>
+		<div id="facebook" class="disruptable">
+			<iframe src="http://www.facebook.com/plugins/like.php?layout=box_count&amp;show_faces=false&amp;width=55&amp;action=like&amp;colorscheme=light&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px; height:65px;" allowTransparency="true"></iframe>
+		</div>
+		<div id="back-to-mozilla">
+			<a href="http://mozilla.org"><img src="media/img/back-to-mozilla.png" /></a>
+		</div>
+		<a href="" id="home-link"></a>
+		<ul id="navigation">
+			<li class="see-types">See!</li>
+			<li><a href="#">HTML5</a></li>
+			<li><a href="#">Design</a></li>
+			<li><a href="#">Video</a></li>
+			<li><a href="#">Audio</a></li>
+		</ul>
+	</div>
+	
+	<div id="mozilla-info">
+		<a href="" id="magic-tickets">
+			<img src="media/img/magic-ticket.png" width="160" height="76" alt="Magic Ticket">
+			<img src="media/img/magic-ticket.png" width="160" height="76" alt="Magic Ticket" class="magic-ticket-2">
+		</a>
+		<img src="media/img/chain-1.png" width="14" height="105" alt="Chain 1">
+		<div id="marvels-await">
+			<h3>Marvels <span>Await</span></h3>
+			<p>EXPLORE the AMAZING CREATIONS of the Web! WONDER at FANTASTIC DISCOVERIES from the comfort of your browser!</p>
+			<a href="#">Submit a Demo!</a>
+		</div>
+		<img src="media/img/chain-2.png" width="15" height="35" alt="Chain 2">
+		<img src="media/img/chain-3.png" width="15" height="50" alt="Chain 3">
+		<a href="#" id="firefox-four">
+			<h3>Firefox 4</h3>
+			<div class="tagline">
+				<span class="knows">Knows</span> <span class="sees">Sees</span>
+			</div>
+			<div class="tagline tagline-2">
+				<span class="tells">Tells</span> <span class="all">All</span>
+			</div>
+			<div class="get-it">Get it today!</div>
+		</a>
+	</div>
+	
+	<div id="demos" class="init">
+		<div id="demos-inner">
+			<div data-hash="appearing-soon" class="demo coming-soon">
+				<div class="demo-inner">
+					<div class="flag">Appearing Soon</div>
+					<div class="demo-image"><img src="media/img/image-coming-soon.png" width="460" height="310" alt="Image Coming Soon"></div>
+					<div class="coming-soon-cover"><img src="media/img/bg-coming-soon.png" width="460" height="310" alt="Bg Coming Soon"></div>
+					<div class="demo-over"></div>
+				</div>
+			</div>
+			<div data-hash="statistweets" class="demo design selected init">
+				<div class="demo-inner">
+					<div class="flag">Design</div>
+					<a href="#" class="flip-card-back">Hide Info</a>
+					<div class="demo-image"><img src="media/img/image-placeholder.jpg" width="458" height="230" alt="Placeholder"></div>
+					<div class="demo-info">
+						<h1>StatisTweets</h1>
+						<h2>by <a class="more-info" href="#">John Smith</a></h2>
+						<div class="demo-info-extra">
+						    <p>Nam at lorem felis, gravida pellentesque nisi. Suspendisse auctor magna in lorem mattis aliquet.</p>
+    						<ul>
+    							<li>Built with <a href="#">HTML5</a>, <a href="#">CSS3</a>, <a href="#">SVG</a>, and <a href="#">WebGL</a>.</li>
+    							<li><a href="#">Explore the source code on GitHub</a></li>
+    						</ul>
+    						<div class="video-container">
+    							<img src="media/img/video-play.png" width="100" height="65" alt="Video Play">
+    							<p>See how John Smith brothers brought space down to earth.</p>
+    							<a class="cbox-youtube" href="http://www.youtube.com/embed/FtX8nswnUKU?rel=0&autoplay=1"  title="The Making of Statistweets">Watch the Video &#187;</a>
+    						</div>
+    					</div>
+					</div>
+					<div class="demo-actions">
+						<a href="http://plopbyte.net:2048/statistweets/index_protocol.html" class="experience-it">
+							<span>Experience <b>it now</b></span>
+							<img src="media/img/icon-flip-card.png" width="14" height="14" alt="Flip Card Icon">
+						</a>
+						&mdash; or &mdash;
+						<a href="http://www.youtube.com/embed/FtX8nswnUKU?rel=0&autoplay=1" class="cbox-youtube watch-video" title="The Making of Statistweets">Watch a Video</a>
+						<a href="#" class="social-media facebook" title="Share on Facebook">Facebook</a>
+						<a href="#" class="social-media twitter" title="Share on Twitter">Twitter</a>
+						<a href="#" class="social-media link" title="Link to this page">Link</a>
+					</div>
+					<div class="demo-over"></div>
+				</div>
+			</div>
+			<div data-hash="letter-heads" class="demo html5 init">
+				<div class="demo-inner">
+					<div class="flag">HTML5</div>
+					<a href="#" class="flip-card-back">Hide Info</a>
+					<div class="demo-image"><img src="media/img/image-placeholder.jpg" width="458" height="230" alt="Placeholder"></div>
+					<div class="demo-info">
+						<h1>Letter-heads</h1>
+						<h2>by <a class="more-info" href="#">Simurai</a></h2>
+						<div class="demo-info-extra">
+						    <p>Nam at lorem felis, gravida pellentesque nisi. Suspendisse auctor magna in lorem mattis aliquet.</p>
+    						<ul>
+    							<li>Built with <a href="#">HTML5</a>, <a href="#">CSS3</a>, <a href="#">SVG</a>, and <a href="#">WebGL</a>.</li>
+    							<li><a href="#">Explore the source code on GitHub</a></li>
+    						</ul>
+    						<div class="video-container">
+    							<img src="media/img/video-play.png" width="100" height="65" alt="Video Play">
+    							<p>See how the LeCollinet brothers brought space down to earth.</p>
+    							<a href="#">Watch the Video &#187;</a>
+    						</div>
+    					</div>
+					</div>
+					<div class="demo-actions">
+						<a href="http://people.mozilla.org/~aking/dteam/demo.html" class="experience-it">
+							<span>Experience <b>it now</b></span>
+							<img src="media/img/icon-flip-card.png" width="14" height="14" alt="Flip Card Icon">
+						</a>
+						&mdash; or &mdash;
+						<a href="#" class="watch-video">Watch a Video</a>
+						<a href="#" class="social-media facebook" title="Share on Facebook">Facebook</a>
+						<a href="#" class="social-media twitter" title="Share on Twitter">Twitter</a>
+						<a href="#" class="social-media link" title="Link to this page">Link</a>
+					</div>
+					<div class="demo-over"></div>
+				</div>
+			</div>
+			<div data-hash="sound-in-motionscapes" class="demo audio init">
+				<div class="demo-inner">
+					<div class="flag">Audio</div>
+					<a href="#" class="flip-card-back">Hide Info</a>
+					<div class="demo-image"><img src="media/img/image-placeholder.jpg" width="458" height="230" alt="Placeholder"></div>
+					<div class="demo-info">
+						<h1>Sound in Motionscapes</h1>
+						<h2>by <a class="more-info" href="#">Scott McCoppin</a></h2>
+						<div class="demo-info-extra">
+						    <p>Nam at lorem felis, gravida pellentesque nisi. Suspendisse auctor magna in lorem mattis aliquet.</p>
+    						<ul>
+    							<li>Built with <a href="#">HTML5</a>, <a href="#">CSS3</a>, <a href="#">SVG</a>, and <a href="#">WebGL</a>.</li>
+    							<li><a href="#">Explore the source code on GitHub</a></li>
+    						</ul>
+    						<div class="video-container">
+    							<img src="media/img/video-play.png" width="100" height="65" alt="Video Play">
+    							<p>See how the LeCollinet brothers brought space down to earth.</p>
+    							<a href="#">Watch the Video &#187;</a>
+    						</div>
+    					</div>
+					</div>
+					<div class="demo-actions">
+						<a href="http://people.mozilla.org/~aking/dteam/demo.html" class="experience-it">
+							<span>Experience <b>it now</b></span>
+							<img src="media/img/icon-flip-card.png" width="14" height="14" alt="Flip Card Icon">
+						</a>
+						&mdash; or &mdash;
+						<a href="#" class="watch-video">Watch a Video</a>
+						<a href="#" class="social-media facebook" title="Share on Facebook">Facebook</a>
+						<a href="#" class="social-media twitter" title="Share on Twitter">Twitter</a>
+						<a href="#" class="social-media link" title="Link to this page">Link</a>
+					</div>
+					<div class="demo-over"></div>
+				</div>
+			</div>
+			<div data-hash="video-demo" class="demo video init">
+				<div class="demo-inner">
+					<div class="flag">Video</div>
+					<a href="#" class="flip-card-back">Hide Info</a>
+					<div class="demo-image"><img src="media/img/image-placeholder.jpg" width="458" height="230" alt="Placeholder"></div>
+					<div class="demo-info">
+						<h1>Video Demo</h1>
+						<h2>by <a class="more-info" href="#">Moz Illa</a></h2>
+						<div class="demo-info-extra">
+						    <p>Nam at lorem felis, gravida pellentesque nisi. Suspendisse auctor magna in lorem mattis aliquet.</p>
+    						<ul>
+    							<li>Built with <a href="#">HTML5</a>, <a href="#">CSS3</a>, <a href="#">SVG</a>, and <a href="#">WebGL</a>.</li>
+    							<li><a href="#">Explore the source code on GitHub</a></li>
+    						</ul>
+    						<div class="video-container">
+    							<img src="media/img/video-play.png" width="100" height="65" alt="Video Play">
+    							<p>See how the LeCollinet brothers brought space down to earth.</p>
+    							<a href="#">Watch the Video &#187;</a>
+    						</div>
+    					</div>
+					</div>
+					<div class="demo-actions">
+						<a href="http://people.mozilla.org/~aking/dteam/demo.html" class="experience-it">
+							<span>Experience <b>it now</b></span>
+							<img src="media/img/icon-flip-card.png" width="14" height="14" alt="Flip Card Icon">
+						</a>
+						&mdash; or &mdash;
+						<a href="#" class="watch-video">Watch a Video</a>
+						<a href="#" class="social-media facebook" title="Share on Facebook">Facebook</a>
+						<a href="#" class="social-media twitter" title="Share on Twitter">Twitter</a>
+						<a href="#" class="social-media link" title="Link to this page">Link</a>
+					</div>
+					<div class="demo-over"></div>
+				</div>
+			</div>
+			<div data-hash="sound-in-motionscapes-2" class="demo audio init">
+				<div class="demo-inner">
+					<div class="flag">Audio</div>
+					<a href="#" class="flip-card-back">Hide Info</a>
+					<div class="demo-image"><img src="media/img/image-placeholder.jpg" width="458" height="230" alt="Placeholder"></div>
+					<div class="demo-info">
+						<h1>Sound in Motionscapes 2</h1>
+						<h2>by <a class="more-info" href="#">Scott McCoppin</a></h2>
+						<div class="demo-info-extra">
+						    <p>Nam at lorem felis, gravida pellentesque nisi. Suspendisse auctor magna in lorem mattis aliquet.</p>
+    						<ul>
+    							<li>Built with <a href="#">HTML5</a>, <a href="#">CSS3</a>, <a href="#">SVG</a>, and <a href="#">WebGL</a>.</li>
+    							<li><a href="#">Explore the source code on GitHub</a></li>
+    						</ul>
+    						<div class="video-container">
+    							<img src="media/img/video-play.png" width="100" height="65" alt="Video Play">
+    							<p>See how the LeCollinet brothers brought space down to earth.</p>
+    							<a href="#">Watch the Video &#187;</a>
+    						</div>
+    					</div>
+					</div>
+					<div class="demo-actions">
+						<a href="http://people.mozilla.org/~aking/dteam/demo.html" class="experience-it">
+							<span>Experience <b>it now</b></span>
+							<img src="media/img/icon-flip-card.png" width="14" height="14" alt="Flip Card Icon">
+						</a>
+						&mdash; or &mdash;
+						<a href="#" class="watch-video">Watch a Video</a>
+						<a href="#" class="social-media facebook" title="Share on Facebook">Facebook</a>
+						<a href="#" class="social-media twitter" title="Share on Twitter">Twitter</a>
+						<a href="#" class="social-media link" title="Link to this page">Link</a>
+					</div>
+					<div class="demo-over"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="demo-controls">
+		<a href="#" id="lights-down"><img src="media/img/lights-down.png" width="70" height="70" alt="Lights Down"></a>
+		<a href="#" id="that-way"><img src="media/img/that-way.png" width="190" height="50" alt="That Way"></a>
+		<a href="#" id="this-way"><img src="media/img/this-way.png" width="190" height="50" alt="This Way"></a>
+	</div>
+</div>
+    <div class="loading"><div class="loading-inner">Loading <span class="title"></span><img src="media/img/loading.gif" height="32" width="32" alt="Loading"/></div></div>
+    <iframe id="demo-viewport" width="100%" scrollbars="no"></iframe>
+    <div class="social-tooltip"><span></span><div></div></div>
+    <span id="spot" class="spotlight"></span>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script type="text/javascript" src="media/js/jquery.quicksand.min.js"></script>
+	<script type="text/javascript" src="media/js/jquery.colorbox.min.js"></script>
+	<script type="text/javascript" src="media/js/wow.js"></script>
+<h1>{{ _('Mozilla\'s Web O\'(pen) Wonder') }}</h1>
+
+
+
 
 {# L10n: This is a localizer comment #}
 <p>
   {% trans %}
   This is a test view. 
-  <a href="http://readthedocs.org/projects/fwenzel/playdoh/docs/index.html">Learn
+
   you some Playdoh</a> and then go build something
   <strong>Awesome</strong>.
   {% endtrans %}  
-  <img id="playdoh" src="/media/img/playdoh.png" width="357" height="600" alt="A can of Play-Doh" />
+
 </p>
 {% endblock %}

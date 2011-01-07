@@ -7,4 +7,5 @@ import jingo
 
 def home(request):
     data = {}
-    return jingo.render(request, 'examples/home.html', data)
+    return jingo.render(request, 'wow/home.html', data)
+

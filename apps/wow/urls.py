@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
 
-urlpatterns = patterns('examples.views',
-    url(r'^$', 'home', name='examples.home'),
+urlpatterns = patterns('wow.views',
+    url(r'^$', 'home', name='wow.home'),
 )
