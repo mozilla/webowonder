@@ -1,0 +1,41 @@
+.flip-card-back {
+	margin-left: -60px;
+	left: 50%;
+	position: absolute;
+}
+
+#magic-tickets {
+	left: -35px;
+}
+
+#firefox-four a {
+	padding-top: 15px;
+}
+
+.flipped .demo-info {
+	margin-top: 35px;
+}
+
+.flip-card b {
+	line-height: 1.2em;	
+}
+
+.flip-card {
+	margin-bottom: 5px;
+}
+
+.flipped .demo-actions {
+	margin-top: 67px;
+}
+
+.knows,
+.tells {
+	line-height: 1em;
+}
+div.chain-2 {
+	top: 393px;
+	margin-left: 68px;
+}
+div.chain-3 {
+	margin-left: 144px;
+}

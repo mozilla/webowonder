@@ -1,0 +1,48 @@
+body {
+	background: #162634 url(../images/bg-harlequin.png) 0 0 repeat;
+}
+
+#header {
+	background: url(../images/logo-web-o-wonder.png) center top  no-repeat;
+}
+
+	#home-link {
+		width: 680px;
+	}
+
+#page-container {
+	background: url(../images/bg-medallion.png) center top no-repeat;
+}
+
+div.chain-1 {
+	margin-left: 112px;
+}
+div.chain-2 {
+	margin-left: 69px;
+}
+div.chain-3 {
+	margin-left: 145px;
+}
+
+#marvels-await a {
+	background: url(../images/non-sprited/bg-submit-demo.png) right 11px no-repeat;
+}
+
+.demo-over {
+	filter: alpha(opacity=80);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+
+.social-media {
+	filter: alpha(opacity=50);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"
+}
+
+	.social-media:hover {
+		filter: alpha(opacity=100);
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+	}
+
+#firefox-four .tagline {
+	margin-top: 115px;
+}
