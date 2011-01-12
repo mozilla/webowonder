@@ -16,24 +16,24 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* @font-face declarations -- do not change!!! */
 @font-face {
 	font-family: 'LeagueGothicRegular';
-	src: url('../fonts/League_Gothic-webfont.eot');
-	src: local('☺'), url('../fonts/League_Gothic-webfont.woff') format('woff'), url('../fonts/League_Gothic-webfont.ttf') format('truetype'), url('../fonts/League_Gothic-webfont.svg#webfontpm5EArBj') format('svg');
+	src: url('/media/fonts/League_Gothic-webfont.eot');
+	src: local('☺'), url('/media/fonts/League_Gothic-webfont.woff') format('woff'), url('/media/fonts/League_Gothic-webfont.ttf') format('truetype'), url('/media/fonts/League_Gothic-webfont.svg#webfontpm5EArBj') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'ChunkFiveRegular';
-	src: url('../fonts/Chunkfive-webfont.eot');
-	src: local('☺'), url('../fonts/Chunkfive-webfont.woff') format('woff'), url('../fonts/Chunkfive-webfont.ttf') format('truetype'), url('../fonts/Chunkfive-webfont.svg#webfontr824sA59') format('svg');
+	src: url('/media/fonts/Chunkfive-webfont.eot');
+	src: local('☺'), url('/media/fonts/Chunkfive-webfont.woff') format('woff'), url('/media/fonts/Chunkfive-webfont.ttf') format('truetype'), url('/media/fonts/Chunkfive-webfont.svg#webfontr824sA59') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'CopseRegular';
-	src: url('../fonts/Copse-Regular-webfont.eot');
-	src: local('☺'), url('../fonts/Copse-Regular-webfont.woff') format('woff'), url('../fonts/Copse-Regular-webfont.ttf') format('truetype'), url('../fonts/Copse-Regular-webfont.svg#webfont2ZLDIqTa') format('svg');
+	src: url('/media/fonts/Copse-Regular-webfont.eot');
+	src: local('☺'), url('/media/fonts/Copse-Regular-webfont.woff') format('woff'), url('/media/fonts/Copse-Regular-webfont.ttf') format('truetype'), url('/media/fonts/Copse-Regular-webfont.svg#webfont2ZLDIqTa') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -52,8 +52,8 @@ html,body {
 
 body {
 	font-family: Helvetica, sans-serif;
-	background: url(../img/bg-main-top.png) 0 0 repeat-x,
-				url(../img/bg-harlequin.png) 0 0 repeat;
+	background: url(/media/img/bg-main-top.png) 0 0 repeat-x,
+				url(/media/img/bg-harlequin.png) 0 0 repeat;
 	min-height: 700px;
 	font-size: 1em;
 	line-height: 1em;
@@ -73,18 +73,18 @@ a:hover {
 	min-height: 700px;
 	height: 100%;
 	position: relative;
-	background: url(../img/bg-top-hat.png) center bottom no-repeat,
-				url(../img/bg-pole.png) center top repeat-y,
-				/*url(../img/bg-main-stains.png) center top no-repeat,*/
-				/*url(../img/bg-main-bottom.png) left bottom repeat-x,*/
-				url(../img/bg-medallion.png) center top no-repeat;
+	background: url(/media/img/bg-top-hat.png) center bottom no-repeat,
+				url(/media/img/bg-pole.png) center top repeat-y,
+				/*url(/media/img/bg-main-stains.png) center top no-repeat,*/
+				/*url(/media/img/bg-main-bottom.png) left bottom repeat-x,*/
+				url(/media/img/bg-medallion.png) center top no-repeat;
 }
 
 #header {
 	width: 750px;
 	height: 220px;
 	margin: 0 auto;
-	background: url(../img/logo-web-o-wonder.png) center top  no-repeat;
+	background: url(/media/img/logo-web-o-wonder.png) center top  no-repeat;
 }
 
 	#home-link {
@@ -97,7 +97,7 @@ a:hover {
 #navigation {
 	width: 750px;
 	padding-top: 4px;
-	background: url(../img/non-sprited/bg-nav.png) 0 0 no-repeat;
+	background: url(/media/img/non-sprited/bg-nav.png) 0 0 no-repeat;
 	float: left;
 }	
 		#navigation li {
@@ -114,8 +114,8 @@ a:hover {
 				padding: 10px 45px 0 0;
 				margin-left: 96px;
 				letter-spacing: 0.5px;
-				/*background: url(../img/non-sprited/bg-see-types.png) right 13px no-repeat;*/
-				background: url(../img/sprite.png) 32px -1431px no-repeat;
+				/*background: url(/media/img/non-sprited/bg-see-types.png) right 13px no-repeat;*/
+				background: url(/media/img/sprite.png) 32px -1431px no-repeat;
 			}
 		
 		#navigation a {
@@ -131,14 +131,14 @@ a:hover {
 		}
 		#navigation a:hover, #navigation a.selected {
   			text-shadow: 2px 2px 3px #333;
-  			background-image: url(../img/non-sprited/nav-selected.png);
+  			background-image: url(/media/img/non-sprited/nav-selected.png);
 		}
 		
 	#twitter {
 		float: right;
 		margin-right: -90px;
 		padding-top: 95px;
-		background: url(../img/chain-1.png) top center no-repeat;
+		background: url(/media/img/chain-1.png) top center no-repeat;
 	}
 		
 		#twitter iframe {
@@ -153,7 +153,7 @@ a:hover {
 		float: right;
 		margin-right: -10px;
 		padding-top: 50px;
-		background: url(../img/chain-facebook.png) top center no-repeat;
+		background: url(/media/img/chain-facebook.png) top center no-repeat;
 	}
 
 		#facebook iframe {
@@ -169,8 +169,8 @@ a:hover {
 		display: block;
 		width: 219px;
 		height: 44px;
-		/*background: url(../img/back-to-mozilla.png) 0 0 no-repeat;*/
-		background: url(../img/sprite.png) 0px -10px no-repeat;
+		/*background: url(/media/img/back-to-mozilla.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -10px no-repeat;
 		margin-right: -160px;
 		margin-top: -2px;
 		-moz-transform: rotate(6deg);
@@ -204,8 +204,8 @@ a:hover {
 	float: right;
 	width: 160px;
 	height: 76px;
-	/*background: url(../img/magic-ticket.png) 0 0 no-repeat;*/
-	background: url(../img/sprite.png) 0px -74px no-repeat;
+	/*background: url(/media/img/magic-ticket.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -74px no-repeat;
 	-moz-transform: rotate(8deg);
 	-webkit-transform: rotate(8deg);
 	-o-transform: rotate(8deg);
@@ -226,7 +226,7 @@ div.chain-1 {
 	position: absolute;
 	width: 14px;
 	height: 105px;
-	background: url(../img/chain-1.png) 0 0 no-repeat;
+	background: url(/media/img/chain-1.png) 0 0 no-repeat;
 	z-index: 101;
 	margin-left: 102px;
 }
@@ -234,8 +234,8 @@ div.chain-2 {
 	position: absolute;
 	width: 15px;
 	height: 35px;
-	/*background: url(../img/chain-2.png) 0 0 no-repeat;*/
-	background: url(../img/sprite.png) 0px -510px no-repeat;
+	/*background: url(/media/img/chain-2.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -510px no-repeat;
 	z-index: 101;
 	top: 397px;
 	margin-left: 80px;
@@ -249,8 +249,8 @@ div.chain-3 {
 	position: absolute;
 	width: 15px;
 	height: 50px;
-	/*background: url(../img/chain-3.png) 0 0 no-repeat;*/
-	background: url(../img/sprite.png) 0px -565px no-repeat;
+	/*background: url(/media/img/chain-3.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -565px no-repeat;
 	z-index: 101;
 	top: 392px;
 	margin-left: 156px;
@@ -267,8 +267,8 @@ div.chain-3 {
 	height: 243px;
 	padding: 40px 30px 35px 35px;
 	margin-top: 92px;
-	/*background: url(../img/non-sprited/bg-marvels-await.png) 0 0 no-repeat;*/
-	background: url(../img/sprite.png) 0px -170px no-repeat;
+	/*background: url(/media/img/non-sprited/bg-marvels-await.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -170px no-repeat;
 	color: #173956;
 	margin-bottom: 5px;
 	-moz-transform: rotate(-4deg);
@@ -316,17 +316,17 @@ div.chain-3 {
 		padding: 6px 5px 5px;
 		margin: 10px 15px 0 0;
 		text-decoration: none;
-		background: url(../img/non-sprited/bg-submit-demo.png) right 10px no-repeat,
-					url(../img/non-sprited/bg-submit-demo-top.png) left top repeat-x,
-					url(../img/non-sprited/bg-submit-demo-bottom.png) left bottom repeat-x;
+		background: url(/media/img/non-sprited/bg-submit-demo.png) right 10px no-repeat,
+					url(/media/img/non-sprited/bg-submit-demo-top.png) left top repeat-x,
+					url(/media/img/non-sprited/bg-submit-demo-bottom.png) left bottom repeat-x;
 	}
 	#marvels-await a:hover { color: #9a280d; }
 
 #firefox-four {
 	position: relative;
 	display: block;
-	/*background: url(../img/non-sprited/bg-firefox-four.png) 0 0 no-repeat;*/
-	background: url(../img/sprite.png) 0px -635px no-repeat;
+	/*background: url(/media/img/non-sprited/bg-firefox-four.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -635px no-repeat;
 	width: 220px;
 	height: 250px;
 	-moz-transform: rotate(6deg);
@@ -388,7 +388,7 @@ div.chain-3 {
 		letter-spacing: 2px;
 		font-size: 1.2em;
 		color: #ffdeb5;
-		padding-top: 35px;
+		padding-top: 200px;
 		padding-left: 8px;
 	}
 	
@@ -407,7 +407,7 @@ div.chain-3 {
 	height: 360px;
 	margin-top: -15px;
 	position: relative;
-	background: url(../img/bg-rope.png) left center repeat-x;
+	background: url(/media/img/bg-rope.png) left center repeat-x;
 	z-index: 2;
 	overflow: hidden;
 }
@@ -430,7 +430,7 @@ div.chain-3 {
 		float: left;
 		margin-right: 20px;
 		background: #e5dabb;
-		/*background: #e5dabb url(../img/non-sprited/bg-demo.png) 0 0 no-repeat;*/
+		/*background: #e5dabb url(/media/img/non-sprited/bg-demo.png) 0 0 no-repeat;*/
 		border-radius: 4px;
 		-moz-border-radius: 4px;
 		-webkit-border-radius: 4px;
@@ -448,7 +448,7 @@ div.chain-3 {
 		}
 	
 		.flipped {
-			/*background: #e5dabb url(../img/non-sprited/demo-flipped.png) 0 0 no-repeat;*/
+			/*background: #e5dabb url(/media/img/non-sprited/demo-flipped.png) 0 0 no-repeat;*/
 		}
 	
 		.flag {
@@ -463,8 +463,8 @@ div.chain-3 {
 			color: #fff;
 			font-size: 0.7em;
 			line-height: 1em;
-			/*background: url(../img/non-sprited/bg-flags.png) 0 0 no-repeat;*/
-			background: url(../img/sprite.png) 0px -915px no-repeat;
+			/*background: url(/media/img/non-sprited/bg-flags.png) 0 0 no-repeat;*/
+			background: url(/media/img/sprite.png) 0px -915px no-repeat;
 			z-index: 99;
 		}
 		
@@ -576,7 +576,7 @@ div.chain-3 {
 	font-size: 0.6em;
 	font-family: "ChunkFiveRegular", serif;
 	text-transform: uppercase;
-	background: url(../img/bg-flip-card-back.png) center top no-repeat;
+	background: url(/media/img/bg-flip-card-back.png) center top no-repeat;
 }
 	
 	.flipped .flip-card-back { display: block; }
@@ -637,7 +637,7 @@ div.chain-3 {
 			text-decoration: none;
 			display: inline-block;
 			padding: 2px 20px 2px 0;
-			background: url(../img/non-sprited/icon-info.png) right top no-repeat;
+			background: url(/media/img/non-sprited/icon-info.png) right top no-repeat;
 		}
 		
 		.flipped .demo-info h2 a {
@@ -661,7 +661,7 @@ div.chain-3 {
 		padding: 5px 0 5px 25px;
 		line-height: 15px;
 		border-bottom: 1px solid #c4ba9c;
-		background: url(../img/non-sprited/bg-bullet.png) 5px 4px no-repeat;
+		background: url(/media/img/non-sprited/bg-bullet.png) 5px 4px no-repeat;
 	}
 	
 	.demo-info a {
@@ -754,8 +754,8 @@ div.chain-3 {
 			margin: -7px -4px 0 0;
 			height: 14px;
 			width: 14px;
-			/*background: url(../img/icon-flip-card.png) 0 0 no-repeat;*/
-			background: url(../img/sprite.png) 0px -1085px no-repeat;
+			/*background: url(/media/img/icon-flip-card.png) 0 0 no-repeat;*/
+			background: url(/media/img/sprite.png) 0px -1085px no-repeat;
 		}
 		
 	.watch-video {
@@ -788,8 +788,8 @@ div.chain-3 {
 		width: 24px;
 		height: 24px;
 		text-indent: -10000px;
-		/*background: url(../img/non-sprited/icon-social.png) 0 0 no-repeat;*/
-		background: url(../img/sprite.png) 0px -1119px no-repeat;
+		/*background: url(/media/img/non-sprited/icon-social.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -1119px no-repeat;
 		margin: 6px 0 0 24px;
 		opacity: 0.5;
 		text-decoration: none !important;
@@ -845,7 +845,7 @@ div.chain-3 {
 		height: 10px;
 		bottom: -10px;
 		left: 75px;
-		background: url(../img/tooltip-arrow.png) 0 0 no-repeat;
+		background: url(/media/img/tooltip-arrow.png) 0 0 no-repeat;
 	}
 	
 #demo-controls {
@@ -866,8 +866,8 @@ div.chain-3 {
 		margin-top: -5px;
 		height: 70px;
 		width: 70px;
-		/*background: url(../img/lights-down.png) 0 0 no-repeat;*/
-		background: url(../img/sprite.png) 0px -1211px no-repeat;
+		/*background: url(/media/img/lights-down.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -1211px no-repeat;
 		text-indent: -9999px;
 	}
 	a#lights-down:active { 
@@ -895,8 +895,8 @@ div.chain-3 {
 	#that-way {
 		float: left;
 		margin-left: 34px;
-		/*background: url(../img/that-way.png) 0 0 no-repeat;*/
-		background: url(../img/sprite.png) 0px -1301px no-repeat;
+		/*background: url(/media/img/that-way.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -1301px no-repeat;
 	}
 	
 		#that-way:hover {
@@ -906,8 +906,8 @@ div.chain-3 {
 	#this-way {
 		float: right;
 		margin-right: 33px;
-		/*background: url(../img/this-way.png) 0 0 no-repeat;*/
-		background: url(../img/sprite.png) 0px -1371px no-repeat;
+		/*background: url(/media/img/this-way.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -1371px no-repeat;
 	}
 	
 		#this-way:hover {
@@ -1004,26 +1004,26 @@ div.chain-3 {
 */
 #cboxOverlay{background-color: #000; opacity: 0.95;}
 #colorbox{}
-    #cboxTopLeft{width:21px; height:21px; background:url(../img/colorbox/controls.png) no-repeat -100px 0;}
-    #cboxTopRight{width:21px; height:21px; background:url(../img/colorbox/controls.png) no-repeat -129px 0;}
-    #cboxBottomLeft{width:21px; height:21px; background:url(../img/colorbox/controls.png) no-repeat -100px -29px;}
-    #cboxBottomRight{width:21px; height:21px; background:url(../img/colorbox/controls.png) no-repeat -129px -29px;}
-    #cboxMiddleLeft{width:21px; background:url(../img/colorbox/controls.png) left top repeat-y;}
-    #cboxMiddleRight{width:21px; background:url(../img/colorbox/controls.png) right top repeat-y;}
-    #cboxTopCenter{height:21px; background:url(../img/colorbox/border.png) 0 0 repeat-x;}
-    #cboxBottomCenter{height:21px; background:url(../img/colorbox/border.png) 0 -29px repeat-x;}
+    #cboxTopLeft{width:21px; height:21px; background:url(/media/img/colorbox/controls.png) no-repeat -100px 0;}
+    #cboxTopRight{width:21px; height:21px; background:url(/media/img/colorbox/controls.png) no-repeat -129px 0;}
+    #cboxBottomLeft{width:21px; height:21px; background:url(/media/img/colorbox/controls.png) no-repeat -100px -29px;}
+    #cboxBottomRight{width:21px; height:21px; background:url(/media/img/colorbox/controls.png) no-repeat -129px -29px;}
+    #cboxMiddleLeft{width:21px; background:url(/media/img/colorbox/controls.png) left top repeat-y;}
+    #cboxMiddleRight{width:21px; background:url(/media/img/colorbox/controls.png) right top repeat-y;}
+    #cboxTopCenter{height:21px; background:url(/media/img/colorbox/border.png) 0 0 repeat-x;}
+    #cboxBottomCenter{height:21px; background:url(/media/img/colorbox/border.png) 0 -29px repeat-x;}
     #cboxContent{background:#fff;}
         #cboxLoadedContent{margin-bottom:28px;}
         #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
         #cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
         #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
-        #cboxPrevious{position:absolute; bottom:0; left:0px; background:url(../img/colorbox/controls.png) no-repeat -75px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxPrevious{position:absolute; bottom:0; left:0px; background:url(/media/img/colorbox/controls.png) no-repeat -75px 0px; width:25px; height:25px; text-indent:-9999px;}
         #cboxPrevious.hover{background-position:-75px -25px;}
-        #cboxNext{position:absolute; bottom:0; left:27px; background:url(../img/colorbox/controls.png) no-repeat -50px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxNext{position:absolute; bottom:0; left:27px; background:url(/media/img/colorbox/controls.png) no-repeat -50px 0px; width:25px; height:25px; text-indent:-9999px;}
         #cboxNext.hover{background-position:-50px -25px;}
-        #cboxLoadingOverlay{background:url(../img/colorbox/loading_background.png) no-repeat center center;}
-        #cboxLoadingGraphic{background:url(../img/colorbox/loading.gif) no-repeat center center;}
-        #cboxClose{position:absolute; bottom:0; right:0; background:url(../img/colorbox/controls.png) no-repeat -25px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxLoadingOverlay{background:url(/media/img/colorbox/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(/media/img/colorbox/loading.gif) no-repeat center center;}
+        #cboxClose{position:absolute; bottom:0; right:0; background:url(/media/img/colorbox/controls.png) no-repeat -25px 0px; width:25px; height:25px; text-indent:-9999px;}
         #cboxClose.hover{background-position:-25px -25px;}
 
 /*
@@ -1036,14 +1036,14 @@ div.chain-3 {
     !! Important Note: AlphaImageLoader src paths are relative to the HTML document,
     while regular CSS background images are relative to the CSS document.
 */
-.cboxIE #cboxTopLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderTopLeft.png, sizingMethod='scale');}
-.cboxIE #cboxTopCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderTopCenter.png, sizingMethod='scale');}
-.cboxIE #cboxTopRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderTopRight.png, sizingMethod='scale');}
-.cboxIE #cboxBottomLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderBottomLeft.png, sizingMethod='scale');}
-.cboxIE #cboxBottomCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderBottomCenter.png, sizingMethod='scale');}
-.cboxIE #cboxBottomRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderBottomRight.png, sizingMethod='scale');}
-.cboxIE #cboxMiddleLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderMiddleLeft.png, sizingMethod='scale');}
-.cboxIE #cboxMiddleRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderMiddleRight.png, sizingMethod='scale');}
+.cboxIE #cboxTopLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderTopLeft.png, sizingMethod='scale');}
+.cboxIE #cboxTopCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderTopCenter.png, sizingMethod='scale');}
+.cboxIE #cboxTopRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderTopRight.png, sizingMethod='scale');}
+.cboxIE #cboxBottomLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderBottomLeft.png, sizingMethod='scale');}
+.cboxIE #cboxBottomCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderBottomCenter.png, sizingMethod='scale');}
+.cboxIE #cboxBottomRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderBottomRight.png, sizingMethod='scale');}
+.cboxIE #cboxMiddleLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderMiddleLeft.png, sizingMethod='scale');}
+.cboxIE #cboxMiddleRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderMiddleRight.png, sizingMethod='scale');}
 
 #submit-demo { 
 	background: none !important; 
@@ -1097,7 +1097,7 @@ div.chain-3 {
 		box-shadow: 0px 1px 3px #aaa;
 		-moz-box-shadow: 0px 1px 3px #aaa;
 		-webkit-box-shadow: 0px 1px 3px #aaa;
-		background: #ccc url(/_gfx/fallback-images/buttons.png) 0 -310px repeat-x;
+		background: #ccc url(/media/img/fallback-images/buttons.png) 0 -310px repeat-x;
 		background: -moz-linear-gradient(100% 100% 90deg, #9a9a9a, #ccc);
 		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#9a9a9a));
 		/* For Internet Explorer 5.5 - 7 */
@@ -1109,7 +1109,7 @@ div.chain-3 {
 		#submit-demo input[type="submit"]:hover {
 			color: #666;
 			cursor: pointer;
-			background: #777 url(/_gfx/fallback-images/buttons.png) 0 -345px repeat-x;
+			background: #777 url(/media/img/fallback-images/buttons.png) 0 -345px repeat-x;
 			background: -moz-linear-gradient(100% 100% 90deg, #777, #ccc);
 			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#777));
 			/* For Internet Explorer 5.5 - 7 */

@@ -1,9 +1,9 @@
 body {
-	background: #162634 url(../images/bg-harlequin.png) 0 0 repeat;
+	background: #162634 url(/media/img/bg-harlequin.png) 0 0 repeat;
 }
 
 #header {
-	background: url(../images/logo-web-o-wonder.png) center top  no-repeat;
+	background: url(/media/img/logo-web-o-wonder.png) center top  no-repeat;
 }
 
 	#home-link {
@@ -11,7 +11,7 @@ body {
 	}
 
 #page-container {
-	background: url(../images/bg-medallion.png) center top no-repeat;
+	background: url(/media/img/bg-medallion.png) center top no-repeat;
 }
 
 div.chain-1 {
@@ -25,7 +25,7 @@ div.chain-3 {
 }
 
 #marvels-await a {
-	background: url(../images/non-sprited/bg-submit-demo.png) right 11px no-repeat;
+	background: url(/media/img/non-sprited/bg-submit-demo.png) right 11px no-repeat;
 }
 
 .demo-over {

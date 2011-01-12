@@ -124,6 +124,9 @@ MINIFY_BUNDLES = {
     'js': {
         'example_js': (
             'js/libs/jquery-1.4.4.min.js',
+            'js/jquery.colorbox.min.js',
+            'js/jquery.quicksand.min.js',
+            'js/wow.js',
         ),
     }
 }
@@ -171,6 +174,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     'wow',
+    'demos',
 )
 
 # Tells the extract script what files to look for L10n in and what function
