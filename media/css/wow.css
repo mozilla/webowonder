@@ -89,9 +89,17 @@ a:hover {
 
 	#home-link {
 		display: block;
-		height: 130px;
-		width: 710px;
-		margin-left: 20px;
+		height: 113px;
+		width: 575px;
+		margin-left: 87px;
+		padding-top: 17px;
+		font-family: "ChunkFiveRegular", serif;
+		color: #cac0a5;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		text-shadow: 1px 1px 3px #000;
 	}
 
 #navigation {
@@ -182,7 +190,7 @@ a:hover {
 	}
 	
 		#back-to-mozilla:hover {
-			margin-right: -156px;
+			background-position: -5px -10px;
 		}	
 
 #mozilla-info {
@@ -198,20 +206,31 @@ a:hover {
 	left: 25px;
 	z-index: 1000;
 	display: block;
+	color: #966300;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+#magic-tickets:hover {
+  text-shadow: 0px 0px 10px rgba(255,255,255,0.6);
 }
 
-#magic-tickets div {
-	float: right;
-	width: 160px;
-	height: 76px;
-	/*background: url(/media/img/magic-ticket.png) 0 0 no-repeat;*/
-	background: url(/media/img/sprite.png) 0px -74px no-repeat;
-	-moz-transform: rotate(8deg);
-	-webkit-transform: rotate(8deg);
-	-o-transform: rotate(8deg);
-	-ms-transform: rotate(8deg);
-	transform: rotate(8deg);
-}
+	#magic-tickets div {
+		float: right;
+		width: 160px;
+		height: 25px;
+		padding: 24px 0 24px 0;
+		/*background: url(/media/img/magic-ticket.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -74px no-repeat;
+		-moz-transform: rotate(8deg);
+		-webkit-transform: rotate(8deg);
+		-o-transform: rotate(8deg);
+		-ms-transform: rotate(8deg);
+		transform: rotate(8deg);
+	}
 
 	#magic-tickets .magic-ticket-2 {
 		margin-right: -170px;
@@ -884,8 +903,14 @@ div.chain-3 {
 		display: block;
 		margin-top: 8px;
 		width: 190px;
-		height: 50px;
-		text-indent: -9999px;
+		height: 30px;
+		padding: 14px 0 5px 0;
+		font-family: "ChunkFiveRegular", serif;
+		font-size: 17px;
+		color: #ededcd;
+		text-decoration: none;
+		text-transform: uppercase;
+		text-shadow: 1px -1px 0px #261006;
 		-moz-transition: all 0.1s ease-in-out;
 		-webkit-transition: all 0.1s ease-in-out;
 		-o-transition: all 0.1s ease-in-out;
@@ -894,9 +919,11 @@ div.chain-3 {
 	
 	#that-way {
 		float: left;
+		width: 158px;
 		margin-left: 34px;
 		/*background: url(/media/img/that-way.png) 0 0 no-repeat;*/
 		background: url(/media/img/sprite.png) 0px -1301px no-repeat;
+		padding-left: 32px;
 	}
 	
 		#that-way:hover {
@@ -904,10 +931,12 @@ div.chain-3 {
 		}
 
 	#this-way {
+		width: 130px;
 		float: right;
 		margin-right: 33px;
 		/*background: url(/media/img/this-way.png) 0 0 no-repeat;*/
 		background: url(/media/img/sprite.png) 0px -1371px no-repeat;
+		padding-left: 60px;
 	}
 	
 		#this-way:hover {
