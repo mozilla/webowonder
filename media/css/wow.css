@@ -11,7 +11,7 @@
 
 /* Reset */
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}:focus{outline:0;}ins{text-decoration:none;}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0;}
 
 /* @font-face declarations -- do not change!!! */
 @font-face {
@@ -114,7 +114,8 @@ a:hover {
 				padding: 10px 45px 0 0;
 				margin-left: 96px;
 				letter-spacing: 0.5px;
-				background: url(../img/non-sprited/bg-see-types.png) right 13px no-repeat;
+				/*background: url(../img/non-sprited/bg-see-types.png) right 13px no-repeat;*/
+				background: url(../img/sprite.png) 32px -1431px no-repeat;
 			}
 		
 		#navigation a {
@@ -165,6 +166,11 @@ a:hover {
 		
 	#back-to-mozilla {
 		float: right;
+		display: block;
+		width: 219px;
+		height: 44px;
+		/*background: url(../img/back-to-mozilla.png) 0 0 no-repeat;*/
+		background: url(../img/sprite.png) 0px -10px no-repeat;
 		margin-right: -160px;
 		margin-top: -2px;
 		-moz-transform: rotate(6deg);
@@ -172,15 +178,11 @@ a:hover {
 		-o-transform: rotate(6deg);
 		-ms-transform: rotate(6deg);
 		transform: rotate(6deg);
+		text-indent: -9999px;
 	}
 	
 		#back-to-mozilla:hover {
-			margin-right: -158px;
-			-moz-transform: rotate(4deg);
-			-webkit-transform: rotate(4deg);
-			-o-transform: rotate(4deg);
-			-ms-transform: rotate(4deg);
-			transform: rotate(4deg);
+			margin-right: -156px;
 		}	
 
 #mozilla-info {
@@ -198,8 +200,12 @@ a:hover {
 	display: block;
 }
 
-#magic-tickets img {
+#magic-tickets div {
 	float: right;
+	width: 160px;
+	height: 76px;
+	/*background: url(../img/magic-ticket.png) 0 0 no-repeat;*/
+	background: url(../img/sprite.png) 0px -74px no-repeat;
 	-moz-transform: rotate(8deg);
 	-webkit-transform: rotate(8deg);
 	-o-transform: rotate(8deg);
@@ -216,13 +222,20 @@ a:hover {
 		transform: rotate(-13deg);
 	}
 
-img[src*="chain-1"] {
+div.chain-1 {
 	position: absolute;
+	width: 14px;
+	height: 105px;
+	background: url(../img/chain-1.png) 0 0 no-repeat;
 	z-index: 101;
 	margin-left: 102px;
 }
-img[src*="chain-2"] {
+div.chain-2 {
 	position: absolute;
+	width: 15px;
+	height: 35px;
+	/*background: url(../img/chain-2.png) 0 0 no-repeat;*/
+	background: url(../img/sprite.png) 0px -510px no-repeat;
 	z-index: 101;
 	top: 397px;
 	margin-left: 80px;
@@ -232,8 +245,12 @@ img[src*="chain-2"] {
 	-ms-transform: rotate(-3deg);
 	transform: rotate(-3deg);
 }
-img[src*="chain-3"] {
+div.chain-3 {
 	position: absolute;
+	width: 15px;
+	height: 50px;
+	/*background: url(../img/chain-3.png) 0 0 no-repeat;*/
+	background: url(../img/sprite.png) 0px -565px no-repeat;
 	z-index: 101;
 	top: 392px;
 	margin-left: 156px;
@@ -250,7 +267,8 @@ img[src*="chain-3"] {
 	height: 243px;
 	padding: 40px 30px 35px 35px;
 	margin-top: 92px;
-	background: url(../img/non-sprited/bg-marvels-await.png) 0 0 no-repeat;
+	/*background: url(../img/non-sprited/bg-marvels-await.png) 0 0 no-repeat;*/
+	background: url(../img/sprite.png) 0px -170px no-repeat;
 	color: #173956;
 	margin-bottom: 5px;
 	-moz-transform: rotate(-4deg);
@@ -307,7 +325,8 @@ img[src*="chain-3"] {
 #firefox-four {
 	position: relative;
 	display: block;
-	background: url(../img/non-sprited/bg-firefox-four.png) 0 0 no-repeat;
+	/*background: url(../img/non-sprited/bg-firefox-four.png) 0 0 no-repeat;*/
+	background: url(../img/sprite.png) 0px -635px no-repeat;
 	width: 220px;
 	height: 250px;
 	-moz-transform: rotate(6deg);
@@ -444,29 +463,30 @@ img[src*="chain-3"] {
 			color: #fff;
 			font-size: 0.7em;
 			line-height: 1em;
-			background: url(../img/non-sprited/bg-flags.png) 0 0 no-repeat;
+			/*background: url(../img/non-sprited/bg-flags.png) 0 0 no-repeat;*/
+			background: url(../img/sprite.png) 0px -915px no-repeat;
 			z-index: 99;
 		}
 		
 			.design .flag {
-				background-position: 0 0;
+				background-position: 0px -915px;
 			}
 			
 			.html5 .flag {
-				background-position: 0 -25px;
+				background-position: 0px -940px;
 			}
 			
 			.video .flag {
-				background-position: 0 -50px;
+				background-position: 0px -965px;
 			}
 			
 			.audio .flag {
-				background-position: 0 -75px;
+				background-position: 0px -990px;
 			}
 			
 			.coming-soon .flag {
 				width: 105px;
-				background-position: 0 -100px;
+				background-position: 0px -1015px;
 			}
 	
 		.demo-inner {
@@ -727,11 +747,15 @@ img[src*="chain-3"] {
 				width: 108px;
 			}
 			
-		.experience-it img {
+		.experience-it .flip-card-icon {
 			position: absolute;
 			top: 50%;
 			right: 0;
 			margin: -7px -4px 0 0;
+			height: 14px;
+			width: 14px;
+			/*background: url(../img/icon-flip-card.png) 0 0 no-repeat;*/
+			background: url(../img/sprite.png) 0px -1085px no-repeat;
 		}
 		
 	.watch-video {
@@ -764,7 +788,8 @@ img[src*="chain-3"] {
 		width: 24px;
 		height: 24px;
 		text-indent: -10000px;
-		background: url(../img/non-sprited/icon-social.png) 0 0 no-repeat;
+		/*background: url(../img/non-sprited/icon-social.png) 0 0 no-repeat;*/
+		background: url(../img/sprite.png) 0px -1119px no-repeat;
 		margin: 6px 0 0 24px;
 		opacity: 0.5;
 		text-decoration: none !important;
@@ -783,11 +808,11 @@ img[src*="chain-3"] {
 		}
 	
 	.twitter {
-		background-position: 0 -24px;
+		background-position: 0px -1143px;
 	}
 	
 	.link {
-		background-position: 0 -48px;
+		background-position: 0px -1167px;
 	}
 	
 	.social-tooltip {
@@ -831,6 +856,7 @@ img[src*="chain-3"] {
 
 	#lights-down {
 		position: absolute;
+		display: block;
 		border-radius: 30px;
 		-moz-border-radius: 30px;
 		-webkit-border-radius: 30px;
@@ -838,6 +864,11 @@ img[src*="chain-3"] {
 		left: 50%;
 		margin-left: -35px;
 		margin-top: -5px;
+		height: 70px;
+		width: 70px;
+		/*background: url(../img/lights-down.png) 0 0 no-repeat;*/
+		background: url(../img/sprite.png) 0px -1211px no-repeat;
+		text-indent: -9999px;
 	}
 	a#lights-down:active { 
 		position: absolute;
@@ -852,6 +883,9 @@ img[src*="chain-3"] {
 	#this-way {
 		display: block;
 		margin-top: 8px;
+		width: 190px;
+		height: 50px;
+		text-indent: -9999px;
 		-moz-transition: all 0.1s ease-in-out;
 		-webkit-transition: all 0.1s ease-in-out;
 		-o-transition: all 0.1s ease-in-out;
@@ -861,6 +895,8 @@ img[src*="chain-3"] {
 	#that-way {
 		float: left;
 		margin-left: 34px;
+		/*background: url(../img/that-way.png) 0 0 no-repeat;*/
+		background: url(../img/sprite.png) 0px -1301px no-repeat;
 	}
 	
 		#that-way:hover {
@@ -870,6 +906,8 @@ img[src*="chain-3"] {
 	#this-way {
 		float: right;
 		margin-right: 33px;
+		/*background: url(../img/this-way.png) 0 0 no-repeat;*/
+		background: url(../img/sprite.png) 0px -1371px no-repeat;
 	}
 	
 		#this-way:hover {
@@ -1006,3 +1044,76 @@ img[src*="chain-3"] {
 .cboxIE #cboxBottomRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderBottomRight.png, sizingMethod='scale');}
 .cboxIE #cboxMiddleLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderMiddleLeft.png, sizingMethod='scale');}
 .cboxIE #cboxMiddleRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/internet_explorer/borderMiddleRight.png, sizingMethod='scale');}
+
+#submit-demo { 
+	background: none !important; 
+	overflow: hidden;
+	padding: 20px;
+	line-height: 20px;
+	}
+#submit-demo h1 { 
+	font-family: "LeagueGothicRegular";
+	font-size: 32px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+	color: #173956;
+	text-shadow: -3px 3px 0px rgba(0,153,204,0.2);
+	}
+#submit-demo p { margin-bottom: 20px; }
+#submit-demo input[type="text"] {
+		display: block;
+		float: left;
+		width: 200px;
+		color: #666;
+		font-size: 12px;
+		border: 1px solid;
+		border-color: #a3a3a3 #c3c3c3 #dadada;
+		padding: 9px 10px 5px;
+		-moz-box-shadow: 1px 1px 5px #aaa inset;
+		-webkit-box-shadow: 1px 1px 5px #aaa inset;
+		box-shadow: 1px 1px 5px #aaa inset;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	}
+
+#submit-demo input[type="submit"] {
+		font-family: "helvetica";
+		border: none;
+		float: left;
+		margin-left: 8px;
+		font-size: 13px;
+		text-transform: uppercase;
+		display: block;
+		text-align: center;
+		padding: 9px 10px 7px;
+		color: #555;
+		font-weight: 700;
+		text-shadow: 0 1px 0 #fff;
+		text-decoration: none;
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		box-shadow: 0px 1px 3px #aaa;
+		-moz-box-shadow: 0px 1px 3px #aaa;
+		-webkit-box-shadow: 0px 1px 3px #aaa;
+		background: #ccc url(/_gfx/fallback-images/buttons.png) 0 -310px repeat-x;
+		background: -moz-linear-gradient(100% 100% 90deg, #9a9a9a, #ccc);
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#9a9a9a));
+		/* For Internet Explorer 5.5 - 7 */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF9a9a9a);
+		/* For Internet Explorer 8 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF9a9a9a)";
+	}
+	
+		#submit-demo input[type="submit"]:hover {
+			color: #666;
+			cursor: pointer;
+			background: #777 url(/_gfx/fallback-images/buttons.png) 0 -345px repeat-x;
+			background: -moz-linear-gradient(100% 100% 90deg, #777, #ccc);
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#777));
+			/* For Internet Explorer 5.5 - 7 */
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF777777);
+			/* For Internet Explorer 8 */
+		-	ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF777777)";
+		}

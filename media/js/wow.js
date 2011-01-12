@@ -50,7 +50,11 @@ mozilla.wow = function() {
             mozilla.wow.lightsdown();
             
             // Setup lightboxes
-            $('a.cbox-youtube').colorbox({iframe:true, innerWidth:425, innerHeight:344});
+            $('a.cbox-youtube').live('click', function(e) {
+                e.preventDefault();
+                $.colorbox({iframe:true, innerWidth:425, innerHeight:344, title: $(this).attr('title'), href: $(this).attr('href')});
+            });
+            $('a.cbox-submit').colorbox({iframe:true, innerWidth:425, innerHeight:200});
         }
     };
 }();
@@ -245,6 +249,18 @@ mozilla.wow.flippableCards = function() {
 mozilla.wow.demoEvents = function() {
     var link, demoTitle;
     
+    // Default behaviour for magic tickets
+    $('#magic-tickets').click(function(e) {
+        // Prevent the default behaviour
+        e.preventDefault();
+
+        // If we're not demoing, do nothing
+        if( !$('body').hasClass('demoing') ) return;
+        
+        // Hide the viewport
+        _hideViewport();
+    })
+    
     // Loading dialog
     function _showLoading() {
         $(".loading").find(".title").text(demoTitle).end()
@@ -256,35 +272,34 @@ mozilla.wow.demoEvents = function() {
     // Show/hide viewport
     function _showViewport() {
         // Animate the tickets
-        $('#magic-tickets').live('mouseover mouseout click', function(e) {                                   
-                               if (e.type == 'mouseover') { $(this).css({top: '-30px', opacity: 0.8}); }
-                               else if(e.type == 'click') { e.preventDefault(); _hideViewport(); }
-                               else { $(this).css({top: '-50px', opacity: 0.5}); }
-                           })
-                           .delay(250)
-                           .animate({opacity: 0.5, top: '-50px'}, 500, function() {
-                               $('#demo-viewport').fadeIn('slow', function() {
-                                   // Hide the loading
-                                   $('.loading').hide();
-                                   
-                                   // Start the demo
-                                   setTimeout(function() {
-                                       $('#demo-viewport').get(0).contentWindow.postMessage('start_demo', '*');    
-                                   }, 750);
-                               });                               
-                           });
+        $('#magic-tickets').animate({opacity: 0.5, top: '-50px'}, 500, function() {
+           $('#demo-viewport').fadeIn('slow', function() {
+               // Hide the loading
+               $('.loading').hide();
+               
+               // Mouse events for magic tickets
+               $("#magic-tickets").live('mouseover mouseout', function(e) {
+                   if (e.type == 'mouseover') { $(this).css({top: '-30px', opacity: 0.8}); }
+                   else { $(this).css({top: '-50px', opacity: 0.5}); }   
+               });
+               
+               // Start the demo
+               setTimeout(function() {
+                   $('#demo-viewport').get(0).contentWindow.postMessage('start_demo', '*');    
+               }, 750);
+           });                               
+       });
     }
     
     function _hideViewport() {
         $('#demo-viewport').get(0).contentWindow.postMessage('stop_demo', '*');
         
         // Return the magic tickets to their normal state
-        $('#magic-tickets').die('mouseover mouseout click')
-                           .animate({opacity: 1.0, top: '0px'});
+        $('#magic-tickets').die('mouseover mouseout')
+                           .css({opacity: 1.0, top: '0px'});
         
         $('#demo-viewport').attr('src', '').fadeOut('slow', function() {
-            // Turn off the mutex
-            $('body').removeClass('demoing');
+            $('body').removeClass('demoing'); 
         });  
     }
     
@@ -319,12 +334,17 @@ mozilla.wow.demoEvents = function() {
     });
     
     // Listen for events
-    window.addEventListener('message', function(e) {
+    function _handleEvents(e) {
        if ('loaded' == e.data) { _showViewport(); }
        else if ('finished_exit' == e.data || 'exiting' == e.data) { _hideViewport(); }
        else if ('hide_exit_ui') { $('#magic-tickets').hide(); }
        else if ('show_exit_ui') { $('#magic-tickets').show(); }
-    }, false);
+    }
+    if ( window['addEventListener'] ) {
+        window.addEventListener('message', _handleEvents, false);
+    } else {
+        window.attachEvent('onmessage', _handleEvents);
+    }
 };
 
 /**
