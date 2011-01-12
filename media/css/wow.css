@@ -806,7 +806,7 @@ div.chain-3 {
 		float: left;
 		width: 24px;
 		height: 24px;
-		text-indent: -10000px;
+		text-indent: -100000px;
 		/*background: url(/media/img/non-sprited/icon-social.png) 0 0 no-repeat;*/
 		background: url(/media/img/sprite.png) 0px -1119px no-repeat;
 		margin: 6px 0 0 24px;
