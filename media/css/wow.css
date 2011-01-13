@@ -499,7 +499,8 @@ div.chain-3 {
 				background-position: 0px -965px;
 			}
 			
-			.audio .flag {
+			.audio .flag,
+			.webgl .flag {
 				background-position: 0px -990px;
 			}
 			
@@ -528,7 +529,8 @@ div.chain-3 {
 				border-color: #d09607;
 			}
 			
-			.audio .demo-inner {
+			.audio .demo-inner,
+			.webgl .demo-inner {
 				border-color: #725b3d;
 			}
 			
@@ -610,7 +612,8 @@ div.chain-3 {
 		background-position: center -29px;
 	}
 	
-	.audio .flip-card-back {
+	.audio .flip-card-back,
+	.webgl .flip-card-back {
 		color: #725b3d;
 		background-position: center -57px;
 	}
