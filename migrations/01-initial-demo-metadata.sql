@@ -80,7 +80,7 @@ INSERT INTO demos_submission (title, slug, summary, description, featured, hidde
 VALUES ("Double UI", "double_ui", "", "Search for a word. Turn you phone to have flickr results, turn again to have twitter results.", b'1', b'0', "CSS3, XMLHttpRequest", "/double_ui/screenshot.jpg", "", "", "", "", "", "", "http://github.com/paulrouget/double_ui", "", 3, NOW(), NOW());
 
 INSERT INTO demos_submission (title, slug, summary, description, featured, hidden, tags, screenshot_1, screenshot_2, screenshot_3, screenshot_4, screenshot_5, video_url, demo_package, source_code_url, license_name, creator_id, created, modified) 
-VALUES ("CSS Hologram", "hologram", "", "Create the illusing of 3D.", b'1', b'0', "CSS3, mobile", "/hologram/screenshot.jpg", "", "", "", "", "", "", "http://github.com/paulrouget/hologram", "", 3, NOW(), NOW());
+VALUES ("CSS Hologram", "hologram", "", "Create the illusing of 3D.", b'1', b'0', "CSS3, Mobile", "/hologram/screenshot.jpg", "", "", "", "", "", "", "http://github.com/paulrouget/hologram", "", 3, NOW(), NOW());
 
 INSERT INTO demos_submission (title, slug, summary, description, featured, hidden, tags, screenshot_1, screenshot_2, screenshot_3, screenshot_4, screenshot_5, video_url, demo_package, source_code_url, license_name, creator_id, created, modified) 
 VALUES ("Runfield", "runfield", "", "A Canabalt like 2D Game", b'1', b'0', "Canvas, Mobile", "/runfield/screenshot.jpg", "", "", "", "", "", "", "http://github.com/kig/runfield", "", 4, NOW(), NOW());
