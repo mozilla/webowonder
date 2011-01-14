@@ -1150,6 +1150,21 @@ div.chain-3 {
 		-	ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF777777)";
 		}
 		
+/* Browser Compatibility */
+#compatibility {
+	background-color: #310d01;
+  	background: url(../images/bg_compatability.jpg) repeat-x;
+    color: #d0c394;
+    font-size: 0.9em;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+}
+
+	#compatibility a { color: #c90; font-weight: bold; text-decoration: none; }
+		
 /* For displaying the page without webfonts */
 
 /* Serif */
