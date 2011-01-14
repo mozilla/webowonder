@@ -1,0 +1,236 @@
+#: apps/demos/models.py:10
+msgid "name"
+msgstr ""
+
+#: apps/demos/models.py:12
+msgid "title"
+msgstr ""
+
+#: apps/demos/models.py:14
+msgid "description"
+msgstr ""
+
+#: apps/demos/models.py:21
+msgid "what is your demo's name?"
+msgstr ""
+
+#: apps/demos/models.py:23
+msgid "slug"
+msgstr ""
+
+#: apps/demos/models.py:26
+msgid "describe your demo in one line"
+msgstr ""
+
+#: apps/demos/models.py:29
+msgid "describe your demo in more detail (optional)"
+msgstr ""
+
+#: apps/demos/models.py:45
+msgid "have a video of your demo in action? (optional)"
+msgstr ""
+
+#: apps/demos/models.py:51
+msgid "is your source code hosted online? (optional)"
+msgstr ""
+
+#: apps/demos/models.py:57
+msgid "date created"
+msgstr ""
+
+#: apps/demos/models.py:59
+msgid "date last modified"
+msgstr ""
+
+#: apps/wow/views.py:13
+msgid "Audio"
+msgstr ""
+
+#: apps/wow/views.py:14
+msgid "Canvas"
+msgstr ""
+
+#: apps/wow/views.py:15
+msgid "CSS3"
+msgstr ""
+
+#: apps/wow/views.py:16
+msgid "DnD"
+msgstr ""
+
+#: apps/wow/views.py:17
+msgid "Files"
+msgstr ""
+
+#: apps/wow/views.py:18
+msgid "Fonts"
+msgstr ""
+
+#: apps/wow/views.py:19
+msgid "Forms"
+msgstr ""
+
+#: apps/wow/views.py:20
+msgid "GeoLocation"
+msgstr ""
+
+#: apps/wow/views.py:21
+msgid "JavaScript"
+msgstr ""
+
+#: apps/wow/views.py:22
+#: apps/wow/templates/wow/home.html:16
+msgid "HTML5"
+msgstr ""
+
+#: apps/wow/views.py:23
+msgid "Mobile"
+msgstr ""
+
+#: apps/wow/views.py:24
+msgid "MultiTouch"
+msgstr ""
+
+#: apps/wow/views.py:25
+msgid "SVG"
+msgstr ""
+
+#: apps/wow/views.py:26
+#: apps/wow/templates/wow/home.html:18
+msgid "Video"
+msgstr ""
+
+#: apps/wow/views.py:27
+#: apps/wow/templates/wow/home.html:19
+msgid "WebGL"
+msgstr ""
+
+#: apps/wow/views.py:28
+msgid "XMLHttpRequest"
+msgstr ""
+
+#: apps/wow/views.py:47
+msgid "The Making of %s"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:2
+msgid "Mozilla's Web O'(pen) Wonder"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:7
+msgid "Tweet"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:12
+msgid "Visit Mozilla.org"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:13
+msgid "Mozilla Presents"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:15
+msgid "See!"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:17
+msgid "Design"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:26
+msgid "Admit<br />All"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:30
+msgid "Marvels <span>Await</span>"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:31
+msgid ""
+"EXPLORE the AMAZING CREATIONS of the Web! WONDER at FANTASTIC DISCOVERIES "
+"from the comfort of your browser!"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:32
+msgid "Submit a Demo!"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:37
+msgid "Firefox 4"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:38
+msgid "Get it today!"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:46
+msgid "Appearing Soon"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:47
+msgid "Image Coming Soon"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:48
+msgid "Background Image Coming Soon"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:56
+msgid "Hide Info"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:58
+msgid "Screenshot"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:66
+msgid "Explore the source code on GitHub"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:70
+msgid "Video Play"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:71
+msgid "See how John Smith brothers brought space down to earth."
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:72
+msgid "Watch the Video &#187;"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:79
+msgid "Experience <b>it now</b>"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:83
+msgid "Watch a Video"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:84
+msgid "Facebook"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:85
+msgid "Twitter"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:86
+msgid "Link"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:96
+msgid "Lights Down"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:97
+msgid "That Way"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:98
+msgid "This Way"
+msgstr ""
+
+#: apps/wow/templates/wow/home.html:101
+msgid "Loading"
+msgstr ""
