@@ -1084,7 +1084,7 @@ div.chain-3 {
 	line-height: 20px;
 	}
 #submit-demo h1 { 
-	font-family: "LeagueGothicRegular";
+	font-family: "LeagueGothicRegular", sans-serif;
 	font-size: 32px;
 	text-transform: uppercase;
 	margin-bottom: 16px;
@@ -1110,7 +1110,7 @@ div.chain-3 {
 	}
 
 #submit-demo input[type="submit"] {
-		font-family: "helvetica";
+		font-family: Helvetica, sans-serif;
 		border: none;
 		float: left;
 		margin-left: 8px;
@@ -1149,3 +1149,37 @@ div.chain-3 {
 			/* For Internet Explorer 8 */
 		-	ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF777777)";
 		}
+		
+/* For displaying the page without webfonts */
+
+/* Serif */
+body.webfontless #home-link,
+body.webfontless #navigation a,
+body.webfontless #marvels-await h3 span,
+body.webfontless #marvels-await p,
+body.webfontless .flip-card-back,
+body.webfontless .demo-info h1,
+body.webfontless .experience-it b,
+body.webfontless #that-way,
+body.webfontless #this-way,
+body.webfontless .loading {
+  font-family: Georgia, serif;
+}
+
+/* Sans-Serif */
+body.webfontless #navigation .see-types,
+body.webfontless #marvels-await h3,
+body.webfontless #marvels-await a,
+body.webfontless #firefox-four .tagline,
+body.webfontless .experience-it {
+  font-family: Helvetica, sans-serif;
+}
+
+/* Tweaks */
+body.webfontless #marvels-await h3{ font-size: 2.0em; }
+body.webfontless #marvels-await h3 span { font-size: 1.4em; }
+body.webfontless #marvels-await a  { font-size: 1em; line-height: 1.8em; }
+body.webfontless #navigation { font-size: 0.9em; }
+body.webfontless #navigation .see-types { background-position: 52px -1431px; }
+body.webfontless .experience-it span { font-size: 1.5em; line-height: 1.3em; }
+body.webfontless .experience-it b { font-size: 1.2em; }
