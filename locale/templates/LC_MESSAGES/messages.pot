@@ -1,188 +1,210 @@
-#: apps/wow/views.py:13
+#. L10n: Technology Tags. A demo can have up to 5 of these. Keep them short.
+#: apps/wow/views.py:14
 msgid "Audio"
 msgstr ""
 
-#: apps/wow/views.py:14
+#: apps/wow/views.py:15
 msgid "Canvas"
 msgstr ""
 
-#: apps/wow/views.py:15
+#: apps/wow/views.py:16
 msgid "CSS3"
 msgstr ""
 
-#: apps/wow/views.py:16
+#: apps/wow/views.py:17
 msgid "DnD"
 msgstr ""
 
-#: apps/wow/views.py:17
+#: apps/wow/views.py:18
 msgid "Files"
 msgstr ""
 
-#: apps/wow/views.py:18
+#: apps/wow/views.py:19
 msgid "Fonts"
 msgstr ""
 
-#: apps/wow/views.py:19
+#: apps/wow/views.py:20
 msgid "Forms"
 msgstr ""
 
-#: apps/wow/views.py:20
+#: apps/wow/views.py:21
 msgid "GeoLocation"
 msgstr ""
 
-#: apps/wow/views.py:21
+#: apps/wow/views.py:22
 msgid "JavaScript"
 msgstr ""
 
-#: apps/wow/views.py:22
-#: apps/wow/templates/wow/home.html:17
+#: apps/wow/views.py:23
+#: apps/wow/templates/wow/home.html:18
 msgid "HTML5"
 msgstr ""
 
-#: apps/wow/views.py:23
+#: apps/wow/views.py:24
 msgid "Mobile"
 msgstr ""
 
-#: apps/wow/views.py:24
+#: apps/wow/views.py:25
 msgid "MultiTouch"
 msgstr ""
 
-#: apps/wow/views.py:25
-msgid "SVG"
-msgstr ""
-
 #: apps/wow/views.py:26
-#: apps/wow/templates/wow/home.html:19
-msgid "Video"
+msgid "SVG"
 msgstr ""
 
 #: apps/wow/views.py:27
 #: apps/wow/templates/wow/home.html:20
-msgid "WebGL"
+msgid "Video"
 msgstr ""
 
 #: apps/wow/views.py:28
+#: apps/wow/templates/wow/home.html:21
+msgid "WebGL"
+msgstr ""
+
+#. L10n: Last of the Technology Tags.
+#: apps/wow/views.py:30
 msgid "XMLHttpRequest"
 msgstr ""
 
-#: apps/wow/views.py:47
-msgid "The Making of %s"
+#. L10n: TagList: (see also Tag Glue)
+#. There will never be a case with 0 Tags
+#. One Tag - {0} is replaced with a Tag.
+#. Two Tags- {0} is replaced with the first tag. {1} is replaced with the
+#. second tag.
+#. Three or more - {0} is replaced with a list of Tags glued together with
+#. the Tag Glue. {1} is replaced with the last tag.
+#. Be careful not to remove the <a href='#'> and </a> HTML.
+#: apps/wow/views.py:49
+msgid "Built with <a href='#'>{0}</a>."
+msgid_plural "Built with <a href='#'>{0}</a>, and <a href='#'>{1}</a>."
+msgstr[0] ""
+msgstr[1] ""
+
+#. L10n: Tag Glue
+#. HTML and punctuation used to glue the Tag List together.
+#: apps/wow/views.py:52
+msgid "</a>, <a href='#'>"
+msgstr ""
+
+#: apps/wow/views.py:59
+msgid "The Making of {0}"
 msgstr ""
 
 #: apps/wow/templates/wow/home.html:3
 msgid "Mozilla's Web O'(pen) Wonder"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:8
+#: apps/wow/templates/wow/home.html:9
 msgid "Tweet"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:13
+#: apps/wow/templates/wow/home.html:14
 msgid "Visit Mozilla.org"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:14
+#: apps/wow/templates/wow/home.html:15
 msgid "Mozilla Presents"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:16
+#: apps/wow/templates/wow/home.html:17
 msgid "See!"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:18
+#: apps/wow/templates/wow/home.html:19
 msgid "Design"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:27
+#: apps/wow/templates/wow/home.html:28
 msgid "Admit<br />All"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:31
+#: apps/wow/templates/wow/home.html:32
 msgid "Marvels <span>Await</span>"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:32
+#: apps/wow/templates/wow/home.html:33
 msgid ""
 "EXPLORE the AMAZING CREATIONS of the Web! WONDER at FANTASTIC DISCOVERIES "
 "from the comfort of your browser!"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:33
+#: apps/wow/templates/wow/home.html:34
 msgid "Submit a Demo!"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:38
+#: apps/wow/templates/wow/home.html:39
 msgid "Firefox 4"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:39
+#: apps/wow/templates/wow/home.html:40
 msgid "Get it today!"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:47
+#: apps/wow/templates/wow/home.html:48
 msgid "Appearing Soon"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:48
+#: apps/wow/templates/wow/home.html:49
 msgid "Image Coming Soon"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:49
+#: apps/wow/templates/wow/home.html:50
 msgid "Background Image Coming Soon"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:57
+#: apps/wow/templates/wow/home.html:58
 msgid "Hide Info"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:59
+#: apps/wow/templates/wow/home.html:60
 msgid "Screenshot"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:67
+#: apps/wow/templates/wow/home.html:68
 msgid "Explore the source code on GitHub"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:71
+#: apps/wow/templates/wow/home.html:72
 msgid "Video Play"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:73
+#: apps/wow/templates/wow/home.html:74
 msgid "Watch the Video &#187;"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:80
+#: apps/wow/templates/wow/home.html:81
 msgid "Experience <b>it now</b>"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:84
+#: apps/wow/templates/wow/home.html:85
 msgid "Watch a Video"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:85
+#: apps/wow/templates/wow/home.html:86
 msgid "Facebook"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:86
+#: apps/wow/templates/wow/home.html:87
 msgid "Twitter"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:87
+#: apps/wow/templates/wow/home.html:88
 msgid "Link"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:97
+#: apps/wow/templates/wow/home.html:98
 msgid "Lights Down"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:98
+#: apps/wow/templates/wow/home.html:99
 msgid "That Way"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:99
+#: apps/wow/templates/wow/home.html:100
 msgid "This Way"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:102
+#: apps/wow/templates/wow/home.html:103
 msgid "Loading"
 msgstr ""
