@@ -3,31 +3,20 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
-from django.utils.translation import ugettext_lazy as _
-
 class TagDescription(models.Model):
     """Description of a tag"""
-    tag_name = models.CharField(_('name'), 
-            max_length=50, unique=True, db_index=True, primary_key=True)
-    title = models.CharField(_("title"), 
-            max_length=255, blank=False, unique=True)
-    description = models.TextField(_("description"), 
-            blank=True)
+    tag_name = models.CharField(max_length=50, unique=True, db_index=True, 
+                                primary_key=True)
+    title = models.CharField(max_length=255, blank=False, unique=True)
+    description = models.TextField(blank=True)
 
 class Submission(models.Model):
     """ReadOnly Representation of a demo submission from MDN Demo Studio"""
 
-    title = models.CharField(
-            _("what is your demo's name?"), 
-            max_length=255, blank=False, unique=True)
-    slug = models.SlugField(_("slug"), 
-            blank=False, unique=True)
-    summary = models.CharField(
-            _("describe your demo in one line"),
-            max_length=255, blank=False)
-    description = models.TextField(
-            _("describe your demo in more detail (optional)"), 
-            blank=True)
+    title = models.CharField(max_length=255, blank=False, unique=True)
+    slug = models.SlugField(blank=False, unique=True)
+    summary = models.CharField(max_length=255, blank=False)
+    description = models.TextField(blank=True)
 
     featured = models.BooleanField()
     hidden = models.BooleanField()
@@ -41,23 +30,18 @@ class Submission(models.Model):
     screenshot_4 = models.CharField(max_length=100)
     screenshot_5 = models.CharField(max_length=100)
 
-    video_url = models.URLField(
-            _("have a video of your demo in action? (optional)"),
-            verify_exists=False, blank=True, null=True)
+    video_url = models.URLField(verify_exists=False, blank=True, null=True)
 
     demo_package = models.CharField(max_length=100)
 
-    source_code_url = models.URLField(
-            _("is your source code hosted online? (optional)"),
-            verify_exists=False, blank=True, null=True)
+    source_code_url = models.URLField(verify_exists=False, blank=True, 
+                                      null=True)
     license_name = models.CharField(max_length=64)
 
     creator = models.ForeignKey(User, blank=False, null=True)
     
-    created = models.DateTimeField( _('date created'), 
-            auto_now_add=True, blank=False)
-    modified = models.DateTimeField( _('date last modified'), 
-            auto_now=True, blank=False)
+    created = models.DateTimeField(auto_now_add=True, blank=False)
+    modified = models.DateTimeField(auto_now=True, blank=False)
 
     def __unicode__(self):
         return 'Submission "%(title)s"' % dict(

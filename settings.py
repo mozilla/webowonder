@@ -52,6 +52,7 @@ RTL_LANGUAGES = ()  # ('ar', 'fa', 'fa-IR', 'he')
 
 LANGUAGE_URL_MAP = dict([(i.lower(), i) for i in LANGUAGES])
 
+TEXT_DOMAIN = 'messages'
 
 ## Media and templates.
 

@@ -45,6 +45,7 @@ def home(request):
         else:
             demo.tag_copy = t % (glue.join(ltags[0:-1]), ltags[-1]) 
         demo.video_title = _('The Making of %s') % demo.title
-        #demo.tag_copy =  % '</a>, <a href="#">'.join(tags[-1])
+        # TODO new db field
+        demo.video_description = 'See how John Smith brothers brought space down to earth.'
 
     return jingo.render(request, 'wow/home.html', data)

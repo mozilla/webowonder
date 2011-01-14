@@ -1,47 +1,3 @@
-#: apps/demos/models.py:10
-msgid "name"
-msgstr ""
-
-#: apps/demos/models.py:12
-msgid "title"
-msgstr ""
-
-#: apps/demos/models.py:14
-msgid "description"
-msgstr ""
-
-#: apps/demos/models.py:21
-msgid "what is your demo's name?"
-msgstr ""
-
-#: apps/demos/models.py:23
-msgid "slug"
-msgstr ""
-
-#: apps/demos/models.py:26
-msgid "describe your demo in one line"
-msgstr ""
-
-#: apps/demos/models.py:29
-msgid "describe your demo in more detail (optional)"
-msgstr ""
-
-#: apps/demos/models.py:45
-msgid "have a video of your demo in action? (optional)"
-msgstr ""
-
-#: apps/demos/models.py:51
-msgid "is your source code hosted online? (optional)"
-msgstr ""
-
-#: apps/demos/models.py:57
-msgid "date created"
-msgstr ""
-
-#: apps/demos/models.py:59
-msgid "date last modified"
-msgstr ""
-
 #: apps/wow/views.py:13
 msgid "Audio"
 msgstr ""
@@ -79,7 +35,7 @@ msgid "JavaScript"
 msgstr ""
 
 #: apps/wow/views.py:22
-#: apps/wow/templates/wow/home.html:16
+#: apps/wow/templates/wow/home.html:17
 msgid "HTML5"
 msgstr ""
 
@@ -96,12 +52,12 @@ msgid "SVG"
 msgstr ""
 
 #: apps/wow/views.py:26
-#: apps/wow/templates/wow/home.html:18
+#: apps/wow/templates/wow/home.html:19
 msgid "Video"
 msgstr ""
 
 #: apps/wow/views.py:27
-#: apps/wow/templates/wow/home.html:19
+#: apps/wow/templates/wow/home.html:20
 msgid "WebGL"
 msgstr ""
 
@@ -113,124 +69,120 @@ msgstr ""
 msgid "The Making of %s"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:2
+#: apps/wow/templates/wow/home.html:3
 msgid "Mozilla's Web O'(pen) Wonder"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:7
+#: apps/wow/templates/wow/home.html:8
 msgid "Tweet"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:12
+#: apps/wow/templates/wow/home.html:13
 msgid "Visit Mozilla.org"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:13
+#: apps/wow/templates/wow/home.html:14
 msgid "Mozilla Presents"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:15
+#: apps/wow/templates/wow/home.html:16
 msgid "See!"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:17
+#: apps/wow/templates/wow/home.html:18
 msgid "Design"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:26
+#: apps/wow/templates/wow/home.html:27
 msgid "Admit<br />All"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:30
+#: apps/wow/templates/wow/home.html:31
 msgid "Marvels <span>Await</span>"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:31
+#: apps/wow/templates/wow/home.html:32
 msgid ""
 "EXPLORE the AMAZING CREATIONS of the Web! WONDER at FANTASTIC DISCOVERIES "
 "from the comfort of your browser!"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:32
+#: apps/wow/templates/wow/home.html:33
 msgid "Submit a Demo!"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:37
+#: apps/wow/templates/wow/home.html:38
 msgid "Firefox 4"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:38
+#: apps/wow/templates/wow/home.html:39
 msgid "Get it today!"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:46
+#: apps/wow/templates/wow/home.html:47
 msgid "Appearing Soon"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:47
+#: apps/wow/templates/wow/home.html:48
 msgid "Image Coming Soon"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:48
+#: apps/wow/templates/wow/home.html:49
 msgid "Background Image Coming Soon"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:56
+#: apps/wow/templates/wow/home.html:57
 msgid "Hide Info"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:58
+#: apps/wow/templates/wow/home.html:59
 msgid "Screenshot"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:66
+#: apps/wow/templates/wow/home.html:67
 msgid "Explore the source code on GitHub"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:70
+#: apps/wow/templates/wow/home.html:71
 msgid "Video Play"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:71
-msgid "See how John Smith brothers brought space down to earth."
-msgstr ""
-
-#: apps/wow/templates/wow/home.html:72
+#: apps/wow/templates/wow/home.html:73
 msgid "Watch the Video &#187;"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:79
+#: apps/wow/templates/wow/home.html:80
 msgid "Experience <b>it now</b>"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:83
+#: apps/wow/templates/wow/home.html:84
 msgid "Watch a Video"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:84
+#: apps/wow/templates/wow/home.html:85
 msgid "Facebook"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:85
+#: apps/wow/templates/wow/home.html:86
 msgid "Twitter"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:86
+#: apps/wow/templates/wow/home.html:87
 msgid "Link"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:96
+#: apps/wow/templates/wow/home.html:97
 msgid "Lights Down"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:97
+#: apps/wow/templates/wow/home.html:98
 msgid "That Way"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:98
+#: apps/wow/templates/wow/home.html:99
 msgid "This Way"
 msgstr ""
 
-#: apps/wow/templates/wow/home.html:101
+#: apps/wow/templates/wow/home.html:102
 msgid "Loading"
 msgstr ""
