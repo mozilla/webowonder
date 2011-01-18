@@ -49,6 +49,11 @@ VALUES (16, 'unknown6', 'Boaz', 'Sender', '', '', 0, 0, 0, NOW(), NOW());
 INSERT INTO auth_user (id, username, first_name, last_name, email, password, is_staff, is_active, is_superuser, last_login, date_joined)
 VALUES (17, 'sork', 'Franck', 'Lecollinet', '', '', 0, 0, 0, NOW(), NOW());
 
+INSERT INTO auth_user (id, username, first_name, last_name, email, password, is_staff, is_active, is_superuser, last_login, date_joined)
+VALUES (18, 'houseofpretty', 'House of Pretty', '', '', '', 0, 0, 0, NOW(), NOW());
+
+
+
 ######################## Demos ######################
 
 INSERT INTO demos_submission (title, slug, summary, description, featured, hidden, tags, screenshot_1, screenshot_2, screenshot_3, screenshot_4, screenshot_5, video_url, demo_package, source_code_url, license_name, creator_id, created, modified) 
