@@ -3,7 +3,7 @@
 {% block page_title %}{{ _('Mozilla\'s Web O\'(pen) Wonder') }}{% endblock %}
 {% block content %}
 <div id="page-container">
-    <div id="compatibility">To enjoy Mozilla's Web of Wonder, you must download one of the following modern browsers: <a href="http://www.mozilla.com/firefox/beta/">Firefox 4 Beta</a>, <a href="http://www.apple.com/safari/">Safari</a>, <a href="http://www.google.com/chrome/">Chrome</a>, <a href="http://www.microsoft.com/ie9">IE9</a> or <a href="http://www.opera.com/">Opera</a>.</div>
+    <!-- div id="compatibility">To enjoy Mozilla's Web of Wonder, you must download one of the following modern browsers: <a href="http://www.mozilla.com/firefox/beta/">Firefox 4 Beta</a>, <a href="http://www.apple.com/safari/">Safari</a>, <a href="http://www.google.com/chrome/">Chrome</a>, <a href="http://www.microsoft.com/ie9">IE9</a> or <a href="http://www.opera.com/">Opera</a>.</div -->
 	<div id="header">
 		<div id="twitter" class="disruptable">
 			<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">{{ _('Tweet') }}</a>
@@ -61,23 +61,27 @@
 					<div class="demo-info">
 						<h1>{{demo.title}}</h1>
 						<h2>by <a class="more-info" href="http://github.com/{{demo.creator.username}}">{{demo.creator.first_name}} {{demo.creator.last_name}}</a></h2>
-						<div class="demo-info-extra">
-						    <p>{{demo.description}}</p>
+						<div class="demo-info-extra">                                                  
+						    <p><emphasis>{# 
+                                                                    L10n: This is before the Demo Description which will be in English 
+                                                                  #}{{ _('From the Author:')|safe }}</emphasis> {{demo.description}}</p>
     						<ul><!-- TODO {{demo.tags}} -->
     							<li>{{ demo.tag_copy|safe }}</li>
     							<li><a href="{{demo.source_code_url}}">{{ _('Explore the source code on GitHub') }}</a></li>
     						</ul>
                                                 <!-- TODO Get videos -->
+                                                {% if demo.video_url %}
     						<div class="video-container">
     							<img src="/media/img/video-play.png" width="100" height="65" alt="{{ _('Video Play') }}">
     							<p>{{ demo.video_description }}</p>
     							<a class="cbox-youtube" href="http://www.youtube.com/embed/FtX8nswnUKU?rel=0&amp;autoplay=1"  title="{{ demo.video_title|safe }}">{{ _('Watch the Video &#187;')|safe }}</a>
     						</div>
+                                                {% endif %}
     					</div>
 					</div>
 					<div class="demo-actions">
                                           <!-- TODO /{{demo.creator.username}}/{{demo.slug}}/demo.html -->
-						<a href="http://plopbyte.net:2048/statistweets/index_protocol.html" class="experience-it">
+						<a href="http://demoland/demos/{{demo.slug}}/demo.html" class="experience-it">
 							<span>{{ _('Experience <b>it now</b>')|safe }}</span>
 							<div class="flip-card-icon"></div>
 						</a>

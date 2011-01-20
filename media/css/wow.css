@@ -470,6 +470,10 @@ div.chain-3 {
 			/*background: #e5dabb url(/media/img/non-sprited/demo-flipped.png) 0 0 no-repeat;*/
 		}
 	
+		emphasis {
+			font-style: italic;
+		}
+	
 		.flag {
 			position: absolute;
 			top: 30px;
