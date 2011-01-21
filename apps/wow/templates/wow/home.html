@@ -57,7 +57,7 @@
 					<div class="flag">{{demo.category}}</div>
 					<a href="#" class="flip-card-back">{{ _('Hide Info') }}</a>
                                         <!-- TODO {{demo.screenshot_1}} -->
-					<div class="demo-image"><img src="/media/img/image-placeholder.jpg" width="458" height="230" alt="{{ _('Screenshot') }}"></div>
+					<div class="demo-image"><img src="{{mozillademos_host}}/demos/{{ demo.slug }}/screenshot.jpg" width="458" height="230" alt="{{ _('Screenshot') }}"></div>
 					<div class="demo-info">
 						<h1>{{demo.title}}</h1>
 						<h2>{{demo.by_authors|safe}}</a></h2>
@@ -81,7 +81,7 @@
 					</div>
 					<div class="demo-actions">
                                           <!-- TODO /{{demo.creator.username}}/{{demo.slug}}/demo.html -->
-						<a href="http://demoland/demos/{{demo.slug}}/demo.html" class="experience-it">
+						<a href="{{mozillademos_host}}/demos/{{demo.slug}}/demo.html" class="experience-it">
 							<span>{{ _('Experience <b>it now</b>')|safe }}</span>
 							<div class="flip-card-icon"></div>
 						</a>

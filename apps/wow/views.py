@@ -50,7 +50,8 @@ tags = {
 
 def home(request):
     global tags
-    data = {'demos': Submission.objects.filter(hidden=False)}
+    data = {'demos': Submission.objects.filter(hidden=False),
+            'mozillademos_host': "http://demoland/"}
     for demo in data['demos']:
 
         ltags = [(tags[x.strip()][0], tags[x.strip()][1],) for x in demo.tags.split(',')]
