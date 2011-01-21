@@ -87,8 +87,7 @@ def home(request):
         [_collect(authors, c) for c in demo.collaborator_set.all()]
 
         formatted_authors = [_format_author(a[0], a[1]) for a in authors]
-
-        demo.by_authors = _("by {0}").format(", ".join(formatted_authors))
+        demo.by_authors = _(u"by {0}").format(", ".join(formatted_authors))
         demo.category = category(demo)
 
     return jingo.render(request, 'wow/home.html', data)
@@ -127,7 +126,7 @@ def category(demo):
 
 def _format_author(url, full_name):
     """ Helper function to make author link """
-    return "<a class='more-info' href='http://github.com/%s'>%s</a>" % (url, full_name)
+    return u"<a class='more-info' href='http://github.com/%s'>%s</a>" % (url,  full_name)
 
 def _collect(authors, c):
     """ Helper function that appends the a collaborator to the list """
