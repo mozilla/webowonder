@@ -1193,7 +1193,7 @@ div.chain-3 {
 /* Browser Compatibility */
 #compatibility {
 	background-color: #310d01;
-  	background: url(../images/bg_compatability.jpg) repeat-x;
+  	background: url(../img/bg_compatability.jpg) repeat-x;
     color: #d0c394;
     font-size: 0.9em;
     padding: 10px 0;
@@ -1203,7 +1203,7 @@ div.chain-3 {
     z-index: 9999;
 }
 
-	#compatibility a { color: #c90; font-weight: bold; text-decoration: none; }
+#compatibility a { color: #c90; font-weight: bold; text-decoration: none; }
 		
 /* For displaying the page without webfonts */
 

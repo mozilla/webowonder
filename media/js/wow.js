@@ -26,7 +26,7 @@ mozilla.wow = function() {
         
         init: function() {
             // Remove CSS class to help progressively enhance
-            $('.init').removeClass('init');
+            $('.init').removeClass('init');            
             
             // Side Scroller
             mozilla.wow.sideScroller();
