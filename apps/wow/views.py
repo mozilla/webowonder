@@ -79,5 +79,50 @@ def home(request):
         demo.video_title = _('The Making of {0}').format(demo.title)
         # TODO new db field
         demo.video_description = 'See how John Smith brothers brought space down to earth.'
+        """by <a class="more-info" href="http://github.com/{{demo.creator.username}}">{{demo.creator.first_name}} {{demo.creator.last_name}}"""
+        
+        authors = [(demo.creator.username, demo.creator.get_full_name(), )]
+
+        [_collect(authors, c) for c in demo.collaborator_set.all()]
+
+        formatted_authors = [_format_author(a[0], a[1]) for a in authors]
+
+        demo.by_authors = _("by {0}").format(", ".join(formatted_authors))
+        demo.category = category(demo)
 
     return jingo.render(request, 'wow/home.html', data)
+
+########################### Helper functions ########################
+
+def category(demo):
+    """ TODO understand MDN's category approach
+        HTML5, Design, Video, webgl """
+    categories = {
+        'AR_models': 'video',
+        'AR_photobooth': 'video',
+        'debug': 'html5',
+        'dj_kraddy': 'webgl',
+        'double_ui': 'design',
+        'flight': 'webgl',
+        'globe_twitter': 'webgl',
+        'hologram': 'design',
+        'html5_poster': 'html5',
+        'immersivevideo': 'video',
+        'londonproject': 'design',
+        'mobile_player': 'video',
+        'motivational': 'html5',
+        'multitouch': 'html5',
+        'particles': 'webgl',
+        'planetarium': 'design',
+        'runfield': 'html5',
+        'shadows': 'design',
+    }
+    return categories[demo.slug]
+
+def _format_author(url, full_name):
+    """ Helper function to make author link """
+    return "<a class='more-info' href='http://github.com/%s'>%s</a>" % (url, full_name)
+
+def _collect(authors, c):
+    """ Helper function that appends the a collaborator to the list """
+    authors.append( (c.details.username, c.details.get_full_name(), ))

@@ -52,15 +52,15 @@
 				</div>
 			</div>
 {% for demo in demos %}
-			<div data-hash="{{demo.slug}}" class="demo {{demo.category()}} {%if loop.first %}selected{% endif %} init">
+			<div data-hash="{{demo.slug}}" class="demo {{demo.category}} {%if loop.first %}selected{% endif %} init">
 				<div class="demo-inner"><!-- TODO L10n map categories -->
-					<div class="flag">{{demo.category()}}</div>
+					<div class="flag">{{demo.category}}</div>
 					<a href="#" class="flip-card-back">{{ _('Hide Info') }}</a>
                                         <!-- TODO {{demo.screenshot_1}} -->
 					<div class="demo-image"><img src="/media/img/image-placeholder.jpg" width="458" height="230" alt="{{ _('Screenshot') }}"></div>
 					<div class="demo-info">
 						<h1>{{demo.title}}</h1>
-						<h2>by <a class="more-info" href="http://github.com/{{demo.creator.username}}">{{demo.creator.first_name}} {{demo.creator.last_name}}</a></h2>
+						<h2>{{demo.by_authors|safe}}</a></h2>
 						<div class="demo-info-extra">                                                  
 						    <p><emphasis>{# 
                                                                     L10n: This is before the Demo Description which will be in English 

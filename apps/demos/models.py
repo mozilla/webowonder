@@ -45,32 +45,7 @@ class Submission(models.Model):
 
     def __unicode__(self):
         return 'Submission "%(title)s"' % dict(
-            title=self.title )
-
-    def category(self):
-        # TODO understand MDN's category approach
-        # HTML5, Design, Video, webgl
-        categories = {
-            'AR_models': 'video',
-            'AR_photobooth': 'video',
-            'debug': 'html5',
-            'dj_kraddy': 'webgl',
-            'double_ui': 'design',
-            'flight': 'webgl',
-            'globe_twitter': 'webgl',
-            'hologram': 'design',
-            'html5_poster': 'html5',
-            'immersive': 'video',
-            'londonproject': 'design',
-            'mobile_player': 'video',
-            'motivational': 'html5',
-            'multitouch': 'html5',
-            'particles': 'webgl',
-            'planetarium': 'design',
-            'runfield': 'html5',
-            'shadows': 'design',
-        }
-        return categories[self.slug]
+            title=self.title )    
 
 def get_root_for_submission(instance):
     c_name = instance.creator.username
