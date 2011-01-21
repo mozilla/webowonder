@@ -662,8 +662,10 @@ div.chain-3 {
 			color: #c30;
 			text-decoration: none;
 			display: inline-block;
-			padding: 2px 20px 2px 0;
+		}
+		.demo-info h2 a:last-child {
 			background: url(/media/img/non-sprited/icon-info.png) right top no-repeat;
+			padding: 2px 20px 2px 0;
 		}
 		
 		.flipped .demo-info h2 a {
