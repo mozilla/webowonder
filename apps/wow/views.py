@@ -92,6 +92,11 @@ def home(request):
 
     return jingo.render(request, 'wow/home.html', data)
 
+def submit_demo(request):
+    """ Collects email addresses or intersticial to MDN Demo Studio. """
+    return jingo.render(request, 'wow/coming_soon.html', {})
+    #return jingo.render(request, 'wow/submit.html', {})
+
 ########################### Helper functions ########################
 
 def category(demo):

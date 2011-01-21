@@ -1,0 +1,44 @@
+<article id="submit-demo">
+  <h1>{{ _('Mozilla Demo Studio coming soon!') }}</h1>
+
+  <p>{% trans %} If you want to be one of the first to submit your demo to the Demo Studio,  get started now and we'll contact you when it's ready.{% endtrans %}</p>
+
+  <form action="https://spreadsheets.google.com/formResponse?formkey=dGdoVzl2dUdod1g0WjBpMllWa0hmU1E6MQ&amp;embedded=true&amp;ifq" method="POST" target="_new">
+    <label for="entry_0">{{ _('Email:') }}</label>
+    <input type="text" name="entry.0.single" value="" id="entry_0">
+    <input type="hidden" name="pageNumber" value="0">
+    <input type="hidden" name="backupCache" value="">
+    <input type="submit" name="submit" value="Submit">
+  </form>
+
+  <p>Here's what you need to know before you get started...</p>
+
+  <section>
+    <h2>Before You Begin</h2>
+    <ul>
+      <li>You must be prepared to <strong>provide the source code</strong> for your demo. Demos are hosted on the Web Gallery's servers.</li>
+
+      <li>Your demo's source code must be available under and <strong>open license</strong>, such as Creative commons, GPL, or BSD.</li>
+
+      <li>Your demo should showcase <strong>open web technologies</strong>, such as HTML5 and CSS3.</li>
+
+      <li>Your demo should support a wide range of <strong>modern web browsers</strong>, like Firefox, Chrome, Safari and Opera.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Preparing Your Demo</h2>
+    <ul>
+      <li>Your demo's source code should be packaged inside a <strong>ZIP file</strong>.</li>
+
+      <li>The main page of your demo should be a file named <strong>index.html</strong> in the root of the ZIP.</li>
+
+      <li>Your demo should be built on client-side <strong>technology</strong> (HTML, CSS, Javscript). PHP, Ruby, and other server-side languages are not supported.</li>
+
+      <li>If your demo requires external resources, it should use <strong>AJAX</strong> to access them.</li>
+
+      <li>Want your demo to also be featured on the Web O Wonder site?  <a href="http://wiki.mozilla.org/Demo_Room_Requirements">Follow these additional requirements</a></li>
+
+      <li>Thanks for supporting the open web!</li>
+    </ul>
+  </section>
+</article>

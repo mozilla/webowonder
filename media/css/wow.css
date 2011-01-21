@@ -1089,6 +1089,7 @@ div.chain-3 {
 	padding: 20px;
 	line-height: 20px;
 	}
+
 #submit-demo h1 { 
 	font-family: "LeagueGothicRegular", sans-serif;
 	font-size: 32px;
@@ -1114,6 +1115,11 @@ div.chain-3 {
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 	}
+#submit-demo label {
+    float: left;
+    padding: 9px 10px 5px;
+    font-weight: 900;
+}
 
 #submit-demo input[type="submit"] {
 		font-family: Helvetica, sans-serif;
@@ -1155,6 +1161,34 @@ div.chain-3 {
 			/* For Internet Explorer 8 */
 		-	ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF777777)";
 		}
+
+#submit-demo p {
+    clear: left;
+    width: 500px;
+}
+#submit-demo section, #submit-demo form {
+    background-color: #DEF;
+    margin-bottom: 5px;
+}
+#submit-demo section {
+    float: left;
+    width: 270px;
+    margin: 0px 10px;
+    padding: 0px;
+}
+
+    #submit-demo section h2 {
+        background-color: #666;
+        color: #FFF;
+        border-bottom: solid 1px grey;
+        padding: 5px 10px;
+    }
+    #submit-demo section ul li {
+        border-bottom: dotted 1px #BBD;
+        line-height: 1.5;
+        margin: 0px 10px;
+        padding: 5px;
+    }
 		
 /* Browser Compatibility */
 #compatibility {
