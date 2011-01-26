@@ -42,9 +42,5 @@ except ImportError:
 # environment variables.
 setup_environ(settings)
 
-# Configure Celery
-import djcelery
-djcelery.setup_loader()
-
 if __name__ == "__main__":
     execute_manager(settings)
