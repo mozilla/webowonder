@@ -30,3 +30,6 @@ MANAGERS = ADMINS
 
 
 DEBUG = TEMPLATE_DEBUG = True
+
+# URL which is a prefix for demos from the demo server
+DEMOLAND = 'https://stage.mozillademos.org/'

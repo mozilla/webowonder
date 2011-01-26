@@ -7,6 +7,8 @@ import jingo
 
 from tower import ugettext as _
 
+import settings
+
 from demos.models import Submission
 
 # TODO, need actual urls and such
@@ -51,7 +53,7 @@ tags = {
 def home(request):
     global tags
     data = {'demos': Submission.objects.filter(hidden=False),
-            'mozillademos_host': "http://demoland/"}
+            'mozillademos_host': settings.DEMOLAND}
     for demo in data['demos']:
 
         ltags = [(tags[x.strip()][0], tags[x.strip()][1],) for x in demo.tags.split(',')]

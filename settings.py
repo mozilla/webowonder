@@ -202,6 +202,9 @@ DOMAIN_METHODS = {
     #],
 }
 
+# URL which is a prefix for demos from the demo server
+DEMOLAND = 'https://mozillademos.org/'
+
 # Path to Java. Used for compress_assets.
 JAVA_BIN = '/usr/bin/java'
 
