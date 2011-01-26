@@ -159,8 +159,8 @@ INSTALLED_APPS = (
     ROOT_PACKAGE,
 
     # Third-party apps
-    'djcelery',
-    'django_nose',
+    #'djcelery',
+    #'django_nose',
 
     # Django contrib apps
     'django.contrib.auth',
