@@ -7,7 +7,7 @@ import jingo
 
 from tower import ugettext as _
 
-import settings
+from django.conf import settings
 
 from demos.models import Submission
 
