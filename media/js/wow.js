@@ -50,12 +50,12 @@ mozilla.wow = function() {
             mozilla.wow.lightsdown();
             
             // Setup lightboxes
-            $('a.cbox-youtube').live('click', function(e) {
-                e.preventDefault();
-                $.colorbox({iframe:true, innerWidth:425, innerHeight:344, title: $(this).attr('title'), href: $(this).attr('href')});
-            });
-            //$('a.cbox-submit').colorbox({iframe:true, innerWidth:425, innerHeight:200}, href:);
-            $('a.cbox-submit').colorbox({xinnerWidth:600, xinnerHeight: 650});
+            $('.watch-video').live('click', function (e) {
+                    e.preventDefault();
+                    $.colorbox({href: $(this).attr('href'),
+                                title: $(this).attr('title')});
+                });
+            $('a.cbox-submit').colorbox();
         }
     };
 }();
@@ -266,7 +266,16 @@ mozilla.wow.demoEvents = function() {
     function _showLoading() {
         $(".loading").find(".title").text(demoTitle).end()
                      .fadeIn("normal", function() {
-                         $('#demo-viewport').attr('src', $(link).attr('href'))
+                             /* $('#demo-viewport').get(0); */
+                             var iframe = document.getElementById('demo-viewport');
+                             
+                             iframe.src = $(link).attr('href');
+                             iframe.focus();
+                             /*
+                             setTimeout(function () {
+                                     window.getElementById('demo-viewport').focus();
+                                     }, 300);
+*/
                      });
     }
     

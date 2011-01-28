@@ -81,12 +81,12 @@
     							<li>{{ demo.tag_copy|safe }}</li>
     							<li><a href="{{demo.source_code_url}}">{{ _('Explore the source code on GitHub') }}</a></li>
     						</ul>
-                                                <!-- TODO Get videos -->
-                                                {% if demo.video_url %}
+                                                <!-- Not all demos have a documentary -->
+                                                {% if demo.video_description %}
     						<div class="video-container">
-    							<img src="/media/img/video-play.png" width="100" height="65" alt="{{ _('Video Play') }}">
+    							<a class="watch-video" href="/documentary/{{demo.slug}}"  title="{{ demo.video_title|safe }}"><img src="/media/img/video-play.png" width="100" height="65" alt="{{ _('Video Play') }}" ></a>
     							<p>{{ demo.video_description }}</p>
-    							<a class="cbox-youtube" href="http://www.youtube.com/embed/FtX8nswnUKU?rel=0&amp;autoplay=1"  title="{{ demo.video_title|safe }}">{{ _('Watch the Video &#187;')|safe }}</a>
+    							<a class="watch-video" href="/documentary/{{demo.slug}}"  title="{{ demo.video_title|safe }}">{{ _('Documentary Video &#187;')|safe }}</a>
     						</div>
                                                 {% endif %}
     					</div>
@@ -97,8 +97,10 @@
 							<span>{{ _('Experience <b>it now</b>')|safe }}</span>
 							<div class="flip-card-icon"></div>
 						</a>
-						&mdash; or &mdash; <!-- TODO get Videos -->
-						<a href="http://www.youtube.com/embed/FtX8nswnUKU?rel=0&amp;autoplay=1" class="cbox-youtube watch-video" title="{{ demo.video_title|safe}}">{{ _('Watch a Video') }}</a>
+						&mdash; or &mdash; <!-- TODO get Videos 
+                                                There is always a Screencast
+-->
+						<a href="/screencast/{{demo.slug}}" class="watch-video" title="{{demo.title}}">{{ _('Watch a Video') }}</a>
 						<a href="#" class="social-media facebook" title="Share on Facebook">{{ _('Facebook') }}</a>
 						<a href="#" class="social-media twitter" title="Share on Twitter">{{ _('Twitter') }}</a>
 						<a href="#" class="social-media link" title="Link to this page">{{ _('Link') }}</a>

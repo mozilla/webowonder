@@ -10,6 +10,7 @@ from tower import ugettext as _
 from django.conf import settings
 
 from demos.models import Submission
+from wow.models import DemoDetails
 
 # TODO, need actual urls and such
 tags = {
@@ -81,8 +82,13 @@ def home(request):
         # L10n {0} is the title of a demo
         demo.video_title = _('The Making of {0}').format(demo.title)
         # TODO new db field
-        demo.video_description = 'See how John Smith brothers brought space down to earth.'
-        """by <a class="more-info" href="http://github.com/{{demo.creator.username}}">{{demo.creator.first_name}} {{demo.creator.last_name}}"""
+        
+        demo.video_description = None
+        try:
+            demo.video_description = demo.demodetails.documentary_description
+        except DemoDetails.DoesNotExist:
+            deets = DemoDetails(demo=demo)
+            deets.save()
         
         authors = [(demo.creator.username, demo.creator.get_full_name(), )]
 
@@ -98,6 +104,12 @@ def submit_demo(request):
     """ Collects email addresses or intersticial to MDN Demo Studio. """
     return jingo.render(request, 'wow/coming_soon.html', {})
     #return jingo.render(request, 'wow/submit.html', {})
+
+def screencast(request, slug):
+    return _show_video(request, slug, 'screencast')
+
+def documentary(request, slug):
+    return _show_video(request, slug, 'documentary')
 
 ########################### Helper functions ########################
 
@@ -133,3 +145,21 @@ def _format_author(url, full_name):
 def _collect(authors, c):
     """ Helper function that appends the a collaborator to the list """
     authors.append( (c.details.username, c.details.get_full_name(), ))
+
+def _show_video(request, slug, videoType):
+    if not videoType in ['documentary', 'screencast']:
+        raise Exception("Invalid type of video")
+    if 'documentary' == videoType:
+        pass
+    else:
+        pass
+    #base = "http://videos-cdn.mozilla.net/serv/mobile/%s" % slug
+    base = "http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile-large" # .ogv
+    #http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile.mp4
+    #firefox-mobile-large.ogv
+    ctx = {
+        'webm':"%s.webm" % base,
+        'ogg': "%s.ogv"  % base,
+        'mp4': "%s.mp4"  % base,
+    }
+    return jingo.render(request, 'wow/video.html', ctx)

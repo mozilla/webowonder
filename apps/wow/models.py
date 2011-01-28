@@ -18,3 +18,14 @@ class Collaborator(models.Model):
     demo = models.ForeignKey(Demo, blank=False, null=True)
     details = models.ForeignKey(User, blank=False, null=True)
     rank = models.SmallIntegerField(default=1)
+
+class DemoDetails(models.Model):
+    """ Our microsite needs a little more data than 
+    MDN Demo Room schema provides.
+
+    * Demo sort order via rank
+    """
+    
+    demo = models.OneToOneField(Demo, primary_key=True, unique=True)
+    documentary_description = models.TextField(blank=True)
+    rank = models.SmallIntegerField(default=1)
