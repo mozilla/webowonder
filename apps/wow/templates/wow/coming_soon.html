@@ -11,34 +11,33 @@
     <input type="submit" name="submit" value="Submit">
   </form>
 
-  <p>Here's what you need to know before you get started...</p>
+  <p>{{_("Here's what you need to know before you get started...")}}</p>
 
   <section>
-    <h2>Before You Begin</h2>
+    <h2>{{_('Before You Begin') }}</h2>
     <ul>
-      <li>You must be prepared to <strong>provide the source code</strong> for your demo. Demos are hosted on the Web Gallery's servers.</li>
+      <li>{{_('You must be prepared to <strong>provide the source code</strong> for your demo. Demos are hosted on the Web Gallery\'s servers.')|safe }}</li>
 
-      <li>Your demo's source code must be available under and <strong>open license</strong>, such as Creative commons, GPL, or BSD.</li>
+      <li>{{_('Your demo\'s source code must be available under and <strong>open license</strong>, such as Creative commons, GPL, or BSD.')|safe }}</li>
 
-      <li>Your demo should showcase <strong>open web technologies</strong>, such as HTML5 and CSS3.</li>
+      <li>{{_('Your demo should showcase <strong>open web technologies</strong>, such as HTML5 and CSS3.')|safe }}</li>
 
-      <li>Your demo should support a wide range of <strong>modern web browsers</strong>, like Firefox, Chrome, Safari and Opera.</li>
+      <li>{{_('Your demo should support a wide range of <strong>modern web browsers</strong>, like Firefox, Chrome, Safari and Opera.')|safe }}</li>
     </ul>
   </section>
   <section>
-    <h2>Preparing Your Demo</h2>
+    <h2>{{_('Preparing Your Demo') }}</h2>
     <ul>
-      <li>Your demo's source code should be packaged inside a <strong>ZIP file</strong>.</li>
+      <li>{{_('Your demo\'s source code should be packaged inside a <strong>ZIP file</strong>.')|safe }}</li>
 
-      <li>The main page of your demo should be a file named <strong>index.html</strong> in the root of the ZIP.</li>
+      <li>{{_('The main page of your demo should be a file named <strong>index.html</strong> in the root of the ZIP.')|safe }}</li>
 
-      <li>Your demo should be built on client-side <strong>technology</strong> (HTML, CSS, Javscript). PHP, Ruby, and other server-side languages are not supported.</li>
+      <li>{{_('Your demo should be built on client-side <strong>technology</strong> (HTML, CSS, Javscript). PHP, Ruby, and other server-side languages are not supported.')|safe }}</li>
 
-      <li>If your demo requires external resources, it should use <strong>AJAX</strong> to access them.</li>
-
-      <li>Want your demo to also be featured on the Web O Wonder site?  <a href="http://wiki.mozilla.org/Demo_Room_Requirements">Follow these additional requirements</a></li>
-
-      <li>Thanks for supporting the open web!</li>
-    </ul>
+      <li>{{_('If your demo requires external resources, it should use <strong>AJAX</strong> to access them.')|safe }}</li>      
+    </ul>    
   </section>
+  <p>{{_('Want your demo to also be featured on the Web O Wonder site?  <a href="{0}">Follow these additional requirements')|fe('http://wiki.mozilla.org/Demo_Room_Requirements') }}</a></p>
+
+  <p>{{_('Thanks for supporting the open web!') }}</p>
 </article>
