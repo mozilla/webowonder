@@ -266,16 +266,14 @@ mozilla.wow.demoEvents = function() {
     function _showLoading() {
         $(".loading").find(".title").text(demoTitle).end()
                      .fadeIn("normal", function() {
-                             /* $('#demo-viewport').get(0); */
-                             var iframe = document.getElementById('demo-viewport');
-                             
-                             iframe.src = $(link).attr('href');
-                             iframe.focus();
-                             /*
-                             setTimeout(function () {
-                                     window.getElementById('demo-viewport').focus();
-                                     }, 300);
-*/
+                         var iframe = document.getElementById('demo-viewport');
+                         iframe.src = $(link).attr('href');
+                         iframe.onload = function () {
+                             document.querySelectorAll("iframe")[2].focus();
+                         }
+                         setTimeout(function () {
+                                 iframe.focus();
+                             }, 1000);
                      });
     }
     
