@@ -2,6 +2,8 @@
 
 import os
 
+from django.utils.functional import lazy
+
 # Make file paths relative to settings.
 ROOT = os.path.dirname(os.path.abspath(__file__))
 path = lambda *a: os.path.join(ROOT, *a)
@@ -44,13 +46,25 @@ USE_L10N = True
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-US'
 
-# List of locales known to this project.
-LANGUAGES = ('en-US',)
+# Accepted locales
+KNOWN_LANGUAGES = ('en-US','de',)
 
 # List of RTL locales known to this project. Subset of LANGUAGES.
 RTL_LANGUAGES = ()  # ('ar', 'fa', 'fa-IR', 'he')
 
-LANGUAGE_URL_MAP = dict([(i.lower(), i) for i in LANGUAGES])
+LANGUAGE_URL_MAP = dict([(i.lower(), i) for i in KNOWN_LANGUAGES])
+
+# Override Django's built-in with our native names
+class LazyLangs(dict):
+    def __new__(self):
+        from product_details import product_details
+        return dict([(lang.lower(), product_details.languages[lang]['native'])
+                     for lang in KNOWN_LANGUAGES])
+
+LANGUAGES = lazy(LazyLangs, dict)()
+
+# Paths that don't require a locale prefix.
+SUPPORTED_NONLOCALES = ('media', 'admin')
 
 TEXT_DOMAIN = 'messages'
 
@@ -136,6 +150,7 @@ MINIFY_BUNDLES = {
 ## Middlewares, apps, URL configs.
 
 MIDDLEWARE_CLASSES = (
+    'commons.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -152,8 +167,6 @@ INSTALLED_APPS = (
     'commons',  # Content common to most playdoh-based apps.
     'jingo_minify',
     'tower',  # for ./manage.py extract (L10n)
-
-    'examples',  # Example code. Can (and should) be removed for actual projects.
 
     # We need this so the jsi18n view will pick up our locale directory.
     ROOT_PACKAGE,
@@ -173,6 +186,9 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+
+    # L10n
+    'product_details',
 
     'wow',
     'demos',
@@ -201,6 +217,9 @@ DOMAIN_METHODS = {
     #    ('media/js/**.js', 'javascript'),
     #],
 }
+
+# Where to store product details etc.
+PROD_DETAILS_DIR = path('lib/product_details_json')
 
 # URL which is a prefix for demos from the demo server
 DEMOLAND = 'https://mozillademos.org/'
