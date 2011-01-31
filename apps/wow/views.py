@@ -106,7 +106,7 @@ def submit_demo(request):
     #return jingo.render(request, 'wow/submit.html', {})
 
 def screencast(request, slug):
-    return _show_video(request, slug, 'screencast')
+    return _show_video(request, slug, 'screencasts')
 
 def documentary(request, slug):
     return _show_video(request, slug, 'documentary')
@@ -147,19 +147,17 @@ def _collect(authors, c):
     authors.append( (c.details.username, c.details.get_full_name(), ))
 
 def _show_video(request, slug, videoType):
-    if not videoType in ['documentary', 'screencast']:
+    if not videoType in ['documentary', 'screencasts']:
         raise Exception("Invalid type of video")
     if 'documentary' == videoType:
-        pass
+        fileName ='documentary'
     else:
-        pass
-    #base = "http://videos-cdn.mozilla.net/serv/mobile/%s" % slug
-    base = "http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile-large" # .ogv
-    #http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile.mp4
-    #firefox-mobile-large.ogv
+        fileName ='screencast'
+    base = "http://videos-cdn.mozilla.net/serv/mozhacks/demos"
+    details = (base, videoType, slug, fileName)
     ctx = {
-        'webm':"%s.webm" % base,
-        'ogg': "%s.ogv"  % base,
-        'mp4': "%s.mp4"  % base,
+        'webm':"%s/%s/%s/%s.webm" % details,
+        'ogg': "%s/%s/%s/%s.ogv"  % details,
+        'mp4': "%s/%s/%s/%s.mp4"  % details,
     }
     return jingo.render(request, 'wow/video.html', ctx)
