@@ -89,7 +89,7 @@ mozilla.wow.sideScroller = function() {
                        
                        // Change location hash
                        if (window.history && window.history.pushState) {
-                           window.history.pushState({}, 
+                           window.history.pushState({playing: false}, 
                                                     $('h1', nextCard).text(), 
                                                     "#" + nextCard.attr('data-hash'));
                        } else {
@@ -150,7 +150,6 @@ mozilla.wow.sideScroller = function() {
     if( hashCard.length > 0 ) _moveByLeap(hashCard);
 
     // Handle Back/Forward
-
     var updateScollFromHash = function (e) {
         if ($('.demo.selected').attr('data-hash') != window.location.hash.substring(1)) {
             var hashCard = $('.demo[data-hash=' + window.location.hash.substring(1) + ']');
@@ -160,7 +159,12 @@ mozilla.wow.sideScroller = function() {
     // TODO handle in/out of demo play state
     if (window.history && window.history.pushState) {
         $(window).bind('popstate', function (e) {
-            var state = e.state;
+            var state = e.originalEvent.state;
+            if (state && state.playing == false) {
+                $('#magic-tickets').click();
+            }
+
+
             updateScollFromHash();
         });
     } else {
@@ -237,7 +241,9 @@ mozilla.wow.sortableCards = function() {
 
                // Change location hash
                if (window.history && window.history.postState) {                   
-                   window.history.pushState({}, $('.demo.selected h1').text(), "#" + $('.demo').eq(1).attr('data-hash'));
+                   window.history.pushState({playing:false}, 
+                                            $('.demo.selected h1').text(), 
+                                            "#" + $('.demo').eq(1).attr('data-hash'));
                } else {
                    window.location.hash = $('.demo').eq(1).attr('data-hash');
                }
@@ -360,6 +366,9 @@ mozilla.wow.demoEvents = function() {
         
         // Add a mutex class
         $('body').addClass('demoing');
+
+        // Support back button to cancel demo
+        window.history.pushState({playing: true}, "");
         
         // Show the loading dialog
         _showLoading();
@@ -407,8 +416,7 @@ mozilla.wow.keynav = function() {
     $(document).keydown(function(e) {
         
         // Ignore the keyboard nav during demos
-        if( $('body').hasClass('demoing') ) return; /* aok add esc key here */
-        
+            if( $('body').hasClass('demoing') ) return; /* demo has focus, shouldn't happen */
         if( e.keyCode == 37 ) {
             $('#that-way').trigger('click');
         } else if( e.keyCode == 39 ) {
