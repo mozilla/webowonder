@@ -54,7 +54,12 @@ tags = {
 def home(request):
     global tags
     data = {'demos': Submission.objects.filter(hidden=False),
+            'share_url': 'https://demos.mozilla.org/',
             'mozillademos_host': settings.DEMOLAND}
+
+    desktop_only = _('Desktop Only')
+    mobile_only = _('Mobile Only')
+
     for demo in data['demos']:
 
         ltags = [(tags[x.strip()][0], tags[x.strip()][1],) for x in demo.tags.split(',')]

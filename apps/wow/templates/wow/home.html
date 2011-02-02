@@ -22,7 +22,7 @@
 			<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">{{ _('Tweet') }}</a>
 		</div>
 		<div id="facebook" class="disruptable">
-			<iframe src="http://www.facebook.com/plugins/like.php?layout=box_count&amp;show_faces=false&amp;width=55&amp;action=like&amp;colorscheme=light&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px; height:65px;" allowTransparency="true"></iframe>
+			<iframe src="http://www.facebook.com/plugins/like.php?href={{share_url|urlencode}}&amp;layout=box_count&amp;show_faces=false&amp;width=55&amp;action=like&amp;colorscheme=light&amp;height=65" style="border:none; overflow:hidden; width:55px; height:65px;"></iframe>
 		</div>
 		<a href="http://mozilla.org" id="back-to-mozilla" title="{{ _('Visit Mozilla.org') }}">{{ _('Visit Mozilla.org') }}</a>
 		<a href="/" id="home-link">{{ _('Mozilla Presents') }}</a>
@@ -74,9 +74,9 @@
 						<h1>{{demo.title}}</h1>
 						<h2>{{demo.by_authors|safe}}</h2>
 						<div class="demo-info-extra">                                                  
-						    <p><emphasis>{# 
+						    <p><em>{# 
                                                                     L10n: This is before the Demo Description which will be in English 
-                                                                  #}{{ _('From the Author:')|safe }}</emphasis> {{demo.description}}</p>
+                                                                  #}{{ _('From the Author:')|safe }}</em> {{demo.description}}</p>
     						<ul><!-- TODO {{demo.tags}} -->
     							<li>{{ demo.tag_copy|safe }}</li>
     							<li><a href="{{demo.source_code_url}}">{{ _('Explore the source code on GitHub') }}</a></li>
@@ -119,7 +119,7 @@
 	</div>
 </div>
     <div class="loading"><div class="loading-inner">{{ _('Loading') }} <span class="title"></span><img src="/media/img/loading.gif" height="32" width="32" alt="{{ _('Loading') }}"/></div></div>
-    <iframe id="demo-viewport" width="100%" scrollbars="no"></iframe>
+    <iframe id="demo-viewport"></iframe>
     <div class="social-tooltip"><span></span><div></div></div>
     <span id="spot" class="spotlight"></span>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>

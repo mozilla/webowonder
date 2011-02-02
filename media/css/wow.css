@@ -154,7 +154,7 @@ a:hover {
 			-webkit-transform: rotate(4deg);
 			-o-transform: rotate(4deg);
 			-ms-transform: rotate(4deg);
-			transform: rotate(4deg);
+			transform: rotate(4deg);                        
 		}
 		
 	#facebook {
@@ -959,6 +959,8 @@ div.chain-3 {
 	top: 0;
 	left: 0;
 	z-index: 999;
+        overflow: none;
+        width: 100%;
 }
 
 .loading {
