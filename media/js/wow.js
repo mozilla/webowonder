@@ -39,7 +39,7 @@ mozilla.wow = function() {
             
             // Demo events
             mozilla.wow.demoEvents();
-            
+
             // Tooltips
             mozilla.wow.tooltips();
             
@@ -69,7 +69,7 @@ $(document).ready(function() { mozilla.wow.init(); });
  * Side Scroller
  */
 mozilla.wow.sideScroller = function() {
-    
+
     // Private, reusable function to animate cards
     function _animateCards(nextCard, moveBy) {
         
@@ -88,8 +88,13 @@ mozilla.wow.sideScroller = function() {
                        $(this).css({opacity: 0.8});
                        
                        // Change location hash
-                       window.location.hash = nextCard.attr('data-hash');
-                       
+                       if (window.history && window.history.pushState) {
+                           window.history.pushState({}, 
+                                                    $('h1', nextCard).text(), 
+                                                    "#" + nextCard.attr('data-hash'));
+                       } else {
+                           window.location.hash = nextCard.attr('data-hash');
+                       }
                        $('body').removeClass('scrolling');
                     });
                 });
@@ -140,10 +145,27 @@ mozilla.wow.sideScroller = function() {
         _moveByLeap( $(this).parents('.demo') );
     });
     
-    // If we've been passed a hashed URL, try to move to the correct card
+    // If we've been passed a hashed URL, try to move to the correct card    
     var hashCard = $('.demo[data-hash=' + window.location.hash.substring(1) + ']');
     if( hashCard.length > 0 ) _moveByLeap(hashCard);
-	
+
+    // Handle Back/Forward
+
+    var updateScollFromHash = function (e) {
+        if ($('.demo.selected').attr('data-hash') != window.location.hash.substring(1)) {
+            var hashCard = $('.demo[data-hash=' + window.location.hash.substring(1) + ']');
+            if( hashCard.length > 0 ) _moveByLeap(hashCard);
+        }
+    };
+    // TODO handle in/out of demo play state
+    if (window.history && window.history.pushState) {
+        $(window).bind('popstate', function (e) {
+            var state = e.state;
+            updateScollFromHash();
+        });
+    } else {
+        $(window).bind('hashchange', updateScollFromHash);
+    }
 };
 
 /**
@@ -212,10 +234,13 @@ mozilla.wow.sortableCards = function() {
                // Select the first card
                $('.demo').eq(1).addClass('selected');
                _setZIndices();
-               
+
                // Change location hash
-               window.location.hash = $('.demo').eq(1).attr('data-hash');
-           
+               if (window.history && window.history.postState) {                   
+                   window.history.pushState({}, $('.demo.selected h1').text(), "#" + $('.demo').eq(1).attr('data-hash'));
+               } else {
+                   window.location.hash = $('.demo').eq(1).attr('data-hash');
+               }
                $('body').removeClass('sorting');
            });
             
@@ -382,7 +407,7 @@ mozilla.wow.keynav = function() {
     $(document).keydown(function(e) {
         
         // Ignore the keyboard nav during demos
-        if( $('body').hasClass('demoing') ) return;
+        if( $('body').hasClass('demoing') ) return; /* aok add esc key here */
         
         if( e.keyCode == 37 ) {
             $('#that-way').trigger('click');
