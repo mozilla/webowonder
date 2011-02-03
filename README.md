@@ -1,18 +1,34 @@
-playdoh
-=======
+Web O' Wonder
+=============
 
-Mozilla's Playdoh is a web application template based on [Django][django].
+Based off Mozilla's [Playdoh][gh-playdoh] web application template,
+Web O Wonder is [hosted on github][gh-wow]. 
 
-Patches are welcome! Feel free to fork and contribute to this project on
-[github][gh-playdoh].
+Please follow [Playdoh's docs][gh-playdoh], except for the follow:
+* cd webowonder
+* git clone --recursive git://github.com/mozilla/webowonder-lib.git vendor
+* svn co [gh-wow-l10n] into locale
+* Setup Apache or another web server on another domain to host your demos
+** clone [gh-wow-demos] which is a bunch of static files
+** Map Doc Root to the root of this repository
+** Test that you can go to http://demoland/demos/shadows/ and see a demo load
+* settings_local.py
+** DEMOLAND = 'http://demoland/'
 
-Full [documentation][docs] is available as well.
+[gh-playdoh]: https://mozilla.github.com/playdoh
+[gh-wow]: https://github.com/mozilla/webowonder
+[gh-wow-lib]: https://github.com/mozilla/webowonder
+[gh-wow-demos]: https://github.com/mozilla/webowonder
+[gh-wow-l10n]: http://svn.mozilla.org/projects/TBD
 
 
-[django]: http://www.djangoproject.com/
-[gh-playdoh]: https://github.com/mozilla/playdoh
-[docs]: http://playdoh.readthedocs.org/
+Vendor vs Virtualenvs
+---------------------
+Optional, but the new way of setting up virtual envs is:
+* pip install only compiled requirements into a virtualenv
+* Django will pickup other requirements from vendor
 
+Remember vendor and locale are not submodules. You'll need to cd into them and make commits.
 
 License
 -------
