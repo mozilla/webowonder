@@ -1,0 +1,1 @@
+UPDATE demos_submission SET title = "GlobeTweeter" WHERE slug = "globetweeter";
