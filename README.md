@@ -5,6 +5,7 @@ Based off Mozilla's [Playdoh][gh-playdoh] web application template,
 Web O Wonder is [hosted on github][gh-wow]. 
 
 Please follow [Playdoh's docs][gh-playdoh], except for the follow:
+
 * cd webowonder
 * git clone --recursive git://github.com/mozilla/webowonder-lib.git vendor
 * svn co [gh-wow-l10n] into locale
@@ -25,6 +26,7 @@ Please follow [Playdoh's docs][gh-playdoh], except for the follow:
 Vendor vs Virtualenvs
 ---------------------
 Optional, but the new way of setting up virtual envs is:
+
 * pip install only compiled requirements into a virtualenv
 * Django will pickup other requirements from vendor
 
