@@ -10,6 +10,7 @@ Please follow [Playdoh's docs][gh-playdoh], except for the follow:
 * git clone --recursive git://github.com/mozilla/webowonder-lib.git vendor
 * svn co [gh-wow-l10n] into a directory named locale
 * Setup Apache or another web server on another domain to host your demos
+* Run schema migrations instead of syncdb (see bin/update_site.py)
 ** clone [gh-wow-demos] which is a bunch of static files
 ** Map Doc Root to the root of this repository
 ** Test that you can go to http://demoland/demos/shadows/ and see a demo load
