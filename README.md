@@ -8,7 +8,7 @@ Please follow [Playdoh's docs][gh-playdoh], except for the follow:
 
 * cd webowonder
 * git clone --recursive git://github.com/mozilla/webowonder-lib.git vendor
-* svn co [gh-wow-l10n] into locale
+* svn co [gh-wow-l10n] into a directory named locale
 * Setup Apache or another web server on another domain to host your demos
 ** clone [gh-wow-demos] which is a bunch of static files
 ** Map Doc Root to the root of this repository
@@ -16,7 +16,7 @@ Please follow [Playdoh's docs][gh-playdoh], except for the follow:
 * settings_local.py
 ** DEMOLAND = 'http://demoland/'
 
-[gh-playdoh]: https://mozilla.github.com/playdoh
+[gh-playdoh]: http://mozilla.github.com/playdoh
 [gh-wow]: https://github.com/mozilla/webowonder
 [gh-wow-lib]: https://github.com/mozilla/webowonder
 [gh-wow-demos]: https://github.com/mozilla/webowonder
@@ -31,6 +31,12 @@ Optional, but the new way of setting up virtual envs is:
 * Django will pickup other requirements from vendor
 
 Remember vendor and locale are not submodules. You'll need to cd into them and make commits.
+::
+    webowonder
+        apps
+        ...
+        locale <- SVN
+        vendor <- git
 
 License
 -------
