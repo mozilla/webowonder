@@ -85,7 +85,7 @@ def home(request):
             demo.tag_copy = copy.format(*tag_pairs)
 
         # L10n {0} is the title of a demo
-        demo.video_title = _('The Making of {0}').format(demo.title)
+        demo.video_title = _(u'The Making of {0}').format(demo.title)
         # TODO new db field
         
         demo.video_description = None
@@ -124,20 +124,20 @@ def category(demo):
     categories = {
         'AR_models': 'video',
         'AR_photobooth': 'video',
+        'dashboard': 'html5',
         'debug': 'html5',
         'dj_kraddy': 'webgl',
         'double_ui': 'design',
-        'flight': 'webgl',
-        'globe_twitter': 'webgl',
+        'flight-of-the-navigator': 'webgl',
+        'globetweeter': 'webgl',
         'hologram': 'design',
-        'html5_poster': 'html5',
         'immersivevideo': 'video',
         'londonproject': 'design',
         'mobile_player': 'video',
         'motivational': 'html5',
-        'multitouch': 'html5',
         'particles': 'webgl',
         'planetarium': 'design',
+        'plztouchme': 'html5',
         'runfield': 'html5',
         'shadows': 'design',
     }
