@@ -59,7 +59,7 @@ at <a href='{{nvidia_url}}'>NVIDIA</a>, <a href='{{amd_url}}'>AMD</a>, and <a hr
         } 
     }} catch (e) {}
 
-    if ( hasWebGl() ) {
+    if (! hasWebGl() ) {
         var msgType, canShowWebGl = true;
         /* Ewh gross... but Only 2 browsers have WebGL
            AND they have to have good video drivers */
