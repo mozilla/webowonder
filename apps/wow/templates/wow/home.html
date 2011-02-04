@@ -3,20 +3,7 @@
 {% block page_title %}{{ _('Mozilla\'s Web O\'(pen) Wonder') }}{% endblock %}
 {% block content %}
 <div id="page-container">
-<script>
-    var compat = "<div id='compatibility'>{% trans firefox_url="http://www.mozilla.com/firefox/beta/",
-                                     safari_url="http://www.apple.com/safari/",
-                                     chrome_url="http://www.google.com/chrome/",
-                                     ie_url="http://www.microsoft.com/ie9",
-                                     opera_url="http://www.opera.com/" %}
-      To enjoy Mozilla's Web of Wonder, you must download one of the following modern browsers: 
-      <a href='{{firefox_url}}'>Firefox 4 Beta</a>, <a href='{{safari_url}}'>Safari</a>, 
-      <a href='{{chrome_url}}'>Chrome</a>, <a href='{{ie_url}}'>IE9</a> or 
-      <a href='{{opera_url}}'>Opera</a>.{% endtrans %}</div>";
-
-    if (! window.postMessage) document.write(compat);
-</script>
-<noscript><div id='compatibility'>{{ _("To  enjoy Mozilla's Web of Wonder, you must enable Javascript!") }}</div></noscript>
+{% include 'wow/browser_compatibility.html' %}
 	<div id="header">
 		<div id="twitter" class="disruptable">
 			<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">{{ _('Tweet') }}</a>

@@ -1,0 +1,95 @@
+    <canvas id='compat-canvas' style='border: none; position:absolute; left:0px; display:none; top:-10px' width='1' height='1'></canvas>
+<script>
+    (function () {
+    var compat = "<div id='compatibility'>{% trans firefox_url="http://www.mozilla.com/firefox/beta/",
+                                     safari_url="http://www.apple.com/safari/",
+                                     chrome_url="http://www.google.com/chrome/",
+                                     ie_url="http://www.microsoft.com/ie9",
+                                     opera_url="http://www.opera.com/" %}
+      To enjoy Mozilla's Web of Wonder, you must download one of the following modern browsers: 
+      <a href='{{firefox_url}}'>Firefox 4 Beta</a>, <a href='{{safari_url}}'>Safari</a>, 
+      <a href='{{chrome_url}}'>Chrome</a>, <a href='{{ie_url}}'>IE9</a> or 
+      <a href='{{opera_url}}'>Opera</a>.{% endtrans %}</div>";
+
+    if (! window.postMessage) document.write(compat);
+
+    {# L10n: Warning shown if user doesn't have a WebGl cabable browser. #}
+    var compat_webgl_drivers = "<div id='webgl-compatibility'><p>{% trans 
+        nvidia_url = "#",
+        amd_url = "#",
+        intel_url = "#"
+        %}Unfortunately, while your browser supports WebGL, your video drivers may be
+too old.  To view any of the demos tagged with WebGL, try updating your drivers
+at <a href='{{nvidia_url}}'>NVIDIA</a>, <a href='{{amd_url}}'>AMD</a>, and <a href='{{intel_url}}'>Intel</a>.{% endtrans %}</p>";
+
+    {# L10n: Shown after the WebGl browser or computer warning. #}
+    var compat_webgl_common = "<p>{% trans %}You can still watch screen-casts of the WebGL demos, or fully experience our other non-WebGL demos.{% endtrans %}</p>";
+
+    {# L10n: Warning shown if user doesn't have a WebGl cabable computer. #}
+    var compat_webgl_browser = "<div id='webgl-compatibility'><p>{% trans %}Unfortunately, your browser does not support WebGL.  To view any of the demos tagged with WebGL, please install an up to date web browser (&lt;&gt;&hellip;&lt;/&gt;) and up to date video card drivers.{% endtrans %}</p>";
+
+    var canvas = document.getElementById("compat-canvas"),
+        hasWebGl;
+
+    hasWebGl = function () {
+        var contexts = ['webgl', 'experimental-webgl', '3d', 'moz-webgl', 'webkit-3d'];
+        for (var i=0; i < contexts.length; i++) {
+            try {
+                gl = canvas.getContext(contexts[i]);
+                gl.viewport(0, 0, canvas.width, canvas.height);
+                return true;
+            } catch (e) {}    
+        }
+        return false;
+    };
+    var canShowWebGlBrowserMsg = true;
+    var canShowWebGlDriversMsg = true;
+    try {
+    if ('localStorage' in window && window['localStorage'] != null) {
+        console.info(localStorage['/home/webgl_browser_shown_once'] + " " +
+              localStorage['/home/webgl_drivers_shown_once']);
+        if (localStorage['/home/webgl_browser_shown_once'] == 'true') {
+            canShowWebGlBrowserMsg = false;
+        } 
+        if (localStorage['/home/webgl_drivers_shown_once'] == 'true') {
+            canShowWebGlDriversMsg = false;
+        } 
+    }} catch (e) {}
+
+    if ( hasWebGl() ) {
+        var msgType, canShowWebGl = true;
+        /* Ewh gross... but Only 2 browsers have WebGL
+           AND they have to have good video drivers */
+        if (window.navigator.userAgent.indexOf('Firefox/4') > 0 ||
+            window.navigator.userAgent.indexOf('Chrome/9')  > 0 ||
+            window.navigator.userAgent.indexOf('Chrome/10') > 0) {
+            if (canShowWebGlDriversMsg) {
+                document.write(compat_webgl_drivers);
+            } else {
+                canShowWebGl = false;
+            }
+            msgType = 'drivers';
+        } else {
+             
+            if (canShowWebGlBrowserMsg) {
+                document.write(compat_webgl_browser);
+            } else {
+                canShowWebGl = false;
+            }
+            msgType = 'browser';
+        }
+        compat_webgl_common += "<div><form id='webgl'><input id='remeber-webgl' " + 
+            "type='checkbox' value='" +  msgType + "' />" + 
+            "<label for='remeber-webgl'>{{ _("Don't show warning again.") }}</label>" + 
+            "<button>{{ _("Hide Warning") }}</button>" + 
+            "</form></div></div>";
+        console.info("canShowWebGlDriversMsg = " + canShowWebGlDriversMsg + ", canShowWebGlBrowserMsg = " + canShowWebGlBrowserMsg +
+              ", canShowWebGl=" + canShowWebGl);
+        if (canShowWebGl) {
+            document.write(compat_webgl_common);
+        }
+    }
+
+})();
+</script>
+<noscript><div id='compatibility'>{{ _("To  enjoy Mozilla's Web of Wonder, you must enable Javascript!") }}</div></noscript>

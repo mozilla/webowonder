@@ -16,7 +16,7 @@ if (typeof mozilla == 'undefined') {
     var mozilla = {};
 }
 
-mozilla.wow = function() {    
+mozilla.wow = function() {
     return {
         vars: {
           scrollSpeed: 350,
@@ -25,6 +25,7 @@ mozilla.wow = function() {
         },
         
         init: function() {
+            mozilla.wow.browserCompatibility();
             // Remove CSS class to help progressively enhance
             $('.init').removeClass('init');            
             
@@ -64,6 +65,34 @@ mozilla.wow = function() {
  * Page initialization
  */
 $(document).ready(function() { mozilla.wow.init(); });
+
+/**
+ * Browser Compatibility
+ */
+mozilla.wow.browserCompatibility = function () {
+    $('#compat-canvas').remove();
+    $('#webgl').submit(function (e) {
+        e.preventDefault();
+
+        console.info("Writing to local storage based on ", $('#remeber-webgl').val() + 
+                     "$('#remeber-webgl').attr('checked') = " + $('#remeber-webgl').attr('checked'));
+        console.info("$('#remeber-webgl').attr('checked')== " + $('#remeber-webgl').attr('checked'));
+        if ('localStorage' in window && window['localStorage'] != null &&
+            $('#remeber-webgl').attr('checked')) {
+
+            if ('browser' == $('#remeber-webgl').val()) {
+                localStorage['/home/webgl_browser_shown_once'] = 'true';
+                console.info("Writing '/home/webgl_browser_shown_once'");
+            } else if ('drivers' == $('#remeber-webgl').val()) {
+                localStorage['/home/webgl_drivers_shown_once'] = 'true';
+                console.info("Writing '/home/webgl_drivers_shown_once'");
+            }
+        } else {
+            console.info("NO LOCAL STORAGE");
+        }
+        $('#webgl-compatibility').remove();
+    });
+};
 
 /**
  * Side Scroller
