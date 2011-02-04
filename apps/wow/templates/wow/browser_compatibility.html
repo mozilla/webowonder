@@ -35,7 +35,7 @@ at <a href='{{nvidia_url}}'>NVIDIA</a>, <a href='{{amd_url}}'>AMD</a>, and <a hr
         hasWebGl;
 
     hasWebGl = function () {
-        var contexts = ['webgl', 'experimental-webgl', '3d', 'moz-webgl', 'webkit-3d'];
+        var contexts = ['webgl', 'experimental-webgl'];
         for (var i=0; i < contexts.length; i++) {
             try {
                 gl = canvas.getContext(contexts[i]);
