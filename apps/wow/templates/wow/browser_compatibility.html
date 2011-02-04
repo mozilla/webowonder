@@ -26,7 +26,10 @@ at <a href='{{nvidia_url}}'>NVIDIA</a>, <a href='{{amd_url}}'>AMD</a>, and <a hr
     var compat_webgl_common = "<p>{% trans %}You can still watch screen-casts of the WebGL demos, or fully experience our other non-WebGL demos.{% endtrans %}</p>";
 
     {# L10n: Warning shown if user doesn't have a WebGl cabable computer. #}
-    var compat_webgl_browser = "<div id='webgl-compatibility'><p>{% trans %}Unfortunately, your browser does not support WebGL.  To view any of the demos tagged with WebGL, please install an up to date web browser (&lt;&gt;&hellip;&lt;/&gt;) and up to date video card drivers.{% endtrans %}</p>";
+    var compat_webgl_browser = "<div id='webgl-compatibility'><p>{% trans 
+                firefox_url = "http://mozilla.com/firefox/beta",
+                chrome_url = "http://www.google.com/intl/en/landing/chrome/beta/"
+        %}Unfortunately, your browser does not support WebGL.  To view any of the demos tagged with WebGL, please install an up to date web browser (<a href='{{firefox_url}}'>Firefox 4</a> or <a href='{{chrome_url}}'>Chrome 9</a>) and up to date video card drivers.{% endtrans %}</p>";
 
     var canvas = document.getElementById("compat-canvas"),
         hasWebGl;
