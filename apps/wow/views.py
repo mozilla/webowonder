@@ -126,7 +126,7 @@ def category(demo):
         'AR_photobooth': 'video',
         'dashboard': 'html5',
         'debug': 'html5',
-        'dj_kraddy': 'webgl',
+        'nocomply': 'webgl',
         'double_ui': 'design',
         'flight-of-the-navigator': 'webgl',
         'globetweeter': 'webgl',
