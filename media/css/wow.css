@@ -1211,7 +1211,9 @@ div.chain-3 {
         line-height: 1.5;
         text-align: left;
     }
-
+    #webgl-compatibility button {
+        margin-left: 10px;
+    }
 #webgl-compatibility a, #compatibility a { color: #c90; font-weight: bold; text-decoration: none; }
 		
 /* For displaying the page without webfonts */
