@@ -4,14 +4,25 @@
   <p>{% trans %} If you want to be one of the first to submit your demo to the Demo Studio,  get started now and we'll contact you when it's ready.{% endtrans %}</p>
 
   <form action="https://spreadsheets.google.com/formResponse?formkey=dGdoVzl2dUdod1g0WjBpMllWa0hmU1E6MQ&amp;embedded=true&amp;ifq" method="POST" target="_new">
-    <label for="entry_0">{{ _('Email:') }}</label>
-    <input type="text" name="entry.0.single" value="" id="entry_0">
+    <div id="email_feild">
+      <label for="entry_0">{{ _('Your email address:') }}</label>
+      <input type="email" name="entry.0.single" value="" id="entry_0">
+    </div>
+    <div>
+      <input id="optin" type="checkbox" name="optin" value="yes" />
+      <label id="optin-label" for="optin">{{ _("I agree to the <a href='{0}'>Mozilla Privacy Policy</a>")|fe('https://www.mozilla.com/en-US/privacy-policy') }}</label> 
+    </div>
+    <div>
     <input type="hidden" name="pageNumber" value="0">
     <input type="hidden" name="backupCache" value="">
-    <input type="submit" name="submit" value="Submit">
+    <p id="opt-in-req" class="error" style="display:none">{{ _('Please read the Mozilla Privacy Policy and agree by checking the box.') }}</p>
+    <input type="submit" name="submit" value="{{ _('Keep me Updated!') }}">
+
+    <p class="legal">{{ _('We will only send you Mozilla-related information.') }}</p>
+    </div>
   </form>
 
-  <p>{{_("Here's what you need to know before you get started&hellip;")}}</p>
+  <p>{{_("Here's what you need to know before you get started&hellip;")|safe}}</p>
 
   <section>
     <h2>{{_('Before You Begin') }}</h2>

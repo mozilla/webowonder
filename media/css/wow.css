@@ -1189,9 +1189,25 @@ div.chain-3 {
         border-bottom: dotted 1px #BBD;
         line-height: 1.5;
         margin: 0px 10px;
-        padding: 5px;
     }
-		
+    #submit-demo form {
+        padding: 10px;
+    }
+    #submit-demo form div {
+        clear: left;
+        margin: 5px 0px 5px 170px;
+    }
+    #submit-demo form div#email_feild {
+        margin: 5px 0px;
+    }
+    #submit-demo #optin-label {
+        width: 170px;
+        float: none;
+    }
+    #submit-demo .legal {
+        margin-top: 10px;
+        font-size: 80%;
+    }
 /* Browser Compatibility */
 #webgl-compatibility, #compatibility {
 	background-color: #310d01;
