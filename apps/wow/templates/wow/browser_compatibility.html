@@ -1,17 +1,11 @@
     <canvas id='compat-canvas' style='border: none; position:absolute; left:0px; display:none; top:-10px' width='1' height='1'></canvas>
 <script>
     (function () {
-    var compat = "<div id='compatibility'>{% trans firefox_url="http://www.mozilla.com/firefox/beta/",
-                                     safari_url="http://www.apple.com/safari/",
-                                     chrome_url="http://www.google.com/chrome/",
-                                     ie_url="http://www.microsoft.com/ie9",
-                                     opera_url="http://www.opera.com/" %}
-      To enjoy Mozilla's Web of Wonder, you must download one of the following modern browsers: 
-      <a href='{{firefox_url}}'>Firefox 4 Beta</a>, <a href='{{safari_url}}'>Safari</a>, 
-      <a href='{{chrome_url}}'>Chrome</a>, <a href='{{ie_url}}'>IE9</a> or 
-      <a href='{{opera_url}}'>Opera</a>.{% endtrans %}</div>";
+    var compat = "<div id='compatibility'>";
+    compat += "{{ _("To enjoy Mozilla's Web of Wonder, you must download one of the following modern browsers:") }}";
+    compat += "<ul id='browser-compat-list'><li><a href='http://www.mozilla.com/firefox/beta/'>Firefox 4 Beta</a></li><li><a href='http://www.google.com/chrome/beta'>Chrome 9</a></li></ul></div>";
 
-    if (! window.postMessage) document.write(compat);
+    if ( window.postMessage) document.write(compat);
 
     {# L10n: Warning shown if user doesn't have a WebGl cabable browser. #}
     var compat_webgl_drivers = "<div id='webgl-compatibility'><p>{% trans 
