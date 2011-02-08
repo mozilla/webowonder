@@ -341,7 +341,8 @@ mozilla.wow.demoEvents = function() {
     function _showViewport() {
         // Animate the tickets
         $('#magic-tickets').animate({opacity: 0.5, top: '-50px'}, 500, function() {
-           $('#demo-viewport').fadeIn('slow', function() {
+            $('#demo-viewport').fadeIn('slow', function() {
+               $(this).css('visibility', 'visible');
                // Hide the loading
                $('.loading').hide();
                
@@ -355,7 +356,7 @@ mozilla.wow.demoEvents = function() {
                setTimeout(function() {
                    $('#demo-viewport').get(0).contentWindow.postMessage('start_demo', '*');    
                }, 750);
-           });                               
+           });
        });
     }
     
@@ -367,6 +368,7 @@ mozilla.wow.demoEvents = function() {
                            .css({opacity: 1.0, top: '0px'});
         
         $('#demo-viewport').attr('src', '').fadeOut('slow', function() {
+            $(this).css('visibility', 'hidden');
             $('body').removeClass('demoing'); 
         });  
     }
