@@ -116,7 +116,7 @@ def screencast(request, slug):
     return _show_video(request, slug, 'screencasts')
 
 def documentary(request, slug):
-    return _show_video(request, slug, 'documentary')
+    return _show_video(request, slug, 'documentaries')
 
 ########################### Helper functions ########################
 
@@ -154,9 +154,9 @@ def _collect(authors, c):
     authors.append( (c.details.username, c.details.get_full_name(), ))
 
 def _show_video(request, slug, videoType):
-    if not videoType in ['documentary', 'screencasts']:
+    if not videoType in ['documentaries', 'screencasts']:
         raise Exception("Invalid type of video")
-    if 'documentary' == videoType:
+    if 'documentaries' == videoType:
         fileName ='documentary'
     else:
         fileName ='screencast'
