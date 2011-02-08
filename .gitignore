@@ -11,6 +11,8 @@ build.py
 *-min.js
 *-all.js
 vendor
+locale
 .noseids
 tmp/*
 *~
+*.log
