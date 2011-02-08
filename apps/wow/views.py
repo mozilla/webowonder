@@ -124,7 +124,7 @@ def category(demo):
     """ TODO understand MDN's category approach
         HTML5, Design, Video, webgl """
     categories = {
-        'AR_models': 'video',
+        'remixingreality': 'video',
         'AR_photobooth': 'video',
         'dashboard': 'html5',
         'debug': 'html5',
