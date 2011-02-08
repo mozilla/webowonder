@@ -3,9 +3,9 @@
     (function () {
     var compat = "<div id='compatibility'>";
     compat += "{{ _("To enjoy Mozilla's Web of Wonder, you must download one of the following cutting edge browsers:") }}";
-    compat += "<ul id='browser-compat-list'><li><a href='http://www.mozilla.com/firefox/beta/'>Firefox 4 Beta</a></li><li><a href='http://www.google.com/chrome/beta'>Chrome 9</a></li></ul></div>";
+    compat += "<ul id='browser-compat-list'><li><a href='{{firefox_download}}'>Firefox 4 Beta</a></li><li><a href='{{chrome_download}}'>Chrome 9</a></li></ul></div>";
 
-    if ( window.postMessage) document.write(compat);
+    if (! window.postMessage) document.write(compat);
 
     {# L10n: Warning shown if user doesn't have a WebGl cabable browser. #}
     var compat_webgl_drivers = "<div id='webgl-compatibility'><p>{% trans 
@@ -21,9 +21,7 @@ at <a href='{{nvidia_url}}'>NVIDIA</a>, <a href='{{amd_url}}'>AMD</a>, and <a hr
 
     {# L10n: Warning shown if user doesn't have a WebGl cabable computer. #}
     var compat_webgl_browser = "<div id='webgl-compatibility'><p>{% trans 
-                firefox_url = "http://mozilla.com/firefox/beta",
-                chrome_url = "http://www.google.com/intl/en/landing/chrome/beta/"
-        %}Unfortunately, your browser does not support WebGL.  To view any of the demos tagged with WebGL, please install an up-to-date web browser (<a href='{{firefox_url}}'>Firefox 4</a> or <a href='{{chrome_url}}'>Chrome 9</a>) and up to date video card drivers.{% endtrans %}</p>";
+        %}Unfortunately, your browser does not support WebGL.  To view any of the demos tagged with WebGL, please install an up-to-date web browser (<a href='{{firefox_download}}'>Firefox 4 Beta</a> or <a href='{{chrome_download}}'>Chrome 9</a>) and up to date video card drivers.{% endtrans %}</p>";
 
     var canvas = document.getElementById("compat-canvas"),
         hasWebGl;

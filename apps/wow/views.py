@@ -55,7 +55,9 @@ def home(request):
     global tags
     data = {'demos': Submission.objects.filter(hidden=False),
             'share_url': 'https://demos.mozilla.org/',
-            'mozillademos_host': settings.DEMOLAND}
+            'mozillademos_host': settings.DEMOLAND,
+            'firefox_download': 'http://www.mozilla.com/firefox/beta/',
+            'chrome_download': 'http://www.google.com/landing/chrome/beta',}
 
     desktop_only = _('Desktop Only')
     mobile_only = _('Mobile Only')
