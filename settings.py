@@ -108,6 +108,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 TEMPLATE_DIRS = (
     path('templates'),
+    path('apps/responsys/templates'),
 )
 
 def JINJA_CONFIG():
@@ -232,6 +233,12 @@ AUTHENTICATION_BACKENDS = ('django_sha2.auth.Sha512Backend',)
 
 ## Tests
 TEST_RUNNER = 'test_utils.runner.RadicalTestSuiteRunner'
+
+# default Responsys campaign id typically used for every newsletter
+RESPONSYS = {
+    'ID': 'X0Gzc2X%3DUQpglLjHJlTQTtQyTQ3qQ0OQQzgQvQviRVwjpnpgHlpgneHmgJoXX0Gzc2X%3DUQpglLjHJlTQTtQyTQ3qQ0NQQGQvQvH3',
+    'CAMPAIGN_ID': 'MDN_DEMO_ROOM_LAUNCH'
+}
 
 ## Celery
 BROKER_HOST = 'localhost'

@@ -3,19 +3,18 @@
 
   <p>{% trans %} If you want to be one of the first to submit your demo to the Demo Studio,  get started now and we'll contact you when it's ready.{% endtrans %}</p>
 
-  <form action="https://spreadsheets.google.com/formResponse?formkey=dGdoVzl2dUdod1g0WjBpMllWa0hmU1E6MQ&amp;embedded=true&amp;ifq" method="POST" target="_new">
+  <form action="{{ url('responsys_subscribe') }}" method="POST">
     <div id="email_feild">
-      <label for="entry_0">{{ _('Your email address:') }}</label>
-      <input type="email" name="entry.0.single" value="" id="entry_0">
+      <label for="id_email">{{ _('Your email address:') }}</label>
+      <input type="email" name="email" value="" id="id_email" required>
     </div>
     <div>
-      <input id="optin" type="checkbox" name="optin" value="yes" />
-      <label id="optin-label" for="optin">{{ _("I agree to the <a href='{0}'>Mozilla Privacy Policy</a>")|fe('https://www.mozilla.com/en-US/privacy-policy') }}</label> 
+      <input id="id_optin" type="checkbox" name="optin" value="yes" />
+      <label id="optin-label" for="id_optin">{{ _("I agree to the <a href='{0}'>Mozilla Privacy Policy</a>")|fe('https://www.mozilla.com/en-US/privacy-policy') }}</label> 
     </div>
     <div>
-    <input type="hidden" name="pageNumber" value="0">
-    <input type="hidden" name="backupCache" value="">
     <p id="opt-in-req" class="error" style="display:none">{{ _('Please read the Mozilla Privacy Policy and agree by checking the box.') }}</p>
+    {{ csrf() }}
     <input type="submit" name="submit" value="{{ _('Keep me Updated!') }}">
 
     <p class="legal">{{ _('We will only send you Mozilla-related information.') }}</p>
