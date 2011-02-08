@@ -97,7 +97,7 @@ def home(request):
             deets = DemoDetails(demo=demo)
             deets.save()
         
-        authors = [(demo.creator.username, demo.creator.get_full_name(), )]
+        authors = [(demo.creator.userprofile_set.all()[0].homepage, demo.creator.get_full_name(), )]
 
         [_collect(authors, c) for c in demo.collaborator_set.all()]
 
@@ -147,11 +147,11 @@ def category(demo):
 
 def _format_author(url, full_name):
     """ Helper function to make author link """
-    return u"<a class='more-info' href='http://github.com/%s'>%s</a>" % (url,  full_name)
+    return u"<a class='more-info' href='%s'>%s</a>" % (url,  full_name)
 
 def _collect(authors, c):
     """ Helper function that appends the a collaborator to the list """
-    authors.append( (c.details.username, c.details.get_full_name(), ))
+    authors.append( (c.details.userprofile_set.all()[0].homepage, c.details.get_full_name(), ))
 
 def _show_video(request, slug, videoType):
     if not videoType in ['documentaries', 'screencasts']:

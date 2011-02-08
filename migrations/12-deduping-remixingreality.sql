@@ -1,0 +1,1 @@
+DELETE FROM wow_collaborator WHERE demo_id = 3 AND details_id = 4;

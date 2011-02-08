@@ -51,3 +51,31 @@ def get_root_for_submission(instance):
     c_name = instance.creator.username
     return 'uploads/demos/%(h1)s/%(h2)s/%(username)s/%(slug)s' % dict(
          h1=c_name[0], h2=c_name[1], username=c_name, slug=instance.slug,)
+
+class UserProfile(models.Model):
+    """
+    Want to track some data that isn't in dekiwiki's db?
+    This is the proper grab bag for user profile info.
+
+    Also, dekicompat middleware and backends use this 
+    class to find Django user objects.
+
+    The UserProfile *must* exist for each 
+    django.contrib.auth.models.User object. This may be relaxed
+    once Dekiwiki isn't the definitive db for user info.
+    """
+    # This could be a ForeignKey, except wikidb might be
+    # a different db
+    deki_user_id = models.PositiveIntegerField(default=0,
+                                               editable=False)
+    homepage = models.URLField(max_length=255, blank=True, default='',
+                               verify_exists=False)
+    # Duplicates phpBB's location field, but it's days are numbered
+    location = models.CharField(max_length=255, default='', blank=True)
+    user = models.ForeignKey(User, null=True, editable=False, blank=True)
+    
+    class Meta:
+        db_table = 'user_profiles'
+
+    def __unicode__(self):
+        return '%s: %s' % (self.id, self.deki_user_id)
