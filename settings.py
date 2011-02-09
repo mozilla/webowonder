@@ -47,7 +47,7 @@ USE_L10N = True
 LANGUAGE_CODE = 'en-US'
 
 # Accepted locales
-KNOWN_LANGUAGES = ('en-US','de',)
+KNOWN_LANGUAGES = ('en-US','de','pl')
 
 # List of RTL locales known to this project. Subset of LANGUAGES.
 RTL_LANGUAGES = ()  # ('ar', 'fa', 'fa-IR', 'he')
