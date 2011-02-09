@@ -58,6 +58,8 @@ mozilla.wow = function() {
                 });
             $('a.cbox-submit').colorbox();
 
+            mozilla.wow.cher();
+
             mozilla.wow.comingSoon();
         }
     };
@@ -124,13 +126,17 @@ mozilla.wow.sideScroller = function() {
                 });
     }
     
-    function _moveByLeap(nextCard) {        
+    function _moveByLeap(nextCard) {
+        
         var selectedCard = $('.demo.selected'),
-            offsetDiff = selectedCard.offset().left - nextCard.offset().left,
+            offsetDiff, moveBy;
+        if (selectedCard.size() > 0) {
+            offsetDiff = selectedCard.offset().left - nextCard.offset().left;
             moveBy = parseInt($('#demos-inner').css('marginLeft')) + offsetDiff;
                         
             // Animate
             _animateCards(nextCard, moveBy);
+        }
     }
     
     // Move the cards left or right, and set the selected class    
@@ -493,6 +499,38 @@ mozilla.wow.lightsdown = function() {
             spot.show();
             $(window).bind('mousemove', _moveSpot);
        }
+    });
+};
+
+mozilla.wow.cher = function () {
+    var _share = function (h, url_key, text_key, extras) {
+        try {
+            var  d = document,
+                 
+                 url = d.location.href,
+                 e = encodeURIComponent,
+                 text = $(this).parents('.demo').find('.demo-info h1').text(),
+                 l = '?' + url_key + '=' + e(url)+'&' + text_key + '=' + e(text),
+                 fn;
+            
+            if (extras) {
+                for (k in extras) {
+                    l += '&' + k + '=' + e(extras[k]);
+                }
+            }
+            console.info(l);
+            fn  = function()  {
+                window.open(h + l, 'sharer', 'toolbar=0, status=0, resizable=1, width=626, height=436');
+            };
+            setTimeout(fn,0);
+        } catch (doh) {window.console && console.info(doh);}
+        return false;
+    };
+    $('.social-media.twitter').click(function (e) {
+            return _share.call(this, 'http://twitter.com/share', 'url', 'text', {via: 'firefox', counturl: 'http://demos.mozilla.org/'});
+    });
+    $('.social-media.facebook').click(function (e) {
+            return _share.call(this, 'http://www.facebook.com/sharer.php', 'u', 't');
     });
 };
 
