@@ -33,3 +33,9 @@ DEBUG = TEMPLATE_DEBUG = True
 
 # URL which is a prefix for demos from the demo server
 DEMOLAND = 'https://stage.mozillademos.org/'
+
+# default Responsys campaign id typically used for every newsletter
+RESPONSYS = {
+    'ID': '<insert sekrit responsys key here>',
+    'CAMPAIGN_ID': 'MDN_DEMO_ROOM_LAUNCH'
+}
