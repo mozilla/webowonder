@@ -3,7 +3,7 @@
 
   <p>{% trans %} If you want to be one of the first to submit your demo to the Demo Studio,  get started now and we'll contact you when it's ready.{% endtrans %}</p>
 
-  <form action="{{ url('responsys_subscribe') }}" method="POST">
+  <form id="dr_launch_email" action="{{ url('responsys_subscribe') }}" method="POST">
     <div id="email_feild">
       <label for="id_email">{{ _('Your email address:') }}</label>
       <input type="email" name="email" value="" id="id_email" required>

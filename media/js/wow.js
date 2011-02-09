@@ -57,6 +57,8 @@ mozilla.wow = function() {
                                 title: $(this).attr('title')});
                 });
             $('a.cbox-submit').colorbox();
+
+            mozilla.wow.comingSoon();
         }
     };
 }();
@@ -74,21 +76,14 @@ mozilla.wow.browserCompatibility = function () {
     $('#webgl').submit(function (e) {
         e.preventDefault();
 
-        console.info("Writing to local storage based on ", $('#remeber-webgl').val() + 
-                     "$('#remeber-webgl').attr('checked') = " + $('#remeber-webgl').attr('checked'));
-        console.info("$('#remeber-webgl').attr('checked')== " + $('#remeber-webgl').attr('checked'));
         if ('localStorage' in window && window['localStorage'] != null &&
             $('#remeber-webgl').attr('checked')) {
 
             if ('browser' == $('#remeber-webgl').val()) {
                 localStorage['/home/webgl_browser_shown_once'] = 'true';
-                console.info("Writing '/home/webgl_browser_shown_once'");
             } else if ('drivers' == $('#remeber-webgl').val()) {
                 localStorage['/home/webgl_drivers_shown_once'] = 'true';
-                console.info("Writing '/home/webgl_drivers_shown_once'");
             }
-        } else {
-            console.info("NO LOCAL STORAGE");
         }
         $('#webgl-compatibility').remove();
     });
@@ -498,6 +493,18 @@ mozilla.wow.lightsdown = function() {
             spot.show();
             $(window).bind('mousemove', _moveSpot);
        }
+    });
+};
+
+mozilla.wow.comingSoon = function () {
+    $('#dr_launch_email').live('submit', function (e) {
+        if (! $('#id_optin').attr('checked')) {
+            $('#opt-in-req').fadeOut('fast', function () {
+                    $('#opt-in-req').fadeIn('slow');
+                });
+            return false;
+        }
+        return true;
     });
 };
 

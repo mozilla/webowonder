@@ -26,11 +26,7 @@ except AttributeError:
     from . import responsys
 
 def subscribe(request):
-    """ Subscribe a new email address 
-        TODO Q: What happends if region/country is blank?
-                How do we test this stuff? is there a stage
-                url besides awesomeness.m.c?
-    """
+    """ Subscribe a new email address to our contact list """
     form = forms.EmailSubscribeForm(request.POST or None)
 
     if request.method == 'POST':

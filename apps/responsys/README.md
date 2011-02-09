@@ -1,5 +1,11 @@
 This code was liberated from jlongster's fine zamboni fork.
 
+--------------------------------------------------
+This README is an intermediate step... this should
+all be pulled out of apps/responsys into it's own
+git repo.
+---------------------------------------------------
+
 This small library provides:
 
 * A library for subscribing email addresses to our contact list
