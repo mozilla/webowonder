@@ -133,12 +133,12 @@ def JINJA_CONFIG():
 # and js files that can be bundled together by the minify app.
 MINIFY_BUNDLES = {
     'css': {
-        'wow_css': (
+        'wow': (
             'css/wow.css',
         ),
     },
     'js': {
-        'example_js': (
+        'wow': (
             'js/libs/jquery-1.4.4.min.js',
             'js/jquery.colorbox.min.js',
             'js/jquery.quicksand.min.js',
@@ -233,12 +233,6 @@ AUTHENTICATION_BACKENDS = ('django_sha2.auth.Sha512Backend',)
 
 ## Tests
 TEST_RUNNER = 'test_utils.runner.RadicalTestSuiteRunner'
-
-# default Responsys campaign id typically used for every newsletter
-RESPONSYS = {
-    'ID': 'X0Gzc2X%3DUQpglLjHJlTQTtQyTQ3qQ0OQQzgQvQviRVwjpnpgHlpgneHmgJoXX0Gzc2X%3DUQpglLjHJlTQTtQyTQ3qQ0NQQGQvQvH3',
-    'CAMPAIGN_ID': 'MDN_DEMO_ROOM_LAUNCH'
-}
 
 ## Celery
 BROKER_HOST = 'localhost'

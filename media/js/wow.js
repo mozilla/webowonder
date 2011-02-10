@@ -514,7 +514,7 @@ mozilla.wow.cher = function () {
                  fn;
             
             if (extras) {
-                for (k in extras) {
+                for (var k in extras) {
                     l += '&' + k + '=' + e(extras[k]);
                 }
             }
