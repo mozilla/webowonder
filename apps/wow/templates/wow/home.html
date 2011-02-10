@@ -52,7 +52,7 @@
 				</div>
 			</div>
 {% for demo in demos %}
-			<div data-hash="{{demo.slug}}" class="demo {{demo.category}} {%if loop.first %}selected{% endif %} init">
+			<div id="{{demo.slug}}" data-hash="{{demo.slug}}" class="demo {{demo.category}} {%if loop.first %}selected{% endif %} init">
 				<div class="demo-inner"><!-- TODO L10n map categories -->
 					<div class="flag">{{demo.category}}</div>
 					<a href="#" class="flip-card-back">{{ _('Hide Info') }}</a>
