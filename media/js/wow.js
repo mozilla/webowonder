@@ -411,7 +411,7 @@ mozilla.wow.demoEvents = function() {
     function _handleEvents(e) {
        if ('loaded' == e.data) { _showViewport(); }
        else if ('finished_exit' == e.data || 'exiting' == e.data) { _hideViewport(); }
-       else if ('hide_exit_ui') { $('#magic-tickets').hide(); }
+       else if ('hide_exit_ui') { $('#magic-tickets').css({top: '-50px', opacity: 0.5}); }
        else if ('show_exit_ui') { $('#magic-tickets').show(); }
     }
     if ( window['addEventListener'] ) {
@@ -506,15 +506,15 @@ mozilla.wow.cher = function () {
     var _share = function (h, url_key, text_key, extras) {
         try {
             var  d = document,
-                 
                  url = d.location.href,
                  e = encodeURIComponent,
                  text = $(this).parents('.demo').find('.demo-info h1').text(),
                  l = '?' + url_key + '=' + e(url)+'&' + text_key + '=' + e(text),
+                 k,
                  fn;
             
             if (extras) {
-                for (var k in extras) {
+                for (k in extras) {
                     l += '&' + k + '=' + e(extras[k]);
                 }
             }
