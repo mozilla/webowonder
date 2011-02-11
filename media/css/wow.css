@@ -818,7 +818,7 @@ div.chain-3 {
 		text-indent: -100000px;
 		/*background: url(/media/img/non-sprited/icon-social.png) 0 0 no-repeat;*/
 		background: url(/media/img/sprite.png) 0px -1119px no-repeat;
-		margin: 6px 0 0 24px;
+		margin: 6px 0 0 30px;
 		opacity: 0.5;
 		text-decoration: none !important;
 	}
@@ -828,7 +828,7 @@ div.chain-3 {
 		}
 	
 	.facebook {
-		margin-left: 0;
+		margin-left: 21px;
 	}
 	
 		.flipped .facebook {
