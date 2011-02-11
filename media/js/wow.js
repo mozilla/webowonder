@@ -341,7 +341,9 @@ mozilla.wow.demoEvents = function() {
     // Show/hide viewport
     function _showViewport() {
         // Animate the tickets
+        _showViewport.hiding = true;
         $('#magic-tickets').animate({opacity: 0.5, top: '-50px'}, 500, function() {
+            _showViewport.hiding = false;
             $('#demo-viewport').fadeIn('slow', function() {
                $(this).css('visibility', 'visible');
                // Hide the loading
@@ -409,10 +411,16 @@ mozilla.wow.demoEvents = function() {
     
     // Listen for events
     function _handleEvents(e) {
-       if ('loaded' == e.data) { _showViewport(); }
-       else if ('finished_exit' == e.data || 'exiting' == e.data) { _hideViewport(); }
-       else if ('hide_exit_ui') { $('#magic-tickets').css({top: '-50px', opacity: 0.5}); }
-       else if ('show_exit_ui') { $('#magic-tickets').show(); }
+       if ('loaded' == e.data) { _showViewport(); 
+       } else if ('finished_exit' == e.data || 'exiting' == e.data) { 
+           _hideViewport(); 
+       } else if ('hide_exit_ui') {
+           if (false ==_showViewport.hiding) {
+               $('#magic-tickets').css({top: '-50px', opacity: 0.5}); 
+           }
+       } else if ('show_exit_ui') { 
+           $('#magic-tickets').show(); 
+       }
     }
     if ( window['addEventListener'] ) {
         window.addEventListener('message', _handleEvents, false);
@@ -518,7 +526,6 @@ mozilla.wow.cher = function () {
                     l += '&' + k + '=' + e(extras[k]);
                 }
             }
-            console.info(l);
             fn  = function()  {
                 window.open(h + l, 'sharer', 'toolbar=0, status=0, resizable=1, width=626, height=436');
             };
