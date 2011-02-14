@@ -401,8 +401,6 @@ mozilla.wow.demoEvents = function() {
         // Add a mutex class
         $('body').addClass('demoing');
 
-        console.info("Going to ",  $(this).attr('href'));
-
         // Support back button to cancel demo
         //SO TODO ... if we put demos on demos.mozilla.org 
         //          then we could do this:
