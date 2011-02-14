@@ -8,6 +8,8 @@ import jingo
 from tower import ugettext as _
 
 from django.conf import settings
+from django.http import HttpResponse
+from django.views.decorators.cache import cache_page
 
 from demos.models import Submission
 from wow.models import DemoDetails
@@ -51,6 +53,7 @@ tags = {
                     _('XMLHttpRequest')),
 }
 
+@cache_page(60 * 15) # 15 minutes
 def home(request):
     global tags
     data = {'demos': Submission.objects.filter(hidden=False),
@@ -107,16 +110,82 @@ def home(request):
 
     return jingo.render(request, 'wow/home.html', data)
 
+@cache_page(60 * 15) # 15 minutes
+def home_no_iframe(request):
+    global tags
+    data = {'demos': Submission.objects.filter(hidden=False),
+            'share_url': 'https://demos.mozilla.org/',
+            'mozillademos_host': settings.DEMOLAND,
+            'firefox_download': 'http://www.mozilla.com/firefox/beta/',
+            'chrome_download': 'http://www.google.com/landing/chrome/beta',}
+
+    desktop_only = _('Desktop Only')
+    mobile_only = _('Mobile Only')
+
+    for demo in data['demos']:
+
+        ltags = [(tags[x.strip()][0], tags[x.strip()][1],) for x in demo.tags.split(',')]
+        tag_pairs = list(itertools.chain(*ltags))
+
+        # This may be ugly to a programmer, but the simplicity
+        # is for ease of L10n. Please don't make this more terse
+        copy = None
+        if len(ltags) == 1:
+            # L10n {1} is a tag like HTML5 or GeoLocation {0} is a url
+            copy = _("Built with <a href='{0}'>{1}</a>.")
+        elif len(ltags) == 2:
+            # L10n {1} and {3} are tags like HTML5 and GeoLocation, {0} and {2} are urls
+            copy = _("Built with <a href='{0}'>{1}</a> and <a href='{2}'>{3}</a>.")
+        elif len(ltags) == 3:
+            copy = _("Built with <a href='{0}'>{1}</a>, <a href='{2}'>{3}</a> and <a href='{4}'>{5}</a>.")
+        elif len(ltags) == 4:
+            copy = _("Built with <a href='{0}'>{1}</a>, <a href='{2}'>{3}</a>, <a href='{4}'>{5}</a> and <a href='{6}'>{7}</a>.")
+        elif len(ltags) == 5:
+            copy = _("Built with <a href='{0}'>{1}</a>, <a href='{2}'>{3}</a>, <a href='{4}'>{5}</a>, <a href='{6}'>{7}</a> and <a href='{8}'>{9}</a>.")
+
+        if copy:
+            demo.tag_copy = copy.format(*tag_pairs)
+
+        # L10n {0} is the title of a demo
+        demo.video_title = _(u'The Making of {0}').format(demo.title)
+        # TODO new db field
+        
+        demo.video_description = None
+        try:
+            demo.video_description = demo.demodetails.documentary_description
+        except DemoDetails.DoesNotExist:
+            deets = DemoDetails(demo=demo)
+            deets.save()
+        
+        authors = [(demo.creator.userprofile_set.all()[0].homepage, demo.creator.get_full_name(), )]
+
+        [_collect(authors, c) for c in demo.collaborator_set.all()]
+
+        formatted_authors = [_format_author(a[0], a[1]) for a in authors]
+        demo.by_authors = _(u"by {0}").format(", ".join(formatted_authors))
+        demo.category = category(demo)
+
+    return jingo.render(request, 'wow/home_no_iframe.html', data)
+
+@cache_page(60 * 60 * 24) # one day
 def submit_demo(request):
     """ Collects email addresses or intersticial to MDN Demo Studio. """
     return jingo.render(request, 'wow/coming_soon.html', {})
     #return jingo.render(request, 'wow/submit.html', {})
 
+@cache_page(60 * 60 * 24) # one day
 def screencast(request, slug):
     return _show_video(request, slug, 'screencasts')
 
+@cache_page(60 * 60 * 24) # one day
 def documentary(request, slug):
     return _show_video(request, slug, 'documentaries')
+
+@cache_page(60 * 60 * 24) # one day
+def robots(request):
+    resp = HttpResponse("User-agent: *\n")
+    resp['X-Foo'] = "bar"
+    return resp
 
 ########################### Helper functions ########################
 

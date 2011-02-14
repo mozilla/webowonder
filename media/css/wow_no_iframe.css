@@ -1,0 +1,1267 @@
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+/**
+ * Mozilla Web O'pen Wonder Stylesheeet
+ *
+ * Initial version created by Weightshift
+ * http://weightshift.com/
+ *
+ * @copyright 2011 Mozilla Corporation
+ * @license   http://www.mozilla.org/MPL/ Mozilla Public License
+ */
+
+/* Reset */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}:focus{outline:0;}ins{text-decoration:none;}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0;}
+
+/* @font-face declarations -- do not change!!! */
+@font-face {
+	font-family: 'LeagueGothicRegular';
+	src: url('/media/fonts/League_Gothic-webfont.eot');
+	src: local('☺'), url('/media/fonts/League_Gothic-webfont.woff') format('woff'), url('/media/fonts/League_Gothic-webfont.ttf') format('truetype'), url('/media/fonts/League_Gothic-webfont.svg#webfontpm5EArBj') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ChunkFiveRegular';
+	src: url('/media/fonts/Chunkfive-webfont.eot');
+	src: local('☺'), url('/media/fonts/Chunkfive-webfont.woff') format('woff'), url('/media/fonts/Chunkfive-webfont.ttf') format('truetype'), url('/media/fonts/Chunkfive-webfont.svg#webfontr824sA59') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CopseRegular';
+	src: url('/media/fonts/Copse-Regular-webfont.eot');
+	src: local('☺'), url('/media/fonts/Copse-Regular-webfont.woff') format('woff'), url('/media/fonts/Copse-Regular-webfont.ttf') format('truetype'), url('/media/fonts/Copse-Regular-webfont.svg#webfont2ZLDIqTa') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* end @font-face declarations -- do not change!!! */
+
+/* HTML5 elements must be set to block because they have no inherent display setting */
+header, nav, section, article, aside, footer {
+	display: block;
+}
+
+html,body {
+	height: 100%;
+	font-size: 14.99px;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+	background: url(/media/img/bg-main-top.png) 0 0 repeat-x,
+				url(/media/img/bg-harlequin.png) 0 0 repeat;
+	min-height: 700px;
+	font-size: 1em;
+	line-height: 1em;
+	-webkit-font-smoothing: antialiased;
+}
+
+a:hover {
+	-moz-transition: all 0.1s linear;
+	-webkit-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+
+#page-container {
+	min-width: 960px;
+	max-width: 100%;
+	min-height: 700px;
+	height: 100%;
+	position: relative;
+	background: url(/media/img/bg-top-hat.png) center bottom no-repeat,
+				url(/media/img/bg-pole.png) center top repeat-y,
+				/*url(/media/img/bg-main-stains.png) center top no-repeat,*/
+				/*url(/media/img/bg-main-bottom.png) left bottom repeat-x,*/
+				url(/media/img/bg-medallion.png) center top no-repeat;
+}
+
+#header {
+	width: 750px;
+	height: 220px;
+	margin: 0 auto;
+	background: url(/media/img/logo-web-o-wonder.png) center top  no-repeat;
+}
+
+	#home-link {
+		display: block;
+		height: 113px;
+		width: 575px;
+		margin-left: 87px;
+		padding-top: 17px;
+		font-family: "ChunkFiveRegular", serif;
+		color: #cac0a5;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		text-shadow: 1px 1px 3px #000;
+	}
+
+#navigation {
+	width: 750px;
+	padding-top: 4px;
+	background: url(/media/img/non-sprited/bg-nav.png) 0 0 no-repeat;
+	float: left;
+}	
+		#navigation li {
+			float: left;
+			font-size: 1.2em;
+			line-height: 1.2em;
+			color: #fff;
+			text-transform: uppercase;
+			text-shadow: 1px 1px 0 #000;
+		}
+			
+			#navigation .see-types {
+				font-family: "LeagueGothicRegular", sans-serif;
+				padding: 10px 45px 0 0;
+				margin-left: 96px;
+				letter-spacing: 0.5px;
+				/*background: url(/media/img/non-sprited/bg-see-types.png) right 13px no-repeat;*/
+				background: url(/media/img/sprite.png) 32px -1431px no-repeat;
+			}
+		
+		#navigation a {
+			font-family: "ChunkFiveRegular", serif;
+			color: #fff6e1;
+			display: block;
+			border-left: 1px dotted #333;
+			padding: 11px 32px;
+			text-decoration: none;
+			letter-spacing: 2px;
+			background-position: center 30px;
+			background-repeat: no-repeat;
+		}
+		#navigation a:hover, #navigation a.selected {
+  			text-shadow: 2px 2px 3px #333;
+  			background-image: url(/media/img/non-sprited/nav-selected.png);
+		}
+		
+	#twitter {
+		float: right;
+		margin-right: -90px;
+		padding-top: 95px;
+		background: url(/media/img/chain-1.png) top center no-repeat;
+	}
+		
+		#twitter iframe {
+			-moz-transform: rotate(4deg);
+			-webkit-transform: rotate(4deg);
+			-o-transform: rotate(4deg);
+			-ms-transform: rotate(4deg);
+			transform: rotate(4deg);                        
+		}
+		
+	#facebook {
+		float: right;
+		margin-right: -10px;
+		padding-top: 50px;
+		background: url(/media/img/chain-facebook.png) top center no-repeat;
+	}
+
+		#facebook iframe {
+			-moz-transform: rotate(-4deg);
+			-webkit-transform: rotate(-4deg);
+			-o-transform: rotate(-4deg);
+			-ms-transform: rotate(-4deg);
+			transform: rotate(-4deg);
+		}
+		
+	#back-to-mozilla {
+		float: right;
+		display: block;
+		width: 219px;
+		height: 44px;
+		/*background: url(/media/img/back-to-mozilla.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -10px no-repeat;
+		margin-right: -160px;
+		margin-top: -2px;
+		-moz-transform: rotate(6deg);
+		-webkit-transform: rotate(6deg);
+		-o-transform: rotate(6deg);
+		-ms-transform: rotate(6deg);
+		transform: rotate(6deg);
+		text-indent: -9999px;
+	}
+	
+		#back-to-mozilla:hover {
+			background-position: -5px -10px;
+		}	
+
+#mozilla-info {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -515px;
+}
+
+#magic-tickets {
+	position: absolute;
+	top: 0;
+	left: 25px;
+	z-index: 1000;
+	display: block;
+	color: #966300;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+#magic-tickets:hover {
+  text-shadow: 0px 0px 10px rgba(255,255,255,0.6);
+}
+
+	#magic-tickets div {
+		float: right;
+		width: 160px;
+		height: 25px;
+		padding: 24px 0 24px 0;
+		/*background: url(/media/img/magic-ticket.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -74px no-repeat;
+		-moz-transform: rotate(8deg);
+		-webkit-transform: rotate(8deg);
+		-o-transform: rotate(8deg);
+		-ms-transform: rotate(8deg);
+		transform: rotate(8deg);
+	}
+
+	#magic-tickets .magic-ticket-2 {
+		margin-right: -170px;
+		-moz-transform: rotate(-13deg);
+		-webkit-transform: rotate(-13deg);
+		-o-transform: rotate(-13deg);
+		-ms-transform: rotate(-13deg);
+		transform: rotate(-13deg);
+	}
+
+div.chain-1 {
+	position: absolute;
+	width: 14px;
+	height: 105px;
+	background: url(/media/img/chain-1.png) 0 0 no-repeat;
+	z-index: 101;
+	margin-left: 102px;
+}
+div.chain-2 {
+	position: absolute;
+	width: 15px;
+	height: 35px;
+	/*background: url(/media/img/chain-2.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -510px no-repeat;
+	z-index: 101;
+	top: 397px;
+	margin-left: 80px;
+	-moz-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+div.chain-3 {
+	position: absolute;
+	width: 15px;
+	height: 50px;
+	/*background: url(/media/img/chain-3.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -565px no-repeat;
+	z-index: 101;
+	top: 392px;
+	margin-left: 156px;
+	-moz-transform: rotate(-1deg);
+	-webkit-transform: rotate(-1deg);
+	-o-transform: rotate(-1deg);
+	-ms-transform: rotate(-1deg);
+	transform: rotate(-1deg);
+}
+		
+#marvels-await {
+	position: relative;
+	width: 170px;
+	height: 243px;
+	padding: 40px 30px 35px 35px;
+	margin-top: 92px;
+	/*background: url(/media/img/non-sprited/bg-marvels-await.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -170px no-repeat;
+	color: #173956;
+	margin-bottom: 5px;
+	-moz-transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+	-o-transform: rotate(-4deg);
+	-ms-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+	z-index: 100;
+}
+
+	#marvels-await h3 {
+		font-family: "LeagueGothicRegular", sans-serif;
+		font-size: 3.6em;
+		line-height: 0.6em;
+		letter-spacing: 2px;
+		font-weight: normal;
+		text-transform: uppercase;
+		padding-left: 6px; 
+		text-shadow: -3px 3px 0px rgba(255,255,255,0.6);
+	}
+	
+	#marvels-await h3 span {
+		font-family: "ChunkFiveRegular", serif;
+		font-size: 0.7em;
+		line-height: 1em;
+	}
+	
+	#marvels-await p {
+		color: #403a30;
+		font-family: "CopseRegular", Georgia, serif;
+		font-size: 0.9em;
+		line-height: 1.5em;
+		margin-right: 10px;
+		padding: 7px 0 3px 4px;
+		text-shadow: 1px 1px 0px rgba(255,255,255,0.6);
+	}
+	
+	#marvels-await a {
+		color: #c30;
+		font-size: 1.8em;
+		line-height: 1.2em;
+		font-family: "LeagueGothicRegular", sans-serif;
+		text-transform: uppercase;
+		display: block;
+		padding: 6px 5px 5px;
+		margin: 10px 15px 0 0;
+		text-decoration: none;
+		background: url(/media/img/non-sprited/bg-submit-demo.png) right 10px no-repeat,
+					url(/media/img/non-sprited/bg-submit-demo-top.png) left top repeat-x,
+					url(/media/img/non-sprited/bg-submit-demo-bottom.png) left bottom repeat-x;
+	}
+	#marvels-await a:hover { color: #9a280d; }
+
+#firefox-four {
+	position: relative;
+	display: block;
+	/*background: url(/media/img/non-sprited/bg-firefox-four.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -635px no-repeat;
+	width: 220px;
+	height: 250px;
+	-moz-transform: rotate(6deg);
+	-webkit-transform: rotate(6deg);
+	-o-transform: rotate(6deg);
+	-ms-transform: rotate(6deg);
+	transform: rotate(6deg);
+	margin-top: 10px;
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	z-index: 100;
+	-moz-box-shadow: 3px 5px 3px #111;
+	-webkit-box-shadow: 3px 5px 3px #111;
+	box-shadow: 3px 5px 3px #111;
+	
+}
+	#firefox-four h3 {
+		text-indent: -10000px;
+	}
+		
+	#firefox-four .tagline {
+		font-family: "LeagueGothicRegular", sans-serif;
+		color: #f61a1a;
+		float: left;
+		width: 40px;
+		margin-top: 115px;
+		margin-left: 20px;
+	}
+	
+	#firefox-four .tagline-2 {
+		float: right;
+		margin-right: 16px;
+		margin-top: 120px;
+	}
+	
+	.knows {
+		font-size: 1.3em;
+	}
+	
+	.sees {
+		font-size: 2em;
+		line-height: 0.9em;
+	}
+	
+	.tells {
+		font-size: 1.5em;
+	}
+	
+	.all {
+		font-size: 2.3em;
+		line-height: 0.8em;
+	}
+		
+	#firefox-four .get-it {
+		clear: both;
+		display: block;
+		font-weight: bold;
+		letter-spacing: 2px;
+		font-size: 1.2em;
+		color: #ffdeb5;
+		padding-top: 200px;
+		padding-left: 8px;
+	}
+	
+	#firefox-four:hover .get-it,
+	#firefox-four:hover .tagline span {
+  		-moz-transition: all 0.2s ease-in-out;
+		-webkit-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s  ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	#firefox-four:hover .get-it { text-shadow: 0px 3px 10px #999; }
+	#firefox-four:hover .tagline span { text-shadow: 0px 5px 20px #000; }
+		
+#demos {
+	width: 100%;
+	height: 360px;
+	margin-top: -15px;
+	position: relative;
+	background: url(/media/img/bg-rope.png) left center repeat-x;
+	z-index: 2;
+	overflow: hidden;
+}
+#demos.init { overflow: visible; }
+
+	#demos .coming-soon {
+	}
+
+	#demos-inner {
+		height: 360px;
+		width: 10000px;
+		margin-left: -780px;
+		position: absolute;
+		left: 50%;
+	}
+	
+	.demo {
+		width: 500px;
+		height: 350px;
+		float: left;
+		margin-right: 20px;
+		background: #e5dabb;
+		/*background: #e5dabb url(/media/img/non-sprited/bg-demo.png) 0 0 no-repeat;*/
+		border-radius: 4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		position: relative;
+		-moz-box-shadow: 0 3px 5px #000;
+		-webkit-box-shadow: 0 3px 5px #000;
+		box-shadow: 0 3px 5px #000;
+	}
+		.demo.flipping {
+			-moz-box-shadow: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			border: none;
+		}
+	
+		.flipped {
+			/*background: #e5dabb url(/media/img/non-sprited/demo-flipped.png) 0 0 no-repeat;*/
+		}
+	
+		emphasis {
+			font-style: italic;
+		}
+	
+		.flag {
+			position: absolute;
+			top: 30px;
+			left: 0;
+			padding: 7px 15px 6px 30px;
+			width: 45px;
+			background-color: #000;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #fff;
+			font-size: 0.7em;
+			line-height: 1em;
+			/*background: url(/media/img/non-sprited/bg-flags.png) 0 0 no-repeat;*/
+			background: url(/media/img/sprite.png) 0px -915px no-repeat;
+			z-index: 99;
+		}
+		
+			.design .flag {
+				background-position: 0px -915px;
+			}
+			
+			.html5 .flag {
+				background-position: 0px -940px;
+			}
+			
+			.video .flag {
+				background-position: 0px -965px;
+			}
+			
+			.audio .flag,
+			.webgl .flag {
+				background-position: 0px -990px;
+			}
+			
+			.coming-soon .flag {
+				width: 105px;
+				background-position: 0px -1015px;
+			}
+	
+		.demo-inner {
+			margin: 10px;
+			padding: 9px;
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+			border: 1px solid #fff;
+			float: left;
+			height: 310px;
+		}
+		
+			.design .demo-inner {
+				border-color: #82902a;
+			}
+			
+			.html5 .demo-inner {
+				border-color: #d09607;
+			}
+			
+			.audio .demo-inner,
+			.webgl .demo-inner {
+				border-color: #725b3d;
+			}
+			
+			.video .demo-inner {
+				border-color: #d45155;
+			}
+			
+			.flipped .demo-inner {
+				width: 460px;
+			}
+		
+		.coming-soon-cover {
+			position: absolute;
+			top: 20px;
+			width: 460px;
+			height: 310px;
+			-moz-box-shadow: inset 0 0 30px #000;
+			-webkit-box-shadow: inset 0 0 30px #000;
+			box-shadow: inset 0 0 30px #000;
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+		}
+		
+		.demo-image {
+			width: 458px;
+			height: 230px;
+			border: 1px solid #fff;
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+			background-color: #000;
+			overflow: hidden;
+		}
+		
+			.coming-soon .demo-image {
+				width: 460px;
+				border: none;
+			}
+			
+			.flipped .demo-image {
+				position: relative;
+				width: 159px;
+				height: 154px;
+				border-radius: 3px;
+				-moz-border-radius: 3px;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				top: 76px;
+				left: 294px;
+			}
+			
+				.flipped .demo-image img { margin: -30px 0 0 -150px;}
+			
+.flip-card-back {
+	display: none;
+	margin: -18px auto 0;
+	padding-top: 13px;
+	text-align: center;
+	width: 120px;
+	text-decoration: none;
+	font-size: 0.6em;
+	font-family: "ChunkFiveRegular", serif;
+	text-transform: uppercase;
+	background: url(/media/img/bg-flip-card-back.png) center top no-repeat;
+}
+	
+	.flipped .flip-card-back { display: block; }
+	
+	.design .flip-card-back {
+		color: #82902a;
+		background-position: center 0px;
+	}
+	
+	.html5 .flip-card-back {
+		color: #d09607;
+		background-position: center -29px;
+	}
+	
+	.audio .flip-card-back,
+	.webgl .flip-card-back {
+		color: #725b3d;
+		background-position: center -57px;
+	}
+	
+	.video .flip-card-back {
+		color: #d45155;
+		background-position: center -85px;
+	}
+	
+.demo-info {
+	width: 285px;
+	padding-right: 15px;
+	float: left;
+	padding-left: 5px;
+}
+
+.demo-info-extra { display: none; }
+			
+.flipped .demo-info {
+	width: 265px;
+	margin-top: -130px;
+	color: #423d30;
+}
+
+.flipped .demo-info-extra { display: block; }
+		
+	.demo-info h1 {
+		font-family: "ChunkFiveRegular", serif;
+		color: #069;
+		text-shadow: 1px 1px 0 #fff;
+		font-size: 2.1em;
+		line-height: 28px;
+		margin: 10px 0 0;
+	}
+	
+	.demo-info h2 {
+		font-size: 0.8em;
+		margin-bottom: 10px;
+	}
+	
+		.demo-info h2 a {
+			color: #c30;
+			text-decoration: none;
+			display: inline-block;
+		}
+		.demo-info h2 a:last-child {
+			background: url(/media/img/non-sprited/icon-info.png) right top no-repeat;
+			padding: 2px 20px 2px 0;
+		}
+		
+		.flipped .demo-info h2 a {
+  			background: none;
+  			color: #423D30;
+		}
+
+	.demo-info p {
+		margin-bottom: 5px;
+		line-height: 16px;
+		font-size: 0.8em;
+	}
+
+	.demo-info ul {
+		border-top: 1px solid #c4ba9c;
+		margin-bottom: 10px;
+		font-size: 0.8em;
+	}
+
+	.demo-info li {
+		padding: 5px 0 5px 25px;
+		line-height: 15px;
+		border-bottom: 1px solid #c4ba9c;
+		background: url(/media/img/non-sprited/bg-bullet.png) 5px 4px no-repeat;
+	}
+	
+	.demo-info a {
+		color: #069;
+		text-decoration: none;
+		font-weight: bold;
+	}
+	.demo-info a:hover { text-decoration: underline; }
+
+.video-container a { font-size: 0.9em; }
+
+.video-container img {
+	float: left;
+	display: block;
+	border: 1px solid #fff;
+	margin-right: 10px;
+}
+
+.demo-actions {
+	float: left;
+	margin: -60px 0 0 10px;
+	width: 120px;
+	text-transform: uppercase;
+	color: #423d30;
+	text-align: center;
+	font-size: 0.7em;
+	line-height: 1.2em;
+}
+
+	.flipped .demo-actions {
+		margin-top: 58px;
+		width: 170px;
+		margin-left: 5px;
+	}
+
+	.experience-it {
+		display: block;
+		background-color: #c23404;
+		border-radius: 4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		padding: 6px;
+		text-decoration: none;
+		color: #fff;
+		font-family: "LeagueGothicRegular", sans-serif;
+		-moz-box-shadow: 0 1px 4px #333;
+		-webkit-box-shadow: 0 1px 4px #333;
+		box-shadow: 0 1px 4px #333;
+		margin-bottom: 11px;
+		font-weight: bold;
+		position: relative;
+		letter-spacing: -1px;
+	}
+		.experience-it:hover {
+			background-color: #9a280d;
+			text-shadow: 2px 2px 3px #333;
+		}
+	
+		.experience-it b {
+			font-family: "ChunkFiveRegular", serif;
+			font-weight: normal;
+			font-size: 0.7em;
+			letter-spacing: 1px;
+			line-height: 0;
+		}
+	
+		.experience-it span {
+			font-size: 3em;
+			line-height: 0.7em;
+			border: 1px solid #fff;
+			border-radius: 3px;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			padding: 8px 6px 6px;
+			display: block;
+			font-weight: normal;
+		}
+		
+			.flipped .experience-it {
+				margin: -52px 0 11px 25px;
+				width: 108px;
+			}
+			
+		.experience-it .flip-card-icon {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin: -7px -4px 0 0;
+			height: 14px;
+			width: 14px;
+			/*background: url(/media/img/icon-flip-card.png) 0 0 no-repeat;*/
+			background: url(/media/img/sprite.png) 0px -1085px no-repeat;
+		}
+		
+	.watch-video {
+		color: #069;
+		display: block;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	.watch-video:hover { text-decoration: underline; }
+	
+	.demo-over {
+		top: 0;
+		left: 0;
+		position: absolute;
+		width: 500px;
+		height: 350px;
+		background-color: #0e1a28;
+		opacity: 0.8;
+		z-index: 999;
+	}
+		
+		.demo.init .demo-over, /* At page init, for progressive enhancement */
+		.demo.selected .demo-over { 
+			visibility: hidden;
+		}
+	
+	.social-media {
+		display: block;
+		float: left;
+		width: 24px;
+		height: 24px;
+		text-indent: -100000px;
+		/*background: url(/media/img/non-sprited/icon-social.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -1119px no-repeat;
+		margin: 6px 0 0 30px;
+		opacity: 0.5;
+		text-decoration: none !important;
+	}
+	
+		.social-media:hover {
+			opacity: 1;
+		}
+	
+	.facebook {
+		margin-left: 21px;
+	}
+	
+		.flipped .facebook {
+			margin-left: 25px;
+		}
+	
+	.twitter {
+		background-position: 0px -1143px;
+	}
+	
+	.link {
+		background-position: 0px -1167px;
+	}
+	
+	.social-tooltip {
+		display: none;
+		position: absolute;
+		margin-top: -50px;
+		text-indent: 0;
+		width: 130px;
+		text-align: center;
+		background-color: #fff;
+		font-weight: bold;
+		border-radius: 4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		color: #069;
+		text-transform: uppercase;
+		font-size: 1em;
+		line-height: 1em;
+		padding: 8px 4px 8px;
+		margin-left: -68px;
+		-moz-box-shadow: 0px 3px 3px #666;
+		-webkit-box-shadow: 0px 3px 3px #666;
+		box-shadow: 0px 3px 3px #666;
+	}
+	
+	.social-tooltip div {
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		bottom: -10px;
+		left: 75px;
+		background: url(/media/img/tooltip-arrow.png) 0 0 no-repeat;
+	}
+	
+#demo-controls {
+	width: 460px;
+	margin: 0 auto;
+	position: relative;
+}
+
+	#lights-down {
+		position: absolute;
+		display: block;
+		border-radius: 30px;
+		-moz-border-radius: 30px;
+		-webkit-border-radius: 30px;
+		border-radius: 30px;
+		left: 50%;
+		margin-left: -35px;
+		margin-top: -5px;
+		height: 70px;
+		width: 70px;
+		/*background: url(/media/img/lights-down.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -1211px no-repeat;
+		text-indent: -9999px;
+	}
+	a#lights-down:active { 
+		position: absolute;
+		top: 2px;
+		-moz-transition: none;
+		-webkit-transition: none;
+		-o-transition: none;
+		transition: none;
+	}
+
+	#that-way,
+	#this-way {
+		display: block;
+		margin-top: 8px;
+		width: 190px;
+		height: 30px;
+		padding: 14px 0 5px 0;
+		font-family: "ChunkFiveRegular", serif;
+		font-size: 17px;
+		color: #ededcd;
+		text-decoration: none;
+		text-transform: uppercase;
+		text-shadow: 1px -1px 0px #261006;
+		-moz-transition: all 0.1s ease-in-out;
+		-webkit-transition: all 0.1s ease-in-out;
+		-o-transition: all 0.1s ease-in-out;
+		transition: all 0.1s ease-in-out;
+	} 
+	
+	#that-way {
+		float: left;
+		width: 158px;
+		margin-left: 34px;
+		/*background: url(/media/img/that-way.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -1301px no-repeat;
+		padding-left: 32px;
+	}
+	
+		#that-way:hover {
+			margin-left: 18px;
+		}
+
+	#this-way {
+		width: 130px;
+		float: right;
+		margin-right: 33px;
+		/*background: url(/media/img/this-way.png) 0 0 no-repeat;*/
+		background: url(/media/img/sprite.png) 0px -1371px no-repeat;
+		padding-left: 60px;
+	}
+	
+		#this-way:hover {
+			margin-right: 18px;
+		}
+
+/* Demo iFrame */
+#demo-viewport { 
+        visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+        overflow: none;
+        width: 100%;
+}
+
+.loading {
+	display: none;
+	font-family: "ChunkFiveRegular", serif;
+	font-size: 32px;
+	line-height: 32px;
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	background: #000;
+  	z-index: 998;
+  	color: #FFF;
+  	text-align: center;
+	opacity: 0.95;
+}
+	.loading-inner { 
+		margin-top: 250px;
+		padding-bottom: 10px;
+	}
+
+	.loading .title {
+		display: block;
+  		color: #999;
+  		size: 36px;
+	}
+
+/* Spotlight */
+/* http://svay.com/experiences/css3-spotlight/ */
+.spotlight {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* this is the sweet spot */
+    background-image: -moz-radial-gradient(50% 50% 45deg,circle closest-side,transparent 0,transparent 150px,rgba(0, 0, 0, 0.8) 180px);
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.8)), color-stop(0.8, rgba(0,0,0,0)));
+    z-index: 9999;
+}
+
+/* Shake */
+.disruptable {
+	-moz-transition: all 0.2s linear;
+	-webkit-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+		
+/* Media Query for Small Screens */
+@media screen and (max-width: 960px) {
+	  #mozilla-info {
+		left: 0;
+		margin-left: -35px;
+	}
+}
+
+/* Colorbox */
+/*
+    ColorBox Core Style
+    The following rules are the styles that are consistant between themes.
+    Avoid changing this area to maintain compatability with future versions of ColorBox.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative; overflow:hidden;}
+#cboxLoadedContent{overflow:auto;}
+#cboxLoadedContent iframe{display:block; width:100%; height:100%; border:0;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+
+/* 
+    Example user style
+    The following rules are ordered and tabbed in a way that represents the
+    order/nesting of the generated HTML, so that the structure easier to understand.
+*/
+#cboxOverlay{background-color: #000; opacity: 0.95;}
+#colorbox{}
+    #cboxTopLeft{width:21px; height:21px; background:url(/media/img/colorbox/controls.png) no-repeat -100px 0;}
+    #cboxTopRight{width:21px; height:21px; background:url(/media/img/colorbox/controls.png) no-repeat -129px 0;}
+    #cboxBottomLeft{width:21px; height:21px; background:url(/media/img/colorbox/controls.png) no-repeat -100px -29px;}
+    #cboxBottomRight{width:21px; height:21px; background:url(/media/img/colorbox/controls.png) no-repeat -129px -29px;}
+    #cboxMiddleLeft{width:21px; background:url(/media/img/colorbox/controls.png) left top repeat-y;}
+    #cboxMiddleRight{width:21px; background:url(/media/img/colorbox/controls.png) right top repeat-y;}
+    #cboxTopCenter{height:21px; background:url(/media/img/colorbox/border.png) 0 0 repeat-x;}
+    #cboxBottomCenter{height:21px; background:url(/media/img/colorbox/border.png) 0 -29px repeat-x;}
+    #cboxContent{background:#fff;}
+        #cboxLoadedContent{margin-bottom:28px;}
+        #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+        #cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+        #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+        #cboxPrevious{position:absolute; bottom:0; left:0px; background:url(/media/img/colorbox/controls.png) no-repeat -75px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxPrevious.hover{background-position:-75px -25px;}
+        #cboxNext{position:absolute; bottom:0; left:27px; background:url(/media/img/colorbox/controls.png) no-repeat -50px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxNext.hover{background-position:-50px -25px;}
+        #cboxLoadingOverlay{background:url(/media/img/colorbox/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(/media/img/colorbox/loading.gif) no-repeat center center;}
+        #cboxClose{position:absolute; bottom:0; right:0; background:url(/media/img/colorbox/controls.png) no-repeat -25px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxClose.hover{background-position:-25px -25px;}
+
+/*
+    The following fixes png-transparency for IE6.  
+    It is also necessary for png-transparency in IE7 & IE8 to avoid 'black halos' with the fade transition
+    
+    Since this method does not support CSS background-positioning, it is incompatible with CSS sprites.
+    Colorbox preloads navigation hover classes to account for this.
+    
+    !! Important Note: AlphaImageLoader src paths are relative to the HTML document,
+    while regular CSS background images are relative to the CSS document.
+*/
+.cboxIE #cboxTopLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderTopLeft.png, sizingMethod='scale');}
+.cboxIE #cboxTopCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderTopCenter.png, sizingMethod='scale');}
+.cboxIE #cboxTopRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderTopRight.png, sizingMethod='scale');}
+.cboxIE #cboxBottomLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderBottomLeft.png, sizingMethod='scale');}
+.cboxIE #cboxBottomCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderBottomCenter.png, sizingMethod='scale');}
+.cboxIE #cboxBottomRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderBottomRight.png, sizingMethod='scale');}
+.cboxIE #cboxMiddleLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderMiddleLeft.png, sizingMethod='scale');}
+.cboxIE #cboxMiddleRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/media/img/colorbox/internet_explorer/borderMiddleRight.png, sizingMethod='scale');}
+
+#submit-demo { 
+	background: none !important; 
+	overflow: hidden;
+	padding: 20px;
+	line-height: 20px;
+	}
+
+#submit-demo h1 { 
+	font-family: "LeagueGothicRegular", sans-serif;
+	font-size: 32px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+	color: #173956;
+	text-shadow: -3px 3px 0px rgba(0,153,204,0.2);
+	}
+#submit-demo p { margin-bottom: 20px; }
+#submit-demo input[type="text"] {
+		display: block;
+		float: left;
+		width: 200px;
+		color: #666;
+		font-size: 12px;
+		border: 1px solid;
+		border-color: #a3a3a3 #c3c3c3 #dadada;
+		padding: 9px 10px 5px;
+		-moz-box-shadow: 1px 1px 5px #aaa inset;
+		-webkit-box-shadow: 1px 1px 5px #aaa inset;
+		box-shadow: 1px 1px 5px #aaa inset;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	}
+#submit-demo label {
+    float: left;
+    padding: 9px 10px 5px;
+    font-weight: 900;
+}
+
+#submit-demo input[type="submit"] {
+		font-family: Helvetica, sans-serif;
+		border: none;
+		float: left;
+		margin-left: 8px;
+		font-size: 13px;
+		text-transform: uppercase;
+		display: block;
+		text-align: center;
+		padding: 9px 10px 7px;
+		color: #555;
+		font-weight: 700;
+		text-shadow: 0 1px 0 #fff;
+		text-decoration: none;
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		box-shadow: 0px 1px 3px #aaa;
+		-moz-box-shadow: 0px 1px 3px #aaa;
+		-webkit-box-shadow: 0px 1px 3px #aaa;
+		background: #ccc url(/media/img/fallback-images/buttons.png) 0 -310px repeat-x;
+		background: -moz-linear-gradient(100% 100% 90deg, #9a9a9a, #ccc);
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#9a9a9a));
+		/* For Internet Explorer 5.5 - 7 */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF9a9a9a);
+		/* For Internet Explorer 8 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF9a9a9a)";
+	}
+	
+		#submit-demo input[type="submit"]:hover {
+			color: #666;
+			cursor: pointer;
+			background: #777 url(/media/img/fallback-images/buttons.png) 0 -345px repeat-x;
+			background: -moz-linear-gradient(100% 100% 90deg, #777, #ccc);
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#777));
+			/* For Internet Explorer 5.5 - 7 */
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF777777);
+			/* For Internet Explorer 8 */
+		-	ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF777777)";
+		}
+
+#submit-demo p {
+    clear: left;
+    width: 500px;
+}
+#submit-demo section, #submit-demo form {
+    background-color: #DEF;
+    margin-bottom: 5px;
+}
+#submit-demo section {
+    float: left;
+    width: 270px;
+    margin: 0px 10px 10px 10px;
+    padding: 0px;
+}
+
+    #submit-demo section h2 {
+        background-color: #666;
+        color: #FFF;
+        border-bottom: solid 1px grey;
+        padding: 5px 10px;
+    }
+    #submit-demo section ul li {
+        border-bottom: dotted 1px #BBD;
+        line-height: 1.5;
+        margin: 0px 10px;
+    }
+    #submit-demo form {
+        padding: 10px;
+    }
+    #submit-demo form div {
+        clear: left;
+        margin: 5px 0px 5px 170px;
+    }
+    #submit-demo form div#email_feild {
+        margin: 5px 0px;
+    }
+    #submit-demo #optin-label {
+        width: 170px;
+        float: none;
+    }
+    #submit-demo .legal {
+        margin-top: 10px;
+        font-size: 80%;
+    }
+/* Browser Compatibility */
+#webgl-compatibility, #compatibility {
+	background-color: #310d01;
+  	background: url(../img/bg_compatability.jpg) repeat;
+    color: #d0c394;
+    font-size: 0.9em;
+    padding: 10px 0;
+    margin-bottom: 3px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+
+}
+    #webgl-compatibility p {
+        margin: auto 100px;
+        line-height: 1.5;
+        text-align: left;
+    }
+    #webgl-compatibility button {
+        margin-left: 10px;
+    }
+#webgl-compatibility a, #compatibility a { color: #c90; font-weight: bold; text-decoration: none; }
+		
+/* For displaying the page without webfonts */
+
+/* Serif */
+body.webfontless #home-link,
+body.webfontless #navigation a,
+body.webfontless #marvels-await h3 span,
+body.webfontless #marvels-await p,
+body.webfontless .flip-card-back,
+body.webfontless .demo-info h1,
+body.webfontless .experience-it b,
+body.webfontless #that-way,
+body.webfontless #this-way,
+body.webfontless .loading {
+  font-family: Georgia, serif;
+}
+
+/* Sans-Serif */
+body.webfontless #navigation .see-types,
+body.webfontless #marvels-await h3,
+body.webfontless #marvels-await a,
+body.webfontless #firefox-four .tagline,
+body.webfontless .experience-it {
+  font-family: Helvetica, sans-serif;
+}
+
+/* Tweaks */
+body.webfontless #marvels-await h3{ font-size: 2.0em; }
+body.webfontless #marvels-await h3 span { font-size: 1.4em; }
+body.webfontless #marvels-await a  { font-size: 1em; line-height: 1.8em; }
+body.webfontless #navigation { font-size: 0.9em; }
+body.webfontless #navigation .see-types { background-position: 52px -1431px; }
+body.webfontless .experience-it span { font-size: 1.5em; line-height: 1.3em; }
+body.webfontless .experience-it b { font-size: 1.2em; }
