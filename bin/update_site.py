@@ -42,8 +42,8 @@ def update_site(env, debug):
       (EXEC,  GIT_PULL % branch),
       (EXEC,  GIT_SUBMODULE),
       (CHDIR, os.path.join(here)),
-      (EXEC, 'python vendor/src/schematic/schematic migrations/'),
-      (EXEC, 'python manage.py compress_assets'),
+      (EXEC, 'python2.6 vendor/src/schematic/schematic migrations/'),
+      (EXEC, 'python2.6 manage.py compress_assets'),
     ]
 
     for cmd, cmd_args in commands:
