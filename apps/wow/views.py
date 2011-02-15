@@ -53,7 +53,7 @@ tags = {
                     _('XMLHttpRequest')),
 }
 
-@cache_page(60 * 15) # 15 minutes
+#@cache_page(60 * 15) # 15 minutes
 def home(request):
     global tags
     data = {'demos': Submission.objects.filter(hidden=False),
@@ -110,7 +110,7 @@ def home(request):
 
     return jingo.render(request, 'wow/home.html', data)
 
-@cache_page(60 * 15) # 15 minutes
+#@cache_page(60 * 15) # 15 minutes
 def home_no_iframe(request):
     global tags
     data = {'demos': Submission.objects.filter(hidden=False),
@@ -167,21 +167,21 @@ def home_no_iframe(request):
 
     return jingo.render(request, 'wow/home_no_iframe.html', data)
 
-@cache_page(60 * 60 * 24) # one day
+#@cache_page(60 * 60 * 24) # one day
 def submit_demo(request):
     """ Collects email addresses or intersticial to MDN Demo Studio. """
     return jingo.render(request, 'wow/coming_soon.html', {})
     #return jingo.render(request, 'wow/submit.html', {})
 
-@cache_page(60 * 60 * 24) # one day
+#@cache_page(60 * 60 * 24) # one day
 def screencast(request, slug):
     return _show_video(request, slug, 'screencasts')
 
-@cache_page(60 * 60 * 24) # one day
+#@cache_page(60 * 60 * 24) # one day
 def documentary(request, slug):
     return _show_video(request, slug, 'documentaries')
 
-@cache_page(60 * 60 * 24) # one day
+#@cache_page(60 * 60 * 24) # one day
 def robots(request):
     resp = HttpResponse("User-agent: *\n")
     resp['X-Foo'] = "bar"
