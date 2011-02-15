@@ -9,3 +9,6 @@ ALTER TABLE `wow_demodetails` ADD CONSTRAINT `demo_id_refs_id_demos_submissions_
 
 INSERT INTO `wow_demodetails` (demo_id, documentary_description, rank) VALUES
 ((SELECT id FROM demos_submission WHERE slug = 'particles'), 'Paul Rouget shows how to manipulate your browser with expanded input control.', 1);
+
+-- Pre-populate wow_demodetails
+INSERT INTO wow_demodetails (demo_id, documentary_description, rank) (select id, '', 1 from demos_submission WHERE id != 1);

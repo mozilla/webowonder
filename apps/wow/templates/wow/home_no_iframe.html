@@ -61,9 +61,7 @@
 						<h1>{{demo.title}}</h1>
 						<h2>{{demo.by_authors|safe}}</h2>
 						<div class="demo-info-extra">                                                  
-						    <p><em>{# 
-                                                                    L10n: This is before the Demo Description which will be in English 
-                                                                  #}{{ _('From the Author:')|safe }}</em> {{demo.description}}</p>
+						    <p>{{demo.description}}</p>
     						<ul><!-- TODO {{demo.tags}} -->
     							<li>{{ demo.tag_copy|safe }}</li>
     							<li><a href="{{demo.source_code_url}}">{{ _('Explore the source code on GitHub') }}</a></li>
@@ -71,7 +69,7 @@
                                                 <!-- Not all demos have a documentary -->
                                                 {% if demo.video_description %}
     						<div class="video-container">
-    							<a class="watch-video" href="/documentary/{{demo.slug}}"  title="{{ demo.video_title|safe }}"><img src="/media/img/video-play.png" width="100" height="65" alt="{{ _('Video Play') }}" ></a>
+    							<a class="watch-video" href="/documentary/{{demo.slug}}"  title="{{ demo.video_title|safe }}">{{ _('Watch the documentary' }}</a>
     							<p>{{ demo.video_description }}</p>
                                                         <p>{# L10n: {0} is the name of a film maker #}{{ _('Film by {0}')|f('<a href="http://www.maxlanman.com/">Max Lanman</a>')|safe }}
     							<a class="watch-video" href="/documentary/{{demo.slug}}"  title="{{ demo.video_title|safe }}">{{ _('Documentary Video &#187;')|safe }}</a>
