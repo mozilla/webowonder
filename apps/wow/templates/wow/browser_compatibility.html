@@ -9,9 +9,9 @@
 
     {# L10n: Warning shown if user doesn't have a WebGl cabable browser. #}
     var compat_webgl_drivers = "<div id='webgl-compatibility'><p>{% trans 
-        nvidia_url = "#",
-        amd_url = "#",
-        intel_url = "#"
+        nvidia_url = "http://www.nvidia.com/Download/index.aspx",
+        amd_url = "http://support.amd.com/us/gpudownload/Pages/index.aspx",
+        intel_url = "http://downloadcenter.intel.com/"
         %}Unfortunately, while your browser supports WebGL, your video drivers may be
 too old.  To view any of the demos tagged with WebGL, try updating your drivers
 at <a href='{{nvidia_url}}'>NVIDIA</a>, <a href='{{amd_url}}'>AMD</a>, and <a href='{{intel_url}}'>Intel</a>.{% endtrans %}</p>";
