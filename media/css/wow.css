@@ -101,9 +101,13 @@ a:hover {
 		letter-spacing: 0.15em;
 		text-shadow: 1px 1px 3px #000;
 	}
-	[lang=cs] #home-link, 
-        [lang=el] #home-link {
+	[lang=cs] #home-link,      /* czech */
+        [lang=el] #home-link {     /* greek */
                 font-family: serif;
+        }
+        [lang=el] #home-link, 
+        [lang=ga] #home-link {     /* irish */
+                text-transform: none;
         }
 
 #navigation {
@@ -120,7 +124,10 @@ a:hover {
 			text-transform: uppercase;
 			text-shadow: 1px 1px 0 #000;
 		}
-			
+		[lang=el] #navigation li,
+                [lang=ga] #navigation li {
+                        text-transform: none;
+                }
 			#navigation .see-types {
 				font-family: "LeagueGothicRegular", sans-serif;
 				padding: 10px 45px 0 0;
@@ -225,6 +232,10 @@ a:hover {
 	text-transform: uppercase;
 	text-decoration: none;
 }
+[lang=el] #magic-tickets,
+[lang=ga] #magic-tickets {
+    text-transform: none;
+}
 #magic-tickets:hover {
   text-shadow: 0px 0px 10px rgba(255,255,255,0.6);
 }
@@ -323,6 +334,10 @@ div.chain-3 {
         [lang=el] #marvels-await h3 {
                 font-family: sans-serif;
         }
+        [lang=el] #marvels-await h3,
+        [lang=ga] #marvels-await h3 {
+            text-transform: none;
+        }
 	#marvels-await h3 span {
 		font-family: "ChunkFiveRegular", serif;
 		font-size: 0.7em;
@@ -364,7 +379,10 @@ div.chain-3 {
         [lang=el] #marvels-await a {
 		font-family: sans-serif;
         }
-
+        [lang=el] #marvels-await a,
+        [lang=ga] #marvels-await a {
+            text-transform: none;
+        }
 	#marvels-await a:hover { color: #9a280d; }
 
 #firefox-four {
@@ -388,6 +406,10 @@ div.chain-3 {
 	-webkit-box-shadow: 3px 5px 3px #111;
 	box-shadow: 3px 5px 3px #111;
 	
+}
+[lang=el] #firefox-four,
+[lang=ga] #firefox-four {
+    text-transform: none;
 }
 	#firefox-four h3 {
 		text-indent: -10000px;
@@ -519,7 +541,10 @@ div.chain-3 {
 			background: url(/media/img/sprite.png) 0px -915px no-repeat;
 			z-index: 99;
 		}
-		
+		[lang=el] .flag,
+                [lang=ga] .flag {
+                        text-transform: none;
+                }
 			.design .flag {
 				background-position: 0px -915px;
 			}
@@ -635,7 +660,11 @@ div.chain-3 {
 [lang=cs] .flip-card-back,
 [lang=el] .flip-card-back {
         font-family: serif;
-}	
+}
+[lang=el] .flip-card-back,
+[lang=ga] .flip-card-back {
+    text-transform: none;
+}
 	.flipped .flip-card-back { display: block; }
 	
 	.design .flip-card-back {
@@ -754,7 +783,10 @@ div.chain-3 {
 	font-size: 0.7em;
 	line-height: 1.2em;
 }
-
+[lang=el] .demo-actions,
+[lang=ga] .demo-actions {
+    text-transform: none;
+}
 	.flipped .demo-actions {
 		margin-top: 58px;
 		width: 170px;
@@ -910,7 +942,10 @@ div.chain-3 {
 		-webkit-box-shadow: 0px 3px 3px #666;
 		box-shadow: 0px 3px 3px #666;
 	}
-	
+        [lang=el] .social-tooltip,
+        [lang=ga] .social-tooltip {
+            text-transform: none;
+        }
 	.social-tooltip div {
 		position: absolute;
 		width: 10px;
@@ -973,7 +1008,10 @@ div.chain-3 {
         [lang=el] #that-way, [lang=el] #this-way {
                 font-family: serif;
         }
-
+        [lang=el] #that-way, [lang=el] #this-way,
+        [lang=ga] #that-way, [lang=ga] #this-way,  {
+            text-transform: none;
+        }
 	#that-way {
 		float: left;
 		width: 158px;
@@ -1156,6 +1194,10 @@ div.chain-3 {
 [lang=el] #submit-demo h1 { 
         font-family: sans-serif;
 }
+[lang=el] #submit-demo h1,
+[lang=ga] #submit-demo h1 {
+    text-transform: none;
+}
 #submit-demo p { margin-bottom: 20px; }
 #submit-demo input[type="text"] {
 		display: block;
@@ -1207,7 +1249,11 @@ div.chain-3 {
 		/* For Internet Explorer 8 */
 		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFcccccc, endColorstr=#FF9a9a9a)";
 	}
-	
+[lang=el] #submit-demo input[type="submit"]	,
+[lang=ga] #submit-demo input[type="submit"]	 {
+    text-transform: none;
+}
+
 		#submit-demo input[type="submit"]:hover {
 			color: #666;
 			cursor: pointer;
