@@ -101,6 +101,10 @@ a:hover {
 		letter-spacing: 0.15em;
 		text-shadow: 1px 1px 3px #000;
 	}
+	[lang=cs] #home-link, 
+        [lang=el] #home-link {
+                font-family: serif;
+        }
 
 #navigation {
 	width: 750px;
@@ -125,7 +129,10 @@ a:hover {
 				/*background: url(/media/img/non-sprited/bg-see-types.png) right 13px no-repeat;*/
 				background: url(/media/img/sprite.png) 32px -1431px no-repeat;
 			}
-		
+		        [lang=cs] #navigation .see-types,
+                        [lang=el] #navigation .see-types {
+                            font-family: sans-serif;
+                        }
 		#navigation a {
 			font-family: "ChunkFiveRegular", serif;
 			color: #fff6e1;
@@ -137,6 +144,10 @@ a:hover {
 			background-position: center 30px;
 			background-repeat: no-repeat;
 		}
+                [lang=cs] #navigation a, 
+                [lang=el] #navigation a {
+                        font-family: serif;
+                }
 		#navigation a:hover, #navigation a.selected {
   			text-shadow: 2px 2px 3px #333;
   			background-image: url(/media/img/non-sprited/nav-selected.png);
@@ -308,13 +319,20 @@ div.chain-3 {
 		padding-left: 6px; 
 		text-shadow: -3px 3px 0px rgba(255,255,255,0.6);
 	}
-	
+	[lang=cs] #marvels-await h3,
+        [lang=el] #marvels-await h3 {
+                font-family: sans-serif;
+        }
 	#marvels-await h3 span {
 		font-family: "ChunkFiveRegular", serif;
 		font-size: 0.7em;
 		line-height: 1em;
 	}
-	
+        [lang=cs] #marvels-await h3 span,
+        [lang=el] #marvels-await h3 span {
+                font-family: serif;
+        }
+
 	#marvels-await p {
 		color: #403a30;
 		font-family: "CopseRegular", Georgia, serif;
@@ -324,7 +342,10 @@ div.chain-3 {
 		padding: 7px 0 3px 4px;
 		text-shadow: 1px 1px 0px rgba(255,255,255,0.6);
 	}
-	
+	[lang=cs] #marvels-await p,
+        [lang=el] #marvels-await p {
+                font-family: Georgia, serif;
+        }
 	#marvels-await a {
 		color: #c30;
 		font-size: 1.8em;
@@ -339,6 +360,11 @@ div.chain-3 {
 					url(/media/img/non-sprited/bg-submit-demo-top.png) left top repeat-x,
 					url(/media/img/non-sprited/bg-submit-demo-bottom.png) left bottom repeat-x;
 	}
+	[lang=cs] #marvels-await a,
+        [lang=el] #marvels-await a {
+		font-family: sans-serif;
+        }
+
 	#marvels-await a:hover { color: #9a280d; }
 
 #firefox-four {
@@ -375,7 +401,10 @@ div.chain-3 {
 		margin-top: 115px;
 		margin-left: 20px;
 	}
-	
+	[lang=cs] #firefox-four .tagline,
+        [lang=el] #firefox-four .tagline {
+                font-family: sans-serif;
+        }	
 	#firefox-four .tagline-2 {
 		float: right;
 		margin-right: 16px;
@@ -603,7 +632,10 @@ div.chain-3 {
 	text-transform: uppercase;
 	background: url(/media/img/bg-flip-card-back.png) center top no-repeat;
 }
-	
+[lang=cs] .flip-card-back,
+[lang=el] .flip-card-back {
+        font-family: serif;
+}	
 	.flipped .flip-card-back { display: block; }
 	
 	.design .flip-card-back {
@@ -652,7 +684,11 @@ div.chain-3 {
 		line-height: 28px;
 		margin: 10px 0 0;
 	}
-	
+	[lang=cs] .demo-info h1,
+        [lang=el] .demo-info h1 {
+                font-family: serif;
+        }
+
 	.demo-info h2 {
 		font-size: 0.8em;
 		margin-bottom: 10px;
@@ -744,6 +780,10 @@ div.chain-3 {
 		position: relative;
 		letter-spacing: -1px;
 	}
+	[lang=cs] .experience-it,
+        [lang=el] .experience-it {
+                font-family: sans-serif;
+        }
 		.experience-it:hover {
 			background-color: #9a280d;
 			text-shadow: 2px 2px 3px #333;
@@ -756,6 +796,10 @@ div.chain-3 {
 			letter-spacing: 1px;
 			line-height: 0;
 		}
+ 	        [lang=cs] .experience-it b,
+                [lang=el] .experience-it b {
+                        font-family: serif;
+                }
 	
 		.experience-it span {
 			font-size: 3em;
@@ -925,7 +969,11 @@ div.chain-3 {
 		-o-transition: all 0.1s ease-in-out;
 		transition: all 0.1s ease-in-out;
 	} 
-	
+	[lang=cs] #that-way, [lang=cs] #this-way,
+        [lang=el] #that-way, [lang=el] #this-way {
+                font-family: serif;
+        }
+
 	#that-way {
 		float: left;
 		width: 158px;
@@ -977,6 +1025,10 @@ div.chain-3 {
   	color: #FFF;
   	text-align: center;
 	opacity: 0.95;
+}
+[lang=cs] .loading,
+[lang=el] .loading {
+        font-family: serif;
 }
 	.loading-inner { 
 		margin-top: 250px;
@@ -1100,6 +1152,10 @@ div.chain-3 {
 	color: #173956;
 	text-shadow: -3px 3px 0px rgba(0,153,204,0.2);
 	}
+[lang=cs] #submit-demo h1,
+[lang=el] #submit-demo h1 { 
+        font-family: sans-serif;
+}
 #submit-demo p { margin-bottom: 20px; }
 #submit-demo input[type="text"] {
 		display: block;
