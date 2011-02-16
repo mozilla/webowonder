@@ -389,23 +389,25 @@ mozilla.wow.demoEvents = function() {
     // Experience It click
     $('.experience-it').live('click', function(e) {        
         // Prevent the default behaviour
-        e.preventDefault();
+        //SO e.preventDefault();
         
         // Turn off the spotlight, just in case
-        $('#spot').hide();
+        //SO $('#spot').hide();
         
         // Get the demo title
-        link = $(this);
-        demoTitle = link.parents('.demo').find('.demo-info h1').text();
+        //SO link = $(this);
+        //SO demoTitle = link.parents('.demo').find('.demo-info h1').text();
         
         // Add a mutex class
         $('body').addClass('demoing');
 
         // Support back button to cancel demo
-        window.history.pushState({playing: true}, "");
+        //SO TODO ... if we put demos on demos.mozilla.org 
+        //          then we could do this:
+        //window.history.pushState({playing: true}, demoTitle, $(this).attr('href'));
         
         // Show the loading dialog
-        _showLoading();
+        //SO _showLoading();
         
     });
     
