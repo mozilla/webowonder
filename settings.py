@@ -146,6 +146,7 @@ MINIFY_BUNDLES = {
             'js/jquery.colorbox.min.js',
             'js/jquery.quicksand.min.js',
             'js/wow.js',
+            'js/libs/webtrends.js',
         ),
         'wow_no_iframe': (
             'js/libs/jquery-1.4.4.min.js',
