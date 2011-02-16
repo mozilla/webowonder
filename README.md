@@ -39,6 +39,13 @@ Remember vendor and locale are not submodules. You'll need to cd into them and m
         locale <- SVN
         vendor <- git
 
+Phases
+------
+This demo site will be released in phases... To hide later phases do;
+1) set hidden flag in database
+2) Comment out webtrends tracking in base.html
+3) Never make this repo public ;)
+
 License
 -------
 This software is licensed under the [New BSD License][BSD]. For more
