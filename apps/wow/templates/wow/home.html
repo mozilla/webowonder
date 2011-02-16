@@ -56,7 +56,7 @@
 				<div class="demo-inner"><!-- TODO L10n map categories -->
 					<div class="flag">{{demo.category}}</div>
 					<a href="#" class="flip-card-back">{{ _('Hide Info') }}</a>
-					<div class="demo-image"><img src="{{mozillademos_host}}demos/{{ demo.slug }}/screenshot.jpg" width="458" height="230" alt="{{ _('Screenshot') }}"></div>
+					<div class="demo-image"><a href="{{mozillademos_host}}/demos/{{demo.slug}}/demo.html"><img src="{{mozillademos_host}}demos/{{ demo.slug }}/screenshot.jpg" width="458" height="230" alt="{{ _('Screenshot') }}"></a></div>
 					<div class="demo-info">
 						<h1>{{demo.title}}</h1>
 						<h2>{{demo.by_authors|safe}}</h2>
