@@ -59,7 +59,7 @@ def home(request):
     data = {'demos': Submission.objects.filter(hidden=False),
             'share_url': 'http://mozilla.com/firefox', #'https://demos.mozilla.org/',
             'mozillademos_host': settings.DEMOLAND,
-            'firefox_download': 'http://www.mozilla.com/firefox/beta/',
+            'firefox_download': 'http://www.mozilla.com/firefox/beta/?WT.mc_id=webwonder&WT.mc_ev=click',
             'chrome_download': 'http://www.google.com/landing/chrome/beta',}
 
     desktop_only = _('Desktop Only')
