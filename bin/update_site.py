@@ -17,9 +17,9 @@ import sys
 from optparse import  OptionParser
 
 ENV_BRANCH = {
-    'dev':   'master', 
-    'stage': 'master', 
-    'prod':  'prod',
+    'dev':   ['mobile', 'master'], 
+    'stage': ['master', 'master'], 
+    'prod':  ['prod', 'master'],
 }
 
 GIT_PULL = "git pull -q origin %(branch)s"
@@ -32,14 +32,15 @@ def update_site(env, debug):
     """ Run through commands to update this site """
     error_updating = False
     here = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    branch = {'branch': ENV_BRANCH[env]}
+    branch = {'branch': ENV_BRANCH[env][0]}
+    vendor_branch = {'branch': ENV_BRANCH[env][1]}
 
     commands = [
       (CHDIR, here),
       (EXEC,  GIT_PULL % branch),
       (EXEC,  GIT_SUBMODULE),
       (CHDIR, os.path.join(here, 'vendor')),
-      (EXEC,  GIT_PULL % branch),
+      (EXEC,  GIT_PULL % vendor_branch),
       (EXEC,  GIT_SUBMODULE),
       (CHDIR, os.path.join(here)),
       (EXEC, 'python2.6 vendor/src/schematic/schematic migrations/'),
