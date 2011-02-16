@@ -114,8 +114,8 @@ def home(request):
 #@cache_page(60 * 60 * 24) # one day
 def submit_demo(request):
     """ Collects email addresses or intersticial to MDN Demo Studio. """
-    return jingo.render(request, 'wow/coming_soon.html', {})
-    #return jingo.render(request, 'wow/submit.html', {})
+    #return jingo.render(request, 'wow/coming_soon.html', {})
+    return jingo.render(request, 'wow/submit.html', {})
 
 #@cache_page(60 * 60 * 24) # one day
 def screencast(request, slug):
