@@ -288,19 +288,14 @@ mozilla.wow.sortableCards = function() {
  * Card Flip
  */
 mozilla.wow.flippableCards = function() {
-    
     $('.more-info, .flip-card-back').live('click', function(e) {
        var card = $(this).parents('.demo');
-       
-       // Prevent the default behaviour
-       e.preventDefault();
-       
-       // Shouldn't do anything if the card is flipped
-       // TODO: Should we open the author's website link?
-       if( $(this).hasClass('more-info') && card.hasClass('flipped') ) return;
-       
-       card.toggleClass('flipped');
-              
+       if( $(this).hasClass('more-info') && card.hasClass('flipped') ) {
+           // They are clicking the authors homepage url... 
+       } else {       
+           e.preventDefault();
+           card.toggleClass('flipped');
+       }              
     });
 
 };
