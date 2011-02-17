@@ -51,8 +51,28 @@ mozilla.wow = function() {
             $('.watch-video').live('click', function (e) {
                     e.preventDefault();
                     $.colorbox({href: $(this).attr('href'),
-                                title: $(this).attr('title')});
+                                title: $(this).attr('title'),
+                                iframe: true,
+                                width: 700,
+                                height: 500});
                 });
+            var _handleEvents = function (e) {
+                console.info("Got a postMessage ", e.data);
+                if ('subtitles-ui' == e.data) {
+
+                    $.colorbox.resize({width: 700, height: 775});
+                } else if ('subtitles-editor' == e.data) {
+                    $.colorbox.resize({width: 1000, height: 800});
+                } else if ('subtitles-shrink' == e.data) {
+                    $.colorbox.resize({width: 700, height: 500});
+                }
+            };
+            if ( window['addEventListener'] ) {
+                window.addEventListener('message', _handleEvents, false);
+            } else {
+                window.attachEvent('onmessage', _handleEvents);
+            }
+
             $('a.cbox-submit').colorbox();
 
             mozilla.wow.cher();

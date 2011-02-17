@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html LANG="{{ LANG }}" dir="{{ DIR }}">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title></title>
+  </head>
+<body>
 <div id="video-player" class="mozilla-video-control">
   <video id="video" width="640" height="360" controls="controls" autoplay>
     <source src="{{webm}}" type="video/webm" />
@@ -22,3 +29,7 @@
     </object>
   </video>
 </div>
+<script type="text/javascript" src="http://s3.www.universalsubtitles.org/js/mirosubs-widgetizer.js"></script>
+{{ js('video') }}
+</body>
+</html>

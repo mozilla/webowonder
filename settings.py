@@ -145,6 +145,10 @@ MINIFY_BUNDLES = {
             'js/wow.js',
             'js/libs/webtrends.js',
         ),
+        'video': (
+            'js/libs/jquery-1.4.4.min.js',
+            'js/video.js',
+        ),
     }
 }
 

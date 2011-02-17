@@ -119,11 +119,15 @@ def submit_demo(request):
 
 #@cache_page(60 * 60 * 24) # one day
 def screencast(request, slug):
-    return _show_video(request, slug, 'screencasts')
+    resp = _show_video(request, slug, 'screencasts')
+    resp['x-frame-options'] = 'SAMEORIGIN'
+    return resp
 
 #@cache_page(60 * 60 * 24) # one day
 def documentary(request, slug):
-    return _show_video(request, slug, 'documentaries')
+    resp = _show_video(request, slug, 'documentaries')
+    resp['x-frame-options'] = 'SAMEORIGIN'
+    return resp
 
 #@cache_page(60 * 60 * 24) # one day
 def robots(request):
