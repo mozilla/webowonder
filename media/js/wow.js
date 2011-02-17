@@ -57,7 +57,6 @@ mozilla.wow = function() {
                                 height: 500});
                 });
             var _handleEvents = function (e) {
-                console.info("Got a postMessage ", e.data);
                 if ('subtitles-ui' == e.data) {
 
                     $.colorbox.resize({width: 700, height: 775});
