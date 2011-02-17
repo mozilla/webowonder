@@ -15,6 +15,125 @@
 	<link rel="stylesheet" href="css/ie7.css" type="text/css" media="all" title="IE7 styles" charset="utf-8">
 	<![endif]-->
         <link rel="shortcut icon" href="/media/img/favicon.ico">
+{% if LANG != 'en-US' %}
+    <style type="text/css">
+{# BEGIN Genearte this section with bin/generate_l10n_css_overrides.py #}
+
+#magic-tickets {
+{# L10n: DO NOT LOCALIZE! Controls size of Golden Tickets. Value is a number. Examples: 0.8 or 1.0 or 1.3 #}
+{% if _('custom-css-magic-tickets-size') and _('custom-css-magic-tickets-size') != 'custom-css-magic-tickets-size' %}
+    font-size: {{ _('custom-css-magic-tickets-size') }}em;
+{% endif %}
+{# L10n: DO NOT LOCALIZE! Controls font family for Golden Tickets.   Values: Arial, sans-serif #}
+{% if _('custom-css-magic-tickets-font') and _('custom-css-magic-tickets-font') != 'custom-css-magic-tickets-font' %}
+    font-family: {{ _('custom-css-magic-tickets-font') }};
+{% endif %}
+}
+
+
+#marvels-await {
+{# L10n: DO NOT LOCALIZE! Controls size of Marvels Await Poster. Value is a number. Examples: 0.8 or 1.0 or 1.3 #}
+{% if _('custom-css-marvels-await-poster-size') and _('custom-css-marvels-await-poster-size') != 'custom-css-marvels-await-poster-size' %}
+    font-size: {{ _('custom-css-marvels-await-poster-size') }}em;
+{% endif %}
+{# L10n: DO NOT LOCALIZE! Controls font family for Marvels Await Poster.   Values: Arial, sans-serif #}
+{% if _('custom-css-marvels-await-poster-font') and _('custom-css-marvels-await-poster-font') != 'custom-css-marvels-await-poster-font' %}
+    font-family: {{ _('custom-css-marvels-await-poster-font') }};
+{% endif %}
+}
+
+
+#marvels-await h3 {
+{# L10n: DO NOT LOCALIZE! Controls size of Marvels Await Title. Value is a number. Examples: 0.8 or 1.0 or 1.3 #}
+{% if _('custom-css-marvels-await-title-size') and _('custom-css-marvels-await-title-size') != 'custom-css-marvels-await-title-size' %}
+    font-size: {{ _('custom-css-marvels-await-title-size') }}em;
+{% endif %}
+{# L10n: DO NOT LOCALIZE! Controls font family for Marvels Await Title.   Values: Arial, sans-serif #}
+{% if _('custom-css-marvels-await-title-font') and _('custom-css-marvels-await-title-font') != 'custom-css-marvels-await-title-font' %}
+    font-family: {{ _('custom-css-marvels-await-title-font') }};
+{% endif %}
+}
+
+
+#marvels-await h3 span {
+{# L10n: DO NOT LOCALIZE! Controls size of Marvels Await Title Line. Value is a number. Examples: 0.8 or 1.0 or 1.3 #}
+{% if _('custom-css-marvels-await-title-line-size') and _('custom-css-marvels-await-title-line-size') != 'custom-css-marvels-await-title-line-size' %}
+    font-size: {{ _('custom-css-marvels-await-title-line-size') }}em;
+{% endif %}
+{# L10n: DO NOT LOCALIZE! Controls font family for Marvels Await Title Line.   Values: Arial, sans-serif #}
+{% if _('custom-css-marvels-await-title-line-font') and _('custom-css-marvels-await-title-line-font') != 'custom-css-marvels-await-title-line-font' %}
+    font-family: {{ _('custom-css-marvels-await-title-line-font') }};
+{% endif %}
+}
+
+
+#submit-demo a {
+{# L10n: DO NOT LOCALIZE! Controls size of Submit Demo!. Value is a number. Examples: 0.8 or 1.0 or 1.3 #}
+{% if _('custom-css-submit-demo-size') and _('custom-css-submit-demo-size') != 'custom-css-submit-demo-size' %}
+    font-size: {{ _('custom-css-submit-demo-size') }}em;
+{% endif %}
+{# L10n: DO NOT LOCALIZE! Controls font family for Submit Demo!.   Values: Arial, sans-serif #}
+{% if _('custom-css-submit-demo-font') and _('custom-css-submit-demo-font') != 'custom-css-submit-demo-font' %}
+    font-family: {{ _('custom-css-submit-demo-font') }};
+{% endif %}
+}
+
+
+#home-link {
+{# L10n: DO NOT LOCALIZE! Controls size of Mozilla Presents. Value is a number. Examples: 0.8 or 1.0 or 1.3 #}
+{% if _('custom-css-mozilla-presents-size') and _('custom-css-mozilla-presents-size') != 'custom-css-mozilla-presents-size' %}
+    font-size: {{ _('custom-css-mozilla-presents-size') }}em;
+{% endif %}
+{# L10n: DO NOT LOCALIZE! Controls font family for Mozilla Presents.   Values: Arial, sans-serif #}
+{% if _('custom-css-mozilla-presents-font') and _('custom-css-mozilla-presents-font') != 'custom-css-mozilla-presents-font' %}
+    font-family: {{ _('custom-css-mozilla-presents-font') }};
+{% endif %}
+}
+
+
+#this-way {
+{# L10n: DO NOT LOCALIZE! Controls size of This Way. Value is a number. Examples: 0.8 or 1.0 or 1.3 #}
+{% if _('custom-css-this-way-size') and _('custom-css-this-way-size') != 'custom-css-this-way-size' %}
+    font-size: {{ _('custom-css-this-way-size') }}em;
+{% endif %}
+{# L10n: DO NOT LOCALIZE! Controls font family for This Way.   Values: Arial, sans-serif #}
+{% if _('custom-css-this-way-font') and _('custom-css-this-way-font') != 'custom-css-this-way-font' %}
+    font-family: {{ _('custom-css-this-way-font') }};
+{% endif %}
+}
+
+
+#that-way {
+{# L10n: DO NOT LOCALIZE! Controls size of That Way. Value is a number. Examples: 0.8 or 1.0 or 1.3 #}
+{% if _('custom-css-that-way-size') and _('custom-css-that-way-size') != 'custom-css-that-way-size' %}
+    font-size: {{ _('custom-css-that-way-size') }}em;
+{% endif %}
+{# L10n: DO NOT LOCALIZE! Controls font family for That Way.   Values: Arial, sans-serif #}
+{% if _('custom-css-that-way-font') and _('custom-css-that-way-font') != 'custom-css-that-way-font' %}
+    font-family: {{ _('custom-css-that-way-font') }};
+{% endif %}
+}
+
+
+#experience-it {
+{# L10n: DO NOT LOCALIZE! Controls size of Experience it now button. Value is a number. Examples: 0.8 or 1.0 or 1.3 #}
+{% if _('custom-css-experience-it-size') and _('custom-css-experience-it-size') != 'custom-css-experience-it-size' %}
+    font-size: {{ _('custom-css-experience-it-size') }}em;
+{% endif %}
+{# L10n: DO NOT LOCALIZE! Controls font family for Experience it now button.   Values: Arial, sans-serif #}
+{% if _('custom-css-experience-it-font') and _('custom-css-experience-it-font') != 'custom-css-experience-it-font' %}
+    font-family: {{ _('custom-css-experience-it-font') }};
+{% endif %}
+}
+
+{# END Genearte this section with bin/generate_l10n_css_overrides.py #}
+{% endif %}
+{# L10n: DO NOT LOCALIZE! You can use this string to put custom CSS
+rules to fix any design issues. https://developer.mozilla.org/en/css 
+#}{% if _('custom-css') and _('custom-css') != 'custom-css' %}
+    {{ _('custom-css') }}
+    </style>
+{% endif %}
   </head>
   <body class="{% block body_class %}{% endblock %}">
     {% block content %}{% endblock %}
