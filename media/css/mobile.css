@@ -1,0 +1,41 @@
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+/**
+ * Mozilla Web O'pen Wonder Stylesheeet
+ *
+ * Initial version created by Weightshift
+ * http://weightshift.com/
+ *
+ * @copyright 2011 Mozilla Corporation
+ * @license   http://www.mozilla.org/MPL/ Mozilla Public License
+ */
+
+/* Reset */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}:focus{outline:0;}ins{text-decoration:none;}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0;}
+
+/* @font-face declarations -- do not change!!! */
+@font-face {
+	font-family: 'LeagueGothicRegular';
+	src: url('/media/fonts/League_Gothic-webfont.eot');
+	src: local('☺'), url('/media/fonts/League_Gothic-webfont.woff') format('woff'), url('/media/fonts/League_Gothic-webfont.ttf') format('truetype'), url('/media/fonts/League_Gothic-webfont.svg#webfontpm5EArBj') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ChunkFiveRegular';
+	src: url('/media/fonts/Chunkfive-webfont.eot');
+	src: local('☺'), url('/media/fonts/Chunkfive-webfont.woff') format('woff'), url('/media/fonts/Chunkfive-webfont.ttf') format('truetype'), url('/media/fonts/Chunkfive-webfont.svg#webfontr824sA59') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CopseRegular';
+	src: url('/media/fonts/Copse-Regular-webfont.eot');
+	src: local('☺'), url('/media/fonts/Copse-Regular-webfont.woff') format('woff'), url('/media/fonts/Copse-Regular-webfont.ttf') format('truetype'), url('/media/fonts/Copse-Regular-webfont.svg#webfont2ZLDIqTa') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* end @font-face declarations -- do not change!!! */

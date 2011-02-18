@@ -134,7 +134,8 @@ def JINJA_CONFIG():
 MINIFY_BUNDLES = {
     'css': {
         'wow': (
-            'css/wow.css',
+            'css/mobile.css',
+            'css/desktop.css',
         ),
     },
     'js': {
