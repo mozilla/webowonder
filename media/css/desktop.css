@@ -11,24 +11,10 @@
 
 @media screen and (min-width: 500px) {
 
-/* HTML5 elements must be set to block because they have no inherent display setting */
-header, nav, section, article, aside, footer {
-	display: block;
-}
-
-html,body {
-	height: 100%;
-	font-size: 14.99px;
-}
-
 body {
-	font-family: Helvetica, sans-serif;
 	background: url(/media/img/bg-main-top.png) 0 0 repeat-x,
 				url(/media/img/bg-harlequin.png) 0 0 repeat;
 	min-height: 700px;
-	font-size: 1em;
-	line-height: 1em;
-	-webkit-font-smoothing: antialiased;
 }
 
 a:hover {
@@ -187,6 +173,8 @@ a:hover {
 	top: 0;
 	left: 50%;
 	margin-left: -515px;
+    padding: 0;
+    width: auto;
 }
 
 #magic-tickets {
@@ -446,7 +434,7 @@ div.chain-3 {
 #demos {
 	width: 100%;
 	height: 360px;
-	margin-top: -15px;
+	margin: -15px 0 0 0;
 	position: relative;
 	background: url(/media/img/bg-rope.png) left center repeat-x;
 	z-index: 2;
@@ -455,6 +443,7 @@ div.chain-3 {
 #demos.init { overflow: visible; }
 
 	#demos .coming-soon {
+        display: block;
 	}
 
 	#demos-inner {
@@ -469,14 +458,8 @@ div.chain-3 {
 		width: 500px;
 		height: 350px;
 		float: left;
-		margin-right: 20px;
-		background: #e5dabb;
+		margin: 0 20px 0 0;
 		/*background: #e5dabb url(/media/img/non-sprited/bg-demo.png) 0 0 no-repeat;*/
-		border-radius: 4px;
-		-moz-border-radius: 4px;
-		-webkit-border-radius: 4px;
-		border-radius: 4px;
-		position: relative;
 		-moz-box-shadow: 0 3px 5px #000;
 		-webkit-box-shadow: 0 3px 5px #000;
 		box-shadow: 0 3px 5px #000;
@@ -588,14 +571,11 @@ div.chain-3 {
 		.demo-image {
 			width: 458px;
 			height: 230px;
-			border: 1px solid #fff;
-			border-radius: 4px;
-			-moz-border-radius: 4px;
-			-webkit-border-radius: 4px;
-			border-radius: 4px;
-			background-color: #000;
-			overflow: hidden;
 		}
+
+            .demo-image img {
+                position: static;
+            }
 		
 			.coming-soon .demo-image {
 				width: 460px;
@@ -677,23 +657,9 @@ div.chain-3 {
 .flipped .demo-info-extra { display: block; }
 		
 	.demo-info h1 {
-		font-family: "ChunkFiveRegular", serif;
-		color: #069;
 		text-shadow: 1px 1px 0 #fff;
-		font-size: 2.1em;
-		line-height: 28px;
-		margin: 10px 0 0;
 	}
-	[lang=cs] .demo-info h1,
-        [lang=el] .demo-info h1 {
-                font-family: serif;
-        }
 
-	.demo-info h2 {
-		font-size: 0.8em;
-		margin-bottom: 10px;
-	}
-	
 		.demo-info h2 a {
 			color: #c30;
 			text-decoration: none;
@@ -765,23 +731,11 @@ div.chain-3 {
 	}
 
 	.experience-it {
-		display: block;
-		background-color: #c23404;
-		border-radius: 4px;
-		-moz-border-radius: 4px;
-		-webkit-border-radius: 4px;
-		border-radius: 4px;
-		padding: 6px;
-		text-decoration: none;
-		color: #fff;
-		font-family: "LeagueGothicRegular", sans-serif;
 		-moz-box-shadow: 0 1px 4px #333;
 		-webkit-box-shadow: 0 1px 4px #333;
 		box-shadow: 0 1px 4px #333;
+		font-family: "LeagueGothicRegular", sans-serif;
 		margin-bottom: 11px;
-		font-weight: bold;
-		position: relative;
-		letter-spacing: -1px;
 	}
 	[lang=cs] .experience-it,
         [lang=el] .experience-it {
@@ -805,16 +759,9 @@ div.chain-3 {
                 }
 	
 		.experience-it span {
-			font-size: 3em;
-			line-height: 0.7em;
-			border: 1px solid #fff;
-			border-radius: 3px;
-			-moz-border-radius: 3px;
-			-webkit-border-radius: 3px;
-			border-radius: 3px;
-			padding: 8px 6px 6px;
-			display: block;
+            font-size: 3em;
 			font-weight: normal;
+			padding: 8px 6px 6px;
 		}
 		
 			.flipped .experience-it {
@@ -927,9 +874,12 @@ div.chain-3 {
 	}
 	
 #demo-controls {
-	width: 460px;
+    display: block;
+
 	margin: 0 auto;
 	position: relative;
+    top: auto;
+	width: 460px;
 }
 
 	#lights-down {
@@ -959,21 +909,28 @@ div.chain-3 {
 
 	#that-way,
 	#this-way {
-		display: block;
 		margin-top: 8px;
 		width: 190px;
 		height: 30px;
 		padding: 14px 0 5px 0;
 		font-family: "ChunkFiveRegular", serif;
 		font-size: 17px;
-		color: #ededcd;
-		text-decoration: none;
 		text-transform: uppercase;
 		text-shadow: 1px -1px 0px #261006;
 		-moz-transition: all 0.1s ease-in-out;
 		-webkit-transition: all 0.1s ease-in-out;
 		-o-transition: all 0.1s ease-in-out;
 		transition: all 0.1s ease-in-out;
+        /* mobile overrides */
+        background-color: none;
+        -moz-border-radius: none;
+        -webkit-border-radius: none;
+        border-radius: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+        border: none;
+        position: static;
 	} 
 	[lang=cs] #that-way, [lang=cs] #this-way,
         [lang=el] #that-way, [lang=el] #this-way {
@@ -990,7 +947,14 @@ div.chain-3 {
 		/*background: url(/media/img/that-way.png) 0 0 no-repeat;*/
 		background: url(/media/img/sprite.png) 0px -1301px no-repeat;
 		padding-left: 32px;
+        /* mobile overrides */
+        left: auto;
+        text-indent: 0;
 	}
+
+        #that-way:after {
+            display: none;
+        }
 	
 		#that-way:hover {
 			margin-left: 18px;
@@ -1003,7 +967,13 @@ div.chain-3 {
 		/*background: url(/media/img/this-way.png) 0 0 no-repeat;*/
 		background: url(/media/img/sprite.png) 0px -1371px no-repeat;
 		padding-left: 60px;
+        /* mobile overrides */
+        right: auto;
 	}
+
+        #this-way:after {
+            display:none;
+        }
 	
 		#this-way:hover {
 			margin-right: 18px;
