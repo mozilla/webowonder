@@ -9,7 +9,7 @@
  * @license   http://www.mozilla.org/MPL/ Mozilla Public License
  */
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
 
 body {
 	background: url(/media/img/bg-main-top.png) 0 0 repeat-x,
@@ -457,7 +457,6 @@ div.chain-3 {
 	.demo {
 		width: 500px;
 		height: 350px;
-		float: left;
 		margin: 0 20px 0 0;
 		/*background: #e5dabb url(/media/img/non-sprited/bg-demo.png) 0 0 no-repeat;*/
 		-moz-box-shadow: 0 3px 5px #000;
@@ -480,79 +479,15 @@ div.chain-3 {
 		}
 	
 		.flag {
-			position: absolute;
-			top: 30px;
-			left: 0;
-			padding: 7px 15px 6px 30px;
-			width: 45px;
-			background-color: #000;
-			font-weight: bold;
-			text-transform: uppercase;
-			color: #fff;
-			font-size: 0.7em;
-			line-height: 1em;
 			/*background: url(/media/img/non-sprited/bg-flags.png) 0 0 no-repeat;*/
-			background: url(/media/img/sprite.png) 0px -915px no-repeat;
-			z-index: 99;
 		}
-		[lang=el] .flag,
-                [lang=ga] .flag {
-                        text-transform: none;
-                }
-			.design .flag {
-				background-position: 0px -915px;
-			}
-			
-			.html5 .flag {
-				background-position: 0px -940px;
-			}
-			
-			.video .flag {
-				background-position: 0px -965px;
-			}
-			
-			.audio .flag,
-			.webgl .flag {
-				background-position: 0px -990px;
-			}
-			
-			.coming-soon .flag {
-				width: 105px;
-				background-position: 0px -1015px;
-			}
 	
 		.demo-inner {
 			margin: 10px;
 			padding: 9px;
-			border-radius: 4px;
-			-moz-border-radius: 4px;
-			-webkit-border-radius: 4px;
-			border-radius: 4px;
-			border: 1px solid #fff;
 			float: left;
 			height: 310px;
 		}
-		
-			.design .demo-inner {
-				border-color: #82902a;
-			}
-			
-			.html5 .demo-inner {
-				border-color: #d09607;
-			}
-			
-			.audio .demo-inner,
-			.webgl .demo-inner {
-				border-color: #725b3d;
-			}
-			
-			.video .demo-inner {
-				border-color: #d45155;
-			}
-			
-			.flipped .demo-inner {
-				width: 460px;
-			}
 		
 		.coming-soon-cover {
 			position: absolute;
@@ -562,19 +497,23 @@ div.chain-3 {
 			-moz-box-shadow: inset 0 0 30px #000;
 			-webkit-box-shadow: inset 0 0 30px #000;
 			box-shadow: inset 0 0 30px #000;
-			border-radius: 4px;
 			-moz-border-radius: 4px;
 			-webkit-border-radius: 4px;
 			border-radius: 4px;
 		}
 		
 		.demo-image {
-			width: 458px;
 			height: 230px;
+			width: 458px;
+            /* mobile overrides */
+            max-width: none;
 		}
 
             .demo-image img {
+                /* mobile overrides */
+                max-width: none;
                 position: static;
+                width: auto;
             }
 		
 			.coming-soon .demo-image {
@@ -597,7 +536,6 @@ div.chain-3 {
 				.flipped .demo-image img { margin: -30px 0 0 -150px;}
 			
 .flip-card-back {
-	display: none;
 	margin: -18px auto 0;
 	padding-top: 13px;
 	text-align: center;
@@ -659,16 +597,6 @@ div.chain-3 {
 	.demo-info h1 {
 		text-shadow: 1px 1px 0 #fff;
 	}
-
-		.demo-info h2 a {
-			color: #c30;
-			text-decoration: none;
-			display: inline-block;
-		}
-		.demo-info h2 a:last-child {
-			background: url(/media/img/non-sprited/icon-info.png) right top no-repeat;
-			padding: 2px 20px 2px 0;
-		}
 		
 		.flipped .demo-info h2 a {
   			background: none;
@@ -715,8 +643,6 @@ div.chain-3 {
 	margin: -60px 0 0 10px;
 	width: 120px;
 	text-transform: uppercase;
-	color: #423d30;
-	text-align: center;
 	font-size: 0.7em;
 	line-height: 1.2em;
 }
@@ -780,12 +706,6 @@ div.chain-3 {
 			background: url(/media/img/sprite.png) 0px -1085px no-repeat;
 		}
 		
-	.watch-video {
-		color: #069;
-		display: block;
-		font-weight: bold;
-		text-decoration: none;
-	}
 	.watch-video:hover { text-decoration: underline; }
 	
 	.demo-over {

@@ -88,15 +88,79 @@ body {
 		-moz-border-radius: 4px;
 		-webkit-border-radius: 4px;
 		border-radius: 4px;
+		float: left;
         height: 96%;
         margin-bottom: 4%;
 		position: relative;
-        width: 96%;
+        width: 100%;
     }
 
-    .demo-inner {
-        /* TODO: take some things from desktop.css's .demo-inner */
+    .flag {
+        background-color: #000;
+        background: url(/media/img/sprite.png) 0px -915px no-repeat;
+        color: #fff;
+        position: absolute;
+        z-index: 99;
+        /* from desktop.css */
+        top: 30px;
+        left: 0;
+        padding: 7px 15px 6px 30px;
+        width: 45px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.7em;
+        line-height: 1em;
     }
+    [lang=el] .flag,
+            [lang=ga] .flag {
+                    text-transform: none;
+            }
+        .design .flag {
+            background-position: 0px -915px;
+        }
+        
+        .html5 .flag {
+            background-position: 0px -940px;
+        }
+        
+        .video .flag {
+            background-position: 0px -965px;
+        }
+        
+        .audio .flag,
+        .webgl .flag {
+            background-position: 0px -990px;
+        }
+        
+        .coming-soon .flag {
+            width: 105px;
+            background-position: 0px -1015px;
+        }
+
+    .demo-inner {
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        margin: 2%;
+        padding: 2%;
+    }
+			.design .demo-inner {
+				border-color: #82902a;
+			}
+			
+			.html5 .demo-inner {
+				border-color: #d09607;
+			}
+			
+			.audio .demo-inner,
+			.webgl .demo-inner {
+				border-color: #725b3d;
+			}
+			
+			.video .demo-inner {
+				border-color: #d45155;
+			}
 
         .demo-image {
 			background-color: #000;
@@ -105,12 +169,21 @@ body {
 			-webkit-border-radius: 4px;
 			border-radius: 4px;
             height: 130px;
+            margin: auto;
+            max-width: 380px;
             overflow:hidden;
         }
 
         .demo-image img {
+            height: auto;
+            max-width: 380px;
             position: relative;
+            width: 100%;
         }
+
+    .flip-card-back {
+        display: none;
+    }
 
     .demo-info h1 {
 		color: #069;
@@ -128,6 +201,21 @@ body {
 		font-size: 0.8em;
 		margin-bottom: 10px;
 	}
+
+		.demo-info h2 a {
+			color: #c30;
+			text-decoration: none;
+			display: inline-block;
+		}
+		.demo-info h2 a:last-child {
+			background: url(/media/img/non-sprited/icon-info.png) right top no-repeat;
+			padding: 2px 20px 2px 0;
+		}
+
+    .demo-actions {
+        color: #423d30;
+        text-align: center;
+    }
 
     .experience-it {
 		background-color: #c23404;
@@ -153,6 +241,13 @@ body {
             padding: 10px;
             text-align: center;
         }
+
+	.watch-video {
+		color: #069;
+		display: block;
+		font-weight: bold;
+		text-decoration: none;
+	}
 
 #demo-controls {
     display: none;
