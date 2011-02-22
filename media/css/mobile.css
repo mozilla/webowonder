@@ -185,6 +185,14 @@ body {
         display: none;
     }
 
+        .flipped .flip-card-back {
+            display: block;
+        }
+
+    .demo-info-extra { display: none; }
+
+    .flipped .demo-info-extra { display: block; }
+		
     .demo-info h1 {
 		color: #069;
 		font-family: "ChunkFiveRegular", serif;

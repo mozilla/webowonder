@@ -585,16 +585,12 @@ div.chain-3 {
 	padding-left: 5px;
 }
 
-.demo-info-extra { display: none; }
-			
 .flipped .demo-info {
 	width: 265px;
 	margin-top: -130px;
 	color: #423d30;
 }
 
-.flipped .demo-info-extra { display: block; }
-		
 	.demo-info h1 {
 		text-shadow: 1px 1px 0 #fff;
 	}
