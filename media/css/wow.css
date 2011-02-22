@@ -772,6 +772,11 @@ div.chain-3 {
 	.demo-info a:hover { text-decoration: underline; }
 
 .video-container a { font-size: 0.9em; }
+.video-container a.watch-video { 
+    font-size: 1.2em; 
+    padding-bottom: 0.3em; 
+    text-shadown: 0.1em 0.1em 0.1em #999 
+}
 
 .video-container img {
 	float: left;
@@ -873,7 +878,9 @@ div.chain-3 {
 		color: #069;
 		display: block;
 		font-weight: bold;
+                font-size: 1.3em;
 		text-decoration: none;
+                text-shadow: 0.1em 0.1em 0.1em #666;
 	}
 	.watch-video:hover { text-decoration: underline; }
 	
@@ -915,7 +922,7 @@ div.chain-3 {
 	}
 	
 		.flipped .facebook {
-			margin-left: 25px;
+			margin-left: 41px;
 		}
 	
 	.twitter {
