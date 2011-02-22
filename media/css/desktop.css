@@ -506,6 +506,7 @@ div.chain-3 {
 			height: 230px;
 			width: 458px;
             /* mobile overrides */
+            margin: 0;
             max-width: none;
 		}
 
