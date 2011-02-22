@@ -169,12 +169,14 @@ a:hover {
 		}	
 
 #mozilla-info {
-	position: absolute;
-	top: 0;
 	left: 50%;
 	margin-left: -515px;
     padding: 0;
+	position: absolute;
+	top: 0;
     width: auto;
+    /* mobile overrides */
+    text-align: left;
 }
 
 #magic-tickets {
