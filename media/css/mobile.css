@@ -71,6 +71,51 @@ body {
     width: 70%;
 }
 
+#magic-tickets {
+    display: none;
+}
+
+#marvels-await {
+	background: url(/media/img/sprite.png) 0px -170px no-repeat;
+	color: #173956;
+	height: 243px;
+	margin-bottom: 5px;
+	padding: 40px 40px 30px 30px;
+	width: 170px;
+}
+
+	#marvels-await h3 {
+		line-height: 28px;
+		font-size: 2.1em;
+        font-weight: bold;
+		text-transform: uppercase;
+    }
+	[lang=cs] #marvels-await h3,
+        [lang=el] #marvels-await h3 {
+                font-family: sans-serif;
+        }
+        [lang=el] #marvels-await h3,
+        [lang=ga] #marvels-await h3 {
+            text-transform: none;
+        }
+
+	#marvels-await h3 span {
+		font-size: 1.2em;
+		font-family: "ChunkFiveRegular", serif;
+		line-height: 1em;
+	}
+        [lang=cs] #marvels-await h3 span,
+        [lang=el] #marvels-await h3 span {
+                font-family: serif;
+        }
+
+	#marvels-await p {
+		color: #403a30;
+        line-height: 1.1em;
+		padding: 7px 0 3px 4px;
+        text-align: left;
+    }
+
 #demos {
     margin: 10px 2% 10px 2%;
     width: 96%;

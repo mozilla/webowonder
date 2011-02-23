@@ -263,15 +263,10 @@ div.chain-3 {
 }
 		
 #marvels-await {
-	position: relative;
-	width: 170px;
-	height: 243px;
 	padding: 40px 30px 35px 35px;
+	position: relative;
 	margin-top: 92px;
 	/*background: url(/media/img/non-sprited/bg-marvels-await.png) 0 0 no-repeat;*/
-	background: url(/media/img/sprite.png) 0px -170px no-repeat;
-	color: #173956;
-	margin-bottom: 5px;
 	-moz-transform: rotate(-4deg);
 	-webkit-transform: rotate(-4deg);
 	-o-transform: rotate(-4deg);
@@ -281,41 +276,29 @@ div.chain-3 {
 }
 
 	#marvels-await h3 {
-		font-family: "LeagueGothicRegular", sans-serif;
 		font-size: 3.6em;
-		line-height: 0.6em;
-		letter-spacing: 2px;
+		font-family: "LeagueGothicRegular", sans-serif;
 		font-weight: normal;
-		text-transform: uppercase;
+		letter-spacing: 2px;
 		padding-left: 6px; 
 		text-shadow: -3px 3px 0px rgba(255,255,255,0.6);
+        /* mobile overrides */
+        line-height: 0.6em;
 	}
-	[lang=cs] #marvels-await h3,
-        [lang=el] #marvels-await h3 {
-                font-family: sans-serif;
-        }
-        [lang=el] #marvels-await h3,
-        [lang=ga] #marvels-await h3 {
-            text-transform: none;
-        }
+
 	#marvels-await h3 span {
-		font-family: "ChunkFiveRegular", serif;
+        /* mobile overrides */
 		font-size: 0.7em;
-		line-height: 1em;
-	}
-        [lang=cs] #marvels-await h3 span,
-        [lang=el] #marvels-await h3 span {
-                font-family: serif;
-        }
+    }
 
 	#marvels-await p {
-		color: #403a30;
 		font-family: "CopseRegular", Georgia, serif;
 		font-size: 0.9em;
 		line-height: 1.5em;
 		margin-right: 10px;
-		padding: 7px 0 3px 4px;
 		text-shadow: 1px 1px 0px rgba(255,255,255,0.6);
+        /* mobile overrides */
+        text-align: inherit;
 	}
 	[lang=cs] #marvels-await p,
         [lang=el] #marvels-await p {
