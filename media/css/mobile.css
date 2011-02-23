@@ -336,24 +336,41 @@ body {
 
 #sharing {
     clear: both;
+    position: relative;
+    margin-right: 53%;
+    top: 20px;
 }
 
     #back-to-mozilla {
 		background: url(/media/img/sprite.png) 0px -10px no-repeat;
 		display: block;
+		float: right;
 		height: 44px;
+		margin-right: -160px;
+		margin-top: -2px;
 		text-indent: -9999px;
 		width: 219px;
+		-moz-transform: rotate(6deg);
+		-webkit-transform: rotate(6deg);
+		-o-transform: rotate(6deg);
+		-ms-transform: rotate(6deg);
+		transform: rotate(6deg);
     }
 
     #twitter {
 		background: url(/media/img/chain-1.png) top center no-repeat;
+		float: right;
+		margin-right: -90px;
+        margin-top: 10px;
 		padding-top: 95px;
         width: 55px;
     }
 
     #facebook {
 		background: url(/media/img/chain-facebook.png) top center no-repeat;
+		float: right;
+		margin-right: -10px;
+        margin-top: 10px;
 		padding-top: 50px;
         width: 55px;
     }
