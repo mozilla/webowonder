@@ -350,11 +350,6 @@ body {
 		margin-top: -2px;
 		text-indent: -9999px;
 		width: 219px;
-		-moz-transform: rotate(6deg);
-		-webkit-transform: rotate(6deg);
-		-o-transform: rotate(6deg);
-		-ms-transform: rotate(6deg);
-		transform: rotate(6deg);
     }
 
     #twitter {

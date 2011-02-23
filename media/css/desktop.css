@@ -156,6 +156,11 @@ a:hover {
 	#back-to-mozilla {
 		/*background: url(/media/img/back-to-mozilla.png) 0 0 no-repeat;*/
 		margin-top: -2px;
+		-moz-transform: rotate(6deg);
+		-webkit-transform: rotate(6deg);
+		-o-transform: rotate(6deg);
+		-ms-transform: rotate(6deg);
+		transform: rotate(6deg);
 	}
 	
 		#back-to-mozilla:hover {
