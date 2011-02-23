@@ -5,13 +5,6 @@
 <div id="page-container">
 {% include 'wow/browser_compatibility.html' %}
 	<div id="header">
-		<div id="twitter" class="disruptable">
-			<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="firefox">{{ _('Tweet') }}</a>
-		</div>
-		<div id="facebook" class="disruptable">
-			<iframe src="http://www.facebook.com/plugins/like.php?href={{share_url|urlencode}}&amp;layout=box_count&amp;show_faces=false&amp;width=55&amp;action=like&amp;colorscheme=light&amp;height=65" style="border:none; overflow:hidden; width:55px; height:65px;"></iframe>
-		</div>
-		<a href="http://mozilla.org" id="back-to-mozilla" title="{{ _('Visit Mozilla.org') }}">{{ _('Visit Mozilla.org') }}</a>
 		<a href="/" id="home-link">{{ _('Mozilla Presents') }}</a>
 		<ul id="navigation">
 			<li class="see-types">{{ _('See!') }}</li>
@@ -97,6 +90,15 @@
 		<a href="#" id="that-way">{{ _('That Way') }}</a>
 		<a href="#" id="this-way">{{ _('This Way') }}</a>
 	</div>
+    <div id="sharing">
+		<div id="twitter" class="disruptable">
+			<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="firefox">{{ _('Tweet') }}</a>
+		</div>
+		<div id="facebook" class="disruptable">
+			<iframe src="http://www.facebook.com/plugins/like.php?href={{share_url|urlencode}}&amp;layout=box_count&amp;show_faces=false&amp;width=55&amp;action=like&amp;colorscheme=light&amp;height=65" style="border:none; overflow:hidden; width:55px; height:65px;"></iframe>
+		</div>
+		<a href="http://mozilla.org" id="back-to-mozilla" title="{{ _('Visit Mozilla.org') }}">{{ _('Visit Mozilla.org') }}</a>
+    </div>
 </div>
     <div class="loading"><div class="loading-inner">{{ _('Loading') }} <span class="title"></span><img src="/media/img/loading.gif" height="32" width="32" alt="{{ _('Loading') }}"/></div></div>
     <iframe id="demo-viewport"></iframe>

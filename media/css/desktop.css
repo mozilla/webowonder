@@ -48,7 +48,7 @@ a:hover {
 		display: block;
 		height: 113px;
 		width: 575px;
-		margin-left: 87px;
+		margin-left: 79px;
 		padding-top: 17px;
 		font-family: "ChunkFiveRegular", serif;
 		color: #cac0a5;
@@ -116,12 +116,20 @@ a:hover {
   			text-shadow: 2px 2px 3px #333;
   			background-image: url(/media/img/non-sprited/nav-selected.png);
 		}
+
+#sharing {
+    margin-right: -375px;
+    position: absolute;
+    right: 50%;
+    top: 0;
+    width: 750px;
+}
 		
 	#twitter {
 		float: right;
 		margin-right: -90px;
-		padding-top: 95px;
-		background: url(/media/img/chain-1.png) top center no-repeat;
+        /* mobile overrides */
+        width: auto;
 	}
 		
 		#twitter iframe {
@@ -135,8 +143,8 @@ a:hover {
 	#facebook {
 		float: right;
 		margin-right: -10px;
-		padding-top: 50px;
-		background: url(/media/img/chain-facebook.png) top center no-repeat;
+        /* mobile overrides */
+        width: auto;
 	}
 
 		#facebook iframe {
@@ -149,11 +157,7 @@ a:hover {
 		
 	#back-to-mozilla {
 		float: right;
-		display: block;
-		width: 219px;
-		height: 44px;
 		/*background: url(/media/img/back-to-mozilla.png) 0 0 no-repeat;*/
-		background: url(/media/img/sprite.png) 0px -10px no-repeat;
 		margin-right: -160px;
 		margin-top: -2px;
 		-moz-transform: rotate(6deg);
@@ -161,7 +165,6 @@ a:hover {
 		-o-transform: rotate(6deg);
 		-ms-transform: rotate(6deg);
 		transform: rotate(6deg);
-		text-indent: -9999px;
 	}
 	
 		#back-to-mozilla:hover {
@@ -910,7 +913,6 @@ div.chain-3 {
 }
 
 .loading {
-	display: none;
 	font-family: "ChunkFiveRegular", serif;
 	font-size: 32px;
 	line-height: 32px;
