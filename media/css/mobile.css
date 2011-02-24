@@ -350,6 +350,10 @@ alternate marvels-await
             background-position: 0px -1015px;
         }
 
+        .flipped .flag {
+            display: none;
+        }
+
     .demo-inner {
         -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
@@ -386,6 +390,10 @@ alternate marvels-await
             max-width: 380px;
             overflow:hidden;
         }
+            
+            .flipped .demo-image {
+                display: none;
+            }
 
         .demo-image img {
             height: auto;
@@ -396,15 +404,51 @@ alternate marvels-await
 
     .flip-card-back {
         display: none;
+        font-family: "ChunkFiveRegular", serif;
+        margin: -10px auto 0;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 50%;
+    }
+    [lang=cs] .flip-card-back,
+    [lang=el] .flip-card-back {
+            font-family: serif;
+    }
+    [lang=el] .flip-card-back,
+    [lang=ga] .flip-card-back {
+        text-transform: none;
     }
 
         .flipped .flip-card-back {
             display: block;
         }
 
+        .design .flip-card-back {
+            color: #82902a;
+        }
+        
+        .html5 .flip-card-back {
+            color: #d09607;
+        }
+        
+        .audio .flip-card-back,
+        .webgl .flip-card-back {
+            color: #725b3d;
+        }
+        
+        .video .flip-card-back {
+            color: #d45155;
+        }
+
     .demo-info-extra { display: none; }
 
     .flipped .demo-info-extra { display: block; }
+
+    .flipped .demo-info {
+        color: #423d30;
+    }
 		
     .demo-info h1 {
 		color: #069;
@@ -416,6 +460,10 @@ alternate marvels-await
 	[lang=cs] .demo-info h1,
         [lang=el] .demo-info h1 {
                 font-family: serif;
+        }
+
+        .flipped .demo-info h1 {
+            margin-top: 8px;
         }
 
 	.demo-info h2 {
@@ -432,6 +480,31 @@ alternate marvels-await
 			background: url(/media/img/non-sprited/icon-info.png) right top no-repeat;
 			padding: 2px 20px 2px 0;
 		}
+
+	.demo-info p {
+		margin-bottom: 5px;
+		line-height: 16px;
+		font-size: 0.8em;
+	}
+
+	.demo-info ul {
+		border-top: 1px solid #c4ba9c;
+		margin-bottom: 10px;
+		font-size: 0.8em;
+	}
+
+	.demo-info li {
+		padding: 5px 0 5px 25px;
+		line-height: 15px;
+		border-bottom: 1px solid #c4ba9c;
+		background: url(/media/img/non-sprited/bg-bullet.png) 5px 4px no-repeat;
+	}
+	
+	.demo-info a {
+		color: #069;
+		text-decoration: none;
+		font-weight: bold;
+	}
 
     .demo-actions {
         color: #423d30;

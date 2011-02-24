@@ -376,6 +376,11 @@ div.chain-3 {
 		.flag {
 			/*background: url(/media/img/non-sprited/bg-flags.png) 0 0 no-repeat;*/
 		}
+
+            .flipped .flag {
+                /* mobile overrides */
+                display: block;
+            }
 	
 		.demo-inner {
 			margin: 10px;
@@ -427,29 +432,20 @@ div.chain-3 {
 				border-radius: 3px;
 				top: 76px;
 				left: 294px;
+                /* mobile overrides */
+                display: block;
 			}
 			
 				.flipped .demo-image img { margin: -30px 0 0 -150px;}
 			
 .flip-card-back {
 	margin: -18px auto 0;
-	padding-top: 13px;
-	text-align: center;
+    padding: 13px 0 0;
 	width: 120px;
-	text-decoration: none;
 	font-size: 0.6em;
-	font-family: "ChunkFiveRegular", serif;
-	text-transform: uppercase;
 	background: url(/media/img/bg-flip-card-back.png) center top no-repeat;
 }
-[lang=cs] .flip-card-back,
-[lang=el] .flip-card-back {
-        font-family: serif;
-}
-[lang=el] .flip-card-back,
-[lang=ga] .flip-card-back {
-    text-transform: none;
-}
+
 	.flipped .flip-card-back { display: block; }
 	
 	.design .flip-card-back {
@@ -483,42 +479,21 @@ div.chain-3 {
 .flipped .demo-info {
 	width: 265px;
 	margin-top: -130px;
-	color: #423d30;
 }
 
 	.demo-info h1 {
 		text-shadow: 1px 1px 0 #fff;
 	}
+
+        .flipped .demo-info h1 {
+            margin-top: 10px;
+        }
 		
 		.flipped .demo-info h2 a {
   			background: none;
   			color: #423D30;
 		}
 
-	.demo-info p {
-		margin-bottom: 5px;
-		line-height: 16px;
-		font-size: 0.8em;
-	}
-
-	.demo-info ul {
-		border-top: 1px solid #c4ba9c;
-		margin-bottom: 10px;
-		font-size: 0.8em;
-	}
-
-	.demo-info li {
-		padding: 5px 0 5px 25px;
-		line-height: 15px;
-		border-bottom: 1px solid #c4ba9c;
-		background: url(/media/img/non-sprited/bg-bullet.png) 5px 4px no-repeat;
-	}
-	
-	.demo-info a {
-		color: #069;
-		text-decoration: none;
-		font-weight: bold;
-	}
 	.demo-info a:hover { text-decoration: underline; }
 
 .video-container a { font-size: 0.9em; }
