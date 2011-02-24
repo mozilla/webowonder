@@ -465,6 +465,13 @@ alternate marvels-await
         .flipped .demo-info h1 {
             margin-top: 8px;
         }
+		
+		.flipped .demo-info h2 a {
+  			color: #423D30;
+		}
+		.flipped .demo-info h2 a:last-child {
+  			background: none;
+        }
 
 	.demo-info h2 {
 		font-size: 0.8em;
@@ -482,20 +489,17 @@ alternate marvels-await
 		}
 
 	.demo-info p {
-		margin-bottom: 5px;
-		line-height: 16px;
-		font-size: 0.8em;
+        line-height: 1.2;
+		margin-bottom: 0.4em;
 	}
 
 	.demo-info ul {
 		border-top: 1px solid #c4ba9c;
-		margin-bottom: 10px;
-		font-size: 0.8em;
+		margin-bottom: 0.9em;
 	}
 
 	.demo-info li {
-		padding: 5px 0 5px 25px;
-		line-height: 15px;
+		padding: 0.4em 0 0.4em 25px;
 		border-bottom: 1px solid #c4ba9c;
 		background: url(/media/img/non-sprited/bg-bullet.png) 5px 4px no-repeat;
 	}
@@ -506,9 +510,17 @@ alternate marvels-await
 		font-weight: bold;
 	}
 
+    .video-container {
+        text-align: center;
+    }
+
     .demo-actions {
         color: #423d30;
         text-align: center;
+    }
+
+    .flipped .demo-actions {
+        display: none;
     }
 
     .experience-it {
@@ -541,7 +553,20 @@ alternate marvels-await
 		display: block;
 		font-weight: bold;
 		text-decoration: none;
-	}
+    }
+
+        .video-container .watch-video {
+            background-color: #069;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 130%;
+            outline: 1px solid #fff;
+            outline-offset: -6px;
+            margin-bottom: 4px;
+            padding: 16px;
+        }
 
 #demo-controls {
     display: none;

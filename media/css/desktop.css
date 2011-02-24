@@ -488,13 +488,26 @@ div.chain-3 {
         .flipped .demo-info h1 {
             margin-top: 10px;
         }
-		
-		.flipped .demo-info h2 a {
-  			background: none;
-  			color: #423D30;
-		}
 
 	.demo-info a:hover { text-decoration: underline; }
+
+    .demo-info p {
+		font-size: 0.8em;
+		line-height: 16px;
+    }
+
+	.demo-info ul {
+		font-size: 0.8em;
+    }
+
+	.demo-info li {
+		line-height: 15px;
+    }
+
+.video-container {
+    /* mobile overrides */
+    text-align: left;
+}
 
 .video-container a { font-size: 0.9em; }
 
@@ -521,6 +534,8 @@ div.chain-3 {
 		margin-top: 58px;
 		width: 170px;
 		margin-left: 5px;
+        /* mobile overrides */
+        display: block;
 	}
 
 	.experience-it {
@@ -574,6 +589,20 @@ div.chain-3 {
 		}
 		
 	.watch-video:hover { text-decoration: underline; }
+
+    .video-container .watch-video {
+        /* mobile overrides */
+        background-color: transparent;
+        -moz-border-radius: none;
+        -webkit-border-radius: none;
+        border-radius: none;
+        color: #069;
+        font-size: inherit;
+        outline: none;
+        margin-bottom: 0;
+        padding: 0;
+        width: auto;
+    }
 	
 	.demo-over {
 		top: 0;
