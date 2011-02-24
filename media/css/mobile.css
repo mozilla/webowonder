@@ -141,6 +141,36 @@ div.chain-1 {
 	width: 14px;
 	z-index: 101;
 }
+div.chain-2 {
+	position: absolute;
+	width: 15px;
+	height: 35px;
+	/*background: url(/media/img/chain-2.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -510px no-repeat;
+	z-index: 101;
+	top: 456px;
+	margin-left: 80px;
+	-moz-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+div.chain-3 {
+	position: absolute;
+	width: 15px;
+	height: 50px;
+	/*background: url(/media/img/chain-3.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -565px no-repeat;
+	z-index: 101;
+	top: 451px;
+	margin-left: 156px;
+	-moz-transform: rotate(-1deg);
+	-webkit-transform: rotate(-1deg);
+	-o-transform: rotate(-1deg);
+	-ms-transform: rotate(-1deg);
+	transform: rotate(-1deg);
+}
 
 #marvels-await {
 	background: url(/media/img/sprite.png) 0px -170px no-repeat;
@@ -215,7 +245,7 @@ alternate marvels-await
 	-o-transform: rotate(6deg);
 	-ms-transform: rotate(6deg);
 	transform: rotate(6deg);
-	margin-top: 10px;
+	margin-top: 15px;
 	text-transform: uppercase;
 	text-align: center;
 	text-decoration: none;
