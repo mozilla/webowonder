@@ -38,10 +38,11 @@ a:hover {
 }
 
 #header {
-	width: 750px;
+	background: url(/media/img/logo-web-o-wonder.png) center top  no-repeat;
 	height: 220px;
 	margin: 0 auto;
-	background: url(/media/img/logo-web-o-wonder.png) center top  no-repeat;
+    max-width: 430px;
+	width: 750px;
 }
 
 	#home-link {
@@ -52,23 +53,18 @@ a:hover {
 	}
 
 #navigation {
-	width: 750px;
-	padding-top: 4px;
 	background: url(/media/img/non-sprited/bg-nav.png) 0 0 no-repeat;
 	float: left;
+	padding-top: 4px;
+	width: 750px;
 }	
 		#navigation li {
-			float: left;
 			font-size: 1.2em;
 			line-height: 1.2em;
 			color: #fff;
-			text-transform: uppercase;
 			text-shadow: 1px 1px 0 #000;
+            width: auto;
 		}
-		[lang=el] #navigation li,
-                [lang=ga] #navigation li {
-                        text-transform: none;
-                }
 			#navigation .see-types {
 				font-family: "LeagueGothicRegular", sans-serif;
 				padding: 10px 45px 0 0;
@@ -76,6 +72,8 @@ a:hover {
 				letter-spacing: 0.5px;
 				/*background: url(/media/img/non-sprited/bg-see-types.png) right 13px no-repeat;*/
 				background: url(/media/img/sprite.png) 32px -1431px no-repeat;
+                /* mobile overrides */
+                display: list-item;
 			}
 		        [lang=cs] #navigation .see-types,
                         [lang=el] #navigation .see-types {
@@ -84,13 +82,13 @@ a:hover {
 		#navigation a {
 			font-family: "ChunkFiveRegular", serif;
 			color: #fff6e1;
-			display: block;
 			border-left: 1px dotted #333;
-			padding: 11px 32px;
-			text-decoration: none;
 			letter-spacing: 2px;
+			padding: 11px 32px;
 			background-position: center 30px;
 			background-repeat: no-repeat;
+            /* mobile overrides */
+            font-weight: normal;
 		}
                 [lang=cs] #navigation a, 
                 [lang=el] #navigation a {
@@ -100,6 +98,12 @@ a:hover {
   			text-shadow: 2px 2px 3px #333;
   			background-image: url(/media/img/non-sprited/nav-selected.png);
 		}
+
+        #navigation a, .js #navigation a.selected {
+            /* mobile overrides */
+            opacity: 1.0;
+            text-decoration: none;
+        }
 
 #sharing {
     margin-right: -375px;
@@ -1147,7 +1151,8 @@ div.chain-3 {
     text-align: center;
     width: 100%;
     z-index: 9999;
-
+    /* mobile overrides */
+    display: block;
 }
     #webgl-compatibility p {
         margin: auto 100px;

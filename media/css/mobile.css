@@ -61,7 +61,8 @@ body {
 #header {
 	background: url(/media/img/logo-web-o-wonder-mobile.png) center top  no-repeat;
     height: 151px;
-    margin: 0 0 2% 0;
+    margin: 0 auto 2%;
+    max-width: 430px;
     text-align: center;
     width: 100%;
 }
@@ -70,6 +71,7 @@ body {
 		color: #cac0a5;
 		display: block;
 		font-family: "ChunkFiveRegular", serif;
+        height: 74px;
 		letter-spacing: 0.15em;
 		padding-top: 17px;
 		text-align: center;
@@ -83,6 +85,40 @@ body {
         [lang=el] #home-link, 
         [lang=ga] #home-link {     /* irish */
                 text-transform: none;
+        }
+
+#navigation {
+    width: 100%;
+}
+
+		#navigation li {
+            float: left;
+			font-size: 0.9em;
+			text-transform: uppercase;
+            width: 25%
+        }
+		[lang=el] #navigation li,
+                [lang=ga] #navigation li {
+                        text-transform: none;
+                }
+
+			#navigation .see-types {
+                display: none;
+            }
+
+		#navigation a {
+            color: #ddd5b3;
+			display: block;
+            font-family: sans-serif;
+            font-weight: bold;
+            opacity: 0.4;
+            padding: 11px 5px;
+            text-decoration: none;
+        }
+
+		.js #navigation a.selected {
+            opacity: 1.0;
+            text-decoration: underline;
         }
 
 #mozilla-info {
@@ -440,3 +476,6 @@ body {
 	display: none;
 }
 
+#webgl-compatibility {
+    display: none;
+}
