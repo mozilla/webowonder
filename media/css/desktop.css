@@ -41,7 +41,7 @@ a:hover {
 	background: url(/media/img/logo-web-o-wonder.png) center top  no-repeat;
 	height: 220px;
 	margin: 0 auto;
-    max-width: 430px;
+    max-width: none;
 	width: 750px;
 }
 
@@ -255,11 +255,6 @@ div.chain-3 {
 	position: relative;
 	margin-top: 92px;
 	/*background: url(/media/img/non-sprited/bg-marvels-await.png) 0 0 no-repeat;*/
-	-moz-transform: rotate(-4deg);
-	-webkit-transform: rotate(-4deg);
-	-o-transform: rotate(-4deg);
-	-ms-transform: rotate(-4deg);
-	transform: rotate(-4deg);
 	z-index: 100;
 }
 
@@ -269,7 +264,6 @@ div.chain-3 {
 		font-weight: normal;
 		letter-spacing: 2px;
 		padding-left: 6px; 
-		text-shadow: -3px 3px 0px rgba(255,255,255,0.6);
         /* mobile overrides */
         line-height: 0.6em;
 	}
@@ -317,42 +311,12 @@ div.chain-3 {
 	#marvels-await a:hover { color: #9a280d; }
 
 #firefox-four {
-	position: relative;
-	display: block;
 	/*background: url(/media/img/non-sprited/bg-firefox-four.png) 0 0 no-repeat;*/
-	background: url(/media/img/sprite.png) 0px -635px no-repeat;
-	width: 220px;
-	height: 250px;
-	-moz-transform: rotate(6deg);
-	-webkit-transform: rotate(6deg);
-	-o-transform: rotate(6deg);
-	-ms-transform: rotate(6deg);
-	transform: rotate(6deg);
-	margin-top: 10px;
-	text-transform: uppercase;
-	text-align: center;
-	text-decoration: none;
-	z-index: 100;
-	-moz-box-shadow: 3px 5px 3px #111;
-	-webkit-box-shadow: 3px 5px 3px #111;
-	box-shadow: 3px 5px 3px #111;
 	
 }
-[lang=el] #firefox-four,
-[lang=ga] #firefox-four {
-    text-transform: none;
-}
-	#firefox-four h3 {
-		text-indent: -10000px;
-	}
 		
 	#firefox-four .tagline {
 		font-family: "LeagueGothicRegular", sans-serif;
-		color: #f61a1a;
-		float: left;
-		width: 40px;
-		margin-top: 115px;
-		margin-left: 20px;
 	}
 	[lang=cs] #firefox-four .tagline,
         [lang=el] #firefox-four .tagline {
@@ -380,17 +344,6 @@ div.chain-3 {
 	.all {
 		font-size: 2.3em;
 		line-height: 0.8em;
-	}
-		
-	#firefox-four .get-it {
-		clear: both;
-		display: block;
-		font-weight: bold;
-		letter-spacing: 2px;
-		font-size: 1.2em;
-		color: #ffdeb5;
-		padding-top: 200px;
-		padding-left: 8px;
 	}
 	
 	#firefox-four:hover .get-it,
@@ -1009,6 +962,8 @@ div.chain-3 {
 	overflow: hidden;
 	padding: 20px;
 	line-height: 20px;
+    /* mobile overrides */
+    display: block;
 	}
 
 #submit-demo h1 { 
