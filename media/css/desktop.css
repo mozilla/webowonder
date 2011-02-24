@@ -45,27 +45,11 @@ a:hover {
 }
 
 	#home-link {
-		display: block;
 		height: 113px;
 		width: 575px;
 		margin-left: 79px;
-		padding-top: 17px;
-		font-family: "ChunkFiveRegular", serif;
-		color: #cac0a5;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
 		text-shadow: 1px 1px 3px #000;
 	}
-	[lang=cs] #home-link,      /* czech */
-        [lang=el] #home-link {     /* greek */
-                font-family: serif;
-        }
-        [lang=el] #home-link, 
-        [lang=ga] #home-link {     /* irish */
-                text-transform: none;
-        }
 
 #navigation {
 	width: 750px;

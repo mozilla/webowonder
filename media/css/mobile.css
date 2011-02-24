@@ -59,10 +59,31 @@ body {
 }
 
 #header {
-    margin: 2% 0;
+	background: url(/media/img/logo-web-o-wonder-mobile.png) center top  no-repeat;
+    height: 151px;
+    margin: 0 0 2% 0;
     text-align: center;
     width: 100%;
 }
+
+    #home-link {
+		color: #cac0a5;
+		display: block;
+		font-family: "ChunkFiveRegular", serif;
+		letter-spacing: 0.15em;
+		padding-top: 17px;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+    }
+	[lang=cs] #home-link,      /* czech */
+        [lang=el] #home-link {     /* greek */
+                font-family: serif;
+        }
+        [lang=el] #home-link, 
+        [lang=ga] #home-link {     /* irish */
+                text-transform: none;
+        }
 
 #mozilla-info {
     color: #ffffff;
