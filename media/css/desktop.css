@@ -40,7 +40,6 @@ a:hover {
 #header {
 	background: url(/media/img/logo-web-o-wonder.png) center top  no-repeat;
 	height: 220px;
-	margin: 0 auto;
     max-width: none;
 	width: 750px;
 }
@@ -212,12 +211,9 @@ a:hover {
 	}
 
 div.chain-1 {
-	position: absolute;
-	width: 14px;
 	height: 105px;
-	background: url(/media/img/chain-1.png) 0 0 no-repeat;
-	z-index: 101;
-	margin-left: 102px;
+    /* mobile overrides */
+    top: 0;
 }
 div.chain-2 {
 	position: absolute;
@@ -251,9 +247,8 @@ div.chain-3 {
 }
 		
 #marvels-await {
-	padding: 40px 30px 35px 35px;
-	position: relative;
 	margin-top: 92px;
+	padding: 40px 30px 35px 35px;
 	/*background: url(/media/img/non-sprited/bg-marvels-await.png) 0 0 no-repeat;*/
 	z-index: 100;
 }

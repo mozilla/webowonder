@@ -61,7 +61,7 @@ body {
 #header {
 	background: url(/media/img/logo-web-o-wonder-mobile.png) center top  no-repeat;
     height: 151px;
-    margin: 0 auto 2%;
+    margin: 0 auto;
     max-width: 430px;
     text-align: center;
     width: 100%;
@@ -132,11 +132,22 @@ body {
     display: none;
 }
 
+div.chain-1 {
+	background: url(/media/img/chain-1.png) 0 0 no-repeat;
+    height: 15px;
+	margin-left: 102px;
+	position: absolute;
+    top: 141px;
+	width: 14px;
+	z-index: 101;
+}
+
 #marvels-await {
 	background: url(/media/img/sprite.png) 0px -170px no-repeat;
 	color: #173956;
 	height: 243px;
 	margin-bottom: 5px;
+	position: relative;
 	padding: 40px 40px 30px 30px;
 	width: 170px;
 	-moz-transform: rotate(-4deg);
