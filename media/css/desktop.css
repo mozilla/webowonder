@@ -588,6 +588,12 @@ div.chain-3 {
 			background: url(/media/img/sprite.png) 0px -1085px no-repeat;
 		}
 		
+    .watch-video {
+        /* mobile overrides */
+        margin: 0;
+        padding: 0;
+        width: auto;
+    }
 	.watch-video:hover { text-decoration: underline; }
 
     .video-container .watch-video {
@@ -621,16 +627,11 @@ div.chain-3 {
 		}
 	
 	.social-media {
-		display: block;
-		float: left;
-		width: 24px;
-		height: 24px;
-		text-indent: -100000px;
 		/*background: url(/media/img/non-sprited/icon-social.png) 0 0 no-repeat;*/
-		background: url(/media/img/sprite.png) 0px -1119px no-repeat;
 		margin: 6px 0 0 30px;
 		opacity: 0.5;
-		text-decoration: none !important;
+        /* mobile overrides */
+        position: static;
 	}
 	
 		.social-media:hover {

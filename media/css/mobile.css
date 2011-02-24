@@ -501,7 +501,7 @@ alternate marvels-await
 	.demo-info li {
 		padding: 0.4em 0 0.4em 25px;
 		border-bottom: 1px solid #c4ba9c;
-		background: url(/media/img/non-sprited/bg-bullet.png) 5px 4px no-repeat;
+		background: url(/media/img/non-sprited/bg-bullet.png) 5px 0.4em no-repeat;
 	}
 	
 	.demo-info a {
@@ -532,6 +532,7 @@ alternate marvels-await
         display: block;
 		font-weight: bold;
 		letter-spacing: -1px;
+        margin-bottom: 0.4em;
 		padding: 6px;
 		position: relative;
 		text-decoration: none;
@@ -552,7 +553,10 @@ alternate marvels-await
 		color: #069;
 		display: block;
 		font-weight: bold;
+        margin: auto;
+        padding: 0.4em 0;
 		text-decoration: none;
+        width: 55%;
     }
 
         .video-container .watch-video {
@@ -567,6 +571,27 @@ alternate marvels-await
             margin-bottom: 4px;
             padding: 16px;
         }
+
+    .social-media {
+		background: url(/media/img/sprite.png) 0px -1119px no-repeat;
+        bottom: 4%;
+		display: block;
+		float: left;
+		height: 24px;
+        position: absolute;
+        right: 4%;
+		text-decoration: none !important;
+		text-indent: -100000px;
+		width: 24px;
+    }
+
+    .facebook {
+        right: 14%;
+    }
+
+	.twitter {
+		background-position: 0px -1143px;
+	}
 
 #demo-controls {
     display: none;
