@@ -174,7 +174,7 @@ mozilla.wow.sideScroller = function() {
         
         // If we don't have a next card
         if(nextCard.length == 0 && !$('body').hasClass('scrolling')) {
-            mozilla.wow.shake();
+            mozilla.wow.spin();
             return;
         };
         
@@ -441,31 +441,20 @@ mozilla.wow.comingSoon = function () {
 };
 
 /**
- * Window Shake
+ * We have another winner!
  */
-mozilla.wow.shake = function() {
-    var multiplier = 1,
-        rotateBy;
-    
-    // Shake the window
-    for (var i=0, x, y; i<3; i++){
-        x = Math.floor(Math.random() * 6) - 3;
-        y = Math.floor(Math.random() * 6) - 3;
-        window.moveBy(x,y);
-        window.moveBy(-x,-y);        
+mozilla.wow.spin = function() {
+    if (mozilla.wow.spin.even) {
+        $('.magic-ticket-2').css(
+            {'-moz-transform': 'rotate(-13deg)',
+             '-o-transform': 'rotate(-13deg)',
+             '-webkit-transform': 'rotate(-13deg)'});
+        mozilla.wow.spin.even = false;
+    } else {
+        $('.magic-ticket-2').css(
+            {'-moz-transform': 'rotate(347deg)',
+             '-o-transform': 'rotate(347deg)',
+             '-webkit-transform': 'rotate(347deg)'});
+        mozilla.wow.spin.even = true;
     }
-    
-    // Disrupt some elements
-    $('.disruptable iframe').each(function() {
-       rotateBy = Math.floor(Math.random() * 10 * multiplier);
-       $(this).css({
-           '-moz-transform': 'rotate(' + rotateBy + 'deg)',
-           '-webkit-transform': 'rotate(' + rotateBy + 'deg)',
-           '-o-transform': 'rotate(' + rotateBy + 'deg)',
-           '-ms-transform': 'rotate(' + rotateBy + 'deg)',
-           'transform': 'rotate(' + rotateBy + 'deg)',
-       });
-       multiplier *= -1;
-    });
-    
 };

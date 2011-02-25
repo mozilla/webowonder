@@ -47,10 +47,10 @@ USE_L10N = True
 LANGUAGE_CODE = 'en-US'
 
 # Accepted locales
-KNOWN_LANGUAGES = ('en-US', 'ca', 'cs', 'de','el', 'es', 'fy', 'ga', 'he', 'hu', 'id', 'ja', 'nl', 'pl', 'rm', 'ro', 'ru', 'sl', 'sr', 'zh_CN', 'zh_TW')
+KNOWN_LANGUAGES = ('en-US', 'ar', 'ca', 'cs', 'de','el', 'es', 'fy', 'ga', 'he', 'hu', 'id', 'ja', 'nl', 'pl', 'rm', 'ro', 'ru', 'sl', 'sr', 'zh_CN', 'zh_TW')
 
 # List of RTL locales known to this project. Subset of LANGUAGES.
-RTL_LANGUAGES = ()  # ('ar', 'fa', 'fa-IR', 'he')
+RTL_LANGUAGES = ('ar',)  # ('ar', 'fa', 'fa-IR', 'he')
 
 LANGUAGE_URL_MAP = dict([(i.lower(), i) for i in KNOWN_LANGUAGES])
 

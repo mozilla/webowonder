@@ -208,7 +208,14 @@ a:hover {
 		-o-transform: rotate(-13deg);
 		-ms-transform: rotate(-13deg);
 		transform: rotate(-13deg);
+                -moz-transition-property: -moz-transform;
+                -moz-transition-duration: 0.3s;
+                -o-transition-property: -o-transform;
+                -o-transition-duration: 0.3s;
+                -webkit-transition-property: -webkit-transform;
+                -webkit-transition-duration: 0.3s;
 	}
+        
 
 div.chain-1 {
 	height: 105px;
@@ -510,6 +517,11 @@ div.chain-3 {
 }
 
 .video-container a { font-size: 0.9em; }
+.video-container a.watch-video { 
+    font-size: 1.2em; 
+    padding-bottom: 0.3em; 
+    text-shadown: 0.1em 0.1em 0.1em #999 
+}
 
 .video-container img {
 	float: left;
@@ -588,12 +600,14 @@ div.chain-3 {
 			background: url(/media/img/sprite.png) 0px -1085px no-repeat;
 		}
 		
-    .watch-video {
+	.watch-video {
+        font-size: 1.3em;
+        text-shadow: 0.1em 0.1em 0.1em #666;
         /* mobile overrides */
         margin: 0;
         padding: 0;
         width: auto;
-    }
+	}
 	.watch-video:hover { text-decoration: underline; }
 
     .video-container .watch-video {
@@ -643,7 +657,7 @@ div.chain-3 {
 	}
 	
 		.flipped .facebook {
-			margin-left: 25px;
+			margin-left: 41px;
 		}
 	
 	.twitter {

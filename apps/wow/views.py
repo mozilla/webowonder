@@ -19,38 +19,38 @@ tags = {
     # L10n: Tag MDN urls. You can change these if your locale has a better url
     'Audio':       (_('https://developer.mozilla.org/en/Introducing_the_Audio_API_Extension'), 
     # L10n: Technology Tags. A demo can have up to 5 of these. Keep them short.
-                    _('Audio')),
+                    _(u'Audio')),
     'Canvas':      (_('https://developer.mozilla.org/En/Canvas'), 
-                    _('Canvas')),
+                    _(u'Canvas')),
     'CSS3':        (_('https://developer.mozilla.org/En/CSS'),
-                    _('CSS3')),
+                    _(u'CSS3')),
     'DnD':         (_('https://developer.mozilla.org/en/DragDrop/Drag_and_Drop'),
-                    _('DnD')),
+                    _(u'DnD')),
     'Files':       (_('https://developer.mozilla.org/en/using_files_from_web_applications'),
-                    _('Files')), 
+                    _(u'Files')), 
     'Fonts':       (_('https://developer.mozilla.org/en/css/@font-face'),
-                    _('Fonts')),
+                    _(u'Fonts')),
     'Forms':       (_('https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5'),
-                    _('Forms')),
+                    _(u'Forms')),
     'GeoLocation': (_('https://developer.mozilla.org/En/Using_geolocation'), 
-                    _('GeoLocation')),
+                    _(u'GeoLocation')),
     'JavaScript':  (_('https://developer.mozilla.org/En/javascript'), 
-                    _('JavaScript')), 
+                    _(u'JavaScript')), 
     'HTML5':       (_('https://developer.mozilla.org/En/HTML5/HTML5'),
-                    _('HTML5')), 
+                    _(u'HTML5')), 
     'Mobile':      (_('https://developer.mozilla.org/En/Mobile'),
-                    _('Mobile')), 
+                    _(u'Mobile')), 
     'MultiTouch':  (_('https://developer.mozilla.org/En/MultiTouch'),
-                    _('MultiTouch')),
+                    _(u'MultiTouch')),
     'SVG':         (_('https://developer.mozilla.org/En/SVG'), 
-                    _('SVG')), 
+                    _(u'SVG')), 
     'Video':       (_('https://developer.mozilla.org/En/Using_audio_and_video_in_Firefox'),
-                    _('Video')), 
+                    _(u'Video')), 
     'WebGL':       (_('https://developer.mozilla.org/En/WebGL'),
-                    _('WebGL')), 
+                    _(u'WebGL')), 
      # L10n: Last of the Technology Tags.
     'XMLHttpRequest': (_('https://developer.mozilla.org/En/XMLHttpRequest/Using_XMLHttpRequest'),
-                    _('XMLHttpRequest')),
+                    _(u'XMLHttpRequest')),
 }
 
 #@cache_page(60 * 15) # 15 minutes
@@ -62,8 +62,8 @@ def home(request):
             'firefox_download': 'http://www.mozilla.com/firefox/beta/?WT.mc_id=webwonder&WT.mc_ev=click',
             'chrome_download': 'http://www.google.com/landing/chrome/beta',}
 
-    desktop_only = _('Desktop Only')
-    mobile_only = _('Mobile Only')
+    desktop_only = _(u'Desktop Only')
+    mobile_only = _(u'Mobile Only')
 
     for demo in data['demos']:
 
@@ -75,16 +75,16 @@ def home(request):
         copy = None
         if len(ltags) == 1:
             # L10n {1} is a tag like HTML5 or GeoLocation {0} is a url
-            copy = _("Built with <a href='{0}'>{1}</a>.")
+            copy = _(u"Built with <a href='{0}'>{1}</a>.")
         elif len(ltags) == 2:
             # L10n {1} and {3} are tags like HTML5 and GeoLocation, {0} and {2} are urls
-            copy = _("Built with <a href='{0}'>{1}</a> and <a href='{2}'>{3}</a>.")
+            copy = _(u"Built with <a href='{0}'>{1}</a> and <a href='{2}'>{3}</a>.")
         elif len(ltags) == 3:
-            copy = _("Built with <a href='{0}'>{1}</a>, <a href='{2}'>{3}</a> and <a href='{4}'>{5}</a>.")
+            copy = _(u"Built with <a href='{0}'>{1}</a>, <a href='{2}'>{3}</a> and <a href='{4}'>{5}</a>.")
         elif len(ltags) == 4:
-            copy = _("Built with <a href='{0}'>{1}</a>, <a href='{2}'>{3}</a>, <a href='{4}'>{5}</a> and <a href='{6}'>{7}</a>.")
+            copy = _(u"Built with <a href='{0}'>{1}</a>, <a href='{2}'>{3}</a>, <a href='{4}'>{5}</a> and <a href='{6}'>{7}</a>.")
         elif len(ltags) == 5:
-            copy = _("Built with <a href='{0}'>{1}</a>, <a href='{2}'>{3}</a>, <a href='{4}'>{5}</a>, <a href='{6}'>{7}</a> and <a href='{8}'>{9}</a>.")
+            copy = _(u"Built with <a href='{0}'>{1}</a>, <a href='{2}'>{3}</a>, <a href='{4}'>{5}</a>, <a href='{6}'>{7}</a> and <a href='{8}'>{9}</a>.")
 
         if copy:
             demo.tag_copy = copy.format(*tag_pairs)
