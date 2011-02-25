@@ -1,6 +1,6 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
 /**
- * Mozilla Web O'(pen) Wonder JavaScript
+ * Mozilla Web O'(pen) Wonder Desktop JavaScript
  *
  * Initial version created by Weightshift
  * http://weightshift.com/
@@ -10,11 +10,8 @@
  */
  
 /**
- * Namespace
+ * mozilla.wow object - handles all desktop JS
  */
-if (typeof mozilla == 'undefined') {
-    var mozilla = {};
-}
 
 mozilla.wow = function() {
     return {
@@ -80,11 +77,6 @@ mozilla.wow = function() {
         }
     };
 }();
-
-/**
- * Page initialization
- */
-$(document).ready(function() { mozilla.wow.init(); });
 
 /**
  * Browser Compatibility
