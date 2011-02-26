@@ -58,13 +58,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-#page-container.js {
-    height: 10000%;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-}
-
 #header {
 	background: url(/media/img/logo-web-o-wonder-mobile.png) center top  no-repeat;
     height: 151px;
@@ -123,7 +116,7 @@ body {
             text-decoration: none;
         }
 
-		.js #navigation a.selected {
+		.mobilejs #navigation a.selected {
             opacity: 1.0;
             text-decoration: underline;
         }
@@ -133,33 +126,6 @@ body {
     text-align: center;
     padding: 0 15%;
     width: 70%;
-}
-
-.js .demo,
-.js #mozilla-info {
-    height: auto;
-    left: 50%;
-    margin-left: 54%;
-    position: absolute;
-}
-.js .demo {
-    top: 0%;
-}
-
-.transitions .demo,
-.transitions #mozilla-info {
-    -moz-transition: all 0.5s ease-in-out 0s;
-    -webkit-transition: all 0.5s ease-in-out 0s;
-}
-
-.js .demo.selected,
-.js #mozilla-info.selected {
-    margin-left: -50%;
-}
-
-.js .demo.past,
-.js #mozilla-info.past {
-    margin-left: -156%;
 }
 
 #magic-tickets {
@@ -321,7 +287,7 @@ alternate marvels-await
     z-index: 1;
 }
 
-.js #demos {
+.mobilejs #demos {
     position: absolute;
 }
 
@@ -635,9 +601,6 @@ alternate marvels-await
     width: 100%;
     z-index: 2;
 }
-.js #demo-controls {
-    display: block;
-}
 
 	#that-way,
 	#this-way {
@@ -705,7 +668,6 @@ alternate marvels-await
     }
 
 #sharing {
-    display: none;
     clear: both;
     position: relative;
     margin-right: 53%;
