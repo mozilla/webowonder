@@ -29,7 +29,6 @@ $(function() { mozilla.page.init(); });
 
 mozilla.page = function() {
     var _desktop;
-    var mobileMaxWidth = 600;
 
     return {
         init: function() {
@@ -41,7 +40,8 @@ mozilla.page = function() {
 
         // detect if we are looking at mobile or desktop layout
         _detectLayout: function() {
-            _desktop = (document.documentElement.clientWidth > mobileMaxWidth);
+            // TODO: don't always default to the desktop JS
+            _desktop = true;
         },
 
         // detect which layout we're looking at and run the JS
