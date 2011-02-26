@@ -116,7 +116,7 @@ body {
             text-decoration: none;
         }
 
-		.js #navigation a.selected {
+		#navigation a.selected {
             opacity: 1.0;
             text-decoration: underline;
         }
@@ -285,10 +285,6 @@ alternate marvels-await
     margin: 10px 2% 10px 2%;
     width: 96%;
     z-index: 1;
-}
-
-.js #demos {
-    position: absolute;
 }
 
     #demos .coming-soon {
