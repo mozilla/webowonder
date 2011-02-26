@@ -98,7 +98,7 @@ a:hover {
   			background-image: url(/media/img/non-sprited/nav-selected.png);
 		}
 
-        #navigation a, .mobilejs #navigation a.selected {
+        #navigation a, .js #navigation a.selected {
             /* mobile overrides */
             opacity: 1.0;
             text-decoration: none;

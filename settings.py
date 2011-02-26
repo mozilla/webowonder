@@ -143,8 +143,7 @@ MINIFY_BUNDLES = {
             'js/libs/jquery-1.4.4.min.js',
             'js/jquery.colorbox.min.js',
             'js/jquery.quicksand.min.js',
-            'js/mobile.js',
-            'js/desktop.js',
+            'js/wow.js',
             'js/libs/webtrends.js',
         ),
         'video': (
