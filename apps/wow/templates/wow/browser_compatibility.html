@@ -41,8 +41,8 @@ at <a href='{{nvidia_url}}'>NVIDIA</a>, <a href='{{amd_url}}'>AMD</a>, and <a hr
     var canShowWebGlDriversMsg = true;
     try {
     if ('localStorage' in window && window['localStorage'] != null) {
-        console.info(localStorage['/home/webgl_browser_shown_once'] + " " +
-              localStorage['/home/webgl_drivers_shown_once']);
+        /*console.info(localStorage['/home/webgl_browser_shown_once'] + " " +
+              localStorage['/home/webgl_drivers_shown_once']); */
         if (localStorage['/home/webgl_browser_shown_once'] == 'true') {
             canShowWebGlBrowserMsg = false;
         } 
@@ -78,8 +78,8 @@ at <a href='{{nvidia_url}}'>NVIDIA</a>, <a href='{{amd_url}}'>AMD</a>, and <a hr
             "<label for='remeber-webgl'>{{ _("Don't show warning again.") }}</label>" + 
             "<button>{{ _("Hide Warning") }}</button>" + 
             "</form></div></div>";
-        console.info("canShowWebGlDriversMsg = " + canShowWebGlDriversMsg + ", canShowWebGlBrowserMsg = " + canShowWebGlBrowserMsg +
-              ", canShowWebGl=" + canShowWebGl);
+        /* console.info("canShowWebGlDriversMsg = " + canShowWebGlDriversMsg + ", canShowWebGlBrowserMsg = " + canShowWebGlBrowserMsg +
+              ", canShowWebGl=" + canShowWebGl); */
         if (canShowWebGl) {
             document.write(compat_webgl_common);
         }
