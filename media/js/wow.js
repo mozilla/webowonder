@@ -198,7 +198,16 @@ mozilla.wow.sideScroller = function() {
     
     // If we've been passed a hashed URL, try to move to the correct card    
     var hashCard = $('.demo[data-hash=' + window.location.hash.substring(1) + ']');
-    if( hashCard.length > 0 ) _moveByLeap(hashCard);
+    if( hashCard.length > 0 ) {
+        // Leap to the right location
+        var selectedCard = $('.demo.selected'),            
+            offsetDiff = selectedCard.offset().left - hashCard.offset().left,
+            moveBy = parseInt($('#demos-inner').css('marginLeft')) + offsetDiff;
+        
+        selectedCard.removeClass('selected');
+        $('#demos-inner').css('marginLeft', moveBy);
+        hashCard.addClass('selected');
+    }
 
     // Handle Back/Forward
     var updateScollFromHash = function (e) {
