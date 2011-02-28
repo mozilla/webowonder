@@ -105,6 +105,11 @@ mozilla.wow.browserCompatibility = function () {
         }
         $('#webgl-compatibility').remove();
     });
+    
+    // Tweaks for Safari 4 and -webkit-transform problem
+    if ($.browser.safari && (navigator.appVersion.indexOf('4.') != -1)) {
+        $("#twitter iframe, #facebook iframe").css("-webkit-transform", "none");
+    }
 };
 
 /**
