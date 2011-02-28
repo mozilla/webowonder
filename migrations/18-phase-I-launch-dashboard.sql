@@ -1,0 +1,1 @@
+UPDATE demos_submission SET hidden = b'0' WHERE slug = 'dashboard';
