@@ -16,3 +16,4 @@ locale
 tmp/*
 *~
 *.log
+migrations/reset-db
