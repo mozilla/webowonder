@@ -43,3 +43,27 @@ div.chain-3 {
 #compatibility {
     margin-bottom: 0;
 }
+
+#header { position: relative; }
+
+#home-link {
+    position: absolute;
+    top: 0;
+    left: -60px;
+}
+
+#mozilla-info {
+    z-index: 999;
+}
+
+#marvels-await, #firefox-four {
+    top: 92px;
+}
+
+.experience-it span {
+   line-height: 45px;
+   padding-bottom: 15px;
+   padding-top: 0px;
+}
+
+#demos-inner { position: fixed; }
