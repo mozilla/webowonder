@@ -89,11 +89,11 @@ $(document).ready(function() { mozilla.wow.init(); });
 /**
  * Browser Compatibility
  */
-mozilla.wow.browserCompatibility = function () {
+mozilla.wow.browserCompatibility = function () {    
     $('#compat-canvas').remove();
-    $('#webgl').submit(function (e) {
+    $('#webgl button').click(function (e) {
         e.preventDefault();
-
+        
         if ('localStorage' in window && window['localStorage'] != null &&
             $('#remeber-webgl').attr('checked')) {
 
@@ -103,7 +103,7 @@ mozilla.wow.browserCompatibility = function () {
                 localStorage['/home/webgl_drivers_shown_once'] = 'true';
             }
         }
-        $('#webgl-compatibility').remove();
+        $('#webgl-compatibility, #compatibility').remove();
     });
     
     // Tweaks for Safari 4 and -webkit-transform problem
