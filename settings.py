@@ -47,7 +47,11 @@ USE_L10N = True
 LANGUAGE_CODE = 'en-US'
 
 # Accepted locales
-KNOWN_LANGUAGES = ('en-US', 'ar', 'ca', 'cs', 'de','el', 'es', 'fr', 'fy', 'ga', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl', 'pt', 'rm', 'ro', 'ru', 'si', 'sl', 'sr', 'th', 'tr', 'zh_CN', 'zh_TW')
+# Staging
+#KNOWN_LANGUAGES = ('en-US', 'ar', 'ca', 'cs', 'de','el', 'es', 'fr', 'fy', 'ga', 'he', 'hu', 'id', 'it', 'ja', 'nl', 'pl', 'pt', 'rm', 'ro', 'ru', 'si', 'sl', 'sr', 'sq', 'th', 'tr', 'zh_CN', 'zh_TW')
+
+# Production
+KNOWN_LANGUAGES = ('en-US', 'ar', 'ca', 'es', 'fr', 'ga', 'hu', 'id', 'it', 'ja', 'pl', 'rm', 'ru', 'sl', 'zh_TW')
 
 # List of RTL locales known to this project. Subset of LANGUAGES.
 RTL_LANGUAGES = ('ar',)  # ('ar', 'fa', 'fa-IR', 'he')
