@@ -154,15 +154,25 @@ a:hover {
 			background-position: -5px -10px;
 		}	
 
-#mozilla-info {
+#mozilla-info, #mozilla-cta {
 	left: 50%;
 	margin-left: -515px;
     padding: 0;
 	position: absolute;
-	top: 0;
     width: auto;
     /* mobile overrides */
     text-align: left;
+    z-index: 3;
+}
+
+#mozilla-info {
+	top: 0;
+    /* mobile overrides */
+    background-image: none;
+}
+
+#mozilla-cta {
+	top: 411px;
 }
 
 #magic-tickets {
@@ -218,22 +228,39 @@ a:hover {
         
 
 div.chain-1 {
+	background: url(/media/img/chain-1.png) 0 0 no-repeat;
 	height: 105px;
-    /* mobile overrides */
+	margin-left: 102px;
+	position: absolute;
     top: 0;
+	width: 14px;
+	z-index: 101;
 }
 div.chain-2 {
-	top: 397px;
+	top: -14px;
 }
 div.chain-3 {
-	top: 392px;
+	top: -19px;
 }
 		
 #marvels-await {
-	margin-top: 92px;
-	padding: 40px 30px 35px 35px;
 	/*background: url(/media/img/non-sprited/bg-marvels-await.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -170px no-repeat;
+	color: #173956;
+	height: 243px;
+	margin: 92px 0 5px;
+	padding: 40px 30px 35px 35px;
+    text-align: left;
+	width: 170px;
 	z-index: 100;
+    /* mobile overrides */
+    max-width: auto;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+#marvels-await:after {
+    display: none;
 }
 
 	#marvels-await h3 {
@@ -243,7 +270,10 @@ div.chain-3 {
 		letter-spacing: 2px;
 		padding-left: 6px; 
         /* mobile overrides */
+        border: 0;
         line-height: 0.6em;
+        padding-top: 0;
+        width: auto;
 	}
 
 	#marvels-await h3 span {
@@ -256,6 +286,7 @@ div.chain-3 {
 		font-size: 0.9em;
 		line-height: 1.5em;
 		margin-right: 10px;
+		padding: 7px 0 3px 4px;
 		text-shadow: 1px 1px 0px rgba(255,255,255,0.6);
         /* mobile overrides */
         text-align: inherit;
@@ -357,13 +388,14 @@ div.chain-3 {
 	}
 	
 	.demo {
+		/*background: #e5dabb url(/media/img/non-sprited/bg-demo.png) 0 0 no-repeat;*/
 		width: 500px;
 		height: 350px;
+        float: left;
 		margin: 0 20px 0 0;
-		/*background: #e5dabb url(/media/img/non-sprited/bg-demo.png) 0 0 no-repeat;*/
-		-moz-box-shadow: 0 3px 5px #000;
-		-webkit-box-shadow: 0 3px 5px #000;
-		box-shadow: 0 3px 5px #000;
+        /* mobile-overrides */
+        max-width: none;
+        padding: 0;
 	}
 		.demo.flipping {
 			-moz-box-shadow: none;
@@ -876,7 +908,7 @@ div.chain-3 {
 		
 /* Media Query for Small Screens */
 @media screen and (max-width: 960px) {
-	  #mozilla-info {
+	  #mozilla-info, #mozilla-cta {
 		left: 0;
 		margin-left: -35px;
 	}
@@ -1142,4 +1174,10 @@ body.webfontless #navigation .see-types { background-position: 52px -1431px; }
 body.webfontless .experience-it span { font-size: 1.5em; line-height: 1.3em; }
 body.webfontless .experience-it b { font-size: 1.2em; }
 
+/* used for mozilla.wow.isDesktopLayout() */
+#_mediaquerytest {
+    display: none;
 }
+
+}
+

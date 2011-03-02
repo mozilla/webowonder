@@ -28,6 +28,9 @@ mozilla.wow = function() {
             mozilla.wow.browserCompatibility();
             // Remove CSS class to help progressively enhance
             $('.init').removeClass('init');            
+
+            // Add div to be used for media query detection
+            $('body').append('<div id="_mediaquerytest"> </div>');
             
             // Side Scroller
             mozilla.wow.sideScroller();
@@ -85,6 +88,15 @@ mozilla.wow = function() {
  * Page initialization
  */
 $(document).ready(function() { mozilla.wow.init(); });
+
+/**
+ * Detect if the Desktop Layout is being shown
+ */
+
+ mozilla.wow.isDesktopLayout = function () {
+    // if #_mediaquerytest is display:none, the media query has been triggered, and we're looking at the Desktop Layout
+    return ($("#_mediaquerytest").css("display") == "none");
+ }
 
 /**
  * Browser Compatibility
