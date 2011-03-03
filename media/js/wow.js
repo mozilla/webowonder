@@ -118,6 +118,8 @@ mozilla.wow.handleResize = function () {
             $("#demos-inner").css("margin-left", mozilla.wow.desktopDemosInnerMargin);
             /* set the previousLayout as Desktop */
             mozilla.wow.previousLayoutWasDesktop = true;
+            /* show any demos or the marvels await poster that might have been hidden from the sorting nav */
+            $(".demo, #marvels-await").show();
         } else {
             /* the new layout is mobile */
             /* so store the demos-inner margin and set it to 0 */
@@ -301,63 +303,100 @@ mozilla.wow.sortableCards = function() {
         
         // Prevent the click behaviour
         e.preventDefault();
-        
-        // Is this already selected?
-        if( $(this).hasClass('selected') ) return;
-        
-        // Mutex until the animation is done
-        if( $('body').hasClass('sorting') ) return;
-        $('body').addClass('sorting');
-        
-        // Swap the navigation's selected class
-        $('#navigation a.selected').removeClass('selected');
-        $(this).addClass('selected');
-        
-        // Unselect the current demo
-        $('.demo.selected').removeClass('selected');
-        
-        // Scroll back to the starting position (if we're not already there)
-        scrollSpeed = ( parseInt($('#demos-inner').css('marginLeft')) == mozilla.wow.vars.cardWidth * -1.5 ) ? 0 : mozilla.wow.vars.scrollSpeed;
-        try { $('#demos').animate({backgroundPosition: mozilla.wow.vars.cardWidth * -1.5 + 'px center'}, scrollSpeed); } catch(err) { /* Do nothing */ }
-        $('#demos-inner').animate({marginLeft: mozilla.wow.vars.cardWidth * -1.5}, scrollSpeed, function() {
-           
-           // Sort by category, selected category first
-           clones = demos.find('.demo:not(.coming-soon)');
-           clones.sort(function(a, b) {
-               var catA = $(a).find('.flag').text().toLowerCase(),
-                   catB = $(b).find('.flag').text().toLowerCase();
 
-               return (catA == selectedCat) ? -1 :
-                      (catB == selectedCat) ? 1 :
-                      (catA < catB) ? -1 :
-                      (catA > catB) ? 1 : 0;
-           });
-
-           // Prepend coming-soon
-           merged = $.merge($('.coming-soon').clone(), clones);
-
-           // Reorder the cards
-           demos.quicksand(merged, {
-               adjustHeight: false,
-               attribute: function(v) { return $(v).find('h1').text(); },
-               enhancement: function() { $('.coming-soon').css('position', 'static'); }
-           }, function() {
-               // Select the first card
-               $('.demo').eq(1).addClass('selected');
-               _setZIndices();
-
-               // Change location hash
-               if (window.history && window.history.postState) {                   
-                   window.history.pushState({playing:false}, 
-                                            $('.demo.selected h1').text(), 
-                                            "#" + $('.demo').eq(1).attr('data-hash'));
-               } else {
-                   window.location.hash = $('.demo').eq(1).attr('data-hash');
-               }
-               $('body').removeClass('sorting');
-           });
+        if (mozilla.wow.isDesktopLayout()) {
+            /* Desktop-layout behavor */
+        
+            // Is this already selected?
+            if( $(this).hasClass('selected') ) return;
             
-        });
+            // Mutex until the animation is done
+            if( $('body').hasClass('sorting') ) return;
+            $('body').addClass('sorting');
+            
+            // Swap the navigation's selected class
+            $('#navigation a.selected').removeClass('selected');
+            $(this).addClass('selected');
+            
+            // Unselect the current demo
+            $('.demo.selected').removeClass('selected');
+            
+            // Scroll back to the starting position (if we're not already there)
+            scrollSpeed = ( parseInt($('#demos-inner').css('marginLeft')) == mozilla.wow.vars.cardWidth * -1.5 ) ? 0 : mozilla.wow.vars.scrollSpeed;
+            try { $('#demos').animate({backgroundPosition: mozilla.wow.vars.cardWidth * -1.5 + 'px center'}, scrollSpeed); } catch(err) { /* Do nothing */ }
+            $('#demos-inner').animate({marginLeft: mozilla.wow.vars.cardWidth * -1.5}, scrollSpeed, function() {
+               
+               // Sort by category, selected category first
+               clones = demos.find('.demo:not(.coming-soon)');
+               clones.sort(function(a, b) {
+                   var catA = $(a).find('.flag').text().toLowerCase(),
+                       catB = $(b).find('.flag').text().toLowerCase();
+
+                   return (catA == selectedCat) ? -1 :
+                          (catB == selectedCat) ? 1 :
+                          (catA < catB) ? -1 :
+                          (catA > catB) ? 1 : 0;
+               });
+
+               // Prepend coming-soon
+               merged = $.merge($('.coming-soon').clone(), clones);
+
+               // Reorder the cards
+               demos.quicksand(merged, {
+                   adjustHeight: false,
+                   attribute: function(v) { return $(v).find('h1').text(); },
+                   enhancement: function() { $('.coming-soon').css('position', 'static'); }
+               }, function() {
+                   // Select the first card
+                   $('.demo').eq(1).addClass('selected');
+                   _setZIndices();
+
+                   // Change location hash
+                   if (window.history && window.history.postState) {                   
+                       window.history.pushState({playing:false}, 
+                                                $('.demo.selected h1').text(), 
+                                                "#" + $('.demo').eq(1).attr('data-hash'));
+                   } else {
+                       window.location.hash = $('.demo').eq(1).attr('data-hash');
+                   }
+                   $('body').removeClass('sorting');
+               });
+                
+            });
+        } else {
+            /* Mobile-layout behavior */
+
+            // Is this already selected?
+            if( $(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+                $(".demo").not(".coming-soon").show();
+                $("#marvels-await").slideDown();
+            } else {
+
+                // Swap the navigation's selected class
+                $('#navigation a.selected').removeClass('selected');
+                $(this).addClass('selected');
+
+                // Hide all demos
+                $(".demo").hide();
+
+                // Slide up "Marvels Await" poster
+                $("#marvels-await").slideUp();
+
+                // Make sure the category that has been selected is shown
+                $(".demo." + selectedCat).show();
+
+                /*
+                // Scroll to just above the first demo
+                var target = $("#navigation li").first();
+                if (target.length > 0) {
+                    var targetOffset = Math.floor(target.offset().top);
+                    window.scrollTo(0, targetOffset);
+                    //$('html,body').animate({scrollTop: targetOffset}, scrollSpeed);
+                }
+                */
+            }
+        }
     });
 };
 
