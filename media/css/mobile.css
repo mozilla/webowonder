@@ -244,31 +244,6 @@ div.chain-3 {
         text-align: left;
     }
 
-    /*
-	#marvels-await p {
-        background: transparent url(/media/img/hand-down.gif) bottom center no-repeat;
-		color: #403a30;
-        line-height: 1.1em;
-		padding: 7px 0 65px 4px;
-        text-align: left;
-    }
-    */
-
-    /*
-    #marvels-await p:after {
-        background: #173956 url(/media/img/hand-down3.gif) center center no-repeat;
-        border: 1px solid #fff;
-        border-radius: 55px;
-        content: "";
-        display: block;
-        height: 55px;
-        left: 58px;
-        bottom: -60px;
-        position: absolute;
-        width: 55px;
-    }
-    */
-
 #firefox-four {
     position: relative;
     display: block;
