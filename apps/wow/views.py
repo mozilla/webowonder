@@ -57,7 +57,7 @@ tags = {
 def home(request):
     global tags
     data = {'demos': Submission.objects.filter(hidden=False),
-            'share_url': 'http://mozilla.com/firefox', #'https://demos.mozilla.org/',
+            'share_url': 'http://webowonder.org/',
             'mozillademos_host': settings.DEMOLAND,
             'firefox_download': 'http://www.mozilla.com/firefox/beta/?WT.mc_id=webwonder&WT.mc_ev=click',
             'chrome_download': 'http://www.google.com/landing/chrome/beta',}
