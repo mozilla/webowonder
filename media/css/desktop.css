@@ -98,12 +98,12 @@ a:hover {
 		#navigation a:hover, #navigation a.selected {
   			text-shadow: 2px 2px 3px #333;
   			background-image: url(/media/img/non-sprited/nav-selected.png);
+            font-size: 100%;
 		}
 
         #navigation a {
             /* mobile overrides */
             opacity: 1.0;
-            text-decoration: none;
         }
 
 #sharing {

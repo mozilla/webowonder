@@ -121,7 +121,6 @@ body {
 		#navigation a.selected {
             font-size: 120%;
             opacity: 1.0;
-            text-decoration: underline;
         }
 
 #mozilla-info, #mozilla-cta {
