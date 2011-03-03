@@ -738,11 +738,12 @@ div.chain-3 {
 	
 #demo-controls {
     display: block;
-
+    height: 50px;
 	margin: 0 auto;
 	position: relative;
     top: auto;
 	width: 460px;
+    z-index: 2;
 }
 
 	#lights-down {
@@ -772,28 +773,21 @@ div.chain-3 {
 
 	#that-way,
 	#this-way {
+		color: #ededcd;
+		display: block;
 		margin-top: 8px;
 		width: 190px;
 		height: 30px;
 		padding: 14px 0 5px 0;
 		font-family: "ChunkFiveRegular", serif;
 		font-size: 17px;
+		text-decoration: none;
 		text-transform: uppercase;
 		text-shadow: 1px -1px 0px #261006;
 		-moz-transition: all 0.1s ease-in-out;
 		-webkit-transition: all 0.1s ease-in-out;
 		-o-transition: all 0.1s ease-in-out;
 		transition: all 0.1s ease-in-out;
-        /* mobile overrides */
-        background-color: none;
-        -moz-border-radius: none;
-        -webkit-border-radius: none;
-        border-radius: none;
-		-moz-box-shadow: none;
-		-webkit-box-shadow: none;
-		box-shadow: none;
-        border: none;
-        position: static;
 	} 
 	[lang=cs] #that-way, [lang=cs] #this-way,
         [lang=el] #that-way, [lang=el] #this-way {
@@ -810,15 +804,8 @@ div.chain-3 {
 		/*background: url(/media/img/that-way.png) 0 0 no-repeat;*/
 		background: url(/media/img/sprite.png) 0px -1301px no-repeat;
 		padding-left: 32px;
-        /* mobile overrides */
-        left: auto;
-        text-indent: 0;
 	}
 
-        #that-way:after {
-            display: none;
-        }
-	
 		#that-way:hover {
 			margin-left: 18px;
 		}
@@ -830,14 +817,8 @@ div.chain-3 {
 		/*background: url(/media/img/this-way.png) 0 0 no-repeat;*/
 		background: url(/media/img/sprite.png) 0px -1371px no-repeat;
 		padding-left: 60px;
-        /* mobile overrides */
-        right: auto;
 	}
 
-        #this-way:after {
-            display:none;
-        }
-	
 		#this-way:hover {
 			margin-right: 18px;
 		}
