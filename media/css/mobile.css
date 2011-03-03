@@ -61,10 +61,12 @@ body {
 #header {
 	background: url(/media/img/logo-web-o-wonder-mobile.png) center top  no-repeat;
     height: 151px;
+    position: relative;
     margin: 0 auto;
     max-width: 430px;
     text-align: center;
     width: 100%;
+    z-index: 1;
 }
 
     #home-link {
@@ -117,6 +119,7 @@ body {
         }
 
 		#navigation a.selected {
+            font-size: 120%;
             opacity: 1.0;
             text-decoration: underline;
         }
@@ -179,9 +182,6 @@ div.chain-3 {
 
 #marvels-await {
     background-color: #d2cebe;
-    -moz-box-shadow: 0 3px 5px #000;
-    -webkit-box-shadow: 0 3px 5px #000;
-    box-shadow: 0 3px 5px #000;
     color: #173956;
 	margin: 0 auto 5px;
     max-width: 15em;
@@ -193,16 +193,28 @@ div.chain-3 {
 	-ms-transform: rotate(-4deg);
 	transform: rotate(-4deg);
 }
-#marvels-await:after {
-    border: 1px solid #c66844;
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 7px;
-    left: 7px;
-    right: 7px;
-    top: 7px;
-}
+    #marvels-await:after {
+        content: '';
+        color: white;
+        background: transparent url(/media/img/drop-shadows.png) bottom center no-repeat;
+        background-size: 100% 10px;
+        position: absolute;
+        bottom: -10px;
+        height: 10px;
+        margin: 0 auto;
+        left: 0;
+        width: 100%;
+    }
+    #marvels-await:before {
+        border: 1px solid #c66844;
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 7px;
+        left: 7px;
+        right: 7px;
+        top: 7px;
+    }
 
 	#marvels-await h3 {
         border-bottom: 5px solid #173956;
@@ -260,9 +272,6 @@ div.chain-3 {
 	text-align: center;
 	text-decoration: none;
 	z-index: 100;
-	-moz-box-shadow: 3px 5px 3px #111;
-	-webkit-box-shadow: 3px 5px 3px #111;
-	box-shadow: 3px 5px 3px #111;
 }
 [lang=el] #firefox-four,
 [lang=ga] #firefox-four {
@@ -293,7 +302,7 @@ div.chain-3 {
 
 #demos {
     background: transparent url(/media/img/bg-rope-vertical.gif) top center repeat-y;
-    margin: -29px 2% 10px;
+    margin: -30px 2% 10px;
     width: 96%;
     z-index: 1;
 }
@@ -304,17 +313,25 @@ div.chain-3 {
 
     .demo {
         background-color: #e5dabb;
-		border-radius: 4px;
 		-moz-border-radius: 4px;
 		-webkit-border-radius: 4px;
-		-moz-box-shadow: 0 3px 5px #000;
-		-webkit-box-shadow: 0 3px 5px #000;
-		box-shadow: 0 3px 5px #000;
 		border-radius: 4px;
         margin: 20px auto;
         max-width: 410px;
         padding: 2%;
 		position: relative;
+    }
+    .demo:after {
+        content: '';
+        color: white;
+        background: transparent url(/media/img/drop-shadows.png) bottom center no-repeat;
+        background-size: 100% 10px;
+        position: absolute;
+        bottom: -10px;
+        height: 10px;
+        margin: 0 auto;
+        left: 0;
+        width: 100%;
     }
 
     .flag {
@@ -363,9 +380,11 @@ div.chain-3 {
         }
 
     .demo-inner {
+        /*
         -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
         border-radius: 4px;
+        */
         border: 1px solid #fff;
         padding: 2%;
     }
@@ -387,11 +406,13 @@ div.chain-3 {
 			}
 
         .demo-image {
-			background-color: #000;
+            background-color: #fff;
 			border: 1px solid #fff;
+            /*
 			-moz-border-radius: 4px;
 			-webkit-border-radius: 4px;
 			border-radius: 4px;
+            */
             height: 130px;
             margin: auto;
             max-width: 380px;

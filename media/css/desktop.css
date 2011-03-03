@@ -42,6 +42,8 @@ a:hover {
 	height: 220px;
     max-width: none;
 	width: 750px;
+    /* mobile overrides */
+    position: static;
 }
 
 	#home-link {
@@ -255,11 +257,8 @@ div.chain-3 {
 	z-index: 100;
     /* mobile overrides */
     max-width: auto;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
 }
-#marvels-await:after {
+#marvels-await:before, #marvels-await:after {
     display: none;
 }
 
@@ -320,6 +319,9 @@ div.chain-3 {
 	#marvels-await a:hover { color: #9a280d; }
 
 #firefox-four {
+	-moz-box-shadow: 3px 5px 3px #111;
+	-webkit-box-shadow: 3px 5px 3px #111;
+	box-shadow: 3px 5px 3px #111;
 	margin-top: 10px;
 }
 		
@@ -389,6 +391,9 @@ div.chain-3 {
 	
 	.demo {
 		/*background: #e5dabb url(/media/img/non-sprited/bg-demo.png) 0 0 no-repeat;*/
+		-moz-box-shadow: 0 3px 5px #000;
+		-webkit-box-shadow: 0 3px 5px #000;
+		box-shadow: 0 3px 5px #000;
 		width: 500px;
 		height: 350px;
         float: left;
@@ -397,6 +402,9 @@ div.chain-3 {
         max-width: none;
         padding: 0;
 	}
+    .demo:after {
+        display: none;
+    }
 		.demo.flipping {
 			-moz-box-shadow: none;
 			-webkit-box-shadow: none;
@@ -422,6 +430,9 @@ div.chain-3 {
             }
 	
 		.demo-inner {
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
 			margin: 10px;
 			padding: 9px;
 			float: left;
@@ -442,6 +453,10 @@ div.chain-3 {
 		}
 		
 		.demo-image {
+			background-color: #000;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
 			height: 230px;
 			width: 458px;
             /* mobile overrides */
