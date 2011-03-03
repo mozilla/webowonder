@@ -31,6 +31,11 @@ mozilla.wow = function() {
 
             // Add div to be used for media query detection
             $('body').append('<div id="_mediaquerytest"> </div>');
+
+            // Handle window resizes on mobile
+            $(window).resize(function() {
+                mozilla.wow.handleResize();
+            });
             
             // Side Scroller
             mozilla.wow.sideScroller();
@@ -92,11 +97,37 @@ $(document).ready(function() { mozilla.wow.init(); });
 /**
  * Detect if the Desktop Layout is being shown
  */
-
- mozilla.wow.isDesktopLayout = function () {
-    // if #_mediaquerytest is display:none, the media query has been triggered, and we're looking at the Desktop Layout
+mozilla.wow.isDesktopLayout = function () {
+    /* if #_mediaquerytest is display:none, the media query has been triggered, and we're looking at the Desktop Layout */
     return ($("#_mediaquerytest").css("display") == "none");
- }
+};
+
+/**
+ * Handle window resizes for the Mobile Layout
+ */
+mozilla.wow.previousLayoutWasDesktop = mozilla.wow.isDesktopLayout();
+mozilla.wow.desktopDemosInnerMargin = $("#demos-inner").css("margin-left");
+mozilla.wow.handleResize = function () {
+    /* if we're on the mobile layout, clear out any margin-left on #demos-inner from the desktop site */
+    var newLayoutIsDesktop = mozilla.wow.isDesktopLayout();
+    if (newLayoutIsDesktop != mozilla.wow.previousLayoutWasDesktop) {
+        /* we have just switched from one layout to another */
+        if (newLayoutIsDesktop) {
+            /* and the new layout is desktop */
+            /* so retreive the stored value of the demos-inner margin */
+            $("#demos-inner").css("margin-left", mozilla.wow.desktopDemosInnerMargin);
+            /* set the previousLayout as Desktop */
+            mozilla.wow.previousLayoutWasDesktop = true;
+        } else {
+            /* the new layout is mobile */
+            /* so store the demos-inner margin and set it to 0 */
+            mozilla.wow.desktopDemosInnerMargin = $("#demos-inner").css("margin-left");
+            $("#demos-inner").css("margin-left", "0");        
+            /* set the previousLayout as Desktop */
+            mozilla.wow.previousLayoutWasDesktop = false;
+        }
+    }
+};
 
 /**
  * Browser Compatibility
@@ -131,6 +162,8 @@ mozilla.wow.sideScroller = function() {
 
     // Private, reusable function to animate cards
     function _animateCards(nextCard, moveBy) {
+
+        //if(!mozilla.wow.isDesktopLayout()) return; /* we're on the mobile layout, ignore */
         
         // Mutex until the animation is done
         if( $('body').hasClass('scrolling') ) return;
@@ -140,7 +173,9 @@ mozilla.wow.sideScroller = function() {
         $('.demo.selected').removeClass('selected');
         
         // Animate and setup the next card
-        try { $('#demos').animate({backgroundPosition: moveBy + 'px center'}, mozilla.wow.vars.scrollSpeed); } catch(err) { /* Do nothing */ }
+        if (mozilla.wow.isDesktopLayout()) {
+            try { $('#demos').animate({backgroundPosition: moveBy + 'px center'}, mozilla.wow.vars.scrollSpeed); } catch(err) { /* Do nothing */ }
+        }
         $('#demos-inner').animate({marginLeft: moveBy}, mozilla.wow.vars.scrollSpeed, function() {
                     nextCard.find('.demo-over').animate({opacity: 0}, 200, function() {
                        nextCard.addClass('selected');
@@ -368,6 +403,8 @@ mozilla.wow.keynav = function() {
     // Attach left/right keyboard events to this/that way links
     $(document).keydown(function(e) {
         
+        if(!mozilla.wow.isDesktopLayout()) return; /* we're on the mobile layout, ignore */
+
         // Ignore the keyboard nav during demos
             if( $('body').hasClass('demoing') ) return; /* demo has focus, shouldn't happen */
         if( e.keyCode == 37 ) {
