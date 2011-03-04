@@ -126,22 +126,22 @@ body {
 #mozilla-info, #mozilla-cta {
     color: #ffffff;
     text-align: center;
-    padding: 0 15%;
-    width: 70%;
 }
 
 #mozilla-info {
     background: transparent url(/media/img/bg-rope-vertical.gif) center 20px repeat-y;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 15%;
     position: relative;
     top: -10px;
+    width: 70%;
 }
 
 #mozilla-cta {
     clear: both;
+    margin: auto;
     position: relative;
     z-index: 0;
+    width: 220px;
 }
 
 #magic-tickets {

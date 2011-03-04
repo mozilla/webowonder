@@ -158,7 +158,7 @@ a:hover {
 
 #mozilla-info, #mozilla-cta {
 	left: 50%;
-	margin-left: -515px;
+	margin: 0 0 0 -515px;
     padding: 0;
 	position: absolute;
     width: auto;
