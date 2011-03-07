@@ -77,6 +77,9 @@ mozilla.wow = function() {
             mozilla.wow.cher();
 
             mozilla.wow.comingSoon();
+
+            $.ajax({ url: 'http://platform.twitter.com/widgets.js?via=firefox',
+                dataType: 'script'});
         }
     };
 }();

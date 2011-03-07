@@ -9,7 +9,7 @@
 			<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="firefox">{{ _('Tweet') }}</a>
 		</div>
 		<div id="facebook" class="disruptable">
-			<iframe src="http://www.facebook.com/plugins/like.php?href={{share_url|urlencode}}&amp;layout=box_count&amp;show_faces=false&amp;width=55&amp;action=like&amp;colorscheme=light&amp;height=65" style="border:none; overflow:hidden; width:55px; height:65px;"></iframe>
+			<iframe src="//www.facebook.com/plugins/like.php?href={{share_url|urlencode}}&amp;layout=box_count&amp;show_faces=false&amp;width=55&amp;action=like&amp;colorscheme=light&amp;height=65" style="border:none; overflow:hidden; width:55px; height:65px;"></iframe>
 		</div>
 		<a href="http://mozilla.org" id="back-to-mozilla" title="{{ _('Visit Mozilla.org') }}">{{ _('Visit Mozilla.org') }}</a>
 		<a href="/" id="home-link">{{ _('Mozilla Presents') }}</a>
@@ -107,5 +107,5 @@ var twttr = window.twttr || {};
 twttr.widgets = twttr.widgets || {};
 twttr.widgets.ignoreSSL = true;
 </script>
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js?via=firefox"></script>
+<!-- script type="text/javascript" src="http://platform.twitter.com/widgets.js?via=firefox"></script -->
 {% endblock %}
