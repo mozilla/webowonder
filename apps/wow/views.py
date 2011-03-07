@@ -56,7 +56,7 @@ tags = {
 @cache_page(60 * 15) # 15 minutes
 def home(request):
     global tags
-    data = {'demos': Submission.objects.filter(hidden=False),
+    data = {'demos': Submission.objects.filter(hidden=False).order_by('demodetails__rank'),
             'share_url': 'http://webowonder.org/',
             'mozillademos_host': settings.DEMOLAND,
             'firefox_download': 'http://www.mozilla.com/firefox/beta/?WT.mc_id=webwonder&WT.mc_ev=click',
