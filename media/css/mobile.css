@@ -352,20 +352,20 @@ div.chain-3 {
             [lang=ga] .flag {
                     text-transform: none;
             }
-        .design .flag {
+        .Design .flag {
             background-position: 0px -915px;
         }
         
-        .html5 .flag {
+        .HTML5 .flag {
             background-position: 0px -940px;
         }
         
-        .video .flag {
+        .Video .flag {
             background-position: 0px -965px;
         }
         
-        .audio .flag,
-        .webgl .flag {
+        .Audio .flag,
+        .WebGL .flag {
             background-position: 0px -990px;
         }
         
@@ -379,39 +379,29 @@ div.chain-3 {
         }
 
     .demo-inner {
-        /*
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
-        border-radius: 4px;
-        */
         border: 1px solid #fff;
         padding: 2%;
     }
-			.design .demo-inner {
+			.Design .demo-inner {
 				border-color: #82902a;
 			}
 			
-			.html5 .demo-inner {
+			.HTML5 .demo-inner {
 				border-color: #d09607;
 			}
 			
-			.audio .demo-inner,
-			.webgl .demo-inner {
+			.Audio .demo-inner,
+			.WebGL .demo-inner {
 				border-color: #725b3d;
 			}
 			
-			.video .demo-inner {
+			.Video .demo-inner {
 				border-color: #d45155;
 			}
 
         .demo-image {
             background-color: #fff;
 			border: 1px solid #fff;
-            /*
-			-moz-border-radius: 4px;
-			-webkit-border-radius: 4px;
-			border-radius: 4px;
-            */
             height: 130px;
             margin: auto;
             max-width: 380px;
@@ -452,20 +442,20 @@ div.chain-3 {
             display: block;
         }
 
-        .design .flip-card-back {
+        .Design .flip-card-back {
             color: #82902a;
         }
         
-        .html5 .flip-card-back {
+        .HTML5 .flip-card-back {
             color: #d09607;
         }
         
-        .audio .flip-card-back,
-        .webgl .flip-card-back {
+        .Audio .flip-card-back,
+        .WebGL .flip-card-back {
             color: #725b3d;
         }
         
-        .video .flip-card-back {
+        .Video .flip-card-back {
             color: #d45155;
         }
 
