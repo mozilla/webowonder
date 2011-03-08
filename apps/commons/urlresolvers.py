@@ -79,11 +79,9 @@ class Prefixer(object):
         if self.request.META.get('HTTP_ACCEPT_LANGUAGE'):
             ranked_languages = parse_accept_lang_header(
                 self.request.META['HTTP_ACCEPT_LANGUAGE'])
-
             # Do we support or remap their locale?
-            supported = [lang[0] for lang in ranked_languages if lang[0]
+            supported = [lang[0] for lang in ranked_languages if lang[0].lower()
                         in settings.LANGUAGE_URL_MAP]
-
             # Do we support a less specific locale? (xx-YY -> xx)
             if not len(supported):
                 for lang in ranked_languages:
@@ -93,7 +91,6 @@ class Prefixer(object):
 
             if len(supported):
                 return settings.LANGUAGE_URL_MAP[supported[0].lower()]
-
         return settings.LANGUAGE_CODE
 
     def fix(self, path):

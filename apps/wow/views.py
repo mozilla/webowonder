@@ -56,7 +56,7 @@ tags = {
 @cache_page(60 * 15) # 15 minutes
 def home(request):
     global tags
-    data = {'demos': Submission.objects.filter(hidden=False),
+    data = {'demos': Submission.objects.filter(hidden=False).order_by('demodetails__rank'),
             'share_url': 'http://webowonder.org/',
             'mozillademos_host': settings.DEMOLAND,
             'firefox_download': 'http://www.mozilla.com/firefox/beta/?WT.mc_id=webwonder&WT.mc_ev=click',
@@ -141,24 +141,24 @@ def category(demo):
     """ TODO understand MDN's category approach
         HTML5, Design, Video, webgl """
     categories = {
-        'remixingreality': 'video',
-        'AR_photobooth': 'video',
-        'dashboard': 'html5',
-        'debug': 'html5',
-        'nocomply': 'webgl',
-        'double_ui': 'design',
-        'flight-of-the-navigator': 'webgl',
-        'globetweeter': 'webgl',
-        'hologram': 'design',
-        'immersivevideo': 'video',
-        'londonproject': 'design',
-        'mobile_player': 'video',
-        'motivational': 'html5',
-        'particles': 'webgl',
-        'planetarium': 'design',
-        'plztouchme': 'html5',
-        'runfield': 'html5',
-        'shadows': 'design',
+        'remixingreality': _('Video'),
+        'AR_photobooth': _('Video'),
+        'dashboard': _('HTML5'),
+        'debug': _('HTML5'),
+        'nocomply': _('WebGL'),
+        'double_ui': _('Design'),
+        'flight-of-the-navigator': _('WebGL'),
+        'globetweeter': _('WebGL'),
+        'hologram': _('Design'),
+        'immersivevideo': _('Video'),
+        'londonproject': _('Design'),
+        'mobile_player': _('Video'),
+        'motivational': _('HTML5'),
+        'particles': _('WebGL'),
+        'planetarium': _('Design'),
+        'plztouchme': _('HTML5'),
+        'runfield': _('HTML5'),
+        'shadows': _('Design'),
     }
     return categories[demo.slug]
 
