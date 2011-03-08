@@ -18,7 +18,7 @@ from optparse import  OptionParser
 
 ENV_BRANCH = {
     'dev':   ['mobile', 'master'], 
-    'stage': ['master', 'master'], 
+    'stage': ['mobile', 'master'], 
     'prod':  ['prod', 'master'],
 }
 
