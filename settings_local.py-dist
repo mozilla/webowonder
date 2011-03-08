@@ -44,6 +44,6 @@ if DEBUG:
     # Zeus populates X-Mobile in staging and production
     # Add DetectMobileMiddleware for mobile development.
     mwc = MIDDLEWARE_CLASSES
-    xmobile = mwc.index('mobile.middleware.XMobileMiddleware')
-    detect = ('mobile.middleware.DetectMobileMiddleware',)
+    xmobile = mwc.index('mobility.middleware.XMobileMiddleware')
+    detect = ('mobility.middleware.DetectMobileMiddleware',)
     MIDDLEWARE_CLASSES = mwc[:xmobile] + detect + mwc[xmobile:]
