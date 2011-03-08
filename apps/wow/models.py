@@ -28,4 +28,5 @@ class DemoDetails(models.Model):
     
     demo = models.OneToOneField(Demo, primary_key=True, unique=True)
     documentary_description = models.TextField(blank=True)
+    platform = models.CharField(max_length=1)
     rank = models.SmallIntegerField(default=1)

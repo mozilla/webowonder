@@ -99,7 +99,7 @@ def home(request):
         except DemoDetails.DoesNotExist:
             deets = DemoDetails(demo=demo)
             deets.save()
-        
+        demo.platform = demo.demodetails.platform
         authors = [(demo.creator.userprofile_set.all()[0].homepage, demo.creator.get_full_name(), )]
 
         [_collect(authors, c) for c in demo.collaborator_set.all()]
