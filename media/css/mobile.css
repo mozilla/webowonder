@@ -693,3 +693,7 @@ div.chain-3 {
     bottom: 0;
     left: 0;
 }
+
+#_nowebgl {
+    display: none;
+}
