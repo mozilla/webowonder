@@ -163,6 +163,9 @@ MINIFY_BUNDLES = {
 MIDDLEWARE_CLASSES = (
     'commons.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
+    # Dev environment - settings_local.py will add 
+    # 'mobile.middleware.DetectMobileMiddleware' here
+    'mobility.middleware.XMobileMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

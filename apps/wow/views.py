@@ -10,6 +10,7 @@ from tower import ugettext as _
 from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_headers
 
 from demos.models import Submission
 from wow.models import DemoDetails
@@ -53,12 +54,14 @@ tags = {
                     _(u'XMLHttpRequest')),
 }
 
-@cache_page(60 * 15) # 15 minutes
+#@cache_page(60 * 15) # 15 minutes
+#@vary_on_headers('X-Mobile')
 def home(request):
     global tags
     data = {'demos': Submission.objects.filter(hidden=False).order_by('demodetails__rank'),
             'share_url': 'http://webowonder.org/',
             'mozillademos_host': settings.DEMOLAND,
+            'mobile_content': request.MOBILE,
             'firefox_download': 'http://www.mozilla.com/firefox/beta/?WT.mc_id=webwonder&WT.mc_ev=click',
             'chrome_download': 'http://www.google.com/landing/chrome/beta',}
 
@@ -111,11 +114,12 @@ def home(request):
     return jingo.render(request, 'wow/home.html', data)
 
 
-@cache_page(60 * 60) # one hour
+#@cache_page(60 * 60) # one hour
+#@vary_on_headers('X-Mobile')
 def submit_demo(request):
     """ Collects email addresses or intersticial to MDN Demo Studio. """
-    return jingo.render(request, 'wow/coming_soon.html', {})
-    #return jingo.render(request, 'wow/submit.html', {})
+    #return jingo.render(request, 'wow/coming_soon.html', {})
+    return jingo.render(request, 'wow/submit.html', {})
 
 @cache_page(60 * 60 ) # one hour
 def screencast(request, slug):
@@ -132,7 +136,6 @@ def documentary(request, slug):
 @cache_page(60 * 60 * 24) # one day
 def robots(request):
     resp = HttpResponse("User-agent: *\n")
-    resp['X-Foo'] = "bar"
     return resp
 
 ########################### Helper functions ########################

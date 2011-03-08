@@ -1,5 +1,6 @@
     <canvas id='compat-canvas' style='border: none; position:absolute; left:0px; display:none; top:-10px' width='1' height='1'></canvas>
 <script>
+    var wow_mobile = {% if mobile_content %}true{% else %}false{% endif %};
     (function () {
     var compat = "<div id='compatibility'>";
     compat += "{{ _("To enjoy Mozilla's Web of Wonder, you must download one of the following cutting edge browsers:") }}";
