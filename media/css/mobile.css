@@ -392,6 +392,10 @@ div.chain-3 {
         z-index: 99;
     }
 
+        .flipped .warning {
+            display: none;
+        }
+
     .demo-inner {
         border: 1px solid #fff;
         padding: 2%;
