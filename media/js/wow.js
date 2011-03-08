@@ -298,14 +298,14 @@ mozilla.wow.sortableCards = function() {
     _setZIndices();
         
     $('#navigation a').click(function(e) {
-        var selectedCat = $(this).text().toLowerCase(),
-            scrollSpeed;
-        
         // Prevent the click behaviour
         e.preventDefault();
 
         if (mozilla.wow.isDesktopLayout()) {
             /* Desktop-layout behavor */
+
+            var selectedCat = $(this).text().toLowerCase(),
+                scrollSpeed;
         
             // Is this already selected?
             if( $(this).hasClass('selected') ) return;
@@ -373,6 +373,8 @@ mozilla.wow.sortableCards = function() {
                 $("#marvels-await").slideDown();
             } else {
 
+                var selectedCat = $(this).text();
+
                 // Swap the navigation's selected class
                 $('#navigation a.selected').removeClass('selected');
                 $(this).addClass('selected');
@@ -385,16 +387,6 @@ mozilla.wow.sortableCards = function() {
 
                 // Make sure the category that has been selected is shown
                 $(".demo." + selectedCat).show();
-
-                /*
-                // Scroll to just above the first demo
-                var target = $("#navigation li").first();
-                if (target.length > 0) {
-                    var targetOffset = Math.floor(target.offset().top);
-                    window.scrollTo(0, targetOffset);
-                    //$('html,body').animate({scrollTop: targetOffset}, scrollSpeed);
-                }
-                */
             }
         }
     });
