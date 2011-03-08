@@ -258,9 +258,9 @@ div.chain-3 {
     /* mobile overrides */
     max-width: auto;
 }
-#marvels-await:before, #marvels-await:after {
-    display: none;
-}
+    #marvels-await:before, #marvels-await:after {
+        display: none;
+    }
 
 	#marvels-await h3 {
 		font-size: 3.6em;
@@ -402,9 +402,10 @@ div.chain-3 {
         max-width: none;
         padding: 0;
 	}
-    .demo:after {
-        display: none;
-    }
+        .demo:after {
+            display: none;
+        }
+
 		.demo.flipping {
 			-moz-box-shadow: none;
 			-webkit-box-shadow: none;
@@ -597,25 +598,24 @@ div.chain-3 {
         display: block;
 	}
 
-	.experience-it {
+	.demo-actions .primary {
 		-moz-box-shadow: 0 1px 4px #333;
 		-webkit-box-shadow: 0 1px 4px #333;
 		box-shadow: 0 1px 4px #333;
-		font-family: "LeagueGothicRegular", sans-serif;
         font-size: 3em;
         font-weight: normal;
-		margin-bottom: 11px;
-        padding: 15px 0 13px;
+		margin-bottom: 5px;
+        padding: 15px 5px 13px;
 	}
-	[lang=cs] .experience-it,
-        [lang=el] .experience-it {
+	[lang=cs] .demo-actions .primary,
+        [lang=el] .demo-actions .primary {
                 font-family: sans-serif;
         }
-		.experience-it:hover {
-			background-color: #9a280d;
+        .demo-actions .primary:hover {
 			text-shadow: 2px 2px 3px #333;
-		}
-		.experience-it:before {
+        }
+		.demo-actions .primary:before {
+            /* for little arrow to the side */
 			/*background: url(/media/img/icon-flip-card.png) 0 0 no-repeat;*/
 			background: url(/media/img/sprite.png) 0px -1085px no-repeat;
             content: '';
@@ -627,34 +627,50 @@ div.chain-3 {
 			top: 50%;
 			width: 14px;
 		}
-		
-	
-		.experience-it b {
-			font-family: "ChunkFiveRegular", serif;
-			font-weight: normal;
-			font-size: 0.7em;
-			letter-spacing: 1px;
-			line-height: 0;
-		}
- 	        [lang=cs] .experience-it b,
-                [lang=el] .experience-it b {
+
+        .experience-it.primary {
+            font-family: "LeagueGothicRegular", sans-serif;
+        }
+            .experience-it.primary:hover {
+                background-color: #9a280d;
+            }
+
+            .experience-it.primary b {
+                font-family: "ChunkFiveRegular", serif;
+                font-weight: normal;
+                font-size: 0.7em;
+                letter-spacing: 1px;
+                line-height: 0;
+            }
+            [lang=cs] .experience-it.primary b,
+                [lang=el] .experience-it.primary b {
                         font-family: serif;
                 }
+
+        .watch-video.primary {
+			font-family: "ChunkFiveRegular", serif;
+            font-size: 2em;
+            line-height: 0.9;
+            text-transform: none;
+        }
+            .watch-video.primary:hover {
+                background-color: #005588;
+            }
 	
-			.flipped .experience-it {
+			.flipped .primary {
 				margin: -52px 0 11px 25px;
 				width: 120px;
 			}
 			
-	.demo-actions .watch-video {
+	.demo-actions .secondary {
         font-size: 1.3em;
         text-shadow: 0.1em 0.1em 0.1em #666;
         /* mobile overrides */
-        margin: 0;
+        margin: 5px 0 0;
         padding: 0;
         width: auto;
 	}
-	.demo-actions .watch-video:hover { text-decoration: underline; }
+	.demo-actions .secondary:hover { text-decoration: underline; }
 
     .video-container .watch-video {
         /* mobile overrides */
@@ -667,11 +683,12 @@ div.chain-3 {
         outline: none;
         margin: 0;
         padding: 0;
+        text-align: left;
         width: auto;
     }
-    .video-container .watch-video:after {
-        display: none;
-    }
+        .video-container .watch-video:after {
+            display: none;
+        }
 	
 	.demo-over {
 		top: 0;

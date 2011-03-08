@@ -56,13 +56,15 @@ mozilla.wow = function() {
             mozilla.wow.lightsdown();
             
             // Setup lightboxes
-            $('.watch-video').live('click', function (e) {
-                    e.preventDefault();
-                    $.colorbox({href: $(this).attr('href'),
-                                title: $(this).attr('title'),
-                                iframe: true,
-                                width: 700,
-                                height: 500});
+            $('.watch-video, .incompatible .demo-image a').live('click', function (e) {
+                    if (mozilla.wow.isDesktopLayout()) {
+                        e.preventDefault();
+                        $.colorbox({href: $(this).attr('href'),
+                                    title: $(this).attr('title'),
+                                    iframe: true,
+                                    width: 700,
+                                    height: 500});
+                    }
                 });
             var _handleEvents = function (e) {
                 if ('subtitles-ui' == e.data) {
@@ -130,6 +132,32 @@ mozilla.wow.handleResize = function () {
         }
     }
 };
+
+/**
+ * Make a demo's DOM reflect that it is not compatible witht the user's browser.
+ * (for now, this just swaps the "Experience it Now" and "Watch a Video" buttons)
+ */
+mozilla.wow.markDemoAsIncompatible = function (demo /* jQuery object of the Demo's DOM */) {
+    if (demo.length > 0) {
+        demo.addClass("incompatible");
+        var container = demo.find(".watch-video").parent();
+
+        /* make the video button primary */
+        var video_button = demo.find(".watch-video");
+        video_button.remove().prependTo(container);
+        video_button.removeClass("secondary").addClass("primary");
+        var video_link = video_button.attr("href");
+        var video_title = video_button.attr("title");
+        $(".demo-image a").attr("href", video_link).attr("title", video_title);
+
+        /* make the experience it button secondary */
+        var exp_button = demo.find(".experience-it");
+        exp_button.remove().appendTo(container);
+        exp_button.removeClass("primary").addClass("secondary");
+    }
+};
+
+
 
 /**
  * Browser Compatibility
