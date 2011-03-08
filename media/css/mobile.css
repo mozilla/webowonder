@@ -379,11 +379,6 @@ div.chain-3 {
         }
 
     .demo-inner {
-        /*
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
-        border-radius: 4px;
-        */
         border: 1px solid #fff;
         padding: 2%;
     }
@@ -407,11 +402,6 @@ div.chain-3 {
         .demo-image {
             background-color: #fff;
 			border: 1px solid #fff;
-            /*
-			-moz-border-radius: 4px;
-			-webkit-border-radius: 4px;
-			border-radius: 4px;
-            */
             height: 130px;
             margin: auto;
             max-width: 380px;
