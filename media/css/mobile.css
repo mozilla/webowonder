@@ -558,7 +558,7 @@ div.chain-3 {
         display: none;
     }
 
-    .primary {
+    .primary, .video-container .watch-video {
 		background-color: #069;
         -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
@@ -574,7 +574,7 @@ div.chain-3 {
         text-align: center;
 		text-decoration: none;
     }
-        .primary:after {
+        .primary:after, .video-container .watch-video:after {
             /* for white border */
 			border: 1px solid #fff;
             -moz-border-radius: 3px;
@@ -609,8 +609,6 @@ div.chain-3 {
     }
 
         .video-container .watch-video {
-            background-color: #069;
-            color: #fff;
             margin: auto;
             margin-bottom: 4px;
             width: 55%;

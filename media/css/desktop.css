@@ -683,6 +683,7 @@ div.chain-3 {
         outline: none;
         margin: 0;
         padding: 0;
+        text-align: left;
         width: auto;
     }
         .video-container .watch-video:after {
