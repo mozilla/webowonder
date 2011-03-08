@@ -39,9 +39,15 @@
 				</div>
 			</div>
 {% for demo in demos %}
-			<div id="{{demo.slug}}" data-hash="{{demo.slug}}" class="demo {{demo.category}} {%if loop.first %}selected{% endif %} init {{demo.platform}}-platform">
+			<div id="{{demo.slug}}" data-hash="{{demo.slug}}" class="demo {{demo.category}} {% if loop.first %}selected{% endif %} init">
 				<div class="demo-inner"><!-- TODO L10n map categories -->
 					<div class="flag">{{demo.category}}</div>
+                    {% if demo.platform  == "D" %}
+                        <div class="desktop-only warning">{{ _('Desktop Only') }}</div>
+                    {% endif %}
+                    {% if demo.platform  == "M" %}
+                        <div class="mobile-only warning">{{ _('Mobile Only') }}</div>
+                    {% endif %}
 					<a href="#" class="flip-card-back">{{ _('Hide Info') }}</a>
 					<div class="demo-image"><a href="{{mozillademos_host}}demos/{{demo.slug}}/demo.html"><img src="{{mozillademos_host}}demos/{{ demo.slug }}/screenshot.jpg" width="458" height="230" alt="{{ _('Screenshot') }}"></a></div>
 					<div class="demo-info">

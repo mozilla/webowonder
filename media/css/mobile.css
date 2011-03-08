@@ -333,14 +333,12 @@ div.chain-3 {
         width: 100%;
     }
 
-    .flag {
+    .flag, .warning {
         background-color: #000;
-        background: url(/media/img/sprite.png) 0px -915px no-repeat;
         color: #fff;
         font-size: 0.7em;
         font-weight: bold;
         left: 0;
-        top: 30px;
         line-height: 1em;
         padding: 7px 15px 6px 30px;
         position: absolute;
@@ -349,9 +347,17 @@ div.chain-3 {
         z-index: 99;
     }
     [lang=el] .flag,
-            [lang=ga] .flag {
+            [lang=ga] .flag,
+            [lang=el] .warning,
+            [lang=ga] .warning {
                     text-transform: none;
             }
+
+    .flag {
+        background: url(/media/img/sprite.png) 0px -915px no-repeat;
+        top: 30px;
+    }
+
         .Design .flag {
             background-position: 0px -915px;
         }
@@ -377,6 +383,14 @@ div.chain-3 {
         .flipped .flag {
             display: none;
         }
+
+    .warning {
+        background: url(/media/img/warning-flag.png) 0px 0px no-repeat;
+        position: absolute;
+        top: 60px;
+        width: 45px;
+        z-index: 99;
+    }
 
     .demo-inner {
         border: 1px solid #fff;
