@@ -144,12 +144,13 @@ def category(demo):
         'remixingreality': _('Video'),
         'AR_photobooth': _('Video'),
         'dashboard': _('HTML5'),
+        'dashboard-mobile': _('HTML5'),
         'debug': _('HTML5'),
         'nocomply': _('WebGL'),
-        'double_ui': _('Design'),
+        'doubleui-mobile': _('Design'),
         'flight-of-the-navigator': _('WebGL'),
         'globetweeter': _('WebGL'),
-        'hologram': _('Design'),
+        'holo-mobile': _('Design'),
         'immersivevideo': _('Video'),
         'londonproject': _('Design'),
         'mobile_player': _('Video'),
@@ -158,6 +159,7 @@ def category(demo):
         'planetarium': _('Design'),
         'plztouchme': _('HTML5'),
         'runfield': _('HTML5'),
+        'runfield-mobile': _('HTML5'),
         'shadows': _('Design'),
     }
     return categories[demo.slug]
