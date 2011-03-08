@@ -602,7 +602,10 @@ div.chain-3 {
 		-webkit-box-shadow: 0 1px 4px #333;
 		box-shadow: 0 1px 4px #333;
 		font-family: "LeagueGothicRegular", sans-serif;
+        font-size: 3em;
+        font-weight: normal;
 		margin-bottom: 11px;
+        padding: 15px 0 13px;
 	}
 	[lang=cs] .experience-it,
         [lang=el] .experience-it {
@@ -612,6 +615,19 @@ div.chain-3 {
 			background-color: #9a280d;
 			text-shadow: 2px 2px 3px #333;
 		}
+		.experience-it:before {
+			/*background: url(/media/img/icon-flip-card.png) 0 0 no-repeat;*/
+			background: url(/media/img/sprite.png) 0px -1085px no-repeat;
+            content: '';
+            display: block;
+			height: 14px;
+			margin: -7px -4px 0 0;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			width: 14px;
+		}
+		
 	
 		.experience-it b {
 			font-family: "ChunkFiveRegular", serif;
@@ -625,28 +641,11 @@ div.chain-3 {
                         font-family: serif;
                 }
 	
-		.experience-it span {
-            font-size: 3em;
-			font-weight: normal;
-			padding: 8px 6px 6px;
-		}
-		
 			.flipped .experience-it {
 				margin: -52px 0 11px 25px;
 				width: 108px;
 			}
 			
-		.experience-it .flip-card-icon {
-			position: absolute;
-			top: 50%;
-			right: 0;
-			margin: -7px -4px 0 0;
-			height: 14px;
-			width: 14px;
-			/*background: url(/media/img/icon-flip-card.png) 0 0 no-repeat;*/
-			background: url(/media/img/sprite.png) 0px -1085px no-repeat;
-		}
-		
 	.watch-video {
         font-size: 1.3em;
         text-shadow: 0.1em 0.1em 0.1em #666;

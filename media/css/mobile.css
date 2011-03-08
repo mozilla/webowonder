@@ -561,23 +561,29 @@ div.chain-3 {
 		border-radius: 4px;
 		color: #fff;
         display: block;
+        font-size: 130%;
 		font-weight: bold;
 		letter-spacing: -1px;
+        line-height: 0.7em;
         margin-bottom: 0.4em;
-		padding: 6px;
+		padding: 16px;
 		position: relative;
+        text-align: center;
 		text-decoration: none;
     }
-		.experience-it span {
+        .experience-it:after {
 			border: 1px solid #fff;
 			-moz-border-radius: 3px;
 			-webkit-border-radius: 3px;
 			border-radius: 3px;
-			display: block;
-            font-size: 130%;
-			line-height: 0.7em;
-            padding: 10px;
-            text-align: center;
+            content: '';
+            cursor: pointer;
+            display: block;
+            bottom: 6px;
+            left: 6px;
+            position: absolute;
+            right: 6px;
+            top: 6px;
         }
 
 	.watch-video {
@@ -597,11 +603,24 @@ div.chain-3 {
             border-radius: 4px;
             color: #fff;
             font-size: 130%;
-            outline: 1px solid #fff;
-            outline-offset: -6px;
             margin-bottom: 4px;
             padding: 16px;
+            position: relative;
         }
+            .video-container .watch-video:after {
+                border: 1px solid #fff;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                content: '';
+                cursor: pointer;
+                display: block;
+                bottom: 6px;
+                left: 6px;
+                position: absolute;
+                right: 6px;
+                top: 6px;
+            }
 
     .social-media {
 		background: url(/media/img/sprite.png) 0px -1119px no-repeat;
