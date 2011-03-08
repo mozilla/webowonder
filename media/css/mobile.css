@@ -558,28 +558,20 @@ div.chain-3 {
         display: none;
     }
 
-    .experience-it {
-		background-color: #c23404;
-		-moz-border-radius: 4px;
-		-webkit-border-radius: 4px;
-		border-radius: 4px;
-		color: #fff;
+    .button {
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        color: #fff;
         display: block;
         font-size: 130%;
 		font-weight: bold;
-		letter-spacing: -1px;
-        line-height: 0.7em;
-        margin-bottom: 0.4em;
 		padding: 16px;
 		position: relative;
-        text-align: center;
 		text-decoration: none;
     }
-        .experience-it:after {
+        .button:after {
 			border: 1px solid #fff;
-			-moz-border-radius: 3px;
-			-webkit-border-radius: 3px;
-			border-radius: 3px;
             content: '';
             cursor: pointer;
             display: block;
@@ -590,7 +582,15 @@ div.chain-3 {
             top: 6px;
         }
 
-	.watch-video {
+    .experience-it {
+		background-color: #c23404;
+		letter-spacing: -1px;
+        line-height: 0.7em;
+        margin-bottom: 0.4em;
+        text-align: center;
+    }
+
+	.demo-actions .watch-video {
 		color: #069;
 		display: block;
 		font-weight: bold;
@@ -602,29 +602,11 @@ div.chain-3 {
 
         .video-container .watch-video {
             background-color: #069;
-            -moz-border-radius: 4px;
-            -webkit-border-radius: 4px;
-            border-radius: 4px;
             color: #fff;
-            font-size: 130%;
+            margin: auto;
             margin-bottom: 4px;
-            padding: 16px;
-            position: relative;
+            width: 55%;
         }
-            .video-container .watch-video:after {
-                border: 1px solid #fff;
-                -moz-border-radius: 3px;
-                -webkit-border-radius: 3px;
-                border-radius: 3px;
-                content: '';
-                cursor: pointer;
-                display: block;
-                bottom: 6px;
-                left: 6px;
-                position: absolute;
-                right: 6px;
-                top: 6px;
-            }
 
     .social-media {
 		background: url(/media/img/sprite.png) 0px -1119px no-repeat;

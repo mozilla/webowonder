@@ -567,7 +567,7 @@ div.chain-3 {
 .video-container a.watch-video { 
     font-size: 1.2em; 
     padding-bottom: 0.3em; 
-    text-shadown: 0.1em 0.1em 0.1em #999 
+    text-shadow: 0.1em 0.1em 0.1em #999 
 }
 
 .video-container img {
@@ -646,7 +646,7 @@ div.chain-3 {
 				width: 120px;
 			}
 			
-	.watch-video {
+	.demo-actions .watch-video {
         font-size: 1.3em;
         text-shadow: 0.1em 0.1em 0.1em #666;
         /* mobile overrides */
@@ -654,7 +654,7 @@ div.chain-3 {
         padding: 0;
         width: auto;
 	}
-	.watch-video:hover { text-decoration: underline; }
+	.demo-actions .watch-video:hover { text-decoration: underline; }
 
     .video-container .watch-video {
         /* mobile overrides */
@@ -665,9 +665,12 @@ div.chain-3 {
         color: #069;
         font-size: inherit;
         outline: none;
-        margin-bottom: 0;
+        margin: 0;
         padding: 0;
         width: auto;
+    }
+    .video-container .watch-video:after {
+        display: none;
     }
 	
 	.demo-over {

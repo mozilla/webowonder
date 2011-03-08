@@ -62,14 +62,14 @@
                                                 <!-- Not all demos have a documentary -->
                                                 {% if demo.video_description %}
     						<div class="video-container">
-    							<a class="watch-video" href="/{{LANG}}/documentary/{{demo.slug}}"  title="{{ demo.video_title|safe }}">{{ _('Watch the documentary &#187;')|safe }}</a>    							
+    							<a class="watch-video button" href="/{{LANG}}/documentary/{{demo.slug}}"  title="{{ demo.video_title|safe }}">{{ _('Watch the documentary &#187;')|safe }}</a>    							
                                                         <p>{# L10n: {0} is the name of a film maker #}{{ _('Film by {0}')|f('<a href="http://www.maxlanman.com/">Max Lanman</a>')|safe }}
                                                 </div>
                                                 {% endif %}
     					</div>
 					</div>
 					<div class="demo-actions">
-						<a href="{{mozillademos_host}}demos/{{demo.slug}}/demo.html" class="experience-it">
+						<a href="{{mozillademos_host}}demos/{{demo.slug}}/demo.html" class="experience-it button">
 							{{ _('Experience <b>it now</b>')|safe }}
 						</a>
 						{{ _('&mdash; or &mdash;')|safe }}
