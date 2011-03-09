@@ -461,6 +461,8 @@ mozilla.wow.flippableCards = function() {
  * Tooltips
  */
 mozilla.wow.tooltips = function() {
+        
+    if(!mozilla.wow.isDesktopLayout()) return; /* we're on the mobile layout, ignore - makes you tap two or three times on demos to share */
     
     // Show tooltips above social icons
 	$('.social-media').live('mouseover mouseout', function(e) {
@@ -556,17 +558,20 @@ mozilla.wow.cher = function () {
                     l += '&' + k + '=' + e(extras[k]);
                 }
             }
+            var win = window.open('', 'sharer', 'toolbar=0, status=0, resizable=1, width=626, height=436');
             fn  = function()  {
-                window.open(h + l, 'sharer', 'toolbar=0, status=0, resizable=1, width=626, height=436');
+                win.location = h + l;
             };
             setTimeout(fn,0);
         } catch (doh) {window.console && console.info(doh);}
         return false;
     };
     $('.social-media.twitter').click(function (e) {
+            e.preventDefault();
             return _share.call(this, 'http://twitter.com/share', 'url', 'text', {via: 'firefox', counturl: 'http://demos.mozilla.org/'});
     });
     $('.social-media.facebook').click(function (e) {
+            e.preventDefault();
             return _share.call(this, 'http://www.facebook.com/sharer.php', 'u', 't');
     });
 };
