@@ -178,6 +178,27 @@ mozilla.wow.browserCompatibility = function () {
         }
         $('#webgl-compatibility, #compatibility').remove();
     });
+
+    /* if they're browser can't display WebGL, mark each WebGL demos as incompatible */
+    if ($("#_nowebgl").length > 0) {
+        $(".demo.WebGL").each(function() {
+            mozilla.wow.markDemoAsIncompatible($(this));
+        });
+    }
+
+    /* if they're using a mobile browser, mark all desktop-only demos as incompatible */
+    if ($("body").hasClass("mobile-content")) {
+        $(".demo.D").each(function() {
+            mozilla.wow.markDemoAsIncompatible($(this));
+        });
+    }
+
+    /* if they're using a desktop browser, mark all mobile-only demos as incompatible */
+    if ($("body").hasClass("desktop-content")) {
+        $(".demo.M").each(function() {
+            mozilla.wow.markDemoAsIncompatible($(this));
+        });
+    }
     
     // Tweaks for Safari 4 and -webkit-transform problem
     if ($.browser.safari && (navigator.appVersion.indexOf('4.') != -1)) {
