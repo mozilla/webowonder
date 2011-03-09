@@ -140,10 +140,10 @@ mozilla.wow.handleResize = function () {
 mozilla.wow.markDemoAsIncompatible = function (demo /* jQuery object of the Demo's DOM */) {
     if (demo.length > 0) {
         demo.addClass("incompatible");
-        var container = demo.find(".watch-video").parent();
+        var container = demo.find(".experience-it").first().parent();
 
         /* make the video button primary */
-        var video_button = demo.find(".watch-video");
+        var video_button = container.find(".watch-video");
         video_button.remove().prependTo(container);
         video_button.removeClass("secondary").addClass("primary");
         var video_link = video_button.attr("href");
@@ -151,7 +151,7 @@ mozilla.wow.markDemoAsIncompatible = function (demo /* jQuery object of the Demo
         $(".demo-image a").attr("href", video_link).attr("title", video_title);
 
         /* make the experience it button secondary */
-        var exp_button = demo.find(".experience-it");
+        var exp_button = container.find(".experience-it");
         exp_button.remove().appendTo(container);
         exp_button.removeClass("primary").addClass("secondary");
     }
