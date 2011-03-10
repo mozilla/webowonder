@@ -1189,6 +1189,8 @@ body.webfontless #navigation .see-types { background-position: 52px -1431px; }
 body.webfontless .experience-it span { font-size: 1.5em; line-height: 1.3em; }
 body.webfontless .experience-it b { font-size: 1.2em; }
 
+#firefox-four div.get-it-mobile { display: none; }
+
 /* used for mozilla.wow.isDesktopLayout() */
 #_mediaquerytest {
     display: none;

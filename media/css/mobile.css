@@ -288,16 +288,23 @@ div.chain-3 {
 		margin-left: 20px;
     }
 		
-	#firefox-four .get-it {
+	#firefox-four .get-it, #firefox-four .get-it-mobile {
 		clear: both;
 		display: block;
 		font-weight: bold;
 		letter-spacing: 2px;
 		font-size: 1.2em;
 		color: #ffdeb5;
-		padding-top: 200px;
-		padding-left: 8px;
+                padding-top: 200px;
+          	padding-left: 8px;
 	}
+        #firefox-four .get-it-mobile {
+            font-size: 1.4em;
+            position: absolute;
+            top: -17px;
+            text-align: center;
+            width: 220px
+        }
 
 #demos {
     background: transparent url(/media/img/bg-rope-vertical.gif) top center repeat-y;

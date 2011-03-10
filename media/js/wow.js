@@ -107,11 +107,11 @@ mozilla.wow.isDesktopLayout = function () {
 /**
  * Handle window resizes for the Mobile Layout
  */
-mozilla.wow.previousLayoutWasDesktop = mozilla.wow.isDesktopLayout();
+mozilla.wow.previousLayoutWasDesktop = null;
 mozilla.wow.desktopDemosInnerMargin = $("#demos-inner").css("margin-left");
 mozilla.wow.handleResize = function () {
     /* if we're on the mobile layout, clear out any margin-left on #demos-inner from the desktop site */
-    var newLayoutIsDesktop = mozilla.wow.isDesktopLayout();
+    var newLayoutIsDesktop = null;
     if (newLayoutIsDesktop != mozilla.wow.previousLayoutWasDesktop) {
         /* we have just switched from one layout to another */
         if (newLayoutIsDesktop) {
@@ -122,6 +122,11 @@ mozilla.wow.handleResize = function () {
             mozilla.wow.previousLayoutWasDesktop = true;
             /* show any demos or the marvels await poster that might have been hidden from the sorting nav */
             $(".demo, #marvels-await").show();
+            if ($('.get-it').attr('data-url') === undefined) {
+                $('.get-it').attr('data-url', $('#firefox-four').attr('href'));
+            } else {
+                $('#firefox-four').attr('href', $('.get-it').attr('data-url'));
+            }
         } else {
             /* the new layout is mobile */
             /* so store the demos-inner margin and set it to 0 */
@@ -129,10 +134,11 @@ mozilla.wow.handleResize = function () {
             $("#demos-inner").css("margin-left", "0");        
             /* set the previousLayout as Desktop */
             mozilla.wow.previousLayoutWasDesktop = false;
+            $('#firefox-four').attr('href', $('.get-it-mobile').attr('data-url'));
         }
     }
 };
-
+mozilla.wow.handleResize();
 /**
  * Make a demo's DOM reflect that it is not compatible witht the user's browser.
  * (for now, this just swaps the "Experience it Now" and "Watch a Video" buttons)
