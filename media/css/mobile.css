@@ -258,7 +258,7 @@ div.chain-3 {
 #firefox-four {
     position: relative;
     display: block;
-	background: url(/media/img/sprite.png) 0px -635px no-repeat;
+	background: url(/media/img/sprite_non-beta.png) 0px -635px no-repeat;
 	width: 220px;
 	height: 250px;
 	-moz-transform: rotate(6deg);
