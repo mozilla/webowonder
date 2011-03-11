@@ -22,7 +22,10 @@ class Collaborator(models.Model):
 class DemoDetails(models.Model):
     """ Our microsite needs a little more data than 
     MDN Demo Room schema provides.
-
+    * Platform - Codes are sorted alphabetically. One of 
+    ** D - Desktop Only
+    ** I - Independent (Works on Desktop or Mobile)
+    ** M - Mobile Only
     * Demo sort order via rank
     """
     

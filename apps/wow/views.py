@@ -58,7 +58,12 @@ tags = {
 #@vary_on_headers('X-Mobile')
 def home(request):
     global tags
-    data = {'demos': Submission.objects.filter(hidden=False).order_by('demodetails__rank'),
+    # Desktop - desktop only, independent, mobile only
+    # Mobile - mobile only, independent, desktop only
+    platform = 'demodetails__platform'
+    if request.MOBILE:
+        platform = '-demodetails__platform'
+    data = {'demos': Submission.objects.filter(hidden=False).order_by(platform, 'demodetails__rank'),
             'share_url': 'http://webowonder.org/',
             'mozillademos_host': settings.DEMOLAND,
             'mobile_content': request.MOBILE,
