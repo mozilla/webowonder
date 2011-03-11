@@ -51,8 +51,8 @@ at <a href='{{nvidia_url}}'>NVIDIA</a>, <a href='{{amd_url}}'>AMD</a>, and <a hr
             canShowWebGlDriversMsg = false;
         } 
     }} catch (e) {}
-
-    if (! hasWebGl() ) {
+    window.webGLOK = hasWebGl();
+    if (! window.webGLOK ) {
         var msgType, canShowWebGl = true;
         /* Ewh gross... but Only 2 browsers have WebGL
            AND they have to have good video drivers */
@@ -82,8 +82,7 @@ at <a href='{{nvidia_url}}'>NVIDIA</a>, <a href='{{amd_url}}'>AMD</a>, and <a hr
         /* console.info("canShowWebGlDriversMsg = " + canShowWebGlDriversMsg + ", canShowWebGlBrowserMsg = " + canShowWebGlBrowserMsg +
               ", canShowWebGl=" + canShowWebGl); */
         if (canShowWebGl) {
-            document.write(compat_webgl_common);
-            document.write("<div id='_nowebgl'> </div>");
+            document.write(compat_webgl_common);            
         }
     }
 

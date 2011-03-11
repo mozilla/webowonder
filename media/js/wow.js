@@ -126,8 +126,12 @@ mozilla.wow.handleResize = function () {
             mozilla.wow.previousLayoutWasDesktop = true;
             /* show any demos or the marvels await poster that might have been hidden from the sorting nav */
             $(".demo, #marvels-await").show();
-            
-            $('#firefox-four').attr('href', $('.get-it').attr('data-url'));
+            if (window.navigator.userAgent.indexOf('Firefox/4') > 0) {
+                $('#firefox-four').attr('href', $('.get-it-mobile').attr('data-url'));
+                $('.get-it-mobile').show();
+            } else {
+                $('#firefox-four').attr('href', $('.get-it').attr('data-url'));
+            }
             
         } else {
             /* the new layout is mobile */
@@ -136,7 +140,12 @@ mozilla.wow.handleResize = function () {
             $("#demos-inner").css("margin-left", "0");        
             /* set the previousLayout as Desktop */
             mozilla.wow.previousLayoutWasDesktop = false;
-            $('#firefox-four').attr('href', $('.get-it-mobile').attr('data-url'));
+            if (window.navigator.userAgent.indexOf('Firefox/4') > 0) {
+                $('#firefox-four').attr('href', $('.get-it').attr('data-url'));
+                $('.get-it-mobile').hide();
+            } else {
+                $('#firefox-four').attr('href', $('.get-it-mobile').attr('data-url'));
+            }
         }
     }
 };
@@ -187,22 +196,17 @@ mozilla.wow.browserCompatibility = function () {
         $('#webgl-compatibility, #compatibility').remove();
     });
 
-    /* if they're browser can't display WebGL, mark each WebGL demos as incompatible */
-    if ($("#_nowebgl").length > 0) {
+    if (! window.webGLOK) {
         $(".demo.WebGL").each(function() {
             mozilla.wow.markDemoAsIncompatible($(this));
         });
     }
 
-    /* if they're using a mobile browser, mark all desktop-only demos as incompatible */
     if ($("body").hasClass("mobile-content")) {
         $(".demo.D").each(function() {
             mozilla.wow.markDemoAsIncompatible($(this));
         });
-    }
-
-    /* if they're using a desktop browser, mark all mobile-only demos as incompatible */
-    if ($("body").hasClass("desktop-content")) {
+    } else if ($("body").hasClass("desktop-content")) {
         $(".demo.M").each(function() {
             mozilla.wow.markDemoAsIncompatible($(this));
         });
