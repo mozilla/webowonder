@@ -137,9 +137,16 @@ def JINJA_CONFIG():
 # and js files that can be bundled together by the minify app.
 MINIFY_BUNDLES = {
     'css': {
+        # Most mobile and desktop UA
         'wow': (
             'css/mobile.css',
             'css/desktop.css',
+        ),
+        # IE 7 & 8
+        'wow_ie': (
+            'css/ie.css',
+            'css/mobile.css',
+            'css/desktop-ie.css',
         ),
     },
     'js': {

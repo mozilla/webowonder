@@ -11,15 +11,17 @@
     <title>{% block page_title %}playdoh examples{% endblock %}</title>
 
 
-        <!--[if IE]>
-	<link rel="stylesheet" href="/media/css/ie.css" type="text/css" media="all" title="IE styles" charset="utf-8">
+        <!--[if lt IE 9]>
+          {% block site_ie_css %}
+            {{ css('wow_ie') }}
+          {% endblock %}
 	<![endif]-->
-        <!--[if no IE]>
-    {% block site_css %}
-      {{ css('wow') }}
-    {% endblock %}
-	<![endif]-->
-	
+        <![if gte IE 9 ]>
+          {% block site_css %}
+            {{ css('wow') }}
+          {% endblock %}
+	<![endif]>
+
 	<!--[if IE 7]>
 	<link rel="stylesheet" href="/media/css/ie7.css" type="text/css" media="all" title="IE7 styles" charset="utf-8">
 	<![endif]-->
