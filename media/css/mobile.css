@@ -484,7 +484,7 @@ div.chain-3 {
             color: #d45155;
         }
 
-    .demo-info-extra { display: none; }
+    .js .demo-info-extra { display: none; }
 
     .flipped .demo-info-extra { display: block; }
 
@@ -693,6 +693,31 @@ div.chain-3 {
 #webgl-compatibility {
     display: none;
 }
+
+/* Browser Compatibility */
+#webgl-compatibility, #compatibility {
+	background-color: #310d01;
+  	background: url(../img/bg_compatability.jpg) repeat;
+    color: #d0c394;
+    font-size: 0.9em;
+    padding: 10px 0;
+    margin-bottom: 3px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    /* mobile overrides */
+    display: block;
+}
+    #webgl-compatibility p {
+        margin: auto 100px;
+        line-height: 1.5;
+        text-align: left;
+    }
+    #webgl-compatibility button {
+        margin-left: 10px;
+    }
+#webgl-compatibility a, #compatibility a { color: #c90; font-weight: bold; text-decoration: none; }
 
 #_mediaquerytest {
     display: block;

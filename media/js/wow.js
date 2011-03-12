@@ -457,6 +457,8 @@ mozilla.wow.sortableCards = function() {
  * Card Flip
  */
 mozilla.wow.flippableCards = function() {
+    // Bug#632120Comment#11
+    $('.demo-info-extra').parent().addClass('js');
     $('.more-info, .flip-card-back').live('click', function(e) {
        var card = $(this).parents('.demo');
        if( $(this).hasClass('more-info') && card.hasClass('flipped') ) {
