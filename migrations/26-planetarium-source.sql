@@ -1,0 +1,1 @@
+UPDATE demos_submission SET source_code_url = 'http://github.com/littleworkshop/planetarium' WHERE slug = 'planetarium';
