@@ -461,6 +461,15 @@ mozilla.wow.flippableCards = function() {
     $('.demo-info-extra').parent().addClass('js');
     $('.more-info, .flip-card-back').live('click', function(e) {
        var card = $(this).parents('.demo');
+       var innerCard = $(this).parents('.demo-inner');
+       // Bug#641237
+       if ( parseInt(innerCard.css('height'), 10) < 310) {//310px from desktop.css
+           console.info("Setting up demo card");
+           innerCard.css('height', innerCard.height() + 'px');
+           console.info("Setting up demo card height to", innerCard.css('height'));
+       } else {
+           console.info("We're good", innerCard.css('height'));
+       }
        if( $(this).hasClass('more-info') && card.hasClass('flipped') ) {
            // They are clicking the authors homepage url... 
        } else {       

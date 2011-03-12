@@ -439,7 +439,7 @@ div.chain-3 {
 			margin: 10px;
 			padding: 9px;
 			float: left;
-			height: 310px;
+			height: 310px; // Update wow.js if changed
 		}
 		
 		.coming-soon-cover {
@@ -496,11 +496,14 @@ div.chain-3 {
 				.flipped .demo-image img { margin: -30px 0 0 -150px;}
 			
 .flip-card-back {
+        bottom: auto;
 	margin: -18px auto 0;
-    padding: 13px 0 0;
+        padding: 13px 0 0;
+        position: relative;
 	width: 120px;
 	font-size: 0.6em;
 	background: url(/media/img/bg-flip-card-back.png) center top no-repeat;
+        width: 50%;
 }
 
 	.flipped .flip-card-back { display: block; }

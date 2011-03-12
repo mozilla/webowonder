@@ -445,14 +445,14 @@ div.chain-3 {
         }
 
     .flip-card-back {
+        bottom: 10px;
         display: none;
         font-family: "ChunkFiveRegular", serif;
-        margin: -10px auto 0;
-        padding: 10px;
+        padding: 10px 0px;
+        position: absolute;
         text-align: center;
         text-decoration: none;
         text-transform: uppercase;
-        width: 50%;
     }
     [lang=cs] .flip-card-back,
     [lang=el] .flip-card-back {
