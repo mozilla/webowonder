@@ -324,6 +324,21 @@ div.chain-3 {
 	#marvels-await a:hover { color: #9a280d; }
 
 #firefox-four {
+	position: relative;
+	display: block;
+	background: url(/media/img/sprite_non-beta.png) 0px -635px no-repeat;
+	width: 220px;
+	height: 250px;
+	-moz-transform: rotate(6deg);
+	-webkit-transform: rotate(6deg);
+	-o-transform: rotate(6deg);
+	-ms-transform: rotate(6deg);
+	transform: rotate(6deg);
+	margin-top: 10px;
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	z-index: 100;
 	-moz-box-shadow: 3px 5px 3px #111;
 	-webkit-box-shadow: 3px 5px 3px #111;
 	box-shadow: 3px 5px 3px #111;
