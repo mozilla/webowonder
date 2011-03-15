@@ -463,9 +463,9 @@ mozilla.wow.flippableCards = function() {
        var card = $(this).parents('.demo');
        var innerCard = $(this).parents('.demo-inner');
        // Bug#641237
-       if ( parseInt(innerCard.css('height'), 10) < 310) {//310px from desktop.css
+       if ( parseInt(innerCard.css('height'), 10) != 310) {//310px from desktop.css
            console.info("Setting up demo card");
-           innerCard.css('height', innerCard.height() + 'px');
+           innerCard.css('height', (parseInt(innerCard.height(), 10) + 1) + 'px');
            console.info("Setting up demo card height to", innerCard.css('height'));
        } else {
            console.info("We're good", innerCard.css('height'));
