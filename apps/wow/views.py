@@ -125,13 +125,13 @@ def submit_demo(request):
     """ Collects email addresses or intersticial to MDN Demo Studio. """
     return jingo.render(request, 'wow/submit.html', {})
 
-@cache_page(60 * 60 ) # one hour
+#@cache_page(60 * 60 ) # one hour
 def screencast(request, slug):
     resp = _show_video(request, slug, 'screencasts')
     resp['x-frame-options'] = 'SAMEORIGIN'
     return resp
 
-@cache_page(60 * 60) # one hour
+#@cache_page(60 * 60) # one hour
 def documentary(request, slug):
     resp = _show_video(request, slug, 'documentaries')
     resp['x-frame-options'] = 'SAMEORIGIN'
@@ -192,5 +192,6 @@ def _show_video(request, slug, videoType):
         'webm':"%s/%s/%s/%s.webm" % details,
         'ogg': "%s/%s/%s/%s.ogv"  % details,
         'mp4': "%s/%s/%s/%s.mp4"  % details,
+        'mobile_content': request.MOBILE,
     }
     return jingo.render(request, 'wow/video.html', ctx)

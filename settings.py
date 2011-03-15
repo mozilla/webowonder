@@ -150,6 +150,9 @@ MINIFY_BUNDLES = {
             'css/mobile.css',
             'css/desktop-ie.css',
         ),
+        'video': (
+            'css/video.css',
+        ),
     },
     'js': {
         'wow': (

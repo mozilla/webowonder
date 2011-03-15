@@ -2,7 +2,11 @@
 <html LANG="{{ LANG }}" dir="{{ DIR }}">
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title></title>
+          {% block site_css %}
+            {{ css('video') }}
+          {% endblock %}
   </head>
 <body>
 <div id="video-player" class="mozilla-video-control">
@@ -29,7 +33,19 @@
     </object>
   </video>
 </div>
+
+{% if mobile_content %}
+  <div id="mobile-alt">
+    <p>{{ _('Trouble playing the video? Try these formats:') }}</p>
+    <ul>
+        <li><a href="{{mp4}}" target="_new">mp4</a></li>
+        <li><a href="{{webm}}" target="_new">webm</a></li>
+        <li><a href="{{ogg}}" target="_new">ogg</a></li>
+    </ul>
+  </div>
+{% else %}
 <script type="text/javascript" src="http://s3.www.universalsubtitles.org/js/mirosubs-widgetizer.js"></script>
+{% endif %}
 {{ js('video') }}
 </body>
 </html>
