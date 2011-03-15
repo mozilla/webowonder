@@ -169,6 +169,7 @@ MINIFY_BUNDLES = {
     }
 }
 
+MOBILE_USER_AGENTS = 'android|fennec|iemobile|ipad|iphone|opera (?:mini|mobi)'
 
 ## Middlewares, apps, URL configs.
 
@@ -268,3 +269,4 @@ BROKER_VHOST = 'playdoh'
 BROKER_CONNECTION_TIMEOUT = 0.1
 CELERY_RESULT_BACKEND = 'amqp'
 CELERY_IGNORE_RESULT = True
+

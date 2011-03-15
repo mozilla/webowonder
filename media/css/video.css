@@ -4,12 +4,14 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 #mobile-alt {
   margin-top: 1em;
-  font-size: 20px;
+  font-size: 18px;
 }
+    #mobile-alt p { float: left; }
     #mobile-alt ul {
       list-style: none;
+      float: left;
     }
         #mobile-alt li {
          float: left;
-          margin-right: 1em;
+          margin-left: 1em;
         }
