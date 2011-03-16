@@ -10,6 +10,7 @@ from tower import ugettext as _
 from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_headers
 
 from demos.models import Submission
 from wow.models import DemoDetails
@@ -53,12 +54,19 @@ tags = {
                     _(u'XMLHttpRequest')),
 }
 
-@cache_page(60 * 15) # 15 minutes
+#@cache_page(60 * 15) # 15 minutes
+#@vary_on_headers('X-Mobile')
 def home(request):
     global tags
-    data = {'demos': Submission.objects.filter(hidden=False).order_by('demodetails__rank'),
+    # Desktop - desktop only, independent, mobile only
+    # Mobile - mobile only, independent, desktop only
+    platform = 'demodetails__platform'
+    if request.MOBILE:
+        platform = '-demodetails__platform'
+    data = {'demos': Submission.objects.filter(hidden=False).order_by(platform, 'demodetails__rank'),
             'share_url': 'http://webowonder.org/',
             'mozillademos_host': settings.DEMOLAND,
+            'mobile_content': request.MOBILE,
             'firefox_download': 'http://www.mozilla.com/firefox/beta/?WT.mc_id=webwonder&WT.mc_ev=click',
             'chrome_download': 'http://www.google.com/landing/chrome/beta',}
 
@@ -99,7 +107,7 @@ def home(request):
         except DemoDetails.DoesNotExist:
             deets = DemoDetails(demo=demo)
             deets.save()
-        
+        demo.platform = demo.demodetails.platform
         authors = [(demo.creator.userprofile_set.all()[0].homepage, demo.creator.get_full_name(), )]
 
         [_collect(authors, c) for c in demo.collaborator_set.all()]
@@ -111,18 +119,19 @@ def home(request):
     return jingo.render(request, 'wow/home.html', data)
 
 
-@cache_page(60 * 60) # one hour
+#@cache_page(60 * 60) # one hour
+#@vary_on_headers('X-Mobile')
 def submit_demo(request):
     """ Collects email addresses or intersticial to MDN Demo Studio. """
     return jingo.render(request, 'wow/submit.html', {})
 
-@cache_page(60 * 60 ) # one hour
+#@cache_page(60 * 60 ) # one hour
 def screencast(request, slug):
     resp = _show_video(request, slug, 'screencasts')
     resp['x-frame-options'] = 'SAMEORIGIN'
     return resp
 
-@cache_page(60 * 60) # one hour
+#@cache_page(60 * 60) # one hour
 def documentary(request, slug):
     resp = _show_video(request, slug, 'documentaries')
     resp['x-frame-options'] = 'SAMEORIGIN'
@@ -131,7 +140,6 @@ def documentary(request, slug):
 @cache_page(60 * 60 * 24) # one day
 def robots(request):
     resp = HttpResponse("User-agent: *\n")
-    resp['X-Foo'] = "bar"
     return resp
 
 ########################### Helper functions ########################
@@ -143,12 +151,13 @@ def category(demo):
         'remixingreality': _('Video'),
         'AR_photobooth': _('Video'),
         'dashboard': _('HTML5'),
+        'dashboard-mobile': _('HTML5'),
         'debug': _('HTML5'),
         'nocomply': _('WebGL'),
-        'double_ui': _('Design'),
+        'doubleui-mobile': _('Design'),
         'flight-of-the-navigator': _('WebGL'),
         'globetweeter': _('WebGL'),
-        'hologram': _('Design'),
+        'holo-mobile': _('Design'),
         'immersivevideo': _('Video'),
         'londonproject': _('Design'),
         'mobile_player': _('Video'),
@@ -157,6 +166,7 @@ def category(demo):
         'planetarium': _('Design'),
         'plztouchme': _('HTML5'),
         'runfield': _('HTML5'),
+        'runfield-mobile': _('HTML5'),
         'shadows': _('Design'),
     }
     return categories[demo.slug]
@@ -182,5 +192,6 @@ def _show_video(request, slug, videoType):
         'webm':"%s/%s/%s/%s.webm" % details,
         'ogg': "%s/%s/%s/%s.ogv"  % details,
         'mp4': "%s/%s/%s/%s.mp4"  % details,
+        'mobile_content': request.MOBILE,
     }
     return jingo.render(request, 'wow/video.html', ctx)

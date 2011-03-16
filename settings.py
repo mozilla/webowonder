@@ -139,8 +139,19 @@ def JINJA_CONFIG():
 # and js files that can be bundled together by the minify app.
 MINIFY_BUNDLES = {
     'css': {
+        # Most mobile and desktop UA
         'wow': (
-            'css/wow.css',
+            'css/mobile.css',
+            'css/desktop.css',
+        ),
+        # IE 7 & 8
+        'wow_ie': (
+            'css/ie.css',
+            'css/mobile.css',
+            'css/desktop-ie.css',
+        ),
+        'video': (
+            'css/video.css',
         ),
     },
     'js': {
@@ -158,12 +169,16 @@ MINIFY_BUNDLES = {
     }
 }
 
+MOBILE_USER_AGENTS = 'android|fennec|iemobile|ipad|iphone|opera (?:mini|mobi)'
 
 ## Middlewares, apps, URL configs.
 
 MIDDLEWARE_CLASSES = (
     'commons.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
+    # Dev environment - settings_local.py will add 
+    # 'mobile.middleware.DetectMobileMiddleware' here
+    'mobility.middleware.XMobileMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -254,3 +269,4 @@ BROKER_VHOST = 'playdoh'
 BROKER_CONNECTION_TIMEOUT = 0.1
 CELERY_RESULT_BACKEND = 'amqp'
 CELERY_IGNORE_RESULT = True
+

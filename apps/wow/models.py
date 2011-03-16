@@ -22,10 +22,14 @@ class Collaborator(models.Model):
 class DemoDetails(models.Model):
     """ Our microsite needs a little more data than 
     MDN Demo Room schema provides.
-
+    * Platform - Codes are sorted alphabetically. One of 
+    ** D - Desktop Only
+    ** I - Independent (Works on Desktop or Mobile)
+    ** M - Mobile Only
     * Demo sort order via rank
     """
     
     demo = models.OneToOneField(Demo, primary_key=True, unique=True)
     documentary_description = models.TextField(blank=True)
+    platform = models.CharField(max_length=1)
     rank = models.SmallIntegerField(default=1)

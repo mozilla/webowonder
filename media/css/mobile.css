@@ -1,0 +1,731 @@
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+/**
+ * Mozilla Web O'pen Wonder Mobile Styles
+ *
+ * Initial version created by Weightshift
+ * http://weightshift.com/
+ *
+ * @copyright 2011 Mozilla Corporation
+ * @license   http://www.mozilla.org/MPL/ Mozilla Public License
+ */
+
+/* Reset */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}:focus{outline:0;}ins{text-decoration:none;}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0;}
+
+/* @font-face declarations -- do not change!!! */
+@font-face {
+	font-family: 'LeagueGothicRegular';
+	src: url('/media/fonts/League_Gothic-webfont.eot');
+	src: local('☺'), url('/media/fonts/League_Gothic-webfont.woff') format('woff'), url('/media/fonts/League_Gothic-webfont.ttf') format('truetype'), url('/media/fonts/League_Gothic-webfont.svg#webfontpm5EArBj') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ChunkFiveRegular';
+	src: url('/media/fonts/Chunkfive-webfont.eot');
+	src: local('☺'), url('/media/fonts/Chunkfive-webfont.woff') format('woff'), url('/media/fonts/Chunkfive-webfont.ttf') format('truetype'), url('/media/fonts/Chunkfive-webfont.svg#webfontr824sA59') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CopseRegular';
+	src: url('/media/fonts/Copse-Regular-webfont.eot');
+	src: local('☺'), url('/media/fonts/Copse-Regular-webfont.woff') format('woff'), url('/media/fonts/Copse-Regular-webfont.ttf') format('truetype'), url('/media/fonts/Copse-Regular-webfont.svg#webfont2ZLDIqTa') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* end @font-face declarations -- do not change!!! */
+
+/* HTML5 elements must be set to block because they have no inherent display setting */
+header, nav, section, article, aside, footer {
+	display: block;
+}
+
+html,body {
+	height: 100%;
+	font-size: 14.99px;
+}
+
+body {
+    background: url("/media/img/bg-harlequin.png") repeat 0 0 #172432;
+	font-family: Helvetica, sans-serif;
+	font-size: 1em;
+	line-height: 1em;
+	-webkit-font-smoothing: antialiased;
+}
+
+#header {
+	background: url(/media/img/logo-web-o-wonder-mobile.png) center top  no-repeat;
+    height: 151px;
+    position: relative;
+    margin: 0 auto;
+    max-width: 430px;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+    #home-link {
+		color: #cac0a5;
+		display: block;
+		font-family: "ChunkFiveRegular", serif;
+        height: 74px;
+		letter-spacing: 0.15em;
+		padding-top: 17px;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+    }
+	[lang=cs] #home-link,      /* czech */
+        [lang=el] #home-link {     /* greek */
+                font-family: serif;
+        }
+        [lang=el] #home-link, 
+        [lang=ga] #home-link {     /* irish */
+                text-transform: none;
+        }
+
+#navigation {
+    width: 100%;
+}
+
+		#navigation li {
+            float: left;
+			font-size: 0.9em;
+			text-transform: uppercase;
+            width: 25%
+        }
+		[lang=el] #navigation li,
+                [lang=ga] #navigation li {
+                        text-transform: none;
+                }
+
+			#navigation .see-types {
+                display: none;
+            }
+
+		#navigation a {
+            color: #ddd5b3;
+			display: block;
+            font-family: sans-serif;
+            font-weight: bold;
+            opacity: 0.4;
+            padding: 11px 5px;
+            text-decoration: none;
+        }
+
+		#navigation a.selected {
+            font-size: 120%;
+            opacity: 1.0;
+        }
+
+#mozilla-info, #mozilla-cta {
+    color: #ffffff;
+    text-align: center;
+}
+
+#mozilla-info {
+    background: transparent url(/media/img/bg-rope-vertical.gif) center 20px repeat-y;
+    padding: 20px 15%;
+    position: relative;
+    top: -10px;
+    width: 70%;
+}
+
+#mozilla-cta {
+    clear: both;
+    margin: auto;
+    position: relative;
+    z-index: 0;
+    width: 220px;
+}
+
+#magic-tickets {
+    display: none;
+}
+
+div.chain-2 {
+	position: absolute;
+	width: 15px;
+	height: 35px;
+	/*background: url(/media/img/chain-2.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -510px no-repeat;
+	z-index: 101;
+	top: -23px;
+	margin-left: 80px;
+	-moz-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+div.chain-3 {
+	position: absolute;
+	width: 15px;
+	height: 50px;
+	/*background: url(/media/img/chain-3.png) 0 0 no-repeat;*/
+	background: url(/media/img/sprite.png) 0px -565px no-repeat;
+	z-index: 101;
+	top: -29px;
+	margin-left: 156px;
+	-moz-transform: rotate(-1deg);
+	-webkit-transform: rotate(-1deg);
+	-o-transform: rotate(-1deg);
+	-ms-transform: rotate(-1deg);
+	transform: rotate(-1deg);
+}
+
+#marvels-await {
+    background-color: #d2cebe;
+    color: #173956;
+	margin: 0 auto 5px;
+    max-width: 15em;
+    padding: 20px;
+	position: relative;
+	-moz-transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+	-o-transform: rotate(-4deg);
+	-ms-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+}
+    #marvels-await:after {
+        content: '';
+        color: white;
+        background: transparent url(/media/img/drop-shadows.png) bottom center no-repeat;
+        background-size: 100% 10px;
+        position: absolute;
+        bottom: -10px;
+        height: 10px;
+        margin: 0 auto;
+        left: 0;
+        width: 100%;
+    }
+    #marvels-await:before {
+        border: 1px solid #c66844;
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 7px;
+        left: 7px;
+        right: 7px;
+        top: 7px;
+    }
+
+	#marvels-await h3 {
+        border-bottom: 5px solid #173956;
+        border-top: 5px solid #173956;
+		line-height: 28px;
+		font-size: 2.1em;
+        font-weight: bold;
+        margin: auto;
+        padding-top: 0.3em;
+		text-transform: uppercase;
+        text-shadow: -3px 3px 0px rgba(255,255,255,0.6);
+        width: 5.5em;
+    }
+
+	[lang=cs] #marvels-await h3,
+        [lang=el] #marvels-await h3 {
+                font-family: sans-serif;
+        }
+        [lang=el] #marvels-await h3,
+        [lang=ga] #marvels-await h3 {
+            text-transform: none;
+        }
+
+	#marvels-await h3 span {
+		font-size: 1.2em;
+		font-family: "ChunkFiveRegular", serif;
+		line-height: 1em;
+	}
+        [lang=cs] #marvels-await h3 span,
+        [lang=el] #marvels-await h3 span {
+                font-family: serif;
+        }
+
+	#marvels-await p {
+		color: #403a30;
+        line-height: 1.1em;
+		padding: 13px 0 3px 4px;
+        position: relative;
+        text-align: left;
+    }
+
+#firefox-four {
+    position: relative;
+    display: block;
+	background: url(/media/img/sprite_non-beta.png) 0px -635px no-repeat;
+	width: 220px;
+	height: 250px;
+	-moz-transform: rotate(6deg);
+	-webkit-transform: rotate(6deg);
+	-o-transform: rotate(6deg);
+	-ms-transform: rotate(6deg);
+	transform: rotate(6deg);
+	margin-top: 15px;
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	z-index: 100;
+}
+[lang=el] #firefox-four,
+[lang=ga] #firefox-four {
+    text-transform: none;
+}
+	#firefox-four h3 {
+		text-indent: -10000px;
+	}
+
+	#firefox-four .tagline {
+		color: #f61a1a;
+		float: left;
+		width: 40px;
+		margin-top: 115px;
+		margin-left: 20px;
+    }
+		
+	#firefox-four .get-it, #firefox-four .get-it-mobile {
+		clear: both;
+		display: block;
+		font-weight: bold;
+		letter-spacing: 2px;
+		font-size: 1.2em;
+		color: #ffdeb5;
+                padding-top: 200px;
+          	padding-left: 8px;
+	}
+        #firefox-four .get-it-mobile {
+            font-size: 1.4em;
+            position: absolute;
+            top: -17px;
+            text-align: center;
+            width: 220px
+        }
+
+#demos {
+    background: transparent url(/media/img/bg-rope-vertical.gif) top center repeat-y;
+    margin: -30px 2% 10px;
+    width: 96%;
+    z-index: 1;
+}
+
+    #demos .coming-soon {
+        display: none;
+    }
+
+    .demo {
+        background-color: #e5dabb;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+        margin: 20px auto;
+        max-width: 410px;
+        padding: 2%;
+		position: relative;
+    }
+        .demo:after {
+            content: '';
+            color: white;
+            background: transparent url(/media/img/drop-shadows.png) bottom center no-repeat;
+            background-size: 100% 10px;
+            position: absolute;
+            bottom: -10px;
+            height: 10px;
+            margin: 0 auto;
+            left: 0;
+            width: 100%;
+        }
+
+    .flag, .warning {
+        background-color: #000;
+        color: #fff;
+        font-size: 0.7em;
+        font-weight: bold;
+        left: 0;
+        line-height: 1em;
+        padding: 7px 15px 6px 30px;
+        position: absolute;
+        text-transform: uppercase;
+        width: 45px;
+        z-index: 99;
+    }
+    [lang=el] .flag,
+            [lang=ga] .flag,
+            [lang=el] .warning,
+            [lang=ga] .warning {
+                    text-transform: none;
+            }
+
+    .flag {
+        background: url(/media/img/sprite.png) 0px -915px no-repeat;
+        top: 30px;
+    }
+
+        .Design .flag {
+            background-position: 0px -915px;
+        }
+        
+        .HTML5 .flag {
+            background-position: 0px -940px;
+        }
+        
+        .Video .flag {
+            background-position: 0px -965px;
+        }
+        
+        .Audio .flag,
+        .WebGL .flag {
+            background-position: 0px -990px;
+        }
+        
+        .coming-soon .flag {
+            width: 105px;
+            background-position: 0px -1015px;
+        }
+
+        .flipped .flag {
+            display: none;
+        }
+
+    .warning {
+        background: url(/media/img/warning-flag.png) 0px 0px no-repeat;
+        position: absolute;
+        top: 60px;
+        width: 45px;
+        z-index: 99;
+    }
+
+        .flipped .warning {
+            display: none;
+        }
+
+    .demo-inner {
+        border: 1px solid #fff;
+        padding: 2%;
+    }
+			.Design .demo-inner {
+				border-color: #82902a;
+			}
+			
+			.HTML5 .demo-inner {
+				border-color: #d09607;
+			}
+			
+			.Audio .demo-inner,
+			.WebGL .demo-inner {
+				border-color: #725b3d;
+			}
+			
+			.Video .demo-inner {
+				border-color: #d45155;
+			}
+
+        .demo-image {
+            background-color: #fff;
+			border: 1px solid #fff;
+            height: 130px;
+            margin: auto;
+            max-width: 380px;
+            overflow:hidden;
+        }
+            
+            .flipped .demo-image {
+                display: none;
+            }
+
+        .demo-image img {
+            height: auto;
+            max-width: 380px;
+            position: relative;
+            width: 100%;
+        }
+
+    .flip-card-back {
+        bottom: 10px;
+        display: none;
+        font-family: "ChunkFiveRegular", serif;
+        padding: 10px 0px;
+        position: absolute;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    [lang=cs] .flip-card-back,
+    [lang=el] .flip-card-back {
+            font-family: serif;
+    }
+    [lang=el] .flip-card-back,
+    [lang=ga] .flip-card-back {
+        text-transform: none;
+    }
+
+        .flipped .flip-card-back {
+            display: block;
+        }
+
+        .Design .flip-card-back {
+            color: #82902a;
+        }
+        
+        .HTML5 .flip-card-back {
+            color: #d09607;
+        }
+        
+        .Audio .flip-card-back,
+        .WebGL .flip-card-back {
+            color: #725b3d;
+        }
+        
+        .Video .flip-card-back {
+            color: #d45155;
+        }
+
+    .js .demo-info-extra { display: none; }
+
+    .flipped .demo-info-extra { display: block; }
+
+    .flipped .demo-info {
+        color: #423d30;
+    }
+		
+    .demo-info h1 {
+		color: #069;
+		font-family: "ChunkFiveRegular", serif;
+		font-size: 2.1em;
+		line-height: 28px;
+		margin: 10px 0 0;
+    }
+	[lang=cs] .demo-info h1,
+        [lang=el] .demo-info h1 {
+                font-family: serif;
+        }
+
+        .flipped .demo-info h1 {
+            margin-top: 8px;
+        }
+		
+		.flipped .demo-info h2 a {
+  			color: #423D30;
+		}
+		.flipped .demo-info h2 a:last-child {
+  			background: none;
+        }
+
+	.demo-info h2 {
+		font-size: 0.8em;
+		margin-bottom: 10px;
+	}
+
+		.demo-info h2 a {
+			color: #c30;
+			text-decoration: none;
+			display: inline-block;
+		}
+		.demo-info h2 a:last-child {
+			background: url(/media/img/non-sprited/icon-info.png) right top no-repeat;
+			padding: 2px 20px 2px 0;
+		}
+
+	.demo-info p {
+        line-height: 1.2;
+		margin-bottom: 0.4em;
+	}
+
+	.demo-info ul {
+		border-top: 1px solid #c4ba9c;
+		margin-bottom: 0.9em;
+	}
+
+	.demo-info li {
+		padding: 0.4em 0 0.4em 25px;
+		border-bottom: 1px solid #c4ba9c;
+		background: url(/media/img/non-sprited/bg-bullet.png) 5px 0.4em no-repeat;
+	}
+	
+	.demo-info a {
+		color: #069;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+    .video-container {
+        text-align: center;
+    }
+
+    .demo-actions {
+        color: #423d30;
+        text-align: center;
+    }
+
+    .flipped .demo-actions {
+        display: none;
+    }
+
+    .primary, .video-container .watch-video {
+		background-color: #069;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        color: #fff;
+        display: block;
+        font-size: 130%;
+		font-weight: bold;
+		letter-spacing: -1px;
+        line-height: 0.7em;
+		padding: 16px;
+		position: relative;
+        text-align: center;
+		text-decoration: none;
+    }
+        .primary:after, .video-container .watch-video:after {
+            /* for white border */
+			border: 1px solid #fff;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            content: '';
+            cursor: pointer;
+            display: block;
+            bottom: 6px;
+            left: 6px;
+            position: absolute;
+            right: 6px;
+            top: 6px;
+        }
+
+    .experience-it.primary {
+		background-color: #c23404;
+    }
+
+    .demo-actions .primary {
+        margin-bottom: 0.4em;
+    }
+
+	.demo-actions .secondary {
+		color: #069;
+		display: block;
+		font-weight: bold;
+        margin: auto;
+        padding: 0.4em 0;
+		text-decoration: none;
+        width: 55%;
+    }
+
+        .video-container .watch-video {
+            margin: auto;
+            margin-bottom: 4px;
+            width: 55%;
+        }
+
+    .social-media {
+		background: url(/media/img/sprite.png) 0px -1119px no-repeat;
+        bottom: 4%;
+		display: block;
+		float: left;
+		height: 24px;
+        position: absolute;
+        right: 4%;
+		text-decoration: none !important;
+		text-indent: -100000px;
+		width: 24px;
+    }
+
+    .facebook {
+        right: 14%;
+    }
+
+	.twitter {
+		background-position: 0px -1143px;
+	}
+
+#demo-controls {
+    display: none;
+}
+
+#sharing {
+    clear: both;
+    position: relative;
+    margin-right: 53%;
+    top: 20px;
+}
+
+    #back-to-mozilla {
+		background: url(/media/img/sprite.png) 0px -10px no-repeat;
+		display: block;
+		float: right;
+		height: 44px;
+		margin-right: -160px;
+		margin-top: -2px;
+		text-indent: -9999px;
+		width: 219px;
+    }
+
+    #twitter {
+		background: url(/media/img/chain-1.png) top center no-repeat;
+		float: right;
+		margin-right: -90px;
+        margin-top: 10px;
+		padding-top: 95px;
+        width: 55px;
+    }
+
+    #facebook {
+		background: url(/media/img/chain-facebook.png) top center no-repeat;
+		float: right;
+		margin-right: -10px;
+        margin-top: 10px;
+		padding-top: 50px;
+        width: 55px;
+    }
+
+.loading {
+	display: none;
+}
+
+#submit-demo { 
+    display: none;
+}
+
+#webgl-compatibility {
+    display: none;
+}
+
+/* Browser Compatibility */
+#webgl-compatibility, #compatibility {
+	background-color: #310d01;
+  	background: url(../img/bg_compatability.jpg) repeat;
+    color: #d0c394;
+    font-size: 0.9em;
+    padding: 10px 0;
+    margin-bottom: 3px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    /* mobile overrides */
+    display: block;
+}
+    #webgl-compatibility p {
+        margin: auto 100px;
+        line-height: 1.5;
+        text-align: left;
+    }
+    #webgl-compatibility button {
+        margin-left: 10px;
+    }
+#webgl-compatibility a, #compatibility a { color: #c90; font-weight: bold; text-decoration: none; }
+
+#_mediaquerytest {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#_nowebgl {
+    display: none;
+}

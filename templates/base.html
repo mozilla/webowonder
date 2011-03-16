@@ -7,15 +7,21 @@
     <!--
     This page does not validate... https://bugzilla.mozilla.org/show_bug.cgi?id=638798
     -->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>{% block page_title %}playdoh examples{% endblock %}</title>
 
-    {% block site_css %}
-      {{ css('wow') }}
-    {% endblock %}
-        <!--[if IE]>
-	<link rel="stylesheet" href="/media/css/ie.css" type="text/css" media="all" title="IE styles" charset="utf-8">
+
+        <!--[if lt IE 9]>
+          {% block site_ie_css %}
+            {{ css('wow_ie') }}
+          {% endblock %}
 	<![endif]-->
-	
+        <![if gte IE 9 ]>
+          {% block site_css %}
+            {{ css('wow') }}
+          {% endblock %}
+	<![endif]>
+
 	<!--[if IE 7]>
 	<link rel="stylesheet" href="/media/css/ie7.css" type="text/css" media="all" title="IE7 styles" charset="utf-8">
 	<![endif]-->

@@ -28,6 +28,14 @@ mozilla.wow = function() {
             mozilla.wow.browserCompatibility();
             // Remove CSS class to help progressively enhance
             $('.init').removeClass('init');            
+
+            // Add div to be used for media query detection
+            $('body').append('<div id="_mediaquerytest"> </div>');
+
+            // Handle window resizes on mobile
+            $(window).resize(function() {
+                mozilla.wow.handleResize();
+            });
             
             // Side Scroller
             mozilla.wow.sideScroller();
@@ -48,13 +56,15 @@ mozilla.wow = function() {
             mozilla.wow.lightsdown();
             
             // Setup lightboxes
-            $('.watch-video').live('click', function (e) {
-                    e.preventDefault();
-                    $.colorbox({href: $(this).attr('href'),
-                                title: $(this).attr('title'),
-                                iframe: true,
-                                width: 700,
-                                height: 500});
+            $('.watch-video, .incompatible .demo-image a').live('click', function (e) {
+                    if (mozilla.wow.isDesktopLayout()) {
+                        e.preventDefault();
+                        $.colorbox({href: $(this).attr('href'),
+                                    title: $(this).attr('title'),
+                                    iframe: true,
+                                    width: 700,
+                                    height: 500});
+                    }
                 });
             var _handleEvents = function (e) {
                 if ('subtitles-ui' == e.data) {
@@ -77,6 +87,7 @@ mozilla.wow = function() {
             mozilla.wow.cher();
 
             mozilla.wow.comingSoon();
+            mozilla.wow.handleResize();
         }
     };
 }();
@@ -85,6 +96,85 @@ mozilla.wow = function() {
  * Page initialization
  */
 $(document).ready(function() { mozilla.wow.init(); });
+
+/**
+ * Detect if the Desktop Layout is being shown
+ */
+mozilla.wow.isDesktopLayout = function () {
+    /* if #_mediaquerytest is display:none, the media query has been triggered, and we're looking at the Desktop Layout */
+    return ($("#_mediaquerytest").css("display") == "none");
+};
+
+/**
+ * Handle window resizes for the Mobile Layout
+ */
+mozilla.wow.previousLayoutWasDesktop = null;
+mozilla.wow.desktopDemosInnerMargin = $("#demos-inner").css("margin-left");
+if ($('.get-it').attr('data-url') === undefined) {
+    $('.get-it').attr('data-url', $('#firefox-four').attr('href'));
+}
+mozilla.wow.handleResize = function () {
+    /* if we're on the mobile layout, clear out any margin-left on #demos-inner from the desktop site */
+    var newLayoutIsDesktop = mozilla.wow.isDesktopLayout();
+    if (newLayoutIsDesktop != mozilla.wow.previousLayoutWasDesktop) {
+        /* we have just switched from one layout to another */
+        if (newLayoutIsDesktop) {
+            /* and the new layout is desktop */
+            /* so retreive the stored value of the demos-inner margin */
+            $("#demos-inner").css("margin-left", mozilla.wow.desktopDemosInnerMargin);
+            /* set the previousLayout as Desktop */
+            mozilla.wow.previousLayoutWasDesktop = true;
+            /* show any demos or the marvels await poster that might have been hidden from the sorting nav */
+            $(".demo, #marvels-await").show();
+            if (window.navigator.userAgent.indexOf('Firefox/4') > 0) {
+                $('#firefox-four').attr('href', $('.get-it-mobile').attr('data-url'));
+                $('.get-it-mobile').show();
+            } else {
+                $('#firefox-four').attr('href', $('.get-it').attr('data-url'));
+            }
+            
+        } else {
+            /* the new layout is mobile */
+            /* so store the demos-inner margin and set it to 0 */
+            mozilla.wow.desktopDemosInnerMargin = $("#demos-inner").css("margin-left");
+            $("#demos-inner").css("margin-left", "0");        
+            /* set the previousLayout as Desktop */
+            mozilla.wow.previousLayoutWasDesktop = false;
+            if (window.navigator.userAgent.indexOf('Firefox/4') > 0) {
+                $('#firefox-four').attr('href', $('.get-it').attr('data-url'));
+                $('.get-it-mobile').hide();
+            } else {
+                $('#firefox-four').attr('href', $('.get-it-mobile').attr('data-url'));
+            }
+        }
+    }
+};
+
+/**
+ * Make a demo's DOM reflect that it is not compatible witht the user's browser.
+ * (for now, this just swaps the "Experience it Now" and "Watch a Video" buttons)
+ */
+mozilla.wow.markDemoAsIncompatible = function (demo /* jQuery object of the Demo's DOM */) {
+    if (demo.length > 0) {
+        demo.addClass("incompatible");
+        var container = demo.find(".experience-it").first().parent();
+
+        /* make the video button primary */
+        var video_button = container.find(".watch-video");
+        video_button.remove().prependTo(container);
+        video_button.removeClass("secondary").addClass("primary");
+        var video_link = video_button.attr("href");
+        var video_title = video_button.attr("title");
+        $(".demo-image a").attr("href", video_link).attr("title", video_title);
+
+        /* make the experience it button secondary */
+        var exp_button = container.find(".experience-it");
+        exp_button.remove().appendTo(container);
+        exp_button.removeClass("primary").addClass("secondary");
+    }
+};
+
+
 
 /**
  * Browser Compatibility
@@ -105,6 +195,22 @@ mozilla.wow.browserCompatibility = function () {
         }
         $('#webgl-compatibility, #compatibility').remove();
     });
+
+    if (! window.webGLOK) {
+        $(".demo.WebGL").each(function() {
+            mozilla.wow.markDemoAsIncompatible($(this));
+        });
+    }
+
+    if ($("body").hasClass("mobile-content")) {
+        $(".demo.D").each(function() {
+            mozilla.wow.markDemoAsIncompatible($(this));
+        });
+    } else if ($("body").hasClass("desktop-content")) {
+        $(".demo.M").each(function() {
+            mozilla.wow.markDemoAsIncompatible($(this));
+        });
+    }
     
     // Tweaks for Safari 4 and -webkit-transform problem
     if ($.browser.safari && (navigator.appVersion.indexOf('4.') != -1)) {
@@ -119,6 +225,8 @@ mozilla.wow.sideScroller = function() {
 
     // Private, reusable function to animate cards
     function _animateCards(nextCard, moveBy) {
+
+        //if(!mozilla.wow.isDesktopLayout()) return; /* we're on the mobile layout, ignore */
         
         // Mutex until the animation is done
         if( $('body').hasClass('scrolling') ) return;
@@ -128,7 +236,9 @@ mozilla.wow.sideScroller = function() {
         $('.demo.selected').removeClass('selected');
         
         // Animate and setup the next card
-        try { $('#demos').animate({backgroundPosition: moveBy + 'px center'}, mozilla.wow.vars.scrollSpeed); } catch(err) { /* Do nothing */ }
+        if (mozilla.wow.isDesktopLayout()) {
+            try { $('#demos').animate({backgroundPosition: moveBy + 'px center'}, mozilla.wow.vars.scrollSpeed); } catch(err) { /* Do nothing */ }
+        }
         $('#demos-inner').animate({marginLeft: moveBy}, mozilla.wow.vars.scrollSpeed, function() {
                     nextCard.find('.demo-over').animate({opacity: 0}, 200, function() {
                        nextCard.addClass('selected');
@@ -249,68 +359,97 @@ mozilla.wow.sortableCards = function() {
     _setZIndices();
         
     $('#navigation a').click(function(e) {
-        var selectedCat = $(this).text().toLowerCase(),
-            scrollSpeed;
-        
         // Prevent the click behaviour
         e.preventDefault();
-        
-        // Is this already selected?
-        if( $(this).hasClass('selected') ) return;
-        
-        // Mutex until the animation is done
-        if( $('body').hasClass('sorting') ) return;
-        $('body').addClass('sorting');
-        
-        // Swap the navigation's selected class
-        $('#navigation a.selected').removeClass('selected');
-        $(this).addClass('selected');
-        
-        // Unselect the current demo
-        $('.demo.selected').removeClass('selected');
-        
-        // Scroll back to the starting position (if we're not already there)
-        scrollSpeed = ( parseInt($('#demos-inner').css('marginLeft')) == mozilla.wow.vars.cardWidth * -1.5 ) ? 0 : mozilla.wow.vars.scrollSpeed;
-        try { $('#demos').animate({backgroundPosition: mozilla.wow.vars.cardWidth * -1.5 + 'px center'}, scrollSpeed); } catch(err) { /* Do nothing */ }
-        $('#demos-inner').animate({marginLeft: mozilla.wow.vars.cardWidth * -1.5}, scrollSpeed, function() {
-           
-           // Sort by category, selected category first
-           clones = demos.find('.demo:not(.coming-soon)');
-           clones.sort(function(a, b) {
-               var catA = $(a).find('.flag').text().toLowerCase(),
-                   catB = $(b).find('.flag').text().toLowerCase();
 
-               return (catA == selectedCat) ? -1 :
-                      (catB == selectedCat) ? 1 :
-                      (catA < catB) ? -1 :
-                      (catA > catB) ? 1 : 0;
-           });
+        if (mozilla.wow.isDesktopLayout()) {
+            /* Desktop-layout behavor */
 
-           // Prepend coming-soon
-           merged = $.merge($('.coming-soon').clone(), clones);
-
-           // Reorder the cards
-           demos.quicksand(merged, {
-               adjustHeight: false,
-               attribute: function(v) { return $(v).find('h1').text(); },
-               enhancement: function() { $('.coming-soon').css('position', 'static'); }
-           }, function() {
-               // Select the first card
-               $('.demo').eq(1).addClass('selected');
-               _setZIndices();
-
-               // Change location hash
-               if (window.history && window.history.postState) {                   
-                   window.history.pushState({playing:false}, 
-                                            $('.demo.selected h1').text(), 
-                                            "#" + $('.demo').eq(1).attr('data-hash'));
-               } else {
-                   window.location.hash = $('.demo').eq(1).attr('data-hash');
-               }
-               $('body').removeClass('sorting');
-           });
+            var selectedCat = $(this).text().toLowerCase(),
+                scrollSpeed;
+        
+            // Is this already selected?
+            if( $(this).hasClass('selected') ) return;
             
-        });
+            // Mutex until the animation is done
+            if( $('body').hasClass('sorting') ) return;
+            $('body').addClass('sorting');
+            
+            // Swap the navigation's selected class
+            $('#navigation a.selected').removeClass('selected');
+            $(this).addClass('selected');
+            
+            // Unselect the current demo
+            $('.demo.selected').removeClass('selected');
+            
+            // Scroll back to the starting position (if we're not already there)
+            scrollSpeed = ( parseInt($('#demos-inner').css('marginLeft')) == mozilla.wow.vars.cardWidth * -1.5 ) ? 0 : mozilla.wow.vars.scrollSpeed;
+            try { $('#demos').animate({backgroundPosition: mozilla.wow.vars.cardWidth * -1.5 + 'px center'}, scrollSpeed); } catch(err) { /* Do nothing */ }
+            $('#demos-inner').animate({marginLeft: mozilla.wow.vars.cardWidth * -1.5}, scrollSpeed, function() {
+               
+               // Sort by category, selected category first
+               clones = demos.find('.demo:not(.coming-soon)');
+               clones.sort(function(a, b) {
+                   var catA = $(a).find('.flag').text().toLowerCase(),
+                       catB = $(b).find('.flag').text().toLowerCase();
+
+                   return (catA == selectedCat) ? -1 :
+                          (catB == selectedCat) ? 1 :
+                          (catA < catB) ? -1 :
+                          (catA > catB) ? 1 : 0;
+               });
+
+               // Prepend coming-soon
+               merged = $.merge($('.coming-soon').clone(), clones);
+
+               // Reorder the cards
+               demos.quicksand(merged, {
+                   adjustHeight: false,
+                   attribute: function(v) { return $(v).find('h1').text(); },
+                   enhancement: function() { $('.coming-soon').css('position', 'static'); }
+               }, function() {
+                   // Select the first card
+                   $('.demo').eq(1).addClass('selected');
+                   _setZIndices();
+
+                   // Change location hash
+                   if (window.history && window.history.postState) {                   
+                       window.history.pushState({playing:false}, 
+                                                $('.demo.selected h1').text(), 
+                                                "#" + $('.demo').eq(1).attr('data-hash'));
+                   } else {
+                       window.location.hash = $('.demo').eq(1).attr('data-hash');
+                   }
+                   $('body').removeClass('sorting');
+               });
+                
+            });
+        } else {
+            /* Mobile-layout behavior */
+
+            // Is this already selected?
+            if( $(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+                $(".demo").not(".coming-soon").show();
+                $("#marvels-await").slideDown();
+            } else {
+
+                var selectedCat = $(this).text();
+
+                // Swap the navigation's selected class
+                $('#navigation a.selected').removeClass('selected');
+                $(this).addClass('selected');
+
+                // Hide all demos
+                $(".demo").hide();
+
+                // Slide up "Marvels Await" poster
+                $("#marvels-await").slideUp();
+
+                // Make sure the category that has been selected is shown
+                $(".demo." + selectedCat).show();
+            }
+        }
     });
 };
 
@@ -318,8 +457,19 @@ mozilla.wow.sortableCards = function() {
  * Card Flip
  */
 mozilla.wow.flippableCards = function() {
+    // Bug#632120Comment#11
+    $('.demo-info-extra').parent().addClass('js');
     $('.more-info, .flip-card-back').live('click', function(e) {
        var card = $(this).parents('.demo');
+       var innerCard = $(this).parents('.demo-inner');
+       // Bug#641237
+       if ( parseInt(innerCard.css('height'), 10) != 310) {//310px from desktop.css
+           console.info("Setting up demo card");
+           innerCard.css('height', (parseInt(innerCard.height(), 10) + 1) + 'px');
+           console.info("Setting up demo card height to", innerCard.css('height'));
+       } else {
+           console.info("We're good", innerCard.css('height'));
+       }
        if( $(this).hasClass('more-info') && card.hasClass('flipped') ) {
            // They are clicking the authors homepage url... 
        } else {       
@@ -334,6 +484,8 @@ mozilla.wow.flippableCards = function() {
  * Tooltips
  */
 mozilla.wow.tooltips = function() {
+        
+    if(!mozilla.wow.isDesktopLayout()) return; /* we're on the mobile layout, ignore - makes you tap two or three times on demos to share */
     
     // Show tooltips above social icons
 	$('.social-media').live('mouseover mouseout', function(e) {
@@ -356,6 +508,8 @@ mozilla.wow.keynav = function() {
     // Attach left/right keyboard events to this/that way links
     $(document).keydown(function(e) {
         
+        if(!mozilla.wow.isDesktopLayout()) return; /* we're on the mobile layout, ignore */
+
         // Ignore the keyboard nav during demos
             if( $('body').hasClass('demoing') ) return; /* demo has focus, shouldn't happen */
         if( e.keyCode == 37 ) {
@@ -427,17 +581,20 @@ mozilla.wow.cher = function () {
                     l += '&' + k + '=' + e(extras[k]);
                 }
             }
+            var win = window.open('', 'sharer', 'toolbar=0, status=0, resizable=1, width=626, height=436');
             fn  = function()  {
-                window.open(h + l, 'sharer', 'toolbar=0, status=0, resizable=1, width=626, height=436');
+                win.location = h + l;
             };
             setTimeout(fn,0);
         } catch (doh) {window.console && console.info(doh);}
         return false;
     };
     $('.social-media.twitter').click(function (e) {
+            e.preventDefault();
             return _share.call(this, 'http://twitter.com/share', 'url', 'text', {via: 'firefox', counturl: 'http://demos.mozilla.org/'});
     });
     $('.social-media.facebook').click(function (e) {
+            e.preventDefault();
             return _share.call(this, 'http://www.facebook.com/sharer.php', 'u', 't');
     });
 };

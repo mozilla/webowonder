@@ -39,3 +39,11 @@ RESPONSYS = {
     'ID': '<insert sekrit responsys key here>',
     'CAMPAIGN_ID': 'MDN_DEMO_ROOM_LAUNCH'
 }
+
+if DEBUG:
+    # Zeus populates X-Mobile in staging and production
+    # Add DetectMobileMiddleware for mobile development.
+    mwc = MIDDLEWARE_CLASSES
+    xmobile = mwc.index('mobility.middleware.XMobileMiddleware')
+    detect = ('mobility.middleware.DetectMobileMiddleware',)
+    MIDDLEWARE_CLASSES = mwc[:xmobile] + detect + mwc[xmobile:]

@@ -1,17 +1,10 @@
 {% extends "base.html" %}
-{% block body_class %}{% endblock %}
+{% block body_class %}{% if mobile_content %}mobile-content{% else %}desktop-content{% endif %}{% endblock %}
 {% block page_title %}{{ _('Mozilla\'s Web O\'(pen) Wonder') }}{% endblock %}
 {% block content %}
 <div id="page-container">
 {% include 'wow/browser_compatibility.html' %}
 	<div id="header">
-		<div id="twitter" class="disruptable">
-			<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="firefox">{{ _('Tweet') }}</a>
-		</div>
-		<div id="facebook" class="disruptable">
-			<iframe src="//www.facebook.com/plugins/like.php?href={{share_url|urlencode}}&amp;layout=box_count&amp;show_faces=false&amp;width=55&amp;action=like&amp;colorscheme=light&amp;height=65" style="border:none; overflow:hidden; width:55px; height:65px;"></iframe>
-		</div>
-		<a href="http://mozilla.org" id="back-to-mozilla" title="{{ _('Visit Mozilla.org') }}">{{ _('Visit Mozilla.org') }}</a>
 		<a href="/" id="home-link">{{ _('Mozilla Presents') }}</a>
 		<ul id="navigation">
 			<li class="see-types">{{ _('See!') }}</li>
@@ -52,9 +45,15 @@
 				</div>
 			</div>
 {% for demo in demos %}
-			<div id="{{demo.slug}}" data-hash="{{demo.slug}}" class="demo {{demo.category}} {%if loop.first %}selected{% endif %} init">
+			<div id="{{demo.slug}}" data-hash="{{demo.slug}}" class="demo {{demo.category}} {% if loop.first %}selected{% endif %} init {{demo.platform}}">
 				<div class="demo-inner"><!-- TODO L10n map categories -->
 					<div class="flag">{{demo.category}}</div>
+                    {% if demo.platform  == "D" and mobile_content %}
+                        <div class="desktop-only warning">{{ _('Desktop Only') }}</div>
+                    {% endif %}
+                    {% if demo.platform  == "M" and not mobile_content %}
+                        <div class="mobile-only warning">{{ _('Mobile Only') }}</div>
+                    {% endif %}
 					<a href="#" class="flip-card-back">{{ _('Hide Info') }}</a>
 					<div class="demo-image"><a href="{{mozillademos_host}}demos/{{demo.slug}}/demo.html"><img src="{{mozillademos_host}}demos/{{ demo.slug }}/screenshot.jpg" width="458" height="230" alt="{{ _('Screenshot') }}"></a></div>
 					<div class="demo-info">
@@ -69,21 +68,22 @@
                                                 <!-- Not all demos have a documentary -->
                                                 {% if demo.video_description %}
     						<div class="video-container">
-    							<a class="watch-video" href="/{{LANG}}/documentary/{{demo.slug}}"  title="{{ demo.video_title|safe }}">{{ _('Watch the documentary &#187;')|safe }}</a>    							
+    							<a class="watch-video secondary" href="/{{LANG}}/documentary/{{demo.slug}}"  title="{{ demo.video_title|safe }}">{{ _('Watch the documentary &#187;')|safe }}</a>    							
                                                         <p>{# L10n: {0} is the name of a film maker #}{{ _('Film by {0}')|f('<a href="http://www.maxlanman.com/">Max Lanman</a>')|safe }}
                                                 </div>
                                                 {% endif %}
     					</div>
 					</div>
 					<div class="demo-actions">
-						<a href="{{mozillademos_host}}demos/{{demo.slug}}/demo.html" class="experience-it">
-							<span>{{ _('Experience <b>it now</b>')|safe }}</span>
-							<div class="flip-card-icon"></div>
-						</a>
-						{{ _('&mdash; or &mdash;')|safe }}
-						<a href="/{{LANG}}/screencast/{{demo.slug}}" class="watch-video" title="{{demo.title}}">{{ _('Watch a Video') }}</a>
+                        <div>
+                            <a href="{{mozillademos_host}}demos/{{demo.slug}}/demo.html" class="experience-it primary">
+                                {{ _('Experience <b>it now</b>')|safe }}
+                            </a>
+                            {{ _('&mdash; or &mdash;')|safe }}
+                            <a href="/{{LANG}}/screencast/{{demo.slug}}" class="watch-video secondary" title="{{demo.title}}">{{ _('Watch a Video') }}</a>
+                        </div>
 						<a href="http://www.facebook.com/sharer.php" class="social-media facebook" title="{{ _('Share on Facebook') }}">{{ _('Facebook') }}</a>
-						<a href="http://twitter.com/share" class="social-media twitter" data-via="firefox" title="{{ _('Share on Twitter') }}">{{ _('Twitter') }}</a>						
+						<a href="http://twitter.com/share" class="social-media twitter" data-via="firefox" data-related="firefox" title="{{ _('Share on Twitter') }}">{{ _('Twitter') }}</a>						
 					</div>
 					<div class="demo-over"></div>
 				</div>
@@ -97,6 +97,26 @@
 		<a href="#" id="that-way">{{ _('That Way') }}</a>
 		<a href="#" id="this-way">{{ _('This Way') }}</a>
 	</div>
+
+    <div id="mozilla-cta">
+		<div class="chain-2"></div>
+		<div class="chain-3"></div>
+		<a href="http://mozilla.com/firefox/RC/?WT.mc_id=webwonder&amp;WT.mc_ev=click" id="firefox-four">
+			<h3>{{ _('Firefox 4') }}</h3>
+                        <div class="get-it-mobile" 
+                             data-url="http://www.mozilla.com/en-US/mobile/download/?WT.mc_id=webwonder&WT.mc_ev=click">{{ _('Mobile') }}</div>
+			<div class="get-it">{{ _('Get it today!') }}</div>
+		</a>
+    </div>
+    <div id="sharing">
+		<div id="twitter" class="disruptable">
+			<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="firefox" data-related="firefox">{{ _('Tweet') }}</a>
+		</div>
+		<div id="facebook" class="disruptable">
+			<iframe src="http://www.facebook.com/plugins/like.php?href={{share_url|urlencode}}&amp;layout=box_count&amp;show_faces=false&amp;width=55&amp;action=like&amp;colorscheme=light&amp;height=65" style="border:none; overflow:hidden; width:55px; height:65px;"></iframe>
+		</div>
+		<a href="http://mozilla.org" id="back-to-mozilla" title="{{ _('Visit Mozilla.org') }}">{{ _('Visit Mozilla.org') }}</a>
+    </div>
 </div>
     <div class="loading"><div class="loading-inner">{{ _('Loading') }} <span class="title"></span><img src="/media/img/loading.gif" height="32" width="32" alt="{{ _('Loading') }}"/></div></div>
     <iframe id="demo-viewport"></iframe>
