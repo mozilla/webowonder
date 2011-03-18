@@ -187,11 +187,14 @@ def _show_video(request, slug, videoType):
     else:
         fileName ='screencast'
     base = "http://videos-cdn.mozilla.net/serv/mozhacks/demos"
+    poster = settings.DEMOLAND + "/demos/" + slug + "/screenshot.jpg"
     details = (base, videoType, slug, fileName)
     ctx = {
         'webm':"%s/%s/%s/%s.webm" % details,
         'ogg': "%s/%s/%s/%s.ogv"  % details,
         'mp4': "%s/%s/%s/%s.mp4"  % details,
+        'mobile_m4v': "%s/%s/%s/%s_mobile.m4v"  % details,
+        'poster': poster,
         'mobile_content': request.MOBILE,
     }
     return jingo.render(request, 'wow/video.html', ctx)

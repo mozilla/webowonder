@@ -3,13 +3,23 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
-    <title></title>
+    <title>Video</title>
           {% block site_css %}
             {{ css('video') }}
           {% endblock %}
   </head>
-<body>
+<body class="{% if mobile_content %}mobile-content{% else %}desktop-content{% endif %}">
 <div id="video-player" class="mozilla-video-control">
+  {% if mobile_content %}
+  <div id="mobile-video-container">
+      <video id="mobile-video" poster="{{poster}}">
+        <source src="{{mobile_m4v}}" />
+        <source src="{{webm}}" type="video/webm" />
+        <source src="{{ogg}}" type="video/ogg" />
+      </video>
+      <p>{{ _('Touch to Play') }}</p>
+  </div>
+  {% else %}
   <video id="video" width="640" height="360" controls="controls" autoplay>
     <source src="{{webm}}" type="video/webm" />
     <source src="{{ogg}}" type="video/ogg" />
@@ -32,15 +42,16 @@
         </div>
     </object>
   </video>
+  {% endif %}
 </div>
 
 {% if mobile_content %}
   <div id="mobile-alt">
     <p>{{ _('Trouble playing the video? Try these formats:') }}</p>
     <ul>
-        <li><a href="{{mp4}}" target="_new">mp4</a></li>
-        <li><a href="{{webm}}" target="_new">webm</a></li>
-        <li><a href="{{ogg}}" target="_new">ogg</a></li>
+        <li><a href="{{mobile_m4v}}" target="_blank">mp4</a></li>
+        <li><a href="{{webm}}" target="_blank">webm</a></li>
+        <li><a href="{{ogg}}" target="_blank">ogg</a></li>
     </ul>
   </div>
 {% else %}

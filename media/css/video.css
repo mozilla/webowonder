@@ -2,16 +2,66 @@
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}:focus{outline:0;}ins{text-decoration:none;}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0;}
 
-#mobile-alt {
-  margin-top: 1em;
-  font-size: 18px;
+/* Desktop */
+
+#video {
+    margin: auto;
+    width: 640px;
 }
-    #mobile-alt p { float: left; }
+
+/* Mobile */
+
+.mobile-content {
+    background: #172432;
+    font-family: Helvetica, sans-serif;
+    font-size: 120%;
+}
+
+#mobile-video {
+    cursor: pointer;
+    height: auto;
+    max-width: 100%;
+    position: relative;
+    width: auto;
+}
+
+#mobile-video-container {
+    background: #e5dabb;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+	-moz-box-shadow: 0px 3px 3px #111;
+	-webkit-box-shadow: 0px 3px 3px #111;
+	box-shadow: 0px 3px 3px #111;
+    padding: 10px 10px 0px;
+    margin: 6px;
+    text-align: center;
+}
+
+#mobile-video-container p {
+    font-style: italic;
+    line-height: 2;
+}
+
+#mobile-alt {
+  color: #4e5c69;
+  margin-top: 1em;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+    #mobile-alt p {
+        float: left;
+    }
     #mobile-alt ul {
       list-style: none;
       float: left;
     }
         #mobile-alt li {
-         float: left;
-          margin-left: 1em;
+            float: left;
+            margin-right: 1em;
+        }
+
+        #mobile-alt a {
+            color: #6e7c89;
+            font-weight: bold;
         }

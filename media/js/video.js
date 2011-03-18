@@ -1,6 +1,15 @@
 /**
  * Only used from /documentary/{slug} or /screencast/{slug}
  */
+
+
+// on mobile devices, clicking the video should begin playing it
+$(function() {
+    $("#mobile-video").click(function() {
+        this.play();
+    });
+});
+
 //mirosubs-videoTab - Initial menu expansion to tweak language or turn off subtitles
 $('.mirosubs-subtitleMeLink, .mirosubs-videoTab').live('click', function () {
     if (window.parent && window.parent.postMessage) 
