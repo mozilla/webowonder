@@ -165,7 +165,7 @@ mozilla.wow.markDemoAsIncompatible = function (demo /* jQuery object of the Demo
         video_button.removeClass("secondary").addClass("primary");
         var video_link = video_button.attr("href");
         var video_title = video_button.attr("title");
-        $(".demo-image a").attr("href", video_link).attr("title", video_title);
+        demo.find(".demo-image a").attr("href", video_link).attr("title", video_title);
 
         /* make the experience it button secondary */
         var exp_button = container.find(".experience-it");
