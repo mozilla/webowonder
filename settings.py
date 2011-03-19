@@ -52,8 +52,8 @@ KNOWN_LANGUAGES = ('en-US', 'ar', 'ca', 'cs', 'de','el', 'es', 'eu', 'fr', 'fy',
 
 # Production
 #KNOWN_LANGUAGES = ('en-US', 'ar', 'ca', 'cs', 'de', 'el', 'es', 'fr', 'fy',
-'ga', 'he', 'hu', 'id', 'it', 'ja', 'ko', 'nl', 'pl', 'pt', 'rm', 'ru', 'si',
-'sl', 'sq', 'th', 'tr', 'zh-CN', 'zh-TW')
+#'ga', 'he', 'hu', 'id', 'it', 'ja', 'ko', 'nl', 'pl', 'pt', 'rm', 'ru', 'si',
+#'sl', 'sq', 'th', 'tr', 'zh-CN', 'zh-TW')
 
 # List of RTL locales known to this project. Subset of LANGUAGES.
 RTL_LANGUAGES = ('ar',)  # ('ar', 'fa', 'fa-IR', 'he')
