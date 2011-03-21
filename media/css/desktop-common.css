@@ -683,6 +683,7 @@ div.chain-3 {
         }
 	
 	.demo-over {
+        cursor: pointer;
 		top: 0;
 		left: 0;
 		position: absolute;
@@ -1163,3 +1164,4 @@ body.webfontless .experience-it b { font-size: 1.2em; }
 #_mediaquerytest {
     display: none;
 }
+
