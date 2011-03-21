@@ -193,6 +193,7 @@ def _show_video(request, slug, videoType):
         'webm':"%s/%s/%s/%s.webm" % details,
         'ogg': "%s/%s/%s/%s.ogv"  % details,
         'mp4': "%s/%s/%s/%s.mp4"  % details,
+        'flash_mp4': "serv/mozhacks/demos/%s/%s/%s.mp4" % (videoType, slug, fileName),
         'mobile_m4v': "%s/%s/%s/%s_mobile.m4v"  % details,
         'poster': poster,
         'mobile_content': request.MOBILE,
