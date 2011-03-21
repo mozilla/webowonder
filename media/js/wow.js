@@ -34,7 +34,7 @@ mozilla.wow = function() {
 
             // Handle window resizes on mobile
             $(window).resize(function() {
-                mozilla.wow.handleResize();
+                    mozilla.wow.handleResize();
             });
             
             // Side Scroller
@@ -87,6 +87,8 @@ mozilla.wow = function() {
             mozilla.wow.cher();
 
             mozilla.wow.comingSoon();
+
+            mozilla.wow.desktopDemosInnerMargin = $("#demos-inner").css("margin-left");
             mozilla.wow.handleResize();
         }
     };
@@ -109,7 +111,7 @@ mozilla.wow.isDesktopLayout = function () {
  * Handle window resizes for the Mobile Layout
  */
 mozilla.wow.previousLayoutWasDesktop = null;
-mozilla.wow.desktopDemosInnerMargin = $("#demos-inner").css("margin-left");
+
 if ($('.get-it').attr('data-url') === undefined) {
     $('.get-it').attr('data-url', $('#firefox-four').attr('href'));
 }
@@ -126,12 +128,12 @@ mozilla.wow.handleResize = function () {
             mozilla.wow.previousLayoutWasDesktop = true;
             /* show any demos or the marvels await poster that might have been hidden from the sorting nav */
             $(".demo, #marvels-await").show();
-            if (window.navigator.userAgent.indexOf('Firefox/4') > 0) {
+            /*if (window.navigator.userAgent.indexOf('Firefox/4') > 0) {
                 $('#firefox-four').attr('href', $('.get-it-mobile').attr('data-url'));
                 $('.get-it-mobile').show();
             } else {
                 $('#firefox-four').attr('href', $('.get-it').attr('data-url'));
-            }
+                }*/
             
         } else {
             /* the new layout is mobile */
