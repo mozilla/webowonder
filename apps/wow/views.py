@@ -67,7 +67,7 @@ def home(request):
             'share_url': 'http://webowonder.org/',
             'mozillademos_host': settings.DEMOLAND,
             'mobile_content': request.MOBILE,
-            'firefox_download': 'http://www.mozilla.com/firefox/beta/?WT.mc_id=webwonder&WT.mc_ev=click',
+            'firefox_download': 'http://www.mozilla.com/firefox/?WT.mc_id=webwonder&WT.mc_ev=click',
             'chrome_download': 'http://www.google.com/landing/chrome/beta',}
 
     desktop_only = _(u'Desktop Only')
