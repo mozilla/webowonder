@@ -33,7 +33,6 @@
 	line-height: 1em;
 }
 div.chain-2 {
-	top: 393px;
 	margin-left: 68px;
 }
 div.chain-3 {
@@ -47,16 +46,15 @@ div.chain-3 {
 #header { position: relative; }
 
 #home-link {
-    position: absolute;
-    top: 0;
-    left: -60px;
+    position: relative;
+    left: -3.5em;
 }
 
 #mozilla-info {
     z-index: 999;
 }
 
-#marvels-await, #firefox-four {
+#marvels-await {
     top: 92px;
 }
 
@@ -67,3 +65,4 @@ div.chain-3 {
 }
 
 #demos-inner { position: fixed; }
+
