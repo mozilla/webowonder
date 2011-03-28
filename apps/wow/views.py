@@ -6,6 +6,7 @@ import itertools
 import jingo
 
 from tower import ugettext as _
+from tower import ugettext_lazy as _lazy
 
 from django.conf import settings
 from django.http import HttpResponse
@@ -18,40 +19,40 @@ from wow.models import DemoDetails
 # TODO, need actual urls and such
 tags = {
     # L10n: Tag MDN urls. You can change these if your locale has a better url
-    'Audio':       (_('https://developer.mozilla.org/en/Introducing_the_Audio_API_Extension'), 
+    'Audio':       (_lazy('https://developer.mozilla.org/en/Introducing_the_Audio_API_Extension'), 
     # L10n: Technology Tags. A demo can have up to 5 of these. Keep them short.
-                    _(u'Audio')),
-    'Canvas':      (_('https://developer.mozilla.org/En/Canvas'), 
-                    _(u'Canvas')),
-    'CSS3':        (_('https://developer.mozilla.org/En/CSS'),
-                    _(u'CSS3')),
-    'DnD':         (_('https://developer.mozilla.org/en/DragDrop/Drag_and_Drop'),
-                    _(u'DnD')),
-    'Files':       (_('https://developer.mozilla.org/en/using_files_from_web_applications'),
-                    _(u'Files')), 
-    'Fonts':       (_('https://developer.mozilla.org/en/css/@font-face'),
-                    _(u'Fonts')),
-    'Forms':       (_('https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5'),
-                    _(u'Forms')),
-    'GeoLocation': (_('https://developer.mozilla.org/En/Using_geolocation'), 
-                    _(u'GeoLocation')),
-    'JavaScript':  (_('https://developer.mozilla.org/En/javascript'), 
-                    _(u'JavaScript')), 
-    'HTML5':       (_('https://developer.mozilla.org/En/HTML5/HTML5'),
-                    _(u'HTML5')), 
-    'Mobile':      (_('https://developer.mozilla.org/En/Mobile'),
-                    _(u'Mobile')), 
-    'MultiTouch':  (_('https://developer.mozilla.org/En/MultiTouch'),
-                    _(u'MultiTouch')),
-    'SVG':         (_('https://developer.mozilla.org/En/SVG'), 
-                    _(u'SVG')), 
-    'Video':       (_('https://developer.mozilla.org/En/Using_audio_and_video_in_Firefox'),
-                    _(u'Video')), 
-    'WebGL':       (_('https://developer.mozilla.org/En/WebGL'),
-                    _(u'WebGL')), 
+                    _lazy(u'Audio')),
+    'Canvas':      (_lazy('https://developer.mozilla.org/En/Canvas'), 
+                    _lazy(u'Canvas')),
+    'CSS3':        (_lazy('https://developer.mozilla.org/En/CSS'),
+                    _lazy(u'CSS3')),
+    'DnD':         (_lazy('https://developer.mozilla.org/en/DragDrop/Drag_and_Drop'),
+                    _lazy(u'DnD')),
+    'Files':       (_lazy('https://developer.mozilla.org/en/using_files_from_web_applications'),
+                    _lazy(u'Files')), 
+    'Fonts':       (_lazy('https://developer.mozilla.org/en/css/@font-face'),
+                    _lazy(u'Fonts')),
+    'Forms':       (_lazy('https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5'),
+                    _lazy(u'Forms')),
+    'GeoLocation': (_lazy('https://developer.mozilla.org/En/Using_geolocation'), 
+                    _lazy(u'GeoLocation')),
+    'JavaScript':  (_lazy('https://developer.mozilla.org/En/javascript'), 
+                    _lazy(u'JavaScript')), 
+    'HTML5':       (_lazy('https://developer.mozilla.org/En/HTML5/HTML5'),
+                    _lazy(u'HTML5')), 
+    'Mobile':      (_lazy('https://developer.mozilla.org/En/Mobile'),
+                    _lazy(u'Mobile')), 
+    'MultiTouch':  (_lazy('https://developer.mozilla.org/En/MultiTouch'),
+                    _lazy(u'MultiTouch')),
+    'SVG':         (_lazy('https://developer.mozilla.org/En/SVG'), 
+                    _lazy(u'SVG')), 
+    'Video':       (_lazy('https://developer.mozilla.org/En/Using_audio_and_video_in_Firefox'),
+                    _lazy(u'Video')), 
+    'WebGL':       (_lazy('https://developer.mozilla.org/En/WebGL'),
+                    _lazy(u'WebGL')), 
      # L10n: Last of the Technology Tags.
-    'XMLHttpRequest': (_('https://developer.mozilla.org/En/XMLHttpRequest/Using_XMLHttpRequest'),
-                    _(u'XMLHttpRequest')),
+    'XMLHttpRequest': (_lazy('https://developer.mozilla.org/En/XMLHttpRequest/Using_XMLHttpRequest'),
+                    _lazy(u'XMLHttpRequest')),
 }
 
 #@cache_page(60 * 15) # 15 minutes
