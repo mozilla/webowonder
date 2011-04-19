@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Example views. Feel free to delete this app."""
+"""Web O Wonder views."""
 
 import itertools
 
@@ -19,8 +19,9 @@ from wow.models import DemoDetails
 # TODO, need actual urls and such
 tags = {
     # L10n: Tag MDN urls. You can change these if your locale has a better url
-    'Audio':       (_lazy('https://developer.mozilla.org/en/Introducing_the_Audio_API_Extension'), 
+
     # L10n: Technology Tags. A demo can have up to 5 of these. Keep them short.
+    'Audio':       (_lazy('https://developer.mozilla.org/en/Introducing_the_Audio_API_Extension'), 
                     _lazy(u'Audio')),
     'Canvas':      (_lazy('https://developer.mozilla.org/En/Canvas'), 
                     _lazy(u'Canvas')),
@@ -75,7 +76,6 @@ def home(request):
     mobile_only = _(u'Mobile Only')
 
     for demo in data['demos']:
-
         ltags = [(tags[x.strip()][0], tags[x.strip()][1],) for x in demo.tags.split(',')]
         tag_pairs = list(itertools.chain(*ltags))
 
@@ -97,6 +97,7 @@ def home(request):
 
         if copy:
             demo.tag_copy = copy.format(*tag_pairs)
+
 
         # L10n {0} is the title of a demo
         demo.video_title = _(u'The Making of {0}').format(demo.title)
@@ -161,6 +162,7 @@ def category(demo):
         'holo-mobile': _('Design'),
         'immersivevideo': _('Video'),
         'londonproject': _('Design'),
+        'marblerun': _('HTML5'),
         'mobile_player': _('Video'),
         'motivational': _('HTML5'),
         'particles': _('WebGL'),
